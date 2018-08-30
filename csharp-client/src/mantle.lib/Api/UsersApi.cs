@@ -118,8 +118,10 @@ namespace mantle.lib.Api
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
         /// <returns>List&lt;ProductUser&gt;</returns>
-        List<ProductUser> UsersGet (bool? isEnabled = null);
+        List<ProductUser> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null);
 
         /// <summary>
         /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role.
@@ -129,8 +131,10 @@ namespace mantle.lib.Api
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProductUser&gt;</returns>
-        ApiResponse<List<ProductUser>> UsersGetWithHttpInfo (bool? isEnabled = null);
+        ApiResponse<List<ProductUser>> UsersGetWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null);
         /// <summary>
         /// Get all of the available assignable roles. Requires the User Admin Role.
         /// </summary>
@@ -246,8 +250,10 @@ namespace mantle.lib.Api
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
         /// <returns>Task of List&lt;ProductUser&gt;</returns>
-        System.Threading.Tasks.Task<List<ProductUser>> UsersGetAsync (bool? isEnabled = null);
+        System.Threading.Tasks.Task<List<ProductUser>> UsersGetAsync (bool? isEnabled = null, int? limit = null, int? offset = null);
 
         /// <summary>
         /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role.
@@ -257,8 +263,10 @@ namespace mantle.lib.Api
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;ProductUser&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProductUser>>> UsersGetAsyncWithHttpInfo (bool? isEnabled = null);
+        System.Threading.Tasks.Task<ApiResponse<List<ProductUser>>> UsersGetAsyncWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null);
         /// <summary>
         /// Get all of the available assignable roles. Requires the User Admin Role.
         /// </summary>
@@ -935,10 +943,12 @@ namespace mantle.lib.Api
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
         /// <returns>List&lt;ProductUser&gt;</returns>
-        public List<ProductUser> UsersGet (bool? isEnabled = null)
+        public List<ProductUser> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null)
         {
-             ApiResponse<List<ProductUser>> localVarResponse = UsersGetWithHttpInfo(isEnabled);
+             ApiResponse<List<ProductUser>> localVarResponse = UsersGetWithHttpInfo(isEnabled, limit, offset);
              return localVarResponse.Data;
         }
 
@@ -947,8 +957,10 @@ namespace mantle.lib.Api
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
         /// <returns>ApiResponse of List&lt;ProductUser&gt;</returns>
-        public ApiResponse< List<ProductUser> > UsersGetWithHttpInfo (bool? isEnabled = null)
+        public ApiResponse< List<ProductUser> > UsersGetWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null)
         {
 
             var localVarPath = "./users";
@@ -975,6 +987,8 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (isEnabled != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "isEnabled", isEnabled)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
 
             // make the HTTP request
@@ -1000,10 +1014,12 @@ namespace mantle.lib.Api
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
         /// <returns>Task of List&lt;ProductUser&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProductUser>> UsersGetAsync (bool? isEnabled = null)
+        public async System.Threading.Tasks.Task<List<ProductUser>> UsersGetAsync (bool? isEnabled = null, int? limit = null, int? offset = null)
         {
-             ApiResponse<List<ProductUser>> localVarResponse = await UsersGetAsyncWithHttpInfo(isEnabled);
+             ApiResponse<List<ProductUser>> localVarResponse = await UsersGetAsyncWithHttpInfo(isEnabled, limit, offset);
              return localVarResponse.Data;
 
         }
@@ -1013,8 +1029,10 @@ namespace mantle.lib.Api
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;ProductUser&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ProductUser>>> UsersGetAsyncWithHttpInfo (bool? isEnabled = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<ProductUser>>> UsersGetAsyncWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null)
         {
 
             var localVarPath = "./users";
@@ -1041,6 +1059,8 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (isEnabled != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "isEnabled", isEnabled)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
 
 
             // make the HTTP request

@@ -38,9 +38,9 @@ namespace mantle.lib.Model
         /// </summary>
         /// <param name="RecipientEmail">RecipientEmail (required).</param>
         /// <param name="Amount">Amount.</param>
-        /// <param name="FactoryId">FactoryId (required).</param>
-        /// <param name="BatchId">BatchId (required).</param>
-        public TrackerBatchTransferRequest(string RecipientEmail = default(string), int? Amount = default(int?), string FactoryId = default(string), string BatchId = default(string))
+        /// <param name="AssetId">AssetId (required).</param>
+        /// <param name="BatchIds">BatchIds (required).</param>
+        public TrackerBatchTransferRequest(string RecipientEmail = default(string), int? Amount = default(int?), string AssetId = default(string), List<string> BatchIds = default(List<string>))
         {
             // to ensure "RecipientEmail" is required (not null)
             if (RecipientEmail == null)
@@ -51,23 +51,23 @@ namespace mantle.lib.Model
             {
                 this.RecipientEmail = RecipientEmail;
             }
-            // to ensure "FactoryId" is required (not null)
-            if (FactoryId == null)
+            // to ensure "AssetId" is required (not null)
+            if (AssetId == null)
             {
-                throw new InvalidDataException("FactoryId is a required property for TrackerBatchTransferRequest and cannot be null");
+                throw new InvalidDataException("AssetId is a required property for TrackerBatchTransferRequest and cannot be null");
             }
             else
             {
-                this.FactoryId = FactoryId;
+                this.AssetId = AssetId;
             }
-            // to ensure "BatchId" is required (not null)
-            if (BatchId == null)
+            // to ensure "BatchIds" is required (not null)
+            if (BatchIds == null)
             {
-                throw new InvalidDataException("BatchId is a required property for TrackerBatchTransferRequest and cannot be null");
+                throw new InvalidDataException("BatchIds is a required property for TrackerBatchTransferRequest and cannot be null");
             }
             else
             {
-                this.BatchId = BatchId;
+                this.BatchIds = BatchIds;
             }
             this.Amount = Amount;
         }
@@ -85,16 +85,16 @@ namespace mantle.lib.Model
         public int? Amount { get; set; }
 
         /// <summary>
-        /// Gets or Sets FactoryId
+        /// Gets or Sets AssetId
         /// </summary>
-        [DataMember(Name="factoryId", EmitDefaultValue=false)]
-        public string FactoryId { get; set; }
+        [DataMember(Name="assetId", EmitDefaultValue=false)]
+        public string AssetId { get; set; }
 
         /// <summary>
-        /// Gets or Sets BatchId
+        /// Gets or Sets BatchIds
         /// </summary>
-        [DataMember(Name="batchId", EmitDefaultValue=false)]
-        public string BatchId { get; set; }
+        [DataMember(Name="batchIds", EmitDefaultValue=false)]
+        public List<string> BatchIds { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -106,8 +106,8 @@ namespace mantle.lib.Model
             sb.Append("class TrackerBatchTransferRequest {\n");
             sb.Append("  RecipientEmail: ").Append(RecipientEmail).Append("\n");
             sb.Append("  Amount: ").Append(Amount).Append("\n");
-            sb.Append("  FactoryId: ").Append(FactoryId).Append("\n");
-            sb.Append("  BatchId: ").Append(BatchId).Append("\n");
+            sb.Append("  AssetId: ").Append(AssetId).Append("\n");
+            sb.Append("  BatchIds: ").Append(BatchIds).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -153,14 +153,14 @@ namespace mantle.lib.Model
                     this.Amount.Equals(input.Amount))
                 ) && 
                 (
-                    this.FactoryId == input.FactoryId ||
-                    (this.FactoryId != null &&
-                    this.FactoryId.Equals(input.FactoryId))
+                    this.AssetId == input.AssetId ||
+                    (this.AssetId != null &&
+                    this.AssetId.Equals(input.AssetId))
                 ) && 
                 (
-                    this.BatchId == input.BatchId ||
-                    (this.BatchId != null &&
-                    this.BatchId.Equals(input.BatchId))
+                    this.BatchIds == input.BatchIds ||
+                    this.BatchIds != null &&
+                    this.BatchIds.SequenceEqual(input.BatchIds)
                 );
         }
 
@@ -177,10 +177,10 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.RecipientEmail.GetHashCode();
                 if (this.Amount != null)
                     hashCode = hashCode * 59 + this.Amount.GetHashCode();
-                if (this.FactoryId != null)
-                    hashCode = hashCode * 59 + this.FactoryId.GetHashCode();
-                if (this.BatchId != null)
-                    hashCode = hashCode * 59 + this.BatchId.GetHashCode();
+                if (this.AssetId != null)
+                    hashCode = hashCode * 59 + this.AssetId.GetHashCode();
+                if (this.BatchIds != null)
+                    hashCode = hashCode * 59 + this.BatchIds.GetHashCode();
                 return hashCode;
             }
         }

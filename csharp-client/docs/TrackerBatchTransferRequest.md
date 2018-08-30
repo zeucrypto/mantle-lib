@@ -5,8 +5,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **RecipientEmail** | **string** |  | 
 **Amount** | **int?** |  | [optional] 
-**FactoryId** | **string** |  | 
-**BatchId** | **string** |  | 
+**AssetId** | **string** |  | 
+**BatchIds** | **List&lt;string&gt;** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

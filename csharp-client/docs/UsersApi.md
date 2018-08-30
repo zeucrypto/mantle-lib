@@ -249,7 +249,7 @@ No authorization required
 
 <a name="usersget"></a>
 # **UsersGet**
-> List<ProductUser> UsersGet (bool? isEnabled = null)
+> List<ProductUser> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null)
 
 Get all of the users for the authenticated user's client. Requires the User Admin Role.
 
@@ -269,11 +269,13 @@ namespace Example
         {
             var apiInstance = new UsersApi();
             var isEnabled = true;  // bool? |  (optional) 
+            var limit = 56;  // int? |  (optional) 
+            var offset = 56;  // int? |  (optional) 
 
             try
             {
                 // Get all of the users for the authenticated user's client. Requires the User Admin Role.
-                List&lt;ProductUser&gt; result = apiInstance.UsersGet(isEnabled);
+                List&lt;ProductUser&gt; result = apiInstance.UsersGet(isEnabled, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -290,6 +292,8 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **isEnabled** | **bool?**|  | [optional] 
+ **limit** | **int?**|  | [optional] 
+ **offset** | **int?**|  | [optional] 
 
 ### Return type
 

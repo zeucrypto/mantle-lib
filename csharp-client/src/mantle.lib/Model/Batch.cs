@@ -31,23 +31,29 @@ namespace mantle.lib.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Batch" /> class.
         /// </summary>
-        /// <param name="DividedBatch">DividedBatch.</param>
-        /// <param name="RemainingAmount">RemainingAmount.</param>
-        /// <param name="Date">Date.</param>
         /// <param name="BatchTransactionId">BatchTransactionId.</param>
-        public Batch(List<Batch> DividedBatch = default(List<Batch>), long? RemainingAmount = default(long?), DateTime? Date = default(DateTime?), string BatchTransactionId = default(string))
+        /// <param name="InitialAmount">InitialAmount.</param>
+        /// <param name="RemainingAmount">RemainingAmount.</param>
+        /// <param name="Timestamp">Timestamp.</param>
+        public Batch(string BatchTransactionId = default(string), long? InitialAmount = default(long?), long? RemainingAmount = default(long?), long? Timestamp = default(long?))
         {
-            this.DividedBatch = DividedBatch;
-            this.RemainingAmount = RemainingAmount;
-            this.Date = Date;
             this.BatchTransactionId = BatchTransactionId;
+            this.InitialAmount = InitialAmount;
+            this.RemainingAmount = RemainingAmount;
+            this.Timestamp = Timestamp;
         }
         
         /// <summary>
-        /// Gets or Sets DividedBatch
+        /// Gets or Sets BatchTransactionId
         /// </summary>
-        [DataMember(Name="dividedBatch", EmitDefaultValue=false)]
-        public List<Batch> DividedBatch { get; set; }
+        [DataMember(Name="batchTransactionId", EmitDefaultValue=false)]
+        public string BatchTransactionId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets InitialAmount
+        /// </summary>
+        [DataMember(Name="initialAmount", EmitDefaultValue=false)]
+        public long? InitialAmount { get; set; }
 
         /// <summary>
         /// Gets or Sets RemainingAmount
@@ -56,16 +62,10 @@ namespace mantle.lib.Model
         public long? RemainingAmount { get; set; }
 
         /// <summary>
-        /// Gets or Sets Date
+        /// Gets or Sets Timestamp
         /// </summary>
-        [DataMember(Name="date", EmitDefaultValue=false)]
-        public DateTime? Date { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BatchTransactionId
-        /// </summary>
-        [DataMember(Name="batchTransactionId", EmitDefaultValue=false)]
-        public string BatchTransactionId { get; set; }
+        [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        public long? Timestamp { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -75,10 +75,10 @@ namespace mantle.lib.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Batch {\n");
-            sb.Append("  DividedBatch: ").Append(DividedBatch).Append("\n");
-            sb.Append("  RemainingAmount: ").Append(RemainingAmount).Append("\n");
-            sb.Append("  Date: ").Append(Date).Append("\n");
             sb.Append("  BatchTransactionId: ").Append(BatchTransactionId).Append("\n");
+            sb.Append("  InitialAmount: ").Append(InitialAmount).Append("\n");
+            sb.Append("  RemainingAmount: ").Append(RemainingAmount).Append("\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -114,9 +114,14 @@ namespace mantle.lib.Model
 
             return 
                 (
-                    this.DividedBatch == input.DividedBatch ||
-                    this.DividedBatch != null &&
-                    this.DividedBatch.SequenceEqual(input.DividedBatch)
+                    this.BatchTransactionId == input.BatchTransactionId ||
+                    (this.BatchTransactionId != null &&
+                    this.BatchTransactionId.Equals(input.BatchTransactionId))
+                ) && 
+                (
+                    this.InitialAmount == input.InitialAmount ||
+                    (this.InitialAmount != null &&
+                    this.InitialAmount.Equals(input.InitialAmount))
                 ) && 
                 (
                     this.RemainingAmount == input.RemainingAmount ||
@@ -124,14 +129,9 @@ namespace mantle.lib.Model
                     this.RemainingAmount.Equals(input.RemainingAmount))
                 ) && 
                 (
-                    this.Date == input.Date ||
-                    (this.Date != null &&
-                    this.Date.Equals(input.Date))
-                ) && 
-                (
-                    this.BatchTransactionId == input.BatchTransactionId ||
-                    (this.BatchTransactionId != null &&
-                    this.BatchTransactionId.Equals(input.BatchTransactionId))
+                    this.Timestamp == input.Timestamp ||
+                    (this.Timestamp != null &&
+                    this.Timestamp.Equals(input.Timestamp))
                 );
         }
 
@@ -144,14 +144,14 @@ namespace mantle.lib.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.DividedBatch != null)
-                    hashCode = hashCode * 59 + this.DividedBatch.GetHashCode();
-                if (this.RemainingAmount != null)
-                    hashCode = hashCode * 59 + this.RemainingAmount.GetHashCode();
-                if (this.Date != null)
-                    hashCode = hashCode * 59 + this.Date.GetHashCode();
                 if (this.BatchTransactionId != null)
                     hashCode = hashCode * 59 + this.BatchTransactionId.GetHashCode();
+                if (this.InitialAmount != null)
+                    hashCode = hashCode * 59 + this.InitialAmount.GetHashCode();
+                if (this.RemainingAmount != null)
+                    hashCode = hashCode * 59 + this.RemainingAmount.GetHashCode();
+                if (this.Timestamp != null)
+                    hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
         }
