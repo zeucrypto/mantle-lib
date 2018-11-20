@@ -1,20 +1,22 @@
 # mantle.lib.Api.AuthenticationApi
 
-All URIs are relative to *http://dev.api.mantle.services*
+All URIs are relative to *http://develop.api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AuthenticationForgotpasswordConfirmationPost**](AuthenticationApi.md#authenticationforgotpasswordconfirmationpost) | **POST** /authentication/forgotpassword/confirmation | Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
-[**AuthenticationForgotpasswordPost**](AuthenticationApi.md#authenticationforgotpasswordpost) | **POST** /authentication/forgotpassword | Send an email to the user&#39;s email address with the reset password instructions.
-[**AuthenticationLoginPost**](AuthenticationApi.md#authenticationloginpost) | **POST** /authentication/login | Login a user with a username and password. The returned access token can be used to perform requests on the platform
-[**AuthenticationLogoutPost**](AuthenticationApi.md#authenticationlogoutpost) | **POST** /authentication/logout | Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
-[**AuthenticationSignupConfirmationPost**](AuthenticationApi.md#authenticationsignupconfirmationpost) | **POST** /authentication/signup/confirmation | Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in.
-[**AuthenticationSignupPost**](AuthenticationApi.md#authenticationsignuppost) | **POST** /authentication/signup | Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account
+[**AuthenticationForgotPasswordConfirmationPost**](AuthenticationApi.md#authenticationforgotpasswordconfirmationpost) | **POST** /authentication/forgot/password/confirmation | Confirm your password reset
+[**AuthenticationForgotPasswordPost**](AuthenticationApi.md#authenticationforgotpasswordpost) | **POST** /authentication/forgot/password | Send an email to the user&#39;s email address with the reset password instructions.
+[**AuthenticationLoginPost**](AuthenticationApi.md#authenticationloginpost) | **POST** /authentication/login | Login a user with a username and password
+[**AuthenticationLogoutPost**](AuthenticationApi.md#authenticationlogoutpost) | **POST** /authentication/logout | Logout a user
+[**AuthenticationSignupConfirmationPost**](AuthenticationApi.md#authenticationsignupconfirmationpost) | **POST** /authentication/signup/confirmation | Confirm your account
+[**AuthenticationSignupPost**](AuthenticationApi.md#authenticationsignuppost) | **POST** /authentication/signup | Sign up a user with an invitation
 
 
 <a name="authenticationforgotpasswordconfirmationpost"></a>
-# **AuthenticationForgotpasswordConfirmationPost**
-> void AuthenticationForgotpasswordConfirmationPost (UserForgotPasswordConfirmationRequest request = null)
+# **AuthenticationForgotPasswordConfirmationPost**
+> void AuthenticationForgotPasswordConfirmationPost (UserForgotPasswordConfirmationRequest request = null)
+
+Confirm your password reset
 
 Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
 
@@ -28,7 +30,7 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class AuthenticationForgotpasswordConfirmationPostExample
+    public class AuthenticationForgotPasswordConfirmationPostExample
     {
         public void main()
         {
@@ -37,12 +39,12 @@ namespace Example
 
             try
             {
-                // Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
-                apiInstance.AuthenticationForgotpasswordConfirmationPost(request);
+                // Confirm your password reset
+                apiInstance.AuthenticationForgotPasswordConfirmationPost(request);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AuthenticationApi.AuthenticationForgotpasswordConfirmationPost: " + e.Message );
+                Debug.Print("Exception when calling AuthenticationApi.AuthenticationForgotPasswordConfirmationPost: " + e.Message );
             }
         }
     }
@@ -71,8 +73,8 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="authenticationforgotpasswordpost"></a>
-# **AuthenticationForgotpasswordPost**
-> void AuthenticationForgotpasswordPost (UserForgotPasswordRequest request = null)
+# **AuthenticationForgotPasswordPost**
+> void AuthenticationForgotPasswordPost (UserForgotPasswordRequest request = null)
 
 Send an email to the user's email address with the reset password instructions.
 
@@ -86,7 +88,7 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class AuthenticationForgotpasswordPostExample
+    public class AuthenticationForgotPasswordPostExample
     {
         public void main()
         {
@@ -96,11 +98,11 @@ namespace Example
             try
             {
                 // Send an email to the user's email address with the reset password instructions.
-                apiInstance.AuthenticationForgotpasswordPost(request);
+                apiInstance.AuthenticationForgotPasswordPost(request);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling AuthenticationApi.AuthenticationForgotpasswordPost: " + e.Message );
+                Debug.Print("Exception when calling AuthenticationApi.AuthenticationForgotPasswordPost: " + e.Message );
             }
         }
     }
@@ -132,7 +134,9 @@ No authorization required
 # **AuthenticationLoginPost**
 > UserLoginResponse AuthenticationLoginPost (UserLoginRequest request = null)
 
-Login a user with a username and password. The returned access token can be used to perform requests on the platform
+Login a user with a username and password
+
+The returned access token can be used to perform requests on the platform.
 
 ### Example
 ```csharp
@@ -153,7 +157,7 @@ namespace Example
 
             try
             {
-                // Login a user with a username and password. The returned access token can be used to perform requests on the platform
+                // Login a user with a username and password
                 UserLoginResponse result = apiInstance.AuthenticationLoginPost(request);
                 Debug.WriteLine(result);
             }
@@ -191,7 +195,9 @@ No authorization required
 # **AuthenticationLogoutPost**
 > void AuthenticationLogoutPost ()
 
-Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
+Logout a user
+
+You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
 
 ### Example
 ```csharp
@@ -211,7 +217,7 @@ namespace Example
 
             try
             {
-                // Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
+                // Logout a user
                 apiInstance.AuthenticationLogoutPost();
             }
             catch (Exception e)
@@ -245,7 +251,9 @@ No authorization required
 # **AuthenticationSignupConfirmationPost**
 > void AuthenticationSignupConfirmationPost (UserSignUpConfirmationRequest request = null)
 
-Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in.
+Confirm your account
+
+Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
 
 ### Example
 ```csharp
@@ -266,7 +274,7 @@ namespace Example
 
             try
             {
-                // Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in.
+                // Confirm your account
                 apiInstance.AuthenticationSignupConfirmationPost(request);
             }
             catch (Exception e)
@@ -303,7 +311,9 @@ No authorization required
 # **AuthenticationSignupPost**
 > void AuthenticationSignupPost (SignUpUserRequest request = null)
 
-Sign up a user with an invitation. You shouldn't be authentified for this request as it's meant to create an account
+Sign up a user with an invitation
+
+You shouldn't be authenticated for this request as it's meant to create an account.
 
 ### Example
 ```csharp
@@ -324,7 +334,7 @@ namespace Example
 
             try
             {
-                // Sign up a user with an invitation. You shouldn't be authentified for this request as it's meant to create an account
+                // Sign up a user with an invitation
                 apiInstance.AuthenticationSignupPost(request);
             }
             catch (Exception e)

@@ -1,17 +1,19 @@
 # mantle.lib.Api.BillingApi
 
-All URIs are relative to *http://dev.api.mantle.services*
+All URIs are relative to *http://develop.api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BillsGet**](BillingApi.md#billsget) | **GET** /bills | Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role.
+[**BillsGet**](BillingApi.md#billsget) | **GET** /bills | Get all bills
 
 
 <a name="billsget"></a>
 # **BillsGet**
 > List<Bill> BillsGet ()
 
-Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role.
+Get all bills
+
+Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
 
 ### Example
 ```csharp
@@ -31,7 +33,7 @@ namespace Example
 
             try
             {
-                // Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role.
+                // Get all bills
                 List&lt;Bill&gt; result = apiInstance.BillsGet();
                 Debug.WriteLine(result);
             }

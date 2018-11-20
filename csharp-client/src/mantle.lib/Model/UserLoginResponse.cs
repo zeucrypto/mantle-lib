@@ -32,9 +32,11 @@ namespace mantle.lib.Model
         /// Initializes a new instance of the <see cref="UserLoginResponse" /> class.
         /// </summary>
         /// <param name="AccessToken">AccessToken.</param>
-        public UserLoginResponse(string AccessToken = default(string))
+        /// <param name="User">User.</param>
+        public UserLoginResponse(string AccessToken = default(string), User User = default(User))
         {
             this.AccessToken = AccessToken;
+            this.User = User;
         }
         
         /// <summary>
@@ -42,6 +44,12 @@ namespace mantle.lib.Model
         /// </summary>
         [DataMember(Name="accessToken", EmitDefaultValue=false)]
         public string AccessToken { get; set; }
+
+        /// <summary>
+        /// Gets or Sets User
+        /// </summary>
+        [DataMember(Name="user", EmitDefaultValue=false)]
+        public User User { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -52,6 +60,7 @@ namespace mantle.lib.Model
             var sb = new StringBuilder();
             sb.Append("class UserLoginResponse {\n");
             sb.Append("  AccessToken: ").Append(AccessToken).Append("\n");
+            sb.Append("  User: ").Append(User).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -90,6 +99,11 @@ namespace mantle.lib.Model
                     this.AccessToken == input.AccessToken ||
                     (this.AccessToken != null &&
                     this.AccessToken.Equals(input.AccessToken))
+                ) && 
+                (
+                    this.User == input.User ||
+                    (this.User != null &&
+                    this.User.Equals(input.User))
                 );
         }
 
@@ -104,6 +118,8 @@ namespace mantle.lib.Model
                 int hashCode = 41;
                 if (this.AccessToken != null)
                     hashCode = hashCode * 59 + this.AccessToken.GetHashCode();
+                if (this.User != null)
+                    hashCode = hashCode * 59 + this.User.GetHashCode();
                 return hashCode;
             }
         }

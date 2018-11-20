@@ -3,22 +3,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** |  | [optional] 
-**BlockchainFileId** | **string** |  | [optional] 
-**FolderId** | **string** |  | [optional] 
-**ClientId** | **string** |  | [optional] 
-**DisplayName** | **string** |  | [optional] 
-**FileName** | **string** |  | [optional] 
-**SizeByte** | **long?** |  | [optional] 
-**Accuracy** | **string** |  | [optional] 
-**KeeperType** | **string** |  | [optional] 
-**BlockchainStatus** | **string** |  | [optional] 
-**IsDeleted** | **bool?** |  | [optional] 
-**CreationDate** | **DateTime?** |  | [optional] 
+**Tag** | **string** |  | [optional] 
 **ModificationDate** | **DateTime?** |  | [optional] 
 **VersionQuantity** | **int?** |  | [optional] 
-**LastVersion** | **int?** |  | [optional] 
-**LastVersionFileSize** | **long?** |  | [optional] 
+**FileType** | **string** |  | [optional] 
+**AccuracyLevel** | **string** |  | [optional] 
+**Id** | **string** |  | [optional] 
+**BlockchainStatus** | **string** |  | [optional] 
+**OwnerEmail** | **string** |  | [optional] 
+**DisplayName** | **string** |  | [optional] 
+**CreationDate** | **DateTime?** |  | [optional] 
+**IsDeleted** | **bool?** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

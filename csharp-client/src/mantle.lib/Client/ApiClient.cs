@@ -53,13 +53,13 @@ namespace mantle.lib.Client
         public ApiClient()
         {
             Configuration = mantle.lib.Client.Configuration.Default;
-            RestClient = new RestClient("http://dev.api.mantle.services");
+            RestClient = new RestClient("http://develop.api.mantleblockchain.com");
             RestClient.IgnoreResponseStatusCode = true;
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (http://dev.api.mantle.services).
+        /// with default base path (http://develop.api.mantleblockchain.com).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
@@ -75,7 +75,7 @@ namespace mantle.lib.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "http://dev.api.mantle.services")
+        public ApiClient(String basePath = "http://develop.api.mantleblockchain.com")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

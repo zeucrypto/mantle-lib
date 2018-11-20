@@ -48,10 +48,10 @@ namespace mantle.lib.Model
             Confirmed = 2,
             
             /// <summary>
-            /// Enum Errored for value: Errored
+            /// Enum Corrupted for value: Corrupted
             /// </summary>
-            [EnumMember(Value = "Errored")]
-            Errored = 3
+            [EnumMember(Value = "Corrupted")]
+            Corrupted = 3
         }
 
         /// <summary>

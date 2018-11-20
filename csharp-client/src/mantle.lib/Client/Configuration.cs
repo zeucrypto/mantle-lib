@@ -29,7 +29,7 @@ namespace mantle.lib.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.1.2";
+        public const string Version = "1.2.1";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -110,8 +110,8 @@ namespace mantle.lib.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "Swagger-Codegen/1.1.2/csharp";
-            BasePath = "http://dev.api.mantle.services";
+            UserAgent = "Swagger-Codegen/1.2.1/csharp";
+            BasePath = "http://develop.api.mantleblockchain.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -127,7 +127,7 @@ namespace mantle.lib.Client
             IDictionary<string, string> defaultHeader,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "http://dev.api.mantle.services") : this()
+            string basePath = "http://develop.api.mantleblockchain.com") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
@@ -183,7 +183,7 @@ namespace mantle.lib.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "Swagger-Codegen/1.1.2/csharp"
+            string userAgent = "Swagger-Codegen/1.2.1/csharp"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -416,7 +416,7 @@ namespace mantle.lib.Client
             String report = "C# SDK (mantle.lib) Debug Report:\n";
             report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
             report += "    Version of the API: v1\n";
-            report += "    SDK Package Version: 1.1.2\n";
+            report += "    SDK Package Version: 1.2.1\n";
 
             return report;
         }

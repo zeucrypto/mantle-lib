@@ -25,31 +25,31 @@ namespace mantle.lib.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get a specific user&#39;s details and roles. Requires the User Admin Role.
+        /// Get a specific user&#39;s details and roles
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
-        /// <returns>ProductUser</returns>
-        ProductUser UsersByUserIdGet (string userId);
+        /// <returns>User</returns>
+        User UsersByUserIdGet (string userId);
 
         /// <summary>
-        /// Get a specific user&#39;s details and roles. Requires the User Admin Role.
+        /// Get a specific user&#39;s details and roles
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
-        /// <returns>ApiResponse of ProductUser</returns>
-        ApiResponse<ProductUser> UsersByUserIdGetWithHttpInfo (string userId);
+        /// <returns>ApiResponse of User</returns>
+        ApiResponse<User> UsersByUserIdGetWithHttpInfo (string userId);
         /// <summary>
-        /// Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role.
+        /// Edit a user&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -58,10 +58,10 @@ namespace mantle.lib.Api
         void UsersByUserIdPut (string userId, EditUserRequest request = null);
 
         /// <summary>
-        /// Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role.
+        /// Edit a user&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -69,10 +69,10 @@ namespace mantle.lib.Api
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> UsersByUserIdPutWithHttpInfo (string userId, EditUserRequest request = null);
         /// <summary>
-        /// Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role.
+        /// Disable a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -80,20 +80,20 @@ namespace mantle.lib.Api
         void UsersDisableByUserIdPut (string userId);
 
         /// <summary>
-        /// Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role.
+        /// Disable a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> UsersDisableByUserIdPutWithHttpInfo (string userId);
         /// <summary>
-        /// Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role.
+        /// Enable a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -101,55 +101,55 @@ namespace mantle.lib.Api
         void UsersEnableByUserIdPut (string userId);
 
         /// <summary>
-        /// Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role.
+        /// Enable a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> UsersEnableByUserIdPutWithHttpInfo (string userId);
         /// <summary>
-        /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role.
+        /// Get all users
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
-        /// <returns>List&lt;ProductUser&gt;</returns>
-        List<ProductUser> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null);
+        /// <returns>List&lt;User&gt;</returns>
+        List<User> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null);
 
         /// <summary>
-        /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role.
+        /// Get all users
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;ProductUser&gt;</returns>
-        ApiResponse<List<ProductUser>> UsersGetWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null);
+        /// <returns>ApiResponse of List&lt;User&gt;</returns>
+        ApiResponse<List<User>> UsersGetWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null);
         /// <summary>
-        /// Get all of the available assignable roles. Requires the User Admin Role.
+        /// Get all roles
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;string&gt;</returns>
         List<string> UsersSelfRolesGet ();
 
         /// <summary>
-        /// Get all of the available assignable roles. Requires the User Admin Role.
+        /// Get all roles
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
@@ -157,31 +157,31 @@ namespace mantle.lib.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get a specific user&#39;s details and roles. Requires the User Admin Role.
+        /// Get a specific user&#39;s details and roles
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
-        /// <returns>Task of ProductUser</returns>
-        System.Threading.Tasks.Task<ProductUser> UsersByUserIdGetAsync (string userId);
+        /// <returns>Task of User</returns>
+        System.Threading.Tasks.Task<User> UsersByUserIdGetAsync (string userId);
 
         /// <summary>
-        /// Get a specific user&#39;s details and roles. Requires the User Admin Role.
+        /// Get a specific user&#39;s details and roles
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
-        /// <returns>Task of ApiResponse (ProductUser)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ProductUser>> UsersByUserIdGetAsyncWithHttpInfo (string userId);
+        /// <returns>Task of ApiResponse (User)</returns>
+        System.Threading.Tasks.Task<ApiResponse<User>> UsersByUserIdGetAsyncWithHttpInfo (string userId);
         /// <summary>
-        /// Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role.
+        /// Edit a user&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -190,10 +190,10 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task UsersByUserIdPutAsync (string userId, EditUserRequest request = null);
 
         /// <summary>
-        /// Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role.
+        /// Edit a user&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -201,10 +201,10 @@ namespace mantle.lib.Api
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> UsersByUserIdPutAsyncWithHttpInfo (string userId, EditUserRequest request = null);
         /// <summary>
-        /// Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role.
+        /// Disable a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -212,20 +212,20 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task UsersDisableByUserIdPutAsync (string userId);
 
         /// <summary>
-        /// Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role.
+        /// Disable a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> UsersDisableByUserIdPutAsyncWithHttpInfo (string userId);
         /// <summary>
-        /// Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role.
+        /// Enable a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -233,55 +233,55 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task UsersEnableByUserIdPutAsync (string userId);
 
         /// <summary>
-        /// Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role.
+        /// Enable a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> UsersEnableByUserIdPutAsyncWithHttpInfo (string userId);
         /// <summary>
-        /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role.
+        /// Get all users
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
-        /// <returns>Task of List&lt;ProductUser&gt;</returns>
-        System.Threading.Tasks.Task<List<ProductUser>> UsersGetAsync (bool? isEnabled = null, int? limit = null, int? offset = null);
+        /// <returns>Task of List&lt;User&gt;</returns>
+        System.Threading.Tasks.Task<List<User>> UsersGetAsync (bool? isEnabled = null, int? limit = null, int? offset = null);
 
         /// <summary>
-        /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role.
+        /// Get all users
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;ProductUser&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<ProductUser>>> UsersGetAsyncWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null);
+        /// <returns>Task of ApiResponse (List&lt;User&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<User>>> UsersGetAsyncWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null);
         /// <summary>
-        /// Get all of the available assignable roles. Requires the User Admin Role.
+        /// Get all roles
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;string&gt;</returns>
         System.Threading.Tasks.Task<List<string>> UsersSelfRolesGetAsync ();
 
         /// <summary>
-        /// Get all of the available assignable roles. Requires the User Admin Role.
+        /// Get all roles
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
@@ -387,24 +387,24 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get a specific user&#39;s details and roles. Requires the User Admin Role. 
+        /// Get a specific user&#39;s details and roles Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
-        /// <returns>ProductUser</returns>
-        public ProductUser UsersByUserIdGet (string userId)
+        /// <returns>User</returns>
+        public User UsersByUserIdGet (string userId)
         {
-             ApiResponse<ProductUser> localVarResponse = UsersByUserIdGetWithHttpInfo(userId);
+             ApiResponse<User> localVarResponse = UsersByUserIdGetWithHttpInfo(userId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get a specific user&#39;s details and roles. Requires the User Admin Role. 
+        /// Get a specific user&#39;s details and roles Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
-        /// <returns>ApiResponse of ProductUser</returns>
-        public ApiResponse< ProductUser > UsersByUserIdGetWithHttpInfo (string userId)
+        /// <returns>ApiResponse of User</returns>
+        public ApiResponse< User > UsersByUserIdGetWithHttpInfo (string userId)
         {
             // verify the required parameter 'userId' is set
             if (userId == null)
@@ -449,31 +449,31 @@ namespace mantle.lib.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ProductUser>(localVarStatusCode,
+            return new ApiResponse<User>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ProductUser) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductUser)));
+                (User) Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
         }
 
         /// <summary>
-        /// Get a specific user&#39;s details and roles. Requires the User Admin Role. 
+        /// Get a specific user&#39;s details and roles Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
-        /// <returns>Task of ProductUser</returns>
-        public async System.Threading.Tasks.Task<ProductUser> UsersByUserIdGetAsync (string userId)
+        /// <returns>Task of User</returns>
+        public async System.Threading.Tasks.Task<User> UsersByUserIdGetAsync (string userId)
         {
-             ApiResponse<ProductUser> localVarResponse = await UsersByUserIdGetAsyncWithHttpInfo(userId);
+             ApiResponse<User> localVarResponse = await UsersByUserIdGetAsyncWithHttpInfo(userId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get a specific user&#39;s details and roles. Requires the User Admin Role. 
+        /// Get a specific user&#39;s details and roles Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
-        /// <returns>Task of ApiResponse (ProductUser)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<ProductUser>> UsersByUserIdGetAsyncWithHttpInfo (string userId)
+        /// <returns>Task of ApiResponse (User)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<User>> UsersByUserIdGetAsyncWithHttpInfo (string userId)
         {
             // verify the required parameter 'userId' is set
             if (userId == null)
@@ -518,13 +518,13 @@ namespace mantle.lib.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<ProductUser>(localVarStatusCode,
+            return new ApiResponse<User>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (ProductUser) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ProductUser)));
+                (User) Configuration.ApiClient.Deserialize(localVarResponse, typeof(User)));
         }
 
         /// <summary>
-        /// Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role. 
+        /// Edit a user&#39;s details If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -536,7 +536,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role. 
+        /// Edit a user&#39;s details If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -602,7 +602,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role. 
+        /// Edit a user&#39;s details If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -615,7 +615,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role. 
+        /// Edit a user&#39;s details If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -681,7 +681,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role. 
+        /// Disable a specific user This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -692,7 +692,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role. 
+        /// Disable a specific user This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -745,7 +745,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role. 
+        /// Disable a specific user This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -757,7 +757,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role. 
+        /// Disable a specific user This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -810,7 +810,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role. 
+        /// Enable a specific user This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -821,7 +821,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role. 
+        /// Enable a specific user This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -874,7 +874,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role. 
+        /// Enable a specific user This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -886,7 +886,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role. 
+        /// Enable a specific user This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -939,28 +939,28 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role. 
+        /// Get all users Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
-        /// <returns>List&lt;ProductUser&gt;</returns>
-        public List<ProductUser> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null)
+        /// <returns>List&lt;User&gt;</returns>
+        public List<User> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null)
         {
-             ApiResponse<List<ProductUser>> localVarResponse = UsersGetWithHttpInfo(isEnabled, limit, offset);
+             ApiResponse<List<User>> localVarResponse = UsersGetWithHttpInfo(isEnabled, limit, offset);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role. 
+        /// Get all users Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
-        /// <returns>ApiResponse of List&lt;ProductUser&gt;</returns>
-        public ApiResponse< List<ProductUser> > UsersGetWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null)
+        /// <returns>ApiResponse of List&lt;User&gt;</returns>
+        public ApiResponse< List<User> > UsersGetWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null)
         {
 
             var localVarPath = "./users";
@@ -1004,35 +1004,35 @@ namespace mantle.lib.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<ProductUser>>(localVarStatusCode,
+            return new ApiResponse<List<User>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<ProductUser>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ProductUser>)));
+                (List<User>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<User>)));
         }
 
         /// <summary>
-        /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role. 
+        /// Get all users Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
-        /// <returns>Task of List&lt;ProductUser&gt;</returns>
-        public async System.Threading.Tasks.Task<List<ProductUser>> UsersGetAsync (bool? isEnabled = null, int? limit = null, int? offset = null)
+        /// <returns>Task of List&lt;User&gt;</returns>
+        public async System.Threading.Tasks.Task<List<User>> UsersGetAsync (bool? isEnabled = null, int? limit = null, int? offset = null)
         {
-             ApiResponse<List<ProductUser>> localVarResponse = await UsersGetAsyncWithHttpInfo(isEnabled, limit, offset);
+             ApiResponse<List<User>> localVarResponse = await UsersGetAsyncWithHttpInfo(isEnabled, limit, offset);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role. 
+        /// Get all users Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="isEnabled"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;ProductUser&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<ProductUser>>> UsersGetAsyncWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null)
+        /// <returns>Task of ApiResponse (List&lt;User&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<User>>> UsersGetAsyncWithHttpInfo (bool? isEnabled = null, int? limit = null, int? offset = null)
         {
 
             var localVarPath = "./users";
@@ -1076,13 +1076,13 @@ namespace mantle.lib.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<ProductUser>>(localVarStatusCode,
+            return new ApiResponse<List<User>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<ProductUser>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<ProductUser>)));
+                (List<User>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<User>)));
         }
 
         /// <summary>
-        /// Get all of the available assignable roles. Requires the User Admin Role. 
+        /// Get all roles Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;string&gt;</returns>
@@ -1093,7 +1093,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the available assignable roles. Requires the User Admin Role. 
+        /// Get all roles Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
@@ -1144,7 +1144,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the available assignable roles. Requires the User Admin Role. 
+        /// Get all roles Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;string&gt;</returns>
@@ -1156,7 +1156,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the available assignable roles. Requires the User Admin Role. 
+        /// Get all roles Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>

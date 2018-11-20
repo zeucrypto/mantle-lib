@@ -1,30 +1,32 @@
 # mantle.lib.Api.KeeperApi
 
-All URIs are relative to *http://dev.api.mantle.services*
+All URIs are relative to *http://develop.api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**KeeperFilesByFileIdDelete**](KeeperApi.md#keeperfilesbyfileiddelete) | **DELETE** /keeper/files/{fileId} | [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role.
-[**KeeperFilesByFileIdGet**](KeeperApi.md#keeperfilesbyfileidget) | **GET** /keeper/files/{fileId} | [FILES] Get a file&#39;s details. Requires the Keeper Admin Role.
-[**KeeperFilesDiffPost**](KeeperApi.md#keeperfilesdiffpost) | **POST** /keeper/files/diff | [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
-[**KeeperFilesDiffWithLatestPost**](KeeperApi.md#keeperfilesdiffwithlatestpost) | **POST** /keeper/files/diffwithlatest | [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
-[**KeeperFilesExistPost**](KeeperApi.md#keeperfilesexistpost) | **POST** /keeper/files/exist | [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role.
-[**KeeperFilesGet**](KeeperApi.md#keeperfilesget) | **GET** /keeper/files | [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role.
-[**KeeperFilesPost**](KeeperApi.md#keeperfilespost) | **POST** /keeper/files | [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role.
-[**KeeperFoldersByFolderIdDelete**](KeeperApi.md#keeperfoldersbyfolderiddelete) | **DELETE** /keeper/folders/{folderId} | [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role.
-[**KeeperFoldersByFolderIdGet**](KeeperApi.md#keeperfoldersbyfolderidget) | **GET** /keeper/folders/{folderId} | [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role.
-[**KeeperFoldersGet**](KeeperApi.md#keeperfoldersget) | **GET** /keeper/folders | [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role.
-[**KeeperFoldersPost**](KeeperApi.md#keeperfolderspost) | **POST** /keeper/folders | [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role.
-[**KeeperVersionsByFileIdGet**](KeeperApi.md#keeperversionsbyfileidget) | **GET** /keeper/versions/{fileId} | [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role.
-[**KeeperVersionsDiffPost**](KeeperApi.md#keeperversionsdiffpost) | **POST** /keeper/versions/diff | [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
-[**KeeperVersionsPost**](KeeperApi.md#keeperversionspost) | **POST** /keeper/versions | [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role.
+[**KeeperByProductIdFilesByFileIdDelete**](KeeperApi.md#keeperbyproductidfilesbyfileiddelete) | **DELETE** /keeper/{productId}/files/{fileId} | [] Delete a file
+[**KeeperByProductIdFilesByFileIdGet**](KeeperApi.md#keeperbyproductidfilesbyfileidget) | **GET** /keeper/{productId}/files/{fileId} | [] Get a file&#39;s details.
+[**KeeperByProductIdFilesDiffLatestPost**](KeeperApi.md#keeperbyproductidfilesdifflatestpost) | **POST** /keeper/{productId}/files/diff/latest | [] Compare a local file to the latest version
+[**KeeperByProductIdFilesDiffPost**](KeeperApi.md#keeperbyproductidfilesdiffpost) | **POST** /keeper/{productId}/files/diff | [] Compare a local file to the original version
+[**KeeperByProductIdFilesExistPost**](KeeperApi.md#keeperbyproductidfilesexistpost) | **POST** /keeper/{productId}/files/exist | [] Check if a file already exists
+[**KeeperByProductIdFilesGet**](KeeperApi.md#keeperbyproductidfilesget) | **GET** /keeper/{productId}/files | [] Get all files
+[**KeeperByProductIdFilesPost**](KeeperApi.md#keeperbyproductidfilespost) | **POST** /keeper/{productId}/files | [] Create a file
+[**KeeperByProductIdFoldersByFolderIdDelete**](KeeperApi.md#keeperbyproductidfoldersbyfolderiddelete) | **DELETE** /keeper/{productId}/folders/{folderId} | [] Delete a folder
+[**KeeperByProductIdFoldersByFolderIdGet**](KeeperApi.md#keeperbyproductidfoldersbyfolderidget) | **GET** /keeper/{productId}/folders/{folderId} | [] Get a specific folder&#39;s details
+[**KeeperByProductIdFoldersGet**](KeeperApi.md#keeperbyproductidfoldersget) | **GET** /keeper/{productId}/folders | [] Get all folders
+[**KeeperByProductIdFoldersPost**](KeeperApi.md#keeperbyproductidfolderspost) | **POST** /keeper/{productId}/folders | [] Create a folder
+[**KeeperByProductIdVersionsByFileIdGet**](KeeperApi.md#keeperbyproductidversionsbyfileidget) | **GET** /keeper/{productId}/versions/{fileId} | [] Get all the versions&#39; details for a specific file
+[**KeeperByProductIdVersionsDiffPost**](KeeperApi.md#keeperbyproductidversionsdiffpost) | **POST** /keeper/{productId}/versions/diff | [] Compare a local file to a specific version
+[**KeeperByProductIdVersionsPost**](KeeperApi.md#keeperbyproductidversionspost) | **POST** /keeper/{productId}/versions | [] Create a version for an existing file
 
 
-<a name="keeperfilesbyfileiddelete"></a>
-# **KeeperFilesByFileIdDelete**
-> void KeeperFilesByFileIdDelete (string fileId)
+<a name="keeperbyproductidfilesbyfileiddelete"></a>
+# **KeeperByProductIdFilesByFileIdDelete**
+> void KeeperByProductIdFilesByFileIdDelete (string fileId, string productId)
 
-[FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won't show it to you anymore. Requires the Keeper Admin Role.
+[] Delete a file
+
+Its fingerprint will stay in the blockchain, but we won't show it to you anymore.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -36,21 +38,22 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFilesByFileIdDeleteExample
+    public class KeeperByProductIdFilesByFileIdDeleteExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
             var fileId = fileId_example;  // string | 
+            var productId = productId_example;  // string | 
 
             try
             {
-                // [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won't show it to you anymore. Requires the Keeper Admin Role.
-                apiInstance.KeeperFilesByFileIdDelete(fileId);
+                // [] Delete a file
+                apiInstance.KeeperByProductIdFilesByFileIdDelete(fileId, productId);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFilesByFileIdDelete: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFilesByFileIdDelete: " + e.Message );
             }
         }
     }
@@ -62,6 +65,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **string**|  | 
+ **productId** | **string**|  | 
 
 ### Return type
 
@@ -78,11 +82,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfilesbyfileidget"></a>
-# **KeeperFilesByFileIdGet**
-> KeeperFile KeeperFilesByFileIdGet (string fileId)
+<a name="keeperbyproductidfilesbyfileidget"></a>
+# **KeeperByProductIdFilesByFileIdGet**
+> KeeperFile KeeperByProductIdFilesByFileIdGet (string fileId, string productId)
 
-[FILES] Get a file's details. Requires the Keeper Admin Role.
+[] Get a file's details.
+
+Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -94,22 +100,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFilesByFileIdGetExample
+    public class KeeperByProductIdFilesByFileIdGetExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
             var fileId = fileId_example;  // string | 
+            var productId = productId_example;  // string | 
 
             try
             {
-                // [FILES] Get a file's details. Requires the Keeper Admin Role.
-                KeeperFile result = apiInstance.KeeperFilesByFileIdGet(fileId);
+                // [] Get a file's details.
+                KeeperFile result = apiInstance.KeeperByProductIdFilesByFileIdGet(fileId, productId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFilesByFileIdGet: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFilesByFileIdGet: " + e.Message );
             }
         }
     }
@@ -121,6 +128,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **string**|  | 
+ **productId** | **string**|  | 
 
 ### Return type
 
@@ -137,11 +145,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfilesdiffpost"></a>
-# **KeeperFilesDiffPost**
-> BreadcrumbingCompareResponse KeeperFilesDiffPost (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+<a name="keeperbyproductidfilesdifflatestpost"></a>
+# **KeeperByProductIdFilesDiffLatestPost**
+> BreadcrumbingCompareResponse KeeperByProductIdFilesDiffLatestPost (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
 
-[FILES] Compare a local file to the original version of a file that's been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+[] Compare a local file to the latest version
+
+Compare a local file to the latest version of a file that's been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -153,24 +163,26 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFilesDiffPostExample
+    public class KeeperByProductIdFilesDiffLatestPostExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
             var fileId = fileId_example;  // string | 
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var generateDiffFile = true;  // bool? |  (optional) 
+            var productId = productId_example;  // string | 
+            var mustGenerateFileDiff = true;  // bool? |  (optional) 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [FILES] Compare a local file to the original version of a file that's been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
-                BreadcrumbingCompareResponse result = apiInstance.KeeperFilesDiffPost(fileId, file, generateDiffFile);
+                // [] Compare a local file to the latest version
+                BreadcrumbingCompareResponse result = apiInstance.KeeperByProductIdFilesDiffLatestPost(fileId, file, productId, mustGenerateFileDiff, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFilesDiffPost: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFilesDiffLatestPost: " + e.Message );
             }
         }
     }
@@ -183,7 +195,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **string**|  | 
  **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **generateDiffFile** | **bool?**|  | [optional] 
+ **productId** | **string**|  | 
+ **mustGenerateFileDiff** | **bool?**|  | [optional] 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -200,11 +214,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfilesdiffwithlatestpost"></a>
-# **KeeperFilesDiffWithLatestPost**
-> BreadcrumbingCompareResponse KeeperFilesDiffWithLatestPost (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+<a name="keeperbyproductidfilesdiffpost"></a>
+# **KeeperByProductIdFilesDiffPost**
+> BreadcrumbingCompareResponse KeeperByProductIdFilesDiffPost (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
 
-[FILES] Compare a local file to the latest version of a file that's been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+[] Compare a local file to the original version
+
+Compare a local file to the original version of a file that's been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -216,24 +232,26 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFilesDiffWithLatestPostExample
+    public class KeeperByProductIdFilesDiffPostExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
             var fileId = fileId_example;  // string | 
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var generateDiffFile = true;  // bool? |  (optional) 
+            var productId = productId_example;  // string | 
+            var mustGenerateFileDiff = true;  // bool? |  (optional) 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [FILES] Compare a local file to the latest version of a file that's been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
-                BreadcrumbingCompareResponse result = apiInstance.KeeperFilesDiffWithLatestPost(fileId, file, generateDiffFile);
+                // [] Compare a local file to the original version
+                BreadcrumbingCompareResponse result = apiInstance.KeeperByProductIdFilesDiffPost(fileId, file, productId, mustGenerateFileDiff, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFilesDiffWithLatestPost: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFilesDiffPost: " + e.Message );
             }
         }
     }
@@ -246,7 +264,9 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **string**|  | 
  **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **generateDiffFile** | **bool?**|  | [optional] 
+ **productId** | **string**|  | 
+ **mustGenerateFileDiff** | **bool?**|  | [optional] 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -263,11 +283,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfilesexistpost"></a>
-# **KeeperFilesExistPost**
-> bool? KeeperFilesExistPost (string folderId, System.IO.Stream file, string accuracy = null)
+<a name="keeperbyproductidfilesexistpost"></a>
+# **KeeperByProductIdFilesExistPost**
+> bool? KeeperByProductIdFilesExistPost (System.IO.Stream file, string productId, string accuracy = null, string request = null)
 
-[FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role.
+[] Check if a file already exists
+
+We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -279,24 +301,25 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFilesExistPostExample
+    public class KeeperByProductIdFilesExistPostExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
-            var folderId = folderId_example;  // string | 
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
+            var productId = productId_example;  // string | 
             var accuracy = accuracy_example;  // string |  (optional) 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role.
-                bool? result = apiInstance.KeeperFilesExistPost(folderId, file, accuracy);
+                // [] Check if a file already exists
+                bool? result = apiInstance.KeeperByProductIdFilesExistPost(file, productId, accuracy, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFilesExistPost: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFilesExistPost: " + e.Message );
             }
         }
     }
@@ -307,9 +330,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **string**|  | 
  **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
+ **productId** | **string**|  | 
  **accuracy** | **string**|  | [optional] 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -326,11 +350,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfilesget"></a>
-# **KeeperFilesGet**
-> List<KeeperFile> KeeperFilesGet (string displayName = null, string folderId = null)
+<a name="keeperbyproductidfilesget"></a>
+# **KeeperByProductIdFilesGet**
+> List<KeeperFile> KeeperByProductIdFilesGet (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null)
 
-[FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role.
+[] Get all files
+
+Get all the files stored in Keeper.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -342,23 +368,26 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFilesGetExample
+    public class KeeperByProductIdFilesGetExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
+            var productId = productId_example;  // string | 
             var displayName = displayName_example;  // string |  (optional) 
-            var folderId = folderId_example;  // string |  (optional) 
+            var limit = 56;  // int? |  (optional) 
+            var offset = 56;  // int? |  (optional) 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role.
-                List&lt;KeeperFile&gt; result = apiInstance.KeeperFilesGet(displayName, folderId);
+                // [] Get all files
+                List&lt;KeeperFile&gt; result = apiInstance.KeeperByProductIdFilesGet(productId, displayName, limit, offset, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFilesGet: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFilesGet: " + e.Message );
             }
         }
     }
@@ -369,8 +398,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **displayName** | **string**|  | [optional] 
- **folderId** | **string**|  | [optional] 
+ **limit** | **int?**|  | [optional] 
+ **offset** | **int?**|  | [optional] 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -387,11 +419,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfilespost"></a>
-# **KeeperFilesPost**
-> KeeperFile KeeperFilesPost (string folderId, System.IO.Stream file, string displayName, string accuracy = null)
+<a name="keeperbyproductidfilespost"></a>
+# **KeeperByProductIdFilesPost**
+> KeeperFile KeeperByProductIdFilesPost (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null)
 
-[FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role.
+[] Create a file
+
+This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -403,25 +437,26 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFilesPostExample
+    public class KeeperByProductIdFilesPostExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
-            var folderId = folderId_example;  // string | 
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
             var displayName = displayName_example;  // string | 
+            var productId = productId_example;  // string | 
             var accuracy = accuracy_example;  // string |  (optional) 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role.
-                KeeperFile result = apiInstance.KeeperFilesPost(folderId, file, displayName, accuracy);
+                // [] Create a file
+                KeeperFile result = apiInstance.KeeperByProductIdFilesPost(file, displayName, productId, accuracy, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFilesPost: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFilesPost: " + e.Message );
             }
         }
     }
@@ -432,10 +467,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **folderId** | **string**|  | 
  **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **displayName** | **string**|  | 
+ **productId** | **string**|  | 
  **accuracy** | **string**|  | [optional] 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -452,11 +488,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfoldersbyfolderiddelete"></a>
-# **KeeperFoldersByFolderIdDelete**
-> void KeeperFoldersByFolderIdDelete (string folderId)
+<a name="keeperbyproductidfoldersbyfolderiddelete"></a>
+# **KeeperByProductIdFoldersByFolderIdDelete**
+> void KeeperByProductIdFoldersByFolderIdDelete (string productId, string folderId)
 
-[FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role.
+[] Delete a folder
+
+This will also delete all the files it contains.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -468,21 +506,22 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFoldersByFolderIdDeleteExample
+    public class KeeperByProductIdFoldersByFolderIdDeleteExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
+            var productId = productId_example;  // string | 
             var folderId = folderId_example;  // string | 
 
             try
             {
-                // [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role.
-                apiInstance.KeeperFoldersByFolderIdDelete(folderId);
+                // [] Delete a folder
+                apiInstance.KeeperByProductIdFoldersByFolderIdDelete(productId, folderId);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFoldersByFolderIdDelete: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFoldersByFolderIdDelete: " + e.Message );
             }
         }
     }
@@ -493,6 +532,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **folderId** | **string**|  | 
 
 ### Return type
@@ -510,11 +550,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfoldersbyfolderidget"></a>
-# **KeeperFoldersByFolderIdGet**
-> KeeperFolder KeeperFoldersByFolderIdGet (string folderId)
+<a name="keeperbyproductidfoldersbyfolderidget"></a>
+# **KeeperByProductIdFoldersByFolderIdGet**
+> KeeperFolder KeeperByProductIdFoldersByFolderIdGet (string productId, string folderId)
 
-[FOLDERS] Get a specific folder's details. Requires the Keeper Admin Role.
+[] Get a specific folder's details
+
+Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -526,22 +568,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFoldersByFolderIdGetExample
+    public class KeeperByProductIdFoldersByFolderIdGetExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
+            var productId = productId_example;  // string | 
             var folderId = folderId_example;  // string | 
 
             try
             {
-                // [FOLDERS] Get a specific folder's details. Requires the Keeper Admin Role.
-                KeeperFolder result = apiInstance.KeeperFoldersByFolderIdGet(folderId);
+                // [] Get a specific folder's details
+                KeeperFolder result = apiInstance.KeeperByProductIdFoldersByFolderIdGet(productId, folderId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFoldersByFolderIdGet: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFoldersByFolderIdGet: " + e.Message );
             }
         }
     }
@@ -552,6 +595,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **folderId** | **string**|  | 
 
 ### Return type
@@ -569,11 +613,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfoldersget"></a>
-# **KeeperFoldersGet**
-> List<KeeperFolder> KeeperFoldersGet (string name = null)
+<a name="keeperbyproductidfoldersget"></a>
+# **KeeperByProductIdFoldersGet**
+> List<KeeperFolder> KeeperByProductIdFoldersGet (string productId, string name = null)
 
-[FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role.
+[] Get all folders
+
+Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -585,22 +631,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFoldersGetExample
+    public class KeeperByProductIdFoldersGetExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
+            var productId = productId_example;  // string | 
             var name = name_example;  // string |  (optional) 
 
             try
             {
-                // [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role.
-                List&lt;KeeperFolder&gt; result = apiInstance.KeeperFoldersGet(name);
+                // [] Get all folders
+                List&lt;KeeperFolder&gt; result = apiInstance.KeeperByProductIdFoldersGet(productId, name);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFoldersGet: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFoldersGet: " + e.Message );
             }
         }
     }
@@ -611,6 +658,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **name** | **string**|  | [optional] 
 
 ### Return type
@@ -628,11 +676,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperfolderspost"></a>
-# **KeeperFoldersPost**
-> KeeperFolder KeeperFoldersPost (KeeperFolderCreateRequest request = null)
+<a name="keeperbyproductidfolderspost"></a>
+# **KeeperByProductIdFoldersPost**
+> KeeperFolder KeeperByProductIdFoldersPost (string productId, KeeperFolderCreateRequest request = null)
 
-[FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role.
+[] Create a folder
+
+This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -644,22 +694,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperFoldersPostExample
+    public class KeeperByProductIdFoldersPostExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
+            var productId = productId_example;  // string | 
             var request = new KeeperFolderCreateRequest(); // KeeperFolderCreateRequest |  (optional) 
 
             try
             {
-                // [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role.
-                KeeperFolder result = apiInstance.KeeperFoldersPost(request);
+                // [] Create a folder
+                KeeperFolder result = apiInstance.KeeperByProductIdFoldersPost(productId, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperFoldersPost: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdFoldersPost: " + e.Message );
             }
         }
     }
@@ -670,6 +721,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **request** | [**KeeperFolderCreateRequest**](KeeperFolderCreateRequest.md)|  | [optional] 
 
 ### Return type
@@ -687,11 +739,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperversionsbyfileidget"></a>
-# **KeeperVersionsByFileIdGet**
-> List<KeeperFileVersion> KeeperVersionsByFileIdGet (string fileId)
+<a name="keeperbyproductidversionsbyfileidget"></a>
+# **KeeperByProductIdVersionsByFileIdGet**
+> List<KeeperFileVersion> KeeperByProductIdVersionsByFileIdGet (string fileId, string productId)
 
-[VERSIONS] Get all the versions' details for a specific file. Requires the Keeper Admin Role.
+[] Get all the versions' details for a specific file
+
+Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -703,22 +757,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperVersionsByFileIdGetExample
+    public class KeeperByProductIdVersionsByFileIdGetExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
             var fileId = fileId_example;  // string | 
+            var productId = productId_example;  // string | 
 
             try
             {
-                // [VERSIONS] Get all the versions' details for a specific file. Requires the Keeper Admin Role.
-                List&lt;KeeperFileVersion&gt; result = apiInstance.KeeperVersionsByFileIdGet(fileId);
+                // [] Get all the versions' details for a specific file
+                List&lt;KeeperFileVersion&gt; result = apiInstance.KeeperByProductIdVersionsByFileIdGet(fileId, productId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperVersionsByFileIdGet: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdVersionsByFileIdGet: " + e.Message );
             }
         }
     }
@@ -730,6 +785,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **string**|  | 
+ **productId** | **string**|  | 
 
 ### Return type
 
@@ -746,11 +802,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperversionsdiffpost"></a>
-# **KeeperVersionsDiffPost**
-> BreadcrumbingCompareResponse KeeperVersionsDiffPost (string versionId, System.IO.Stream file, bool? generateDiffFile = null)
+<a name="keeperbyproductidversionsdiffpost"></a>
+# **KeeperByProductIdVersionsDiffPost**
+> BreadcrumbingCompareResponse KeeperByProductIdVersionsDiffPost (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null)
 
-[VERSIONS] Compare a local file to a specific version of a file that's been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+[] Compare a local file to a specific version
+
+We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -762,24 +820,27 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperVersionsDiffPostExample
+    public class KeeperByProductIdVersionsDiffPostExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
             var versionId = versionId_example;  // string | 
+            var fileId = fileId_example;  // string | 
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
+            var productId = productId_example;  // string | 
             var generateDiffFile = true;  // bool? |  (optional) 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [VERSIONS] Compare a local file to a specific version of a file that's been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare's type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
-                BreadcrumbingCompareResponse result = apiInstance.KeeperVersionsDiffPost(versionId, file, generateDiffFile);
+                // [] Compare a local file to a specific version
+                BreadcrumbingCompareResponse result = apiInstance.KeeperByProductIdVersionsDiffPost(versionId, fileId, file, productId, generateDiffFile, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperVersionsDiffPost: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdVersionsDiffPost: " + e.Message );
             }
         }
     }
@@ -791,8 +852,11 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **versionId** | **string**|  | 
+ **fileId** | **string**|  | 
  **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
+ **productId** | **string**|  | 
  **generateDiffFile** | **bool?**|  | [optional] 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -809,11 +873,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="keeperversionspost"></a>
-# **KeeperVersionsPost**
-> KeeperFileVersion KeeperVersionsPost (string fileId, System.IO.Stream file)
+<a name="keeperbyproductidversionspost"></a>
+# **KeeperByProductIdVersionsPost**
+> KeeperFileVersion KeeperByProductIdVersionsPost (string fileId, System.IO.Stream file, string productId, string request = null)
 
-[VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role.
+[] Create a version for an existing file
+
+This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
 
 ### Example
 ```csharp
@@ -825,23 +891,25 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class KeeperVersionsPostExample
+    public class KeeperByProductIdVersionsPostExample
     {
         public void main()
         {
             var apiInstance = new KeeperApi();
             var fileId = fileId_example;  // string | 
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
+            var productId = productId_example;  // string | 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role.
-                KeeperFileVersion result = apiInstance.KeeperVersionsPost(fileId, file);
+                // [] Create a version for an existing file
+                KeeperFileVersion result = apiInstance.KeeperByProductIdVersionsPost(fileId, file, productId, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling KeeperApi.KeeperVersionsPost: " + e.Message );
+                Debug.Print("Exception when calling KeeperApi.KeeperByProductIdVersionsPost: " + e.Message );
             }
         }
     }
@@ -854,6 +922,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **fileId** | **string**|  | 
  **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
+ **productId** | **string**|  | 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 

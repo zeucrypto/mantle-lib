@@ -1,22 +1,24 @@
 # mantle.lib.Api.UsersApi
 
-All URIs are relative to *http://dev.api.mantle.services*
+All URIs are relative to *http://develop.api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UsersByUserIdGet**](UsersApi.md#usersbyuseridget) | **GET** /users/{userId} | Get a specific user&#39;s details and roles. Requires the User Admin Role.
-[**UsersByUserIdPut**](UsersApi.md#usersbyuseridput) | **PUT** /users/{userId} | Edit a user&#39;s details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role.
-[**UsersDisableByUserIdPut**](UsersApi.md#usersdisablebyuseridput) | **PUT** /users/disable/{userId} | Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role.
-[**UsersEnableByUserIdPut**](UsersApi.md#usersenablebyuseridput) | **PUT** /users/enable/{userId} | Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role.
-[**UsersGet**](UsersApi.md#usersget) | **GET** /users | Get all of the users for the authenticated user&#39;s client. Requires the User Admin Role.
-[**UsersSelfRolesGet**](UsersApi.md#usersselfrolesget) | **GET** /users/self/roles | Get all of the available assignable roles. Requires the User Admin Role.
+[**UsersByUserIdGet**](UsersApi.md#usersbyuseridget) | **GET** /users/{userId} | Get a specific user&#39;s details and roles
+[**UsersByUserIdPut**](UsersApi.md#usersbyuseridput) | **PUT** /users/{userId} | Edit a user&#39;s details
+[**UsersDisableByUserIdPut**](UsersApi.md#usersdisablebyuseridput) | **PUT** /users/disable/{userId} | Disable a specific user
+[**UsersEnableByUserIdPut**](UsersApi.md#usersenablebyuseridput) | **PUT** /users/enable/{userId} | Enable a specific user
+[**UsersGet**](UsersApi.md#usersget) | **GET** /users | Get all users
+[**UsersSelfRolesGet**](UsersApi.md#usersselfrolesget) | **GET** /users/self/roles | Get all roles
 
 
 <a name="usersbyuseridget"></a>
 # **UsersByUserIdGet**
-> ProductUser UsersByUserIdGet (string userId)
+> User UsersByUserIdGet (string userId)
 
-Get a specific user's details and roles. Requires the User Admin Role.
+Get a specific user's details and roles
+
+Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -37,8 +39,8 @@ namespace Example
 
             try
             {
-                // Get a specific user's details and roles. Requires the User Admin Role.
-                ProductUser result = apiInstance.UsersByUserIdGet(userId);
+                // Get a specific user's details and roles
+                User result = apiInstance.UsersByUserIdGet(userId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -58,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProductUser**](ProductUser.md)
+[**User**](User.md)
 
 ### Authorization
 
@@ -75,7 +77,9 @@ No authorization required
 # **UsersByUserIdPut**
 > void UsersByUserIdPut (string userId, EditUserRequest request = null)
 
-Edit a user's details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role.
+Edit a user's details
+
+If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -97,7 +101,7 @@ namespace Example
 
             try
             {
-                // Edit a user's details. If their roles are changed, it will also delete their access token and they will need to login again next time. Requires the User Admin Role.
+                // Edit a user's details
                 apiInstance.UsersByUserIdPut(userId, request);
             }
             catch (Exception e)
@@ -135,7 +139,9 @@ No authorization required
 # **UsersDisableByUserIdPut**
 > void UsersDisableByUserIdPut (string userId)
 
-Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role.
+Disable a specific user
+
+This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -156,7 +162,7 @@ namespace Example
 
             try
             {
-                // Disable a specific user. This will prevent this user from accessing the platform and will delete their API key if they had one. Requires the User Admin Role.
+                // Disable a specific user
                 apiInstance.UsersDisableByUserIdPut(userId);
             }
             catch (Exception e)
@@ -193,7 +199,9 @@ No authorization required
 # **UsersEnableByUserIdPut**
 > void UsersEnableByUserIdPut (string userId)
 
-Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role.
+Enable a specific user
+
+This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -214,7 +222,7 @@ namespace Example
 
             try
             {
-                // Enable a specific user that has been disabled previously. This will let this user access the platform again. If the user needs an API key, it will need to be regenerated. Requires the User Admin Role.
+                // Enable a specific user
                 apiInstance.UsersEnableByUserIdPut(userId);
             }
             catch (Exception e)
@@ -249,9 +257,11 @@ No authorization required
 
 <a name="usersget"></a>
 # **UsersGet**
-> List<ProductUser> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null)
+> List<User> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null)
 
-Get all of the users for the authenticated user's client. Requires the User Admin Role.
+Get all users
+
+Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -274,8 +284,8 @@ namespace Example
 
             try
             {
-                // Get all of the users for the authenticated user's client. Requires the User Admin Role.
-                List&lt;ProductUser&gt; result = apiInstance.UsersGet(isEnabled, limit, offset);
+                // Get all users
+                List&lt;User&gt; result = apiInstance.UsersGet(isEnabled, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -297,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<ProductUser>**](ProductUser.md)
+[**List<User>**](User.md)
 
 ### Authorization
 
@@ -314,7 +324,9 @@ No authorization required
 # **UsersSelfRolesGet**
 > List<string> UsersSelfRolesGet ()
 
-Get all of the available assignable roles. Requires the User Admin Role.
+Get all roles
+
+Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -334,7 +346,7 @@ namespace Example
 
             try
             {
-                // Get all of the available assignable roles. Requires the User Admin Role.
+                // Get all roles
                 List&lt;string&gt; result = apiInstance.UsersSelfRolesGet();
                 Debug.WriteLine(result);
             }

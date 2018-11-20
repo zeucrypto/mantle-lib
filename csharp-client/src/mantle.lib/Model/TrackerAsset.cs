@@ -48,10 +48,10 @@ namespace mantle.lib.Model
             Confirmed = 2,
             
             /// <summary>
-            /// Enum Errored for value: Errored
+            /// Enum Corrupted for value: Corrupted
             /// </summary>
-            [EnumMember(Value = "Errored")]
-            Errored = 3
+            [EnumMember(Value = "Corrupted")]
+            Corrupted = 3
         }
 
         /// <summary>
@@ -66,12 +66,14 @@ namespace mantle.lib.Model
         /// <param name="Name">Name.</param>
         /// <param name="BlockchainStatus">BlockchainStatus.</param>
         /// <param name="CreationDate">CreationDate.</param>
-        public TrackerAsset(string Id = default(string), string Name = default(string), BlockchainStatusEnum? BlockchainStatus = default(BlockchainStatusEnum?), DateTime? CreationDate = default(DateTime?))
+        /// <param name="IsDeleted">IsDeleted.</param>
+        public TrackerAsset(string Id = default(string), string Name = default(string), BlockchainStatusEnum? BlockchainStatus = default(BlockchainStatusEnum?), DateTime? CreationDate = default(DateTime?), bool? IsDeleted = default(bool?))
         {
             this.Id = Id;
             this.Name = Name;
             this.BlockchainStatus = BlockchainStatus;
             this.CreationDate = CreationDate;
+            this.IsDeleted = IsDeleted;
         }
         
         /// <summary>
@@ -94,6 +96,12 @@ namespace mantle.lib.Model
         public DateTime? CreationDate { get; set; }
 
         /// <summary>
+        /// Gets or Sets IsDeleted
+        /// </summary>
+        [DataMember(Name="isDeleted", EmitDefaultValue=false)]
+        public bool? IsDeleted { get; set; }
+
+        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -105,6 +113,7 @@ namespace mantle.lib.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  BlockchainStatus: ").Append(BlockchainStatus).Append("\n");
             sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -158,6 +167,11 @@ namespace mantle.lib.Model
                     this.CreationDate == input.CreationDate ||
                     (this.CreationDate != null &&
                     this.CreationDate.Equals(input.CreationDate))
+                ) && 
+                (
+                    this.IsDeleted == input.IsDeleted ||
+                    (this.IsDeleted != null &&
+                    this.IsDeleted.Equals(input.IsDeleted))
                 );
         }
 
@@ -178,6 +192,8 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.BlockchainStatus.GetHashCode();
                 if (this.CreationDate != null)
                     hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
+                if (this.IsDeleted != null)
+                    hashCode = hashCode * 59 + this.IsDeleted.GetHashCode();
                 return hashCode;
             }
         }

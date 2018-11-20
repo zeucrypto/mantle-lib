@@ -25,20 +25,20 @@ namespace mantle.lib.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role.
+        /// Get all bills
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Bill&gt;</returns>
         List<Bill> BillsGet ();
 
         /// <summary>
-        /// Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role.
+        /// Get all bills
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Bill&gt;</returns>
@@ -46,20 +46,20 @@ namespace mantle.lib.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role.
+        /// Get all bills
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;Bill&gt;</returns>
         System.Threading.Tasks.Task<List<Bill>> BillsGetAsync ();
 
         /// <summary>
-        /// Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role.
+        /// Get all bills
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;Bill&gt;)</returns>
@@ -165,7 +165,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role. 
+        /// Get all bills Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Bill&gt;</returns>
@@ -176,7 +176,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role. 
+        /// Get all bills Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Bill&gt;</returns>
@@ -227,7 +227,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role. 
+        /// Get all bills Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;Bill&gt;</returns>
@@ -239,7 +239,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all bills that have been generated for the client linked to the authentified user. Requires the Billing Role. 
+        /// Get all bills Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;Bill&gt;)</returns>

@@ -29,10 +29,53 @@ namespace mantle.lib.Model
     public partial class KeeperFile :  IEquatable<KeeperFile>
     {
         /// <summary>
-        /// Defines Accuracy
+        /// Defines FileType
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
-        public enum AccuracyEnum
+        public enum FileTypeEnum
+        {
+            
+            /// <summary>
+            /// Enum Image for value: Image
+            /// </summary>
+            [EnumMember(Value = "Image")]
+            Image = 1,
+            
+            /// <summary>
+            /// Enum Text for value: Text
+            /// </summary>
+            [EnumMember(Value = "Text")]
+            Text = 2,
+            
+            /// <summary>
+            /// Enum Binary for value: Binary
+            /// </summary>
+            [EnumMember(Value = "Binary")]
+            Binary = 3,
+            
+            /// <summary>
+            /// Enum Json for value: Json
+            /// </summary>
+            [EnumMember(Value = "Json")]
+            Json = 4,
+            
+            /// <summary>
+            /// Enum Xml for value: Xml
+            /// </summary>
+            [EnumMember(Value = "Xml")]
+            Xml = 5
+        }
+
+        /// <summary>
+        /// Gets or Sets FileType
+        /// </summary>
+        [DataMember(Name="fileType", EmitDefaultValue=false)]
+        public FileTypeEnum? FileType { get; set; }
+        /// <summary>
+        /// Defines AccuracyLevel
+        /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
+        public enum AccuracyLevelEnum
         {
             
             /// <summary>
@@ -67,47 +110,10 @@ namespace mantle.lib.Model
         }
 
         /// <summary>
-        /// Gets or Sets Accuracy
+        /// Gets or Sets AccuracyLevel
         /// </summary>
-        [DataMember(Name="accuracy", EmitDefaultValue=false)]
-        public AccuracyEnum? Accuracy { get; set; }
-        /// <summary>
-        /// Defines KeeperType
-        /// </summary>
-        [JsonConverter(typeof(StringEnumConverter))]
-        public enum KeeperTypeEnum
-        {
-            
-            /// <summary>
-            /// Enum Text for value: Text
-            /// </summary>
-            [EnumMember(Value = "Text")]
-            Text = 1,
-            
-            /// <summary>
-            /// Enum Image for value: Image
-            /// </summary>
-            [EnumMember(Value = "Image")]
-            Image = 2,
-            
-            /// <summary>
-            /// Enum Binary for value: Binary
-            /// </summary>
-            [EnumMember(Value = "Binary")]
-            Binary = 3,
-            
-            /// <summary>
-            /// Enum Json for value: Json
-            /// </summary>
-            [EnumMember(Value = "Json")]
-            Json = 4
-        }
-
-        /// <summary>
-        /// Gets or Sets KeeperType
-        /// </summary>
-        [DataMember(Name="keeperType", EmitDefaultValue=false)]
-        public KeeperTypeEnum? KeeperType { get; set; }
+        [DataMember(Name="accuracyLevel", EmitDefaultValue=false)]
+        public AccuracyLevelEnum? AccuracyLevel { get; set; }
         /// <summary>
         /// Defines BlockchainStatus
         /// </summary>
@@ -128,10 +134,10 @@ namespace mantle.lib.Model
             Confirmed = 2,
             
             /// <summary>
-            /// Enum Errored for value: Errored
+            /// Enum Corrupted for value: Corrupted
             /// </summary>
-            [EnumMember(Value = "Errored")]
-            Errored = 3
+            [EnumMember(Value = "Corrupted")]
+            Corrupted = 3
         }
 
         /// <summary>
@@ -142,98 +148,37 @@ namespace mantle.lib.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="KeeperFile" /> class.
         /// </summary>
-        /// <param name="Id">Id.</param>
-        /// <param name="BlockchainFileId">BlockchainFileId.</param>
-        /// <param name="FolderId">FolderId.</param>
-        /// <param name="ClientId">ClientId.</param>
-        /// <param name="DisplayName">DisplayName.</param>
-        /// <param name="FileName">FileName.</param>
-        /// <param name="SizeByte">SizeByte.</param>
-        /// <param name="Accuracy">Accuracy.</param>
-        /// <param name="KeeperType">KeeperType.</param>
-        /// <param name="BlockchainStatus">BlockchainStatus.</param>
-        /// <param name="IsDeleted">IsDeleted.</param>
-        /// <param name="CreationDate">CreationDate.</param>
+        /// <param name="Tag">Tag.</param>
         /// <param name="ModificationDate">ModificationDate.</param>
         /// <param name="VersionQuantity">VersionQuantity.</param>
-        /// <param name="LastVersion">LastVersion.</param>
-        /// <param name="LastVersionFileSize">LastVersionFileSize.</param>
-        public KeeperFile(string Id = default(string), string BlockchainFileId = default(string), string FolderId = default(string), string ClientId = default(string), string DisplayName = default(string), string FileName = default(string), long? SizeByte = default(long?), AccuracyEnum? Accuracy = default(AccuracyEnum?), KeeperTypeEnum? KeeperType = default(KeeperTypeEnum?), BlockchainStatusEnum? BlockchainStatus = default(BlockchainStatusEnum?), bool? IsDeleted = default(bool?), DateTime? CreationDate = default(DateTime?), DateTime? ModificationDate = default(DateTime?), int? VersionQuantity = default(int?), int? LastVersion = default(int?), long? LastVersionFileSize = default(long?))
+        /// <param name="FileType">FileType.</param>
+        /// <param name="AccuracyLevel">AccuracyLevel.</param>
+        /// <param name="Id">Id.</param>
+        /// <param name="BlockchainStatus">BlockchainStatus.</param>
+        /// <param name="OwnerEmail">OwnerEmail.</param>
+        /// <param name="DisplayName">DisplayName.</param>
+        /// <param name="CreationDate">CreationDate.</param>
+        /// <param name="IsDeleted">IsDeleted.</param>
+        public KeeperFile(string Tag = default(string), DateTime? ModificationDate = default(DateTime?), int? VersionQuantity = default(int?), FileTypeEnum? FileType = default(FileTypeEnum?), AccuracyLevelEnum? AccuracyLevel = default(AccuracyLevelEnum?), string Id = default(string), BlockchainStatusEnum? BlockchainStatus = default(BlockchainStatusEnum?), string OwnerEmail = default(string), string DisplayName = default(string), DateTime? CreationDate = default(DateTime?), bool? IsDeleted = default(bool?))
         {
-            this.Id = Id;
-            this.BlockchainFileId = BlockchainFileId;
-            this.FolderId = FolderId;
-            this.ClientId = ClientId;
-            this.DisplayName = DisplayName;
-            this.FileName = FileName;
-            this.SizeByte = SizeByte;
-            this.Accuracy = Accuracy;
-            this.KeeperType = KeeperType;
-            this.BlockchainStatus = BlockchainStatus;
-            this.IsDeleted = IsDeleted;
-            this.CreationDate = CreationDate;
+            this.Tag = Tag;
             this.ModificationDate = ModificationDate;
             this.VersionQuantity = VersionQuantity;
-            this.LastVersion = LastVersion;
-            this.LastVersionFileSize = LastVersionFileSize;
+            this.FileType = FileType;
+            this.AccuracyLevel = AccuracyLevel;
+            this.Id = Id;
+            this.BlockchainStatus = BlockchainStatus;
+            this.OwnerEmail = OwnerEmail;
+            this.DisplayName = DisplayName;
+            this.CreationDate = CreationDate;
+            this.IsDeleted = IsDeleted;
         }
         
         /// <summary>
-        /// Gets or Sets Id
+        /// Gets or Sets Tag
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; set; }
-
-        /// <summary>
-        /// Gets or Sets BlockchainFileId
-        /// </summary>
-        [DataMember(Name="blockchainFileId", EmitDefaultValue=false)]
-        public string BlockchainFileId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets FolderId
-        /// </summary>
-        [DataMember(Name="folderId", EmitDefaultValue=false)]
-        public string FolderId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ClientId
-        /// </summary>
-        [DataMember(Name="clientId", EmitDefaultValue=false)]
-        public string ClientId { get; set; }
-
-        /// <summary>
-        /// Gets or Sets DisplayName
-        /// </summary>
-        [DataMember(Name="displayName", EmitDefaultValue=false)]
-        public string DisplayName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets FileName
-        /// </summary>
-        [DataMember(Name="fileName", EmitDefaultValue=false)]
-        public string FileName { get; set; }
-
-        /// <summary>
-        /// Gets or Sets SizeByte
-        /// </summary>
-        [DataMember(Name="sizeByte", EmitDefaultValue=false)]
-        public long? SizeByte { get; set; }
-
-
-
-
-        /// <summary>
-        /// Gets or Sets IsDeleted
-        /// </summary>
-        [DataMember(Name="isDeleted", EmitDefaultValue=false)]
-        public bool? IsDeleted { get; set; }
-
-        /// <summary>
-        /// Gets or Sets CreationDate
-        /// </summary>
-        [DataMember(Name="creationDate", EmitDefaultValue=false)]
-        public DateTime? CreationDate { get; set; }
+        [DataMember(Name="tag", EmitDefaultValue=false)]
+        public string Tag { get; set; }
 
         /// <summary>
         /// Gets or Sets ModificationDate
@@ -247,17 +192,38 @@ namespace mantle.lib.Model
         [DataMember(Name="versionQuantity", EmitDefaultValue=false)]
         public int? VersionQuantity { get; set; }
 
-        /// <summary>
-        /// Gets or Sets LastVersion
-        /// </summary>
-        [DataMember(Name="lastVersion", EmitDefaultValue=false)]
-        public int? LastVersion { get; set; }
+
 
         /// <summary>
-        /// Gets or Sets LastVersionFileSize
+        /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="lastVersionFileSize", EmitDefaultValue=false)]
-        public long? LastVersionFileSize { get; set; }
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public string Id { get; set; }
+
+
+        /// <summary>
+        /// Gets or Sets OwnerEmail
+        /// </summary>
+        [DataMember(Name="ownerEmail", EmitDefaultValue=false)]
+        public string OwnerEmail { get; set; }
+
+        /// <summary>
+        /// Gets or Sets DisplayName
+        /// </summary>
+        [DataMember(Name="displayName", EmitDefaultValue=false)]
+        public string DisplayName { get; set; }
+
+        /// <summary>
+        /// Gets or Sets CreationDate
+        /// </summary>
+        [DataMember(Name="creationDate", EmitDefaultValue=false)]
+        public DateTime? CreationDate { get; set; }
+
+        /// <summary>
+        /// Gets or Sets IsDeleted
+        /// </summary>
+        [DataMember(Name="isDeleted", EmitDefaultValue=false)]
+        public bool? IsDeleted { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -267,22 +233,17 @@ namespace mantle.lib.Model
         {
             var sb = new StringBuilder();
             sb.Append("class KeeperFile {\n");
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  BlockchainFileId: ").Append(BlockchainFileId).Append("\n");
-            sb.Append("  FolderId: ").Append(FolderId).Append("\n");
-            sb.Append("  ClientId: ").Append(ClientId).Append("\n");
-            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
-            sb.Append("  FileName: ").Append(FileName).Append("\n");
-            sb.Append("  SizeByte: ").Append(SizeByte).Append("\n");
-            sb.Append("  Accuracy: ").Append(Accuracy).Append("\n");
-            sb.Append("  KeeperType: ").Append(KeeperType).Append("\n");
-            sb.Append("  BlockchainStatus: ").Append(BlockchainStatus).Append("\n");
-            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
-            sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
+            sb.Append("  Tag: ").Append(Tag).Append("\n");
             sb.Append("  ModificationDate: ").Append(ModificationDate).Append("\n");
             sb.Append("  VersionQuantity: ").Append(VersionQuantity).Append("\n");
-            sb.Append("  LastVersion: ").Append(LastVersion).Append("\n");
-            sb.Append("  LastVersionFileSize: ").Append(LastVersionFileSize).Append("\n");
+            sb.Append("  FileType: ").Append(FileType).Append("\n");
+            sb.Append("  AccuracyLevel: ").Append(AccuracyLevel).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  BlockchainStatus: ").Append(BlockchainStatus).Append("\n");
+            sb.Append("  OwnerEmail: ").Append(OwnerEmail).Append("\n");
+            sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
+            sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
+            sb.Append("  IsDeleted: ").Append(IsDeleted).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -318,64 +279,9 @@ namespace mantle.lib.Model
 
             return 
                 (
-                    this.Id == input.Id ||
-                    (this.Id != null &&
-                    this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.BlockchainFileId == input.BlockchainFileId ||
-                    (this.BlockchainFileId != null &&
-                    this.BlockchainFileId.Equals(input.BlockchainFileId))
-                ) && 
-                (
-                    this.FolderId == input.FolderId ||
-                    (this.FolderId != null &&
-                    this.FolderId.Equals(input.FolderId))
-                ) && 
-                (
-                    this.ClientId == input.ClientId ||
-                    (this.ClientId != null &&
-                    this.ClientId.Equals(input.ClientId))
-                ) && 
-                (
-                    this.DisplayName == input.DisplayName ||
-                    (this.DisplayName != null &&
-                    this.DisplayName.Equals(input.DisplayName))
-                ) && 
-                (
-                    this.FileName == input.FileName ||
-                    (this.FileName != null &&
-                    this.FileName.Equals(input.FileName))
-                ) && 
-                (
-                    this.SizeByte == input.SizeByte ||
-                    (this.SizeByte != null &&
-                    this.SizeByte.Equals(input.SizeByte))
-                ) && 
-                (
-                    this.Accuracy == input.Accuracy ||
-                    (this.Accuracy != null &&
-                    this.Accuracy.Equals(input.Accuracy))
-                ) && 
-                (
-                    this.KeeperType == input.KeeperType ||
-                    (this.KeeperType != null &&
-                    this.KeeperType.Equals(input.KeeperType))
-                ) && 
-                (
-                    this.BlockchainStatus == input.BlockchainStatus ||
-                    (this.BlockchainStatus != null &&
-                    this.BlockchainStatus.Equals(input.BlockchainStatus))
-                ) && 
-                (
-                    this.IsDeleted == input.IsDeleted ||
-                    (this.IsDeleted != null &&
-                    this.IsDeleted.Equals(input.IsDeleted))
-                ) && 
-                (
-                    this.CreationDate == input.CreationDate ||
-                    (this.CreationDate != null &&
-                    this.CreationDate.Equals(input.CreationDate))
+                    this.Tag == input.Tag ||
+                    (this.Tag != null &&
+                    this.Tag.Equals(input.Tag))
                 ) && 
                 (
                     this.ModificationDate == input.ModificationDate ||
@@ -388,14 +294,44 @@ namespace mantle.lib.Model
                     this.VersionQuantity.Equals(input.VersionQuantity))
                 ) && 
                 (
-                    this.LastVersion == input.LastVersion ||
-                    (this.LastVersion != null &&
-                    this.LastVersion.Equals(input.LastVersion))
+                    this.FileType == input.FileType ||
+                    (this.FileType != null &&
+                    this.FileType.Equals(input.FileType))
                 ) && 
                 (
-                    this.LastVersionFileSize == input.LastVersionFileSize ||
-                    (this.LastVersionFileSize != null &&
-                    this.LastVersionFileSize.Equals(input.LastVersionFileSize))
+                    this.AccuracyLevel == input.AccuracyLevel ||
+                    (this.AccuracyLevel != null &&
+                    this.AccuracyLevel.Equals(input.AccuracyLevel))
+                ) && 
+                (
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
+                ) && 
+                (
+                    this.BlockchainStatus == input.BlockchainStatus ||
+                    (this.BlockchainStatus != null &&
+                    this.BlockchainStatus.Equals(input.BlockchainStatus))
+                ) && 
+                (
+                    this.OwnerEmail == input.OwnerEmail ||
+                    (this.OwnerEmail != null &&
+                    this.OwnerEmail.Equals(input.OwnerEmail))
+                ) && 
+                (
+                    this.DisplayName == input.DisplayName ||
+                    (this.DisplayName != null &&
+                    this.DisplayName.Equals(input.DisplayName))
+                ) && 
+                (
+                    this.CreationDate == input.CreationDate ||
+                    (this.CreationDate != null &&
+                    this.CreationDate.Equals(input.CreationDate))
+                ) && 
+                (
+                    this.IsDeleted == input.IsDeleted ||
+                    (this.IsDeleted != null &&
+                    this.IsDeleted.Equals(input.IsDeleted))
                 );
         }
 
@@ -408,38 +344,28 @@ namespace mantle.lib.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Id != null)
-                    hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.BlockchainFileId != null)
-                    hashCode = hashCode * 59 + this.BlockchainFileId.GetHashCode();
-                if (this.FolderId != null)
-                    hashCode = hashCode * 59 + this.FolderId.GetHashCode();
-                if (this.ClientId != null)
-                    hashCode = hashCode * 59 + this.ClientId.GetHashCode();
-                if (this.DisplayName != null)
-                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
-                if (this.FileName != null)
-                    hashCode = hashCode * 59 + this.FileName.GetHashCode();
-                if (this.SizeByte != null)
-                    hashCode = hashCode * 59 + this.SizeByte.GetHashCode();
-                if (this.Accuracy != null)
-                    hashCode = hashCode * 59 + this.Accuracy.GetHashCode();
-                if (this.KeeperType != null)
-                    hashCode = hashCode * 59 + this.KeeperType.GetHashCode();
-                if (this.BlockchainStatus != null)
-                    hashCode = hashCode * 59 + this.BlockchainStatus.GetHashCode();
-                if (this.IsDeleted != null)
-                    hashCode = hashCode * 59 + this.IsDeleted.GetHashCode();
-                if (this.CreationDate != null)
-                    hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
+                if (this.Tag != null)
+                    hashCode = hashCode * 59 + this.Tag.GetHashCode();
                 if (this.ModificationDate != null)
                     hashCode = hashCode * 59 + this.ModificationDate.GetHashCode();
                 if (this.VersionQuantity != null)
                     hashCode = hashCode * 59 + this.VersionQuantity.GetHashCode();
-                if (this.LastVersion != null)
-                    hashCode = hashCode * 59 + this.LastVersion.GetHashCode();
-                if (this.LastVersionFileSize != null)
-                    hashCode = hashCode * 59 + this.LastVersionFileSize.GetHashCode();
+                if (this.FileType != null)
+                    hashCode = hashCode * 59 + this.FileType.GetHashCode();
+                if (this.AccuracyLevel != null)
+                    hashCode = hashCode * 59 + this.AccuracyLevel.GetHashCode();
+                if (this.Id != null)
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
+                if (this.BlockchainStatus != null)
+                    hashCode = hashCode * 59 + this.BlockchainStatus.GetHashCode();
+                if (this.OwnerEmail != null)
+                    hashCode = hashCode * 59 + this.OwnerEmail.GetHashCode();
+                if (this.DisplayName != null)
+                    hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
+                if (this.CreationDate != null)
+                    hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
+                if (this.IsDeleted != null)
+                    hashCode = hashCode * 59 + this.IsDeleted.GetHashCode();
                 return hashCode;
             }
         }

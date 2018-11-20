@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
 **ClientId** | **string** |  | [optional] 
+**SubscriptionId** | **string** |  | [optional] 
 **CreatedById** | **string** |  | [optional] 
 **CreatedByEmail** | **string** |  | [optional] 
 **Name** | **string** |  | [optional] 

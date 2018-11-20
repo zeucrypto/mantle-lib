@@ -1,20 +1,22 @@
 # mantle.lib.Api.InvitationsApi
 
-All URIs are relative to *http://dev.api.mantle.services*
+All URIs are relative to *http://develop.api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**InvitationsByInvitationIdDelete**](InvitationsApi.md#invitationsbyinvitationiddelete) | **DELETE** /invitations/{invitationId} | Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role.
+[**InvitationsByInvitationIdDelete**](InvitationsApi.md#invitationsbyinvitationiddelete) | **DELETE** /invitations/{invitationId} | Delete a specific invitation
 [**InvitationsByInvitationIdGet**](InvitationsApi.md#invitationsbyinvitationidget) | **GET** /invitations/{invitationId} | Get an invitation&#39;s details
-[**InvitationsGet**](InvitationsApi.md#invitationsget) | **GET** /invitations | Get all of the invitations that have been sent for the current client. Requires the User Admin Role.
-[**InvitationsPost**](InvitationsApi.md#invitationspost) | **POST** /invitations | Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role.
+[**InvitationsGet**](InvitationsApi.md#invitationsget) | **GET** /invitations | Get all invitations
+[**InvitationsPost**](InvitationsApi.md#invitationspost) | **POST** /invitations | Create an invitation
 
 
 <a name="invitationsbyinvitationiddelete"></a>
 # **InvitationsByInvitationIdDelete**
 > void InvitationsByInvitationIdDelete (string invitationId)
 
-Delete a specific invitation. The invited user won't be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role.
+Delete a specific invitation
+
+The invited user won't be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -35,7 +37,7 @@ namespace Example
 
             try
             {
-                // Delete a specific invitation. The invited user won't be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role.
+                // Delete a specific invitation
                 apiInstance.InvitationsByInvitationIdDelete(invitationId);
             }
             catch (Exception e)
@@ -131,7 +133,9 @@ No authorization required
 # **InvitationsGet**
 > List<Invitation> InvitationsGet ()
 
-Get all of the invitations that have been sent for the current client. Requires the User Admin Role.
+Get all invitations
+
+Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -151,7 +155,7 @@ namespace Example
 
             try
             {
-                // Get all of the invitations that have been sent for the current client. Requires the User Admin Role.
+                // Get all invitations
                 List&lt;Invitation&gt; result = apiInstance.InvitationsGet();
                 Debug.WriteLine(result);
             }
@@ -186,7 +190,9 @@ No authorization required
 # **InvitationsPost**
 > Invitation InvitationsPost (InvitationCreateRequest request = null)
 
-Create an invitation so that a user can join the platform. The entered email will be used to confirm the user's entity. An invitation email will also be sent. Requires the User Admin Role.
+Create an invitation
+
+Used so a user can join the platform. The entered email will be used to confirm the user's  entity. An invitation email will also be sent.                Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -207,7 +213,7 @@ namespace Example
 
             try
             {
-                // Create an invitation so that a user can join the platform. The entered email will be used to confirm the user's entity. An invitation email will also be sent. Requires the User Admin Role.
+                // Create an invitation
                 Invitation result = apiInstance.InvitationsPost(request);
                 Debug.WriteLine(result);
             }

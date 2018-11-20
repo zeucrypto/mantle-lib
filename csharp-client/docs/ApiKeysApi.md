@@ -1,20 +1,22 @@
 # mantle.lib.Api.ApiKeysApi
 
-All URIs are relative to *http://dev.api.mantle.services*
+All URIs are relative to *http://develop.api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApiKeysAllGet**](ApiKeysApi.md#apikeysallget) | **GET** /apikeys/all | Get all of the users that have a generated API key and their details. Requires the User Admin Role.
-[**ApiKeysByUserIdDelete**](ApiKeysApi.md#apikeysbyuseriddelete) | **DELETE** /apikeys/{userId} | Delete the API key for a specific user. Requires the User Admin Role.
-[**ApiKeysGet**](ApiKeysApi.md#apikeysget) | **GET** /apikeys | Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account.
-[**ApiKeysPost**](ApiKeysApi.md#apikeyspost) | **POST** /apikeys | Create an API key for a specific user. Requires the User Admin Role.
+[**ApiKeysAllGet**](ApiKeysApi.md#apikeysallget) | **GET** /apikeys/all | Get all generated api keys
+[**ApiKeysByUserIdDelete**](ApiKeysApi.md#apikeysbyuseriddelete) | **DELETE** /apikeys/{userId} | Delete the API key for a specific user
+[**ApiKeysGet**](ApiKeysApi.md#apikeysget) | **GET** /apikeys | Get the API key for the currently authenticated user
+[**ApiKeysPost**](ApiKeysApi.md#apikeyspost) | **POST** /apikeys | Create an API key for a specific user
 
 
 <a name="apikeysallget"></a>
 # **ApiKeysAllGet**
 > List<AnonymousApiKeyResponse> ApiKeysAllGet ()
 
-Get all of the users that have a generated API key and their details. Requires the User Admin Role.
+Get all generated api keys
+
+Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -34,7 +36,7 @@ namespace Example
 
             try
             {
-                // Get all of the users that have a generated API key and their details. Requires the User Admin Role.
+                // Get all generated api keys
                 List&lt;AnonymousApiKeyResponse&gt; result = apiInstance.ApiKeysAllGet();
                 Debug.WriteLine(result);
             }
@@ -69,7 +71,9 @@ No authorization required
 # **ApiKeysByUserIdDelete**
 > void ApiKeysByUserIdDelete (string userId)
 
-Delete the API key for a specific user. Requires the User Admin Role.
+Delete the API key for a specific user
+
+Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -90,7 +94,7 @@ namespace Example
 
             try
             {
-                // Delete the API key for a specific user. Requires the User Admin Role.
+                // Delete the API key for a specific user
                 apiInstance.ApiKeysByUserIdDelete(userId);
             }
             catch (Exception e)
@@ -127,7 +131,9 @@ No authorization required
 # **ApiKeysGet**
 > string ApiKeysGet ()
 
-Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account.
+Get the API key for the currently authenticated user
+
+Will return null if no API key has been generated for your account.
 
 ### Example
 ```csharp
@@ -147,7 +153,7 @@ namespace Example
 
             try
             {
-                // Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account.
+                // Get the API key for the currently authenticated user
                 string result = apiInstance.ApiKeysGet();
                 Debug.WriteLine(result);
             }
@@ -182,7 +188,9 @@ No authorization required
 # **ApiKeysPost**
 > void ApiKeysPost (CreateApiKeyRequest request = null)
 
-Create an API key for a specific user. Requires the User Admin Role.
+Create an API key for a specific user
+
+Requires the User Admin Role.
 
 ### Example
 ```csharp
@@ -203,7 +211,7 @@ namespace Example
 
             try
             {
-                // Create an API key for a specific user. Requires the User Admin Role.
+                // Create an API key for a specific user
                 apiInstance.ApiKeysPost(request);
             }
             catch (Exception e)

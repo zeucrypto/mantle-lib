@@ -25,10 +25,10 @@ namespace mantle.lib.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role.
+        /// Delete a specific invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invitationId"></param>
@@ -36,10 +36,10 @@ namespace mantle.lib.Api
         void InvitationsByInvitationIdDelete (string invitationId);
 
         /// <summary>
-        /// Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role.
+        /// Delete a specific invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invitationId"></param>
@@ -67,29 +67,29 @@ namespace mantle.lib.Api
         /// <returns>ApiResponse of InvitationSignUpResponse</returns>
         ApiResponse<InvitationSignUpResponse> InvitationsByInvitationIdGetWithHttpInfo (string invitationId);
         /// <summary>
-        /// Get all of the invitations that have been sent for the current client. Requires the User Admin Role.
+        /// Get all invitations
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Invitation&gt;</returns>
         List<Invitation> InvitationsGet ();
 
         /// <summary>
-        /// Get all of the invitations that have been sent for the current client. Requires the User Admin Role.
+        /// Get all invitations
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Invitation&gt;</returns>
         ApiResponse<List<Invitation>> InvitationsGetWithHttpInfo ();
         /// <summary>
-        /// Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role.
+        /// Create an invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// Used so a user can join the platform. The entered email will be used to confirm the user&#39;s  entity. An invitation email will also be sent.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -97,10 +97,10 @@ namespace mantle.lib.Api
         Invitation InvitationsPost (InvitationCreateRequest request = null);
 
         /// <summary>
-        /// Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role.
+        /// Create an invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// Used so a user can join the platform. The entered email will be used to confirm the user&#39;s  entity. An invitation email will also be sent.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -109,10 +109,10 @@ namespace mantle.lib.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role.
+        /// Delete a specific invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invitationId"></param>
@@ -120,10 +120,10 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task InvitationsByInvitationIdDeleteAsync (string invitationId);
 
         /// <summary>
-        /// Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role.
+        /// Delete a specific invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invitationId"></param>
@@ -151,29 +151,29 @@ namespace mantle.lib.Api
         /// <returns>Task of ApiResponse (InvitationSignUpResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<InvitationSignUpResponse>> InvitationsByInvitationIdGetAsyncWithHttpInfo (string invitationId);
         /// <summary>
-        /// Get all of the invitations that have been sent for the current client. Requires the User Admin Role.
+        /// Get all invitations
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;Invitation&gt;</returns>
         System.Threading.Tasks.Task<List<Invitation>> InvitationsGetAsync ();
 
         /// <summary>
-        /// Get all of the invitations that have been sent for the current client. Requires the User Admin Role.
+        /// Get all invitations
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;Invitation&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<Invitation>>> InvitationsGetAsyncWithHttpInfo ();
         /// <summary>
-        /// Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role.
+        /// Create an invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// Used so a user can join the platform. The entered email will be used to confirm the user&#39;s  entity. An invitation email will also be sent.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -181,10 +181,10 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task<Invitation> InvitationsPostAsync (InvitationCreateRequest request = null);
 
         /// <summary>
-        /// Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role.
+        /// Create an invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// Used so a user can join the platform. The entered email will be used to confirm the user&#39;s  entity. An invitation email will also be sent.                Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -291,7 +291,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role. 
+        /// Delete a specific invitation The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invitationId"></param>
@@ -302,7 +302,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role. 
+        /// Delete a specific invitation The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invitationId"></param>
@@ -358,7 +358,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role. 
+        /// Delete a specific invitation The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invitationId"></param>
@@ -370,7 +370,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Delete a specific invitation. The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again. Requires the User Admin Role. 
+        /// Delete a specific invitation The invited user won&#39;t be able to join the platform anymore. An invitation can be created with the same email again.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="invitationId"></param>
@@ -563,7 +563,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the invitations that have been sent for the current client. Requires the User Admin Role. 
+        /// Get all invitations Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;Invitation&gt;</returns>
@@ -574,7 +574,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the invitations that have been sent for the current client. Requires the User Admin Role. 
+        /// Get all invitations Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;Invitation&gt;</returns>
@@ -625,7 +625,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the invitations that have been sent for the current client. Requires the User Admin Role. 
+        /// Get all invitations Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;Invitation&gt;</returns>
@@ -637,7 +637,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the invitations that have been sent for the current client. Requires the User Admin Role. 
+        /// Get all invitations Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;Invitation&gt;)</returns>
@@ -688,7 +688,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role. 
+        /// Create an invitation Used so a user can join the platform. The entered email will be used to confirm the user&#39;s  entity. An invitation email will also be sent.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -700,7 +700,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role. 
+        /// Create an invitation Used so a user can join the platform. The entered email will be used to confirm the user&#39;s  entity. An invitation email will also be sent.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -764,7 +764,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role. 
+        /// Create an invitation Used so a user can join the platform. The entered email will be used to confirm the user&#39;s  entity. An invitation email will also be sent.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -777,7 +777,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Create an invitation so that a user can join the platform. The entered email will be used to confirm the user&#39;s entity. An invitation email will also be sent. Requires the User Admin Role. 
+        /// Create an invitation Used so a user can join the platform. The entered email will be used to confirm the user&#39;s  entity. An invitation email will also be sent.                Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>

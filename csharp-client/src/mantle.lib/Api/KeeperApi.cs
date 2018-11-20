@@ -25,647 +25,731 @@ namespace mantle.lib.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role.
+        /// [] Delete a file
         /// </summary>
         /// <remarks>
-        /// 
+        /// Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns></returns>
-        void KeeperFilesByFileIdDelete (string fileId);
+        void KeeperByProductIdFilesByFileIdDelete (string fileId, string productId);
 
         /// <summary>
-        /// [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role.
+        /// [] Delete a file
         /// </summary>
         /// <remarks>
-        /// 
+        /// Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> KeeperFilesByFileIdDeleteWithHttpInfo (string fileId);
+        ApiResponse<Object> KeeperByProductIdFilesByFileIdDeleteWithHttpInfo (string fileId, string productId);
         /// <summary>
-        /// [FILES] Get a file&#39;s details. Requires the Keeper Admin Role.
+        /// [] Get a file&#39;s details.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>KeeperFile</returns>
-        KeeperFile KeeperFilesByFileIdGet (string fileId);
+        KeeperFile KeeperByProductIdFilesByFileIdGet (string fileId, string productId);
 
         /// <summary>
-        /// [FILES] Get a file&#39;s details. Requires the Keeper Admin Role.
+        /// [] Get a file&#39;s details.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of KeeperFile</returns>
-        ApiResponse<KeeperFile> KeeperFilesByFileIdGetWithHttpInfo (string fileId);
+        ApiResponse<KeeperFile> KeeperByProductIdFilesByFileIdGetWithHttpInfo (string fileId, string productId);
         /// <summary>
-        /// [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to the latest version
         /// </summary>
         /// <remarks>
-        /// 
+        /// Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>BreadcrumbingCompareResponse</returns>
-        BreadcrumbingCompareResponse KeeperFilesDiffPost (string fileId, System.IO.Stream file, bool? generateDiffFile = null);
+        BreadcrumbingCompareResponse KeeperByProductIdFilesDiffLatestPost (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null);
 
         /// <summary>
-        /// [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to the latest version
         /// </summary>
         /// <remarks>
-        /// 
+        /// Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of BreadcrumbingCompareResponse</returns>
-        ApiResponse<BreadcrumbingCompareResponse> KeeperFilesDiffPostWithHttpInfo (string fileId, System.IO.Stream file, bool? generateDiffFile = null);
+        ApiResponse<BreadcrumbingCompareResponse> KeeperByProductIdFilesDiffLatestPostWithHttpInfo (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null);
         /// <summary>
-        /// [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to the original version
         /// </summary>
         /// <remarks>
-        /// 
+        /// Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>BreadcrumbingCompareResponse</returns>
-        BreadcrumbingCompareResponse KeeperFilesDiffWithLatestPost (string fileId, System.IO.Stream file, bool? generateDiffFile = null);
+        BreadcrumbingCompareResponse KeeperByProductIdFilesDiffPost (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null);
 
         /// <summary>
-        /// [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to the original version
         /// </summary>
         /// <remarks>
-        /// 
+        /// Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of BreadcrumbingCompareResponse</returns>
-        ApiResponse<BreadcrumbingCompareResponse> KeeperFilesDiffWithLatestPostWithHttpInfo (string fileId, System.IO.Stream file, bool? generateDiffFile = null);
+        ApiResponse<BreadcrumbingCompareResponse> KeeperByProductIdFilesDiffPostWithHttpInfo (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null);
         /// <summary>
-        /// [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role.
+        /// [] Check if a file already exists
         /// </summary>
         /// <remarks>
-        /// 
+        /// We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>bool?</returns>
-        bool? KeeperFilesExistPost (string folderId, System.IO.Stream file, string accuracy = null);
+        bool? KeeperByProductIdFilesExistPost (System.IO.Stream file, string productId, string accuracy = null, string request = null);
 
         /// <summary>
-        /// [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role.
+        /// [] Check if a file already exists
         /// </summary>
         /// <remarks>
-        /// 
+        /// We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of bool?</returns>
-        ApiResponse<bool?> KeeperFilesExistPostWithHttpInfo (string folderId, System.IO.Stream file, string accuracy = null);
+        ApiResponse<bool?> KeeperByProductIdFilesExistPostWithHttpInfo (System.IO.Stream file, string productId, string accuracy = null, string request = null);
         /// <summary>
-        /// [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role.
+        /// [] Get all files
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all the files stored in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="displayName"> (optional)</param>
-        /// <param name="folderId"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>List&lt;KeeperFile&gt;</returns>
-        List<KeeperFile> KeeperFilesGet (string displayName = null, string folderId = null);
+        List<KeeperFile> KeeperByProductIdFilesGet (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null);
 
         /// <summary>
-        /// [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role.
+        /// [] Get all files
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all the files stored in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="displayName"> (optional)</param>
-        /// <param name="folderId"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of List&lt;KeeperFile&gt;</returns>
-        ApiResponse<List<KeeperFile>> KeeperFilesGetWithHttpInfo (string displayName = null, string folderId = null);
+        ApiResponse<List<KeeperFile>> KeeperByProductIdFilesGetWithHttpInfo (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null);
         /// <summary>
-        /// [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role.
+        /// [] Create a file
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
         /// <param name="displayName"></param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>KeeperFile</returns>
-        KeeperFile KeeperFilesPost (string folderId, System.IO.Stream file, string displayName, string accuracy = null);
+        KeeperFile KeeperByProductIdFilesPost (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null);
 
         /// <summary>
-        /// [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role.
+        /// [] Create a file
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
         /// <param name="displayName"></param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of KeeperFile</returns>
-        ApiResponse<KeeperFile> KeeperFilesPostWithHttpInfo (string folderId, System.IO.Stream file, string displayName, string accuracy = null);
+        ApiResponse<KeeperFile> KeeperByProductIdFilesPostWithHttpInfo (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null);
         /// <summary>
-        /// [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role.
+        /// [] Delete a folder
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will also delete all the files it contains.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns></returns>
-        void KeeperFoldersByFolderIdDelete (string folderId);
+        void KeeperByProductIdFoldersByFolderIdDelete (string productId, string folderId);
 
         /// <summary>
-        /// [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role.
+        /// [] Delete a folder
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will also delete all the files it contains.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> KeeperFoldersByFolderIdDeleteWithHttpInfo (string folderId);
+        ApiResponse<Object> KeeperByProductIdFoldersByFolderIdDeleteWithHttpInfo (string productId, string folderId);
         /// <summary>
-        /// [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role.
+        /// [] Get a specific folder&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>KeeperFolder</returns>
-        KeeperFolder KeeperFoldersByFolderIdGet (string folderId);
+        KeeperFolder KeeperByProductIdFoldersByFolderIdGet (string productId, string folderId);
 
         /// <summary>
-        /// [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role.
+        /// [] Get a specific folder&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>ApiResponse of KeeperFolder</returns>
-        ApiResponse<KeeperFolder> KeeperFoldersByFolderIdGetWithHttpInfo (string folderId);
+        ApiResponse<KeeperFolder> KeeperByProductIdFoldersByFolderIdGetWithHttpInfo (string productId, string folderId);
         /// <summary>
-        /// [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role.
+        /// [] Get all folders
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="name"> (optional)</param>
         /// <returns>List&lt;KeeperFolder&gt;</returns>
-        List<KeeperFolder> KeeperFoldersGet (string name = null);
+        List<KeeperFolder> KeeperByProductIdFoldersGet (string productId, string name = null);
 
         /// <summary>
-        /// [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role.
+        /// [] Get all folders
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="name"> (optional)</param>
         /// <returns>ApiResponse of List&lt;KeeperFolder&gt;</returns>
-        ApiResponse<List<KeeperFolder>> KeeperFoldersGetWithHttpInfo (string name = null);
+        ApiResponse<List<KeeperFolder>> KeeperByProductIdFoldersGetWithHttpInfo (string productId, string name = null);
         /// <summary>
-        /// [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role.
+        /// [] Create a folder
         /// </summary>
         /// <remarks>
-        /// 
+        /// This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>KeeperFolder</returns>
-        KeeperFolder KeeperFoldersPost (KeeperFolderCreateRequest request = null);
+        KeeperFolder KeeperByProductIdFoldersPost (string productId, KeeperFolderCreateRequest request = null);
 
         /// <summary>
-        /// [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role.
+        /// [] Create a folder
         /// </summary>
         /// <remarks>
-        /// 
+        /// This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of KeeperFolder</returns>
-        ApiResponse<KeeperFolder> KeeperFoldersPostWithHttpInfo (KeeperFolderCreateRequest request = null);
+        ApiResponse<KeeperFolder> KeeperByProductIdFoldersPostWithHttpInfo (string productId, KeeperFolderCreateRequest request = null);
         /// <summary>
-        /// [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role.
+        /// [] Get all the versions&#39; details for a specific file
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>List&lt;KeeperFileVersion&gt;</returns>
-        List<KeeperFileVersion> KeeperVersionsByFileIdGet (string fileId);
+        List<KeeperFileVersion> KeeperByProductIdVersionsByFileIdGet (string fileId, string productId);
 
         /// <summary>
-        /// [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role.
+        /// [] Get all the versions&#39; details for a specific file
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of List&lt;KeeperFileVersion&gt;</returns>
-        ApiResponse<List<KeeperFileVersion>> KeeperVersionsByFileIdGetWithHttpInfo (string fileId);
+        ApiResponse<List<KeeperFileVersion>> KeeperByProductIdVersionsByFileIdGetWithHttpInfo (string fileId, string productId);
         /// <summary>
-        /// [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to a specific version
         /// </summary>
         /// <remarks>
-        /// 
+        /// We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
+        /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>BreadcrumbingCompareResponse</returns>
-        BreadcrumbingCompareResponse KeeperVersionsDiffPost (string versionId, System.IO.Stream file, bool? generateDiffFile = null);
+        BreadcrumbingCompareResponse KeeperByProductIdVersionsDiffPost (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null);
 
         /// <summary>
-        /// [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to a specific version
         /// </summary>
         /// <remarks>
-        /// 
+        /// We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
+        /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of BreadcrumbingCompareResponse</returns>
-        ApiResponse<BreadcrumbingCompareResponse> KeeperVersionsDiffPostWithHttpInfo (string versionId, System.IO.Stream file, bool? generateDiffFile = null);
+        ApiResponse<BreadcrumbingCompareResponse> KeeperByProductIdVersionsDiffPostWithHttpInfo (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null);
         /// <summary>
-        /// [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role.
+        /// [] Create a version for an existing file
         /// </summary>
         /// <remarks>
-        /// 
+        /// This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
         /// <returns>KeeperFileVersion</returns>
-        KeeperFileVersion KeeperVersionsPost (string fileId, System.IO.Stream file);
+        KeeperFileVersion KeeperByProductIdVersionsPost (string fileId, System.IO.Stream file, string productId, string request = null);
 
         /// <summary>
-        /// [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role.
+        /// [] Create a version for an existing file
         /// </summary>
         /// <remarks>
-        /// 
+        /// This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of KeeperFileVersion</returns>
-        ApiResponse<KeeperFileVersion> KeeperVersionsPostWithHttpInfo (string fileId, System.IO.Stream file);
+        ApiResponse<KeeperFileVersion> KeeperByProductIdVersionsPostWithHttpInfo (string fileId, System.IO.Stream file, string productId, string request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role.
+        /// [] Delete a file
         /// </summary>
         /// <remarks>
-        /// 
+        /// Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task KeeperFilesByFileIdDeleteAsync (string fileId);
+        System.Threading.Tasks.Task KeeperByProductIdFilesByFileIdDeleteAsync (string fileId, string productId);
 
         /// <summary>
-        /// [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role.
+        /// [] Delete a file
         /// </summary>
         /// <remarks>
-        /// 
+        /// Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> KeeperFilesByFileIdDeleteAsyncWithHttpInfo (string fileId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> KeeperByProductIdFilesByFileIdDeleteAsyncWithHttpInfo (string fileId, string productId);
         /// <summary>
-        /// [FILES] Get a file&#39;s details. Requires the Keeper Admin Role.
+        /// [] Get a file&#39;s details.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of KeeperFile</returns>
-        System.Threading.Tasks.Task<KeeperFile> KeeperFilesByFileIdGetAsync (string fileId);
+        System.Threading.Tasks.Task<KeeperFile> KeeperByProductIdFilesByFileIdGetAsync (string fileId, string productId);
 
         /// <summary>
-        /// [FILES] Get a file&#39;s details. Requires the Keeper Admin Role.
+        /// [] Get a file&#39;s details.
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (KeeperFile)</returns>
-        System.Threading.Tasks.Task<ApiResponse<KeeperFile>> KeeperFilesByFileIdGetAsyncWithHttpInfo (string fileId);
+        System.Threading.Tasks.Task<ApiResponse<KeeperFile>> KeeperByProductIdFilesByFileIdGetAsyncWithHttpInfo (string fileId, string productId);
         /// <summary>
-        /// [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to the latest version
         /// </summary>
         /// <remarks>
-        /// 
+        /// Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of BreadcrumbingCompareResponse</returns>
-        System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperFilesDiffPostAsync (string fileId, System.IO.Stream file, bool? generateDiffFile = null);
+        System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperByProductIdFilesDiffLatestPostAsync (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null);
 
         /// <summary>
-        /// [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to the latest version
         /// </summary>
         /// <remarks>
-        /// 
+        /// Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (BreadcrumbingCompareResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperFilesDiffPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, bool? generateDiffFile = null);
+        System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperByProductIdFilesDiffLatestPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null);
         /// <summary>
-        /// [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to the original version
         /// </summary>
         /// <remarks>
-        /// 
+        /// Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of BreadcrumbingCompareResponse</returns>
-        System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperFilesDiffWithLatestPostAsync (string fileId, System.IO.Stream file, bool? generateDiffFile = null);
+        System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperByProductIdFilesDiffPostAsync (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null);
 
         /// <summary>
-        /// [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to the original version
         /// </summary>
         /// <remarks>
-        /// 
+        /// Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (BreadcrumbingCompareResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperFilesDiffWithLatestPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, bool? generateDiffFile = null);
+        System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperByProductIdFilesDiffPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null);
         /// <summary>
-        /// [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role.
+        /// [] Check if a file already exists
         /// </summary>
         /// <remarks>
-        /// 
+        /// We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of bool?</returns>
-        System.Threading.Tasks.Task<bool?> KeeperFilesExistPostAsync (string folderId, System.IO.Stream file, string accuracy = null);
+        System.Threading.Tasks.Task<bool?> KeeperByProductIdFilesExistPostAsync (System.IO.Stream file, string productId, string accuracy = null, string request = null);
 
         /// <summary>
-        /// [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role.
+        /// [] Check if a file already exists
         /// </summary>
         /// <remarks>
-        /// 
+        /// We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (bool?)</returns>
-        System.Threading.Tasks.Task<ApiResponse<bool?>> KeeperFilesExistPostAsyncWithHttpInfo (string folderId, System.IO.Stream file, string accuracy = null);
+        System.Threading.Tasks.Task<ApiResponse<bool?>> KeeperByProductIdFilesExistPostAsyncWithHttpInfo (System.IO.Stream file, string productId, string accuracy = null, string request = null);
         /// <summary>
-        /// [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role.
+        /// [] Get all files
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all the files stored in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="displayName"> (optional)</param>
-        /// <param name="folderId"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of List&lt;KeeperFile&gt;</returns>
-        System.Threading.Tasks.Task<List<KeeperFile>> KeeperFilesGetAsync (string displayName = null, string folderId = null);
+        System.Threading.Tasks.Task<List<KeeperFile>> KeeperByProductIdFilesGetAsync (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null);
 
         /// <summary>
-        /// [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role.
+        /// [] Get all files
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all the files stored in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="displayName"> (optional)</param>
-        /// <param name="folderId"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;KeeperFile&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<KeeperFile>>> KeeperFilesGetAsyncWithHttpInfo (string displayName = null, string folderId = null);
+        System.Threading.Tasks.Task<ApiResponse<List<KeeperFile>>> KeeperByProductIdFilesGetAsyncWithHttpInfo (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null);
         /// <summary>
-        /// [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role.
+        /// [] Create a file
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
         /// <param name="displayName"></param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of KeeperFile</returns>
-        System.Threading.Tasks.Task<KeeperFile> KeeperFilesPostAsync (string folderId, System.IO.Stream file, string displayName, string accuracy = null);
+        System.Threading.Tasks.Task<KeeperFile> KeeperByProductIdFilesPostAsync (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null);
 
         /// <summary>
-        /// [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role.
+        /// [] Create a file
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
         /// <param name="displayName"></param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (KeeperFile)</returns>
-        System.Threading.Tasks.Task<ApiResponse<KeeperFile>> KeeperFilesPostAsyncWithHttpInfo (string folderId, System.IO.Stream file, string displayName, string accuracy = null);
+        System.Threading.Tasks.Task<ApiResponse<KeeperFile>> KeeperByProductIdFilesPostAsyncWithHttpInfo (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null);
         /// <summary>
-        /// [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role.
+        /// [] Delete a folder
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will also delete all the files it contains.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task KeeperFoldersByFolderIdDeleteAsync (string folderId);
+        System.Threading.Tasks.Task KeeperByProductIdFoldersByFolderIdDeleteAsync (string productId, string folderId);
 
         /// <summary>
-        /// [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role.
+        /// [] Delete a folder
         /// </summary>
         /// <remarks>
-        /// 
+        /// This will also delete all the files it contains.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> KeeperFoldersByFolderIdDeleteAsyncWithHttpInfo (string folderId);
+        System.Threading.Tasks.Task<ApiResponse<Object>> KeeperByProductIdFoldersByFolderIdDeleteAsyncWithHttpInfo (string productId, string folderId);
         /// <summary>
-        /// [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role.
+        /// [] Get a specific folder&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>Task of KeeperFolder</returns>
-        System.Threading.Tasks.Task<KeeperFolder> KeeperFoldersByFolderIdGetAsync (string folderId);
+        System.Threading.Tasks.Task<KeeperFolder> KeeperByProductIdFoldersByFolderIdGetAsync (string productId, string folderId);
 
         /// <summary>
-        /// [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role.
+        /// [] Get a specific folder&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>Task of ApiResponse (KeeperFolder)</returns>
-        System.Threading.Tasks.Task<ApiResponse<KeeperFolder>> KeeperFoldersByFolderIdGetAsyncWithHttpInfo (string folderId);
+        System.Threading.Tasks.Task<ApiResponse<KeeperFolder>> KeeperByProductIdFoldersByFolderIdGetAsyncWithHttpInfo (string productId, string folderId);
         /// <summary>
-        /// [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role.
+        /// [] Get all folders
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="name"> (optional)</param>
         /// <returns>Task of List&lt;KeeperFolder&gt;</returns>
-        System.Threading.Tasks.Task<List<KeeperFolder>> KeeperFoldersGetAsync (string name = null);
+        System.Threading.Tasks.Task<List<KeeperFolder>> KeeperByProductIdFoldersGetAsync (string productId, string name = null);
 
         /// <summary>
-        /// [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role.
+        /// [] Get all folders
         /// </summary>
         /// <remarks>
-        /// 
+        /// Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="name"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;KeeperFolder&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<KeeperFolder>>> KeeperFoldersGetAsyncWithHttpInfo (string name = null);
+        System.Threading.Tasks.Task<ApiResponse<List<KeeperFolder>>> KeeperByProductIdFoldersGetAsyncWithHttpInfo (string productId, string name = null);
         /// <summary>
-        /// [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role.
+        /// [] Create a folder
         /// </summary>
         /// <remarks>
-        /// 
+        /// This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of KeeperFolder</returns>
-        System.Threading.Tasks.Task<KeeperFolder> KeeperFoldersPostAsync (KeeperFolderCreateRequest request = null);
+        System.Threading.Tasks.Task<KeeperFolder> KeeperByProductIdFoldersPostAsync (string productId, KeeperFolderCreateRequest request = null);
 
         /// <summary>
-        /// [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role.
+        /// [] Create a folder
         /// </summary>
         /// <remarks>
-        /// 
+        /// This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (KeeperFolder)</returns>
-        System.Threading.Tasks.Task<ApiResponse<KeeperFolder>> KeeperFoldersPostAsyncWithHttpInfo (KeeperFolderCreateRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<KeeperFolder>> KeeperByProductIdFoldersPostAsyncWithHttpInfo (string productId, KeeperFolderCreateRequest request = null);
         /// <summary>
-        /// [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role.
+        /// [] Get all the versions&#39; details for a specific file
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of List&lt;KeeperFileVersion&gt;</returns>
-        System.Threading.Tasks.Task<List<KeeperFileVersion>> KeeperVersionsByFileIdGetAsync (string fileId);
+        System.Threading.Tasks.Task<List<KeeperFileVersion>> KeeperByProductIdVersionsByFileIdGetAsync (string fileId, string productId);
 
         /// <summary>
-        /// [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role.
+        /// [] Get all the versions&#39; details for a specific file
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (List&lt;KeeperFileVersion&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<KeeperFileVersion>>> KeeperVersionsByFileIdGetAsyncWithHttpInfo (string fileId);
+        System.Threading.Tasks.Task<ApiResponse<List<KeeperFileVersion>>> KeeperByProductIdVersionsByFileIdGetAsyncWithHttpInfo (string fileId, string productId);
         /// <summary>
-        /// [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to a specific version
         /// </summary>
         /// <remarks>
-        /// 
+        /// We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
+        /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of BreadcrumbingCompareResponse</returns>
-        System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperVersionsDiffPostAsync (string versionId, System.IO.Stream file, bool? generateDiffFile = null);
+        System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperByProductIdVersionsDiffPostAsync (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null);
 
         /// <summary>
-        /// [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role.
+        /// [] Compare a local file to a specific version
         /// </summary>
         /// <remarks>
-        /// 
+        /// We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
+        /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (BreadcrumbingCompareResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperVersionsDiffPostAsyncWithHttpInfo (string versionId, System.IO.Stream file, bool? generateDiffFile = null);
+        System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperByProductIdVersionsDiffPostAsyncWithHttpInfo (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null);
         /// <summary>
-        /// [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role.
+        /// [] Create a version for an existing file
         /// </summary>
         /// <remarks>
-        /// 
+        /// This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of KeeperFileVersion</returns>
-        System.Threading.Tasks.Task<KeeperFileVersion> KeeperVersionsPostAsync (string fileId, System.IO.Stream file);
+        System.Threading.Tasks.Task<KeeperFileVersion> KeeperByProductIdVersionsPostAsync (string fileId, System.IO.Stream file, string productId, string request = null);
 
         /// <summary>
-        /// [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role.
+        /// [] Create a version for an existing file
         /// </summary>
         /// <remarks>
-        /// 
+        /// This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (KeeperFileVersion)</returns>
-        System.Threading.Tasks.Task<ApiResponse<KeeperFileVersion>> KeeperVersionsPostAsyncWithHttpInfo (string fileId, System.IO.Stream file);
+        System.Threading.Tasks.Task<ApiResponse<KeeperFileVersion>> KeeperByProductIdVersionsPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, string productId, string request = null);
         #endregion Asynchronous Operations
     }
 
@@ -767,29 +851,34 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role. 
+        /// [] Delete a file Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns></returns>
-        public void KeeperFilesByFileIdDelete (string fileId)
+        public void KeeperByProductIdFilesByFileIdDelete (string fileId, string productId)
         {
-             KeeperFilesByFileIdDeleteWithHttpInfo(fileId);
+             KeeperByProductIdFilesByFileIdDeleteWithHttpInfo(fileId, productId);
         }
 
         /// <summary>
-        /// [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role. 
+        /// [] Delete a file Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> KeeperFilesByFileIdDeleteWithHttpInfo (string fileId)
+        public ApiResponse<Object> KeeperByProductIdFilesByFileIdDeleteWithHttpInfo (string fileId, string productId)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperFilesByFileIdDelete");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdFilesByFileIdDelete");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesByFileIdDelete");
 
-            var localVarPath = "./keeper/files/{fileId}";
+            var localVarPath = "./keeper/{productId}/files/{fileId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -813,6 +902,7 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (fileId != null) localVarPathParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -824,7 +914,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesByFileIdDelete", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesByFileIdDelete", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -834,30 +924,35 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role. 
+        /// [] Delete a file Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task KeeperFilesByFileIdDeleteAsync (string fileId)
+        public async System.Threading.Tasks.Task KeeperByProductIdFilesByFileIdDeleteAsync (string fileId, string productId)
         {
-             await KeeperFilesByFileIdDeleteAsyncWithHttpInfo(fileId);
+             await KeeperByProductIdFilesByFileIdDeleteAsyncWithHttpInfo(fileId, productId);
 
         }
 
         /// <summary>
-        /// [FILES] Delete a file from Keeper. Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore. Requires the Keeper Admin Role. 
+        /// [] Delete a file Its fingerprint will stay in the blockchain, but we won&#39;t show it to you anymore.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> KeeperFilesByFileIdDeleteAsyncWithHttpInfo (string fileId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> KeeperByProductIdFilesByFileIdDeleteAsyncWithHttpInfo (string fileId, string productId)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperFilesByFileIdDelete");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdFilesByFileIdDelete");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesByFileIdDelete");
 
-            var localVarPath = "./keeper/files/{fileId}";
+            var localVarPath = "./keeper/{productId}/files/{fileId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -881,6 +976,7 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (fileId != null) localVarPathParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -892,7 +988,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesByFileIdDelete", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesByFileIdDelete", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -902,30 +998,35 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Get a file&#39;s details. Requires the Keeper Admin Role. 
+        /// [] Get a file&#39;s details. Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>KeeperFile</returns>
-        public KeeperFile KeeperFilesByFileIdGet (string fileId)
+        public KeeperFile KeeperByProductIdFilesByFileIdGet (string fileId, string productId)
         {
-             ApiResponse<KeeperFile> localVarResponse = KeeperFilesByFileIdGetWithHttpInfo(fileId);
+             ApiResponse<KeeperFile> localVarResponse = KeeperByProductIdFilesByFileIdGetWithHttpInfo(fileId, productId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FILES] Get a file&#39;s details. Requires the Keeper Admin Role. 
+        /// [] Get a file&#39;s details. Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of KeeperFile</returns>
-        public ApiResponse< KeeperFile > KeeperFilesByFileIdGetWithHttpInfo (string fileId)
+        public ApiResponse< KeeperFile > KeeperByProductIdFilesByFileIdGetWithHttpInfo (string fileId, string productId)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperFilesByFileIdGet");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdFilesByFileIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesByFileIdGet");
 
-            var localVarPath = "./keeper/files/{fileId}";
+            var localVarPath = "./keeper/{productId}/files/{fileId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -949,6 +1050,7 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (fileId != null) localVarPathParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -960,7 +1062,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesByFileIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesByFileIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -970,31 +1072,36 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Get a file&#39;s details. Requires the Keeper Admin Role. 
+        /// [] Get a file&#39;s details. Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of KeeperFile</returns>
-        public async System.Threading.Tasks.Task<KeeperFile> KeeperFilesByFileIdGetAsync (string fileId)
+        public async System.Threading.Tasks.Task<KeeperFile> KeeperByProductIdFilesByFileIdGetAsync (string fileId, string productId)
         {
-             ApiResponse<KeeperFile> localVarResponse = await KeeperFilesByFileIdGetAsyncWithHttpInfo(fileId);
+             ApiResponse<KeeperFile> localVarResponse = await KeeperByProductIdFilesByFileIdGetAsyncWithHttpInfo(fileId, productId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FILES] Get a file&#39;s details. Requires the Keeper Admin Role. 
+        /// [] Get a file&#39;s details. Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (KeeperFile)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<KeeperFile>> KeeperFilesByFileIdGetAsyncWithHttpInfo (string fileId)
+        public async System.Threading.Tasks.Task<ApiResponse<KeeperFile>> KeeperByProductIdFilesByFileIdGetAsyncWithHttpInfo (string fileId, string productId)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperFilesByFileIdGet");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdFilesByFileIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesByFileIdGet");
 
-            var localVarPath = "./keeper/files/{fileId}";
+            var localVarPath = "./keeper/{productId}/files/{fileId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1018,6 +1125,7 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (fileId != null) localVarPathParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -1029,7 +1137,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesByFileIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesByFileIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1039,37 +1147,44 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to the latest version Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>BreadcrumbingCompareResponse</returns>
-        public BreadcrumbingCompareResponse KeeperFilesDiffPost (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+        public BreadcrumbingCompareResponse KeeperByProductIdFilesDiffLatestPost (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
         {
-             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = KeeperFilesDiffPostWithHttpInfo(fileId, file, generateDiffFile);
+             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = KeeperByProductIdFilesDiffLatestPostWithHttpInfo(fileId, file, productId, mustGenerateFileDiff, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to the latest version Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of BreadcrumbingCompareResponse</returns>
-        public ApiResponse< BreadcrumbingCompareResponse > KeeperFilesDiffPostWithHttpInfo (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+        public ApiResponse< BreadcrumbingCompareResponse > KeeperByProductIdFilesDiffLatestPostWithHttpInfo (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperFilesDiffPost");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdFilesDiffLatestPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperFilesDiffPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdFilesDiffLatestPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesDiffLatestPost");
 
-            var localVarPath = "./keeper/files/diff";
+            var localVarPath = "./keeper/{productId}/files/diff/latest";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1093,9 +1208,11 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (fileId != null) localVarFormParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
-            if (generateDiffFile != null) localVarFormParams.Add("generateDiffFile", Configuration.ApiClient.ParameterToString(generateDiffFile)); // form parameter
+            if (mustGenerateFileDiff != null) localVarFormParams.Add("mustGenerateFileDiff", Configuration.ApiClient.ParameterToString(mustGenerateFileDiff)); // form parameter
 
 
             // make the HTTP request
@@ -1107,7 +1224,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesDiffPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesDiffLatestPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1117,38 +1234,45 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to the latest version Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of BreadcrumbingCompareResponse</returns>
-        public async System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperFilesDiffPostAsync (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+        public async System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperByProductIdFilesDiffLatestPostAsync (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
         {
-             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = await KeeperFilesDiffPostAsyncWithHttpInfo(fileId, file, generateDiffFile);
+             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = await KeeperByProductIdFilesDiffLatestPostAsyncWithHttpInfo(fileId, file, productId, mustGenerateFileDiff, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FILES] Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to the latest version Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (BreadcrumbingCompareResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperFilesDiffPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperByProductIdFilesDiffLatestPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperFilesDiffPost");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdFilesDiffLatestPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperFilesDiffPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdFilesDiffLatestPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesDiffLatestPost");
 
-            var localVarPath = "./keeper/files/diff";
+            var localVarPath = "./keeper/{productId}/files/diff/latest";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1172,9 +1296,11 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (fileId != null) localVarFormParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
-            if (generateDiffFile != null) localVarFormParams.Add("generateDiffFile", Configuration.ApiClient.ParameterToString(generateDiffFile)); // form parameter
+            if (mustGenerateFileDiff != null) localVarFormParams.Add("mustGenerateFileDiff", Configuration.ApiClient.ParameterToString(mustGenerateFileDiff)); // form parameter
 
 
             // make the HTTP request
@@ -1186,7 +1312,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesDiffPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesDiffLatestPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1196,37 +1322,44 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to the original version Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>BreadcrumbingCompareResponse</returns>
-        public BreadcrumbingCompareResponse KeeperFilesDiffWithLatestPost (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+        public BreadcrumbingCompareResponse KeeperByProductIdFilesDiffPost (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
         {
-             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = KeeperFilesDiffWithLatestPostWithHttpInfo(fileId, file, generateDiffFile);
+             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = KeeperByProductIdFilesDiffPostWithHttpInfo(fileId, file, productId, mustGenerateFileDiff, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to the original version Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of BreadcrumbingCompareResponse</returns>
-        public ApiResponse< BreadcrumbingCompareResponse > KeeperFilesDiffWithLatestPostWithHttpInfo (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+        public ApiResponse< BreadcrumbingCompareResponse > KeeperByProductIdFilesDiffPostWithHttpInfo (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperFilesDiffWithLatestPost");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdFilesDiffPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperFilesDiffWithLatestPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdFilesDiffPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesDiffPost");
 
-            var localVarPath = "./keeper/files/diffwithlatest";
+            var localVarPath = "./keeper/{productId}/files/diff";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1250,9 +1383,11 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (fileId != null) localVarFormParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
-            if (generateDiffFile != null) localVarFormParams.Add("generateDiffFile", Configuration.ApiClient.ParameterToString(generateDiffFile)); // form parameter
+            if (mustGenerateFileDiff != null) localVarFormParams.Add("mustGenerateFileDiff", Configuration.ApiClient.ParameterToString(mustGenerateFileDiff)); // form parameter
 
 
             // make the HTTP request
@@ -1264,7 +1399,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesDiffWithLatestPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesDiffPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1274,38 +1409,45 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to the original version Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of BreadcrumbingCompareResponse</returns>
-        public async System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperFilesDiffWithLatestPostAsync (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+        public async System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperByProductIdFilesDiffPostAsync (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
         {
-             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = await KeeperFilesDiffWithLatestPostAsyncWithHttpInfo(fileId, file, generateDiffFile);
+             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = await KeeperByProductIdFilesDiffPostAsyncWithHttpInfo(fileId, file, productId, mustGenerateFileDiff, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FILES] Compare a local file to the latest version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to the original version Compare a local file to the original version of a file that&#39;s been stored in the blockchain. We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
-        /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="productId"></param>
+        /// <param name="mustGenerateFileDiff"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (BreadcrumbingCompareResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperFilesDiffWithLatestPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, bool? generateDiffFile = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperByProductIdFilesDiffPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperFilesDiffWithLatestPost");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdFilesDiffPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperFilesDiffWithLatestPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdFilesDiffPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesDiffPost");
 
-            var localVarPath = "./keeper/files/diffwithlatest";
+            var localVarPath = "./keeper/{productId}/files/diff";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1329,9 +1471,11 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (fileId != null) localVarFormParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
-            if (generateDiffFile != null) localVarFormParams.Add("generateDiffFile", Configuration.ApiClient.ParameterToString(generateDiffFile)); // form parameter
+            if (mustGenerateFileDiff != null) localVarFormParams.Add("mustGenerateFileDiff", Configuration.ApiClient.ParameterToString(mustGenerateFileDiff)); // form parameter
 
 
             // make the HTTP request
@@ -1343,7 +1487,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesDiffWithLatestPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesDiffPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1353,37 +1497,39 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role. 
+        /// [] Check if a file already exists We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>bool?</returns>
-        public bool? KeeperFilesExistPost (string folderId, System.IO.Stream file, string accuracy = null)
+        public bool? KeeperByProductIdFilesExistPost (System.IO.Stream file, string productId, string accuracy = null, string request = null)
         {
-             ApiResponse<bool?> localVarResponse = KeeperFilesExistPostWithHttpInfo(folderId, file, accuracy);
+             ApiResponse<bool?> localVarResponse = KeeperByProductIdFilesExistPostWithHttpInfo(file, productId, accuracy, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role. 
+        /// [] Check if a file already exists We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of bool?</returns>
-        public ApiResponse< bool? > KeeperFilesExistPostWithHttpInfo (string folderId, System.IO.Stream file, string accuracy = null)
+        public ApiResponse< bool? > KeeperByProductIdFilesExistPostWithHttpInfo (System.IO.Stream file, string productId, string accuracy = null, string request = null)
         {
-            // verify the required parameter 'folderId' is set
-            if (folderId == null)
-                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperFilesExistPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperFilesExistPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdFilesExistPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesExistPost");
 
-            var localVarPath = "./keeper/files/exist";
+            var localVarPath = "./keeper/{productId}/files/exist";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1407,7 +1553,8 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (folderId != null) localVarFormParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // form parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (accuracy != null) localVarFormParams.Add("accuracy", Configuration.ApiClient.ParameterToString(accuracy)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
 
@@ -1421,7 +1568,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesExistPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesExistPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1431,38 +1578,40 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role. 
+        /// [] Check if a file already exists We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of bool?</returns>
-        public async System.Threading.Tasks.Task<bool?> KeeperFilesExistPostAsync (string folderId, System.IO.Stream file, string accuracy = null)
+        public async System.Threading.Tasks.Task<bool?> KeeperByProductIdFilesExistPostAsync (System.IO.Stream file, string productId, string accuracy = null, string request = null)
         {
-             ApiResponse<bool?> localVarResponse = await KeeperFilesExistPostAsyncWithHttpInfo(folderId, file, accuracy);
+             ApiResponse<bool?> localVarResponse = await KeeperByProductIdFilesExistPostAsyncWithHttpInfo(file, productId, accuracy, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FILES] Check if a file already exists in Keeper. We will verify if we have the fingerprint of the file you sent. Requires the Keeper Admin Role. 
+        /// [] Check if a file already exists We will verify if we have the fingerprint of the file you sent.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (bool?)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<bool?>> KeeperFilesExistPostAsyncWithHttpInfo (string folderId, System.IO.Stream file, string accuracy = null)
+        public async System.Threading.Tasks.Task<ApiResponse<bool?>> KeeperByProductIdFilesExistPostAsyncWithHttpInfo (System.IO.Stream file, string productId, string accuracy = null, string request = null)
         {
-            // verify the required parameter 'folderId' is set
-            if (folderId == null)
-                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperFilesExistPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperFilesExistPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdFilesExistPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesExistPost");
 
-            var localVarPath = "./keeper/files/exist";
+            var localVarPath = "./keeper/{productId}/files/exist";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1486,7 +1635,8 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (folderId != null) localVarFormParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // form parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (accuracy != null) localVarFormParams.Add("accuracy", Configuration.ApiClient.ParameterToString(accuracy)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
 
@@ -1500,7 +1650,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesExistPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesExistPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1510,29 +1660,38 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role. 
+        /// [] Get all files Get all the files stored in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="displayName"> (optional)</param>
-        /// <param name="folderId"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>List&lt;KeeperFile&gt;</returns>
-        public List<KeeperFile> KeeperFilesGet (string displayName = null, string folderId = null)
+        public List<KeeperFile> KeeperByProductIdFilesGet (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null)
         {
-             ApiResponse<List<KeeperFile>> localVarResponse = KeeperFilesGetWithHttpInfo(displayName, folderId);
+             ApiResponse<List<KeeperFile>> localVarResponse = KeeperByProductIdFilesGetWithHttpInfo(productId, displayName, limit, offset, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role. 
+        /// [] Get all files Get all the files stored in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="displayName"> (optional)</param>
-        /// <param name="folderId"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of List&lt;KeeperFile&gt;</returns>
-        public ApiResponse< List<KeeperFile> > KeeperFilesGetWithHttpInfo (string displayName = null, string folderId = null)
+        public ApiResponse< List<KeeperFile> > KeeperByProductIdFilesGetWithHttpInfo (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesGet");
 
-            var localVarPath = "./keeper/files";
+            var localVarPath = "./keeper/{productId}/files";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1555,8 +1714,11 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (displayName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "displayName", displayName)); // query parameter
-            if (folderId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "folderId", folderId)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
 
 
             // make the HTTP request
@@ -1568,7 +1730,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1578,30 +1740,39 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role. 
+        /// [] Get all files Get all the files stored in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="displayName"> (optional)</param>
-        /// <param name="folderId"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of List&lt;KeeperFile&gt;</returns>
-        public async System.Threading.Tasks.Task<List<KeeperFile>> KeeperFilesGetAsync (string displayName = null, string folderId = null)
+        public async System.Threading.Tasks.Task<List<KeeperFile>> KeeperByProductIdFilesGetAsync (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null)
         {
-             ApiResponse<List<KeeperFile>> localVarResponse = await KeeperFilesGetAsyncWithHttpInfo(displayName, folderId);
+             ApiResponse<List<KeeperFile>> localVarResponse = await KeeperByProductIdFilesGetAsyncWithHttpInfo(productId, displayName, limit, offset, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FILES] Get all the files stored in Keeper. Requires the Keeper Admin Role. 
+        /// [] Get all files Get all the files stored in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="displayName"> (optional)</param>
-        /// <param name="folderId"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;KeeperFile&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<KeeperFile>>> KeeperFilesGetAsyncWithHttpInfo (string displayName = null, string folderId = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<KeeperFile>>> KeeperByProductIdFilesGetAsyncWithHttpInfo (string productId, string displayName = null, int? limit = null, int? offset = null, string request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesGet");
 
-            var localVarPath = "./keeper/files";
+            var localVarPath = "./keeper/{productId}/files";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1624,8 +1795,11 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (displayName != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "displayName", displayName)); // query parameter
-            if (folderId != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "folderId", folderId)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
 
 
             // make the HTTP request
@@ -1637,7 +1811,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1647,42 +1821,44 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role. 
+        /// [] Create a file This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
         /// <param name="displayName"></param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>KeeperFile</returns>
-        public KeeperFile KeeperFilesPost (string folderId, System.IO.Stream file, string displayName, string accuracy = null)
+        public KeeperFile KeeperByProductIdFilesPost (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null)
         {
-             ApiResponse<KeeperFile> localVarResponse = KeeperFilesPostWithHttpInfo(folderId, file, displayName, accuracy);
+             ApiResponse<KeeperFile> localVarResponse = KeeperByProductIdFilesPostWithHttpInfo(file, displayName, productId, accuracy, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role. 
+        /// [] Create a file This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
         /// <param name="displayName"></param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of KeeperFile</returns>
-        public ApiResponse< KeeperFile > KeeperFilesPostWithHttpInfo (string folderId, System.IO.Stream file, string displayName, string accuracy = null)
+        public ApiResponse< KeeperFile > KeeperByProductIdFilesPostWithHttpInfo (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null)
         {
-            // verify the required parameter 'folderId' is set
-            if (folderId == null)
-                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperFilesPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperFilesPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdFilesPost");
             // verify the required parameter 'displayName' is set
             if (displayName == null)
-                throw new ApiException(400, "Missing required parameter 'displayName' when calling KeeperApi->KeeperFilesPost");
+                throw new ApiException(400, "Missing required parameter 'displayName' when calling KeeperApi->KeeperByProductIdFilesPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesPost");
 
-            var localVarPath = "./keeper/files";
+            var localVarPath = "./keeper/{productId}/files";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1706,7 +1882,8 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (folderId != null) localVarFormParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // form parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (accuracy != null) localVarFormParams.Add("accuracy", Configuration.ApiClient.ParameterToString(accuracy)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
             if (displayName != null) localVarFormParams.Add("displayName", Configuration.ApiClient.ParameterToString(displayName)); // form parameter
@@ -1721,7 +1898,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1731,43 +1908,45 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role. 
+        /// [] Create a file This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
         /// <param name="displayName"></param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of KeeperFile</returns>
-        public async System.Threading.Tasks.Task<KeeperFile> KeeperFilesPostAsync (string folderId, System.IO.Stream file, string displayName, string accuracy = null)
+        public async System.Threading.Tasks.Task<KeeperFile> KeeperByProductIdFilesPostAsync (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null)
         {
-             ApiResponse<KeeperFile> localVarResponse = await KeeperFilesPostAsyncWithHttpInfo(folderId, file, displayName, accuracy);
+             ApiResponse<KeeperFile> localVarResponse = await KeeperByProductIdFilesPostAsyncWithHttpInfo(file, displayName, productId, accuracy, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FILES] Add a file to Keeper. This will create a cryptographic representation of the file and store its fingerprint in the blockchain. Requires the Keeper Admin Role. 
+        /// [] Create a file This will create a cryptographic representation of the file and store its fingerprint in the blockchain.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="folderId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
         /// <param name="displayName"></param>
+        /// <param name="productId"></param>
         /// <param name="accuracy"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (KeeperFile)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<KeeperFile>> KeeperFilesPostAsyncWithHttpInfo (string folderId, System.IO.Stream file, string displayName, string accuracy = null)
+        public async System.Threading.Tasks.Task<ApiResponse<KeeperFile>> KeeperByProductIdFilesPostAsyncWithHttpInfo (System.IO.Stream file, string displayName, string productId, string accuracy = null, string request = null)
         {
-            // verify the required parameter 'folderId' is set
-            if (folderId == null)
-                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperFilesPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperFilesPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdFilesPost");
             // verify the required parameter 'displayName' is set
             if (displayName == null)
-                throw new ApiException(400, "Missing required parameter 'displayName' when calling KeeperApi->KeeperFilesPost");
+                throw new ApiException(400, "Missing required parameter 'displayName' when calling KeeperApi->KeeperByProductIdFilesPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFilesPost");
 
-            var localVarPath = "./keeper/files";
+            var localVarPath = "./keeper/{productId}/files";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1791,7 +1970,8 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (folderId != null) localVarFormParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // form parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (accuracy != null) localVarFormParams.Add("accuracy", Configuration.ApiClient.ParameterToString(accuracy)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
             if (displayName != null) localVarFormParams.Add("displayName", Configuration.ApiClient.ParameterToString(displayName)); // form parameter
@@ -1806,7 +1986,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFilesPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFilesPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1816,29 +1996,34 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role. 
+        /// [] Delete a folder This will also delete all the files it contains.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns></returns>
-        public void KeeperFoldersByFolderIdDelete (string folderId)
+        public void KeeperByProductIdFoldersByFolderIdDelete (string productId, string folderId)
         {
-             KeeperFoldersByFolderIdDeleteWithHttpInfo(folderId);
+             KeeperByProductIdFoldersByFolderIdDeleteWithHttpInfo(productId, folderId);
         }
 
         /// <summary>
-        /// [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role. 
+        /// [] Delete a folder This will also delete all the files it contains.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> KeeperFoldersByFolderIdDeleteWithHttpInfo (string folderId)
+        public ApiResponse<Object> KeeperByProductIdFoldersByFolderIdDeleteWithHttpInfo (string productId, string folderId)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFoldersByFolderIdDelete");
             // verify the required parameter 'folderId' is set
             if (folderId == null)
-                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperFoldersByFolderIdDelete");
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperByProductIdFoldersByFolderIdDelete");
 
-            var localVarPath = "./keeper/folders/{folderId}";
+            var localVarPath = "./keeper/{productId}/folders/{folderId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1861,6 +2046,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // path parameter
 
 
@@ -1873,7 +2059,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFoldersByFolderIdDelete", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFoldersByFolderIdDelete", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1883,30 +2069,35 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role. 
+        /// [] Delete a folder This will also delete all the files it contains.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task KeeperFoldersByFolderIdDeleteAsync (string folderId)
+        public async System.Threading.Tasks.Task KeeperByProductIdFoldersByFolderIdDeleteAsync (string productId, string folderId)
         {
-             await KeeperFoldersByFolderIdDeleteAsyncWithHttpInfo(folderId);
+             await KeeperByProductIdFoldersByFolderIdDeleteAsyncWithHttpInfo(productId, folderId);
 
         }
 
         /// <summary>
-        /// [FOLDERS] Delete a folder in Keeper. This will also delete all the files it contains. Requires the Keeper Admin Role. 
+        /// [] Delete a folder This will also delete all the files it contains.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> KeeperFoldersByFolderIdDeleteAsyncWithHttpInfo (string folderId)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> KeeperByProductIdFoldersByFolderIdDeleteAsyncWithHttpInfo (string productId, string folderId)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFoldersByFolderIdDelete");
             // verify the required parameter 'folderId' is set
             if (folderId == null)
-                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperFoldersByFolderIdDelete");
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperByProductIdFoldersByFolderIdDelete");
 
-            var localVarPath = "./keeper/folders/{folderId}";
+            var localVarPath = "./keeper/{productId}/folders/{folderId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1929,6 +2120,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // path parameter
 
 
@@ -1941,7 +2133,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFoldersByFolderIdDelete", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFoldersByFolderIdDelete", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1951,30 +2143,35 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role. 
+        /// [] Get a specific folder&#39;s details Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>KeeperFolder</returns>
-        public KeeperFolder KeeperFoldersByFolderIdGet (string folderId)
+        public KeeperFolder KeeperByProductIdFoldersByFolderIdGet (string productId, string folderId)
         {
-             ApiResponse<KeeperFolder> localVarResponse = KeeperFoldersByFolderIdGetWithHttpInfo(folderId);
+             ApiResponse<KeeperFolder> localVarResponse = KeeperByProductIdFoldersByFolderIdGetWithHttpInfo(productId, folderId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role. 
+        /// [] Get a specific folder&#39;s details Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>ApiResponse of KeeperFolder</returns>
-        public ApiResponse< KeeperFolder > KeeperFoldersByFolderIdGetWithHttpInfo (string folderId)
+        public ApiResponse< KeeperFolder > KeeperByProductIdFoldersByFolderIdGetWithHttpInfo (string productId, string folderId)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFoldersByFolderIdGet");
             // verify the required parameter 'folderId' is set
             if (folderId == null)
-                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperFoldersByFolderIdGet");
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperByProductIdFoldersByFolderIdGet");
 
-            var localVarPath = "./keeper/folders/{folderId}";
+            var localVarPath = "./keeper/{productId}/folders/{folderId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1997,6 +2194,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // path parameter
 
 
@@ -2009,7 +2207,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFoldersByFolderIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFoldersByFolderIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2019,31 +2217,36 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role. 
+        /// [] Get a specific folder&#39;s details Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>Task of KeeperFolder</returns>
-        public async System.Threading.Tasks.Task<KeeperFolder> KeeperFoldersByFolderIdGetAsync (string folderId)
+        public async System.Threading.Tasks.Task<KeeperFolder> KeeperByProductIdFoldersByFolderIdGetAsync (string productId, string folderId)
         {
-             ApiResponse<KeeperFolder> localVarResponse = await KeeperFoldersByFolderIdGetAsyncWithHttpInfo(folderId);
+             ApiResponse<KeeperFolder> localVarResponse = await KeeperByProductIdFoldersByFolderIdGetAsyncWithHttpInfo(productId, folderId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FOLDERS] Get a specific folder&#39;s details. Requires the Keeper Admin Role. 
+        /// [] Get a specific folder&#39;s details Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="folderId"></param>
         /// <returns>Task of ApiResponse (KeeperFolder)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<KeeperFolder>> KeeperFoldersByFolderIdGetAsyncWithHttpInfo (string folderId)
+        public async System.Threading.Tasks.Task<ApiResponse<KeeperFolder>> KeeperByProductIdFoldersByFolderIdGetAsyncWithHttpInfo (string productId, string folderId)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFoldersByFolderIdGet");
             // verify the required parameter 'folderId' is set
             if (folderId == null)
-                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperFoldersByFolderIdGet");
+                throw new ApiException(400, "Missing required parameter 'folderId' when calling KeeperApi->KeeperByProductIdFoldersByFolderIdGet");
 
-            var localVarPath = "./keeper/folders/{folderId}";
+            var localVarPath = "./keeper/{productId}/folders/{folderId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2066,6 +2269,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (folderId != null) localVarPathParams.Add("folderId", Configuration.ApiClient.ParameterToString(folderId)); // path parameter
 
 
@@ -2078,7 +2282,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFoldersByFolderIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFoldersByFolderIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2088,27 +2292,32 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role. 
+        /// [] Get all folders Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="name"> (optional)</param>
         /// <returns>List&lt;KeeperFolder&gt;</returns>
-        public List<KeeperFolder> KeeperFoldersGet (string name = null)
+        public List<KeeperFolder> KeeperByProductIdFoldersGet (string productId, string name = null)
         {
-             ApiResponse<List<KeeperFolder>> localVarResponse = KeeperFoldersGetWithHttpInfo(name);
+             ApiResponse<List<KeeperFolder>> localVarResponse = KeeperByProductIdFoldersGetWithHttpInfo(productId, name);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role. 
+        /// [] Get all folders Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="name"> (optional)</param>
         /// <returns>ApiResponse of List&lt;KeeperFolder&gt;</returns>
-        public ApiResponse< List<KeeperFolder> > KeeperFoldersGetWithHttpInfo (string name = null)
+        public ApiResponse< List<KeeperFolder> > KeeperByProductIdFoldersGetWithHttpInfo (string productId, string name = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFoldersGet");
 
-            var localVarPath = "./keeper/folders";
+            var localVarPath = "./keeper/{productId}/folders";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2131,6 +2340,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (name != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "name", name)); // query parameter
 
 
@@ -2143,7 +2353,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFoldersGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFoldersGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2153,28 +2363,33 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role. 
+        /// [] Get all folders Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="name"> (optional)</param>
         /// <returns>Task of List&lt;KeeperFolder&gt;</returns>
-        public async System.Threading.Tasks.Task<List<KeeperFolder>> KeeperFoldersGetAsync (string name = null)
+        public async System.Threading.Tasks.Task<List<KeeperFolder>> KeeperByProductIdFoldersGetAsync (string productId, string name = null)
         {
-             ApiResponse<List<KeeperFolder>> localVarResponse = await KeeperFoldersGetAsyncWithHttpInfo(name);
+             ApiResponse<List<KeeperFolder>> localVarResponse = await KeeperByProductIdFoldersGetAsyncWithHttpInfo(productId, name);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FOLDERS] Get all folders that have been created in Keeper. Requires the Keeper Admin Role. 
+        /// [] Get all folders Get all folders that have been created in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="name"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;KeeperFolder&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<KeeperFolder>>> KeeperFoldersGetAsyncWithHttpInfo (string name = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<KeeperFolder>>> KeeperByProductIdFoldersGetAsyncWithHttpInfo (string productId, string name = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFoldersGet");
 
-            var localVarPath = "./keeper/folders";
+            var localVarPath = "./keeper/{productId}/folders";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2197,6 +2412,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (name != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "name", name)); // query parameter
 
 
@@ -2209,7 +2425,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFoldersGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFoldersGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2219,27 +2435,32 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role. 
+        /// [] Create a folder This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>KeeperFolder</returns>
-        public KeeperFolder KeeperFoldersPost (KeeperFolderCreateRequest request = null)
+        public KeeperFolder KeeperByProductIdFoldersPost (string productId, KeeperFolderCreateRequest request = null)
         {
-             ApiResponse<KeeperFolder> localVarResponse = KeeperFoldersPostWithHttpInfo(request);
+             ApiResponse<KeeperFolder> localVarResponse = KeeperByProductIdFoldersPostWithHttpInfo(productId, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role. 
+        /// [] Create a folder This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of KeeperFolder</returns>
-        public ApiResponse< KeeperFolder > KeeperFoldersPostWithHttpInfo (KeeperFolderCreateRequest request = null)
+        public ApiResponse< KeeperFolder > KeeperByProductIdFoldersPostWithHttpInfo (string productId, KeeperFolderCreateRequest request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFoldersPost");
 
-            var localVarPath = "./keeper/folders";
+            var localVarPath = "./keeper/{productId}/folders";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2266,6 +2487,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -2285,7 +2507,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFoldersPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFoldersPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2295,28 +2517,33 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role. 
+        /// [] Create a folder This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of KeeperFolder</returns>
-        public async System.Threading.Tasks.Task<KeeperFolder> KeeperFoldersPostAsync (KeeperFolderCreateRequest request = null)
+        public async System.Threading.Tasks.Task<KeeperFolder> KeeperByProductIdFoldersPostAsync (string productId, KeeperFolderCreateRequest request = null)
         {
-             ApiResponse<KeeperFolder> localVarResponse = await KeeperFoldersPostAsyncWithHttpInfo(request);
+             ApiResponse<KeeperFolder> localVarResponse = await KeeperByProductIdFoldersPostAsyncWithHttpInfo(productId, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [FOLDERS] Create a folder in Keeper. This is necessary to add files in Keeper. Requires the Keeper Admin Role. 
+        /// [] Create a folder This is necessary to add files in Keeper.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (KeeperFolder)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<KeeperFolder>> KeeperFoldersPostAsyncWithHttpInfo (KeeperFolderCreateRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<KeeperFolder>> KeeperByProductIdFoldersPostAsyncWithHttpInfo (string productId, KeeperFolderCreateRequest request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdFoldersPost");
 
-            var localVarPath = "./keeper/folders";
+            var localVarPath = "./keeper/{productId}/folders";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2343,6 +2570,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -2362,7 +2590,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperFoldersPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdFoldersPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2372,30 +2600,35 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role. 
+        /// [] Get all the versions&#39; details for a specific file Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>List&lt;KeeperFileVersion&gt;</returns>
-        public List<KeeperFileVersion> KeeperVersionsByFileIdGet (string fileId)
+        public List<KeeperFileVersion> KeeperByProductIdVersionsByFileIdGet (string fileId, string productId)
         {
-             ApiResponse<List<KeeperFileVersion>> localVarResponse = KeeperVersionsByFileIdGetWithHttpInfo(fileId);
+             ApiResponse<List<KeeperFileVersion>> localVarResponse = KeeperByProductIdVersionsByFileIdGetWithHttpInfo(fileId, productId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role. 
+        /// [] Get all the versions&#39; details for a specific file Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of List&lt;KeeperFileVersion&gt;</returns>
-        public ApiResponse< List<KeeperFileVersion> > KeeperVersionsByFileIdGetWithHttpInfo (string fileId)
+        public ApiResponse< List<KeeperFileVersion> > KeeperByProductIdVersionsByFileIdGetWithHttpInfo (string fileId, string productId)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperVersionsByFileIdGet");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdVersionsByFileIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdVersionsByFileIdGet");
 
-            var localVarPath = "./keeper/versions/{fileId}";
+            var localVarPath = "./keeper/{productId}/versions/{fileId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2419,6 +2652,7 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (fileId != null) localVarPathParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -2430,7 +2664,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperVersionsByFileIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdVersionsByFileIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2440,31 +2674,36 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role. 
+        /// [] Get all the versions&#39; details for a specific file Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of List&lt;KeeperFileVersion&gt;</returns>
-        public async System.Threading.Tasks.Task<List<KeeperFileVersion>> KeeperVersionsByFileIdGetAsync (string fileId)
+        public async System.Threading.Tasks.Task<List<KeeperFileVersion>> KeeperByProductIdVersionsByFileIdGetAsync (string fileId, string productId)
         {
-             ApiResponse<List<KeeperFileVersion>> localVarResponse = await KeeperVersionsByFileIdGetAsyncWithHttpInfo(fileId);
+             ApiResponse<List<KeeperFileVersion>> localVarResponse = await KeeperByProductIdVersionsByFileIdGetAsyncWithHttpInfo(fileId, productId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [VERSIONS] Get all the versions&#39; details for a specific file. Requires the Keeper Admin Role. 
+        /// [] Get all the versions&#39; details for a specific file Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (List&lt;KeeperFileVersion&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<KeeperFileVersion>>> KeeperVersionsByFileIdGetAsyncWithHttpInfo (string fileId)
+        public async System.Threading.Tasks.Task<ApiResponse<List<KeeperFileVersion>>> KeeperByProductIdVersionsByFileIdGetAsyncWithHttpInfo (string fileId, string productId)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperVersionsByFileIdGet");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdVersionsByFileIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdVersionsByFileIdGet");
 
-            var localVarPath = "./keeper/versions/{fileId}";
+            var localVarPath = "./keeper/{productId}/versions/{fileId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2488,6 +2727,7 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (fileId != null) localVarPathParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -2499,7 +2739,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperVersionsByFileIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdVersionsByFileIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2509,37 +2749,49 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to a specific version We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
+        /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>BreadcrumbingCompareResponse</returns>
-        public BreadcrumbingCompareResponse KeeperVersionsDiffPost (string versionId, System.IO.Stream file, bool? generateDiffFile = null)
+        public BreadcrumbingCompareResponse KeeperByProductIdVersionsDiffPost (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null)
         {
-             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = KeeperVersionsDiffPostWithHttpInfo(versionId, file, generateDiffFile);
+             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = KeeperByProductIdVersionsDiffPostWithHttpInfo(versionId, fileId, file, productId, generateDiffFile, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to a specific version We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
+        /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of BreadcrumbingCompareResponse</returns>
-        public ApiResponse< BreadcrumbingCompareResponse > KeeperVersionsDiffPostWithHttpInfo (string versionId, System.IO.Stream file, bool? generateDiffFile = null)
+        public ApiResponse< BreadcrumbingCompareResponse > KeeperByProductIdVersionsDiffPostWithHttpInfo (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null)
         {
             // verify the required parameter 'versionId' is set
             if (versionId == null)
-                throw new ApiException(400, "Missing required parameter 'versionId' when calling KeeperApi->KeeperVersionsDiffPost");
+                throw new ApiException(400, "Missing required parameter 'versionId' when calling KeeperApi->KeeperByProductIdVersionsDiffPost");
+            // verify the required parameter 'fileId' is set
+            if (fileId == null)
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdVersionsDiffPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperVersionsDiffPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdVersionsDiffPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdVersionsDiffPost");
 
-            var localVarPath = "./keeper/versions/diff";
+            var localVarPath = "./keeper/{productId}/versions/diff";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2563,7 +2815,10 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (versionId != null) localVarFormParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId)); // form parameter
+            if (fileId != null) localVarFormParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
             if (generateDiffFile != null) localVarFormParams.Add("generateDiffFile", Configuration.ApiClient.ParameterToString(generateDiffFile)); // form parameter
 
@@ -2577,7 +2832,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperVersionsDiffPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdVersionsDiffPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2587,38 +2842,50 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to a specific version We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
+        /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of BreadcrumbingCompareResponse</returns>
-        public async System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperVersionsDiffPostAsync (string versionId, System.IO.Stream file, bool? generateDiffFile = null)
+        public async System.Threading.Tasks.Task<BreadcrumbingCompareResponse> KeeperByProductIdVersionsDiffPostAsync (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null)
         {
-             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = await KeeperVersionsDiffPostAsyncWithHttpInfo(versionId, file, generateDiffFile);
+             ApiResponse<BreadcrumbingCompareResponse> localVarResponse = await KeeperByProductIdVersionsDiffPostAsyncWithHttpInfo(versionId, fileId, file, productId, generateDiffFile, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [VERSIONS] Compare a local file to a specific version of a file that&#39;s been stored in the blockchain. We will compare their fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is either Text, JSON or an image, then a file highlighting the differences will be generated.  Requires the Keeper Admin Role. 
+        /// [] Compare a local file to a specific version We will compare their  fingerprint against each other to find the differences.  The GenerateDiffFile property is false by default, and if it is set to true and the file to compare&#39;s type is  either Text, JSON or an image, then a file highlighting the differences will be generated.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="versionId"></param>
+        /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
         /// <param name="generateDiffFile"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (BreadcrumbingCompareResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperVersionsDiffPostAsyncWithHttpInfo (string versionId, System.IO.Stream file, bool? generateDiffFile = null)
+        public async System.Threading.Tasks.Task<ApiResponse<BreadcrumbingCompareResponse>> KeeperByProductIdVersionsDiffPostAsyncWithHttpInfo (string versionId, string fileId, System.IO.Stream file, string productId, bool? generateDiffFile = null, string request = null)
         {
             // verify the required parameter 'versionId' is set
             if (versionId == null)
-                throw new ApiException(400, "Missing required parameter 'versionId' when calling KeeperApi->KeeperVersionsDiffPost");
+                throw new ApiException(400, "Missing required parameter 'versionId' when calling KeeperApi->KeeperByProductIdVersionsDiffPost");
+            // verify the required parameter 'fileId' is set
+            if (fileId == null)
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdVersionsDiffPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperVersionsDiffPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdVersionsDiffPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdVersionsDiffPost");
 
-            var localVarPath = "./keeper/versions/diff";
+            var localVarPath = "./keeper/{productId}/versions/diff";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2642,7 +2909,10 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (versionId != null) localVarFormParams.Add("versionId", Configuration.ApiClient.ParameterToString(versionId)); // form parameter
+            if (fileId != null) localVarFormParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
             if (generateDiffFile != null) localVarFormParams.Add("generateDiffFile", Configuration.ApiClient.ParameterToString(generateDiffFile)); // form parameter
 
@@ -2656,7 +2926,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperVersionsDiffPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdVersionsDiffPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2666,35 +2936,42 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role. 
+        /// [] Create a version for an existing file This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
         /// <returns>KeeperFileVersion</returns>
-        public KeeperFileVersion KeeperVersionsPost (string fileId, System.IO.Stream file)
+        public KeeperFileVersion KeeperByProductIdVersionsPost (string fileId, System.IO.Stream file, string productId, string request = null)
         {
-             ApiResponse<KeeperFileVersion> localVarResponse = KeeperVersionsPostWithHttpInfo(fileId, file);
+             ApiResponse<KeeperFileVersion> localVarResponse = KeeperByProductIdVersionsPostWithHttpInfo(fileId, file, productId, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role. 
+        /// [] Create a version for an existing file This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of KeeperFileVersion</returns>
-        public ApiResponse< KeeperFileVersion > KeeperVersionsPostWithHttpInfo (string fileId, System.IO.Stream file)
+        public ApiResponse< KeeperFileVersion > KeeperByProductIdVersionsPostWithHttpInfo (string fileId, System.IO.Stream file, string productId, string request = null)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperVersionsPost");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdVersionsPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperVersionsPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdVersionsPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdVersionsPost");
 
-            var localVarPath = "./keeper/versions";
+            var localVarPath = "./keeper/{productId}/versions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2718,6 +2995,8 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (fileId != null) localVarFormParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
 
@@ -2731,7 +3010,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperVersionsPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdVersionsPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2741,36 +3020,43 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role. 
+        /// [] Create a version for an existing file This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of KeeperFileVersion</returns>
-        public async System.Threading.Tasks.Task<KeeperFileVersion> KeeperVersionsPostAsync (string fileId, System.IO.Stream file)
+        public async System.Threading.Tasks.Task<KeeperFileVersion> KeeperByProductIdVersionsPostAsync (string fileId, System.IO.Stream file, string productId, string request = null)
         {
-             ApiResponse<KeeperFileVersion> localVarResponse = await KeeperVersionsPostAsyncWithHttpInfo(fileId, file);
+             ApiResponse<KeeperFileVersion> localVarResponse = await KeeperByProductIdVersionsPostAsyncWithHttpInfo(fileId, file, productId, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [VERSIONS] Create a version for an existing file. This new version will also have its fingerprint stored in the blockchain. Requires the Keeper Admin Role. 
+        /// [] Create a version for an existing file This new version will also have its fingerprint stored in the blockchain.                Requires the Keeper Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="fileId"></param>
         /// <param name="file">The file to upload. How http file upload works: https://goo.gl/UYQ2nX</param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (KeeperFileVersion)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<KeeperFileVersion>> KeeperVersionsPostAsyncWithHttpInfo (string fileId, System.IO.Stream file)
+        public async System.Threading.Tasks.Task<ApiResponse<KeeperFileVersion>> KeeperByProductIdVersionsPostAsyncWithHttpInfo (string fileId, System.IO.Stream file, string productId, string request = null)
         {
             // verify the required parameter 'fileId' is set
             if (fileId == null)
-                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperVersionsPost");
+                throw new ApiException(400, "Missing required parameter 'fileId' when calling KeeperApi->KeeperByProductIdVersionsPost");
             // verify the required parameter 'file' is set
             if (file == null)
-                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperVersionsPost");
+                throw new ApiException(400, "Missing required parameter 'file' when calling KeeperApi->KeeperByProductIdVersionsPost");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling KeeperApi->KeeperByProductIdVersionsPost");
 
-            var localVarPath = "./keeper/versions";
+            var localVarPath = "./keeper/{productId}/versions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2794,6 +3080,8 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
             if (fileId != null) localVarFormParams.Add("fileId", Configuration.ApiClient.ParameterToString(fileId)); // form parameter
             if (file != null) localVarFileParams.Add("file", Configuration.ApiClient.ParameterToFile("file", file));
 
@@ -2807,7 +3095,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("KeeperVersionsPost", localVarResponse);
+                Exception exception = ExceptionFactory("KeeperByProductIdVersionsPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 

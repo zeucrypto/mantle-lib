@@ -25,641 +25,921 @@ namespace mantle.lib.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for an asset
         /// </summary>
         /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns></returns>
-        void TrackerAssetsByAssetIdDelete (string assetId);
-
-        /// <summary>
-        /// [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> TrackerAssetsByAssetIdDeleteWithHttpInfo (string assetId);
-        /// <summary>
-        /// [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>TrackerAsset</returns>
-        TrackerAsset TrackerAssetsByAssetIdGet (string assetId);
-
-        /// <summary>
-        /// [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>ApiResponse of TrackerAsset</returns>
-        ApiResponse<TrackerAsset> TrackerAssetsByAssetIdGetWithHttpInfo (string assetId);
-        /// <summary>
-        /// [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <param name="request"> (optional)</param>
-        /// <returns></returns>
-        void TrackerAssetsByAssetIdPut (string assetId, TrackerAssetCreateRequest request = null);
-
-        /// <summary>
-        /// [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <param name="request"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> TrackerAssetsByAssetIdPutWithHttpInfo (string assetId, TrackerAssetCreateRequest request = null);
-        /// <summary>
-        /// [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;TrackerAsset&gt;</returns>
-        List<TrackerAsset> TrackerAssetsGet ();
-
-        /// <summary>
-        /// [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;TrackerAsset&gt;</returns>
-        ApiResponse<List<TrackerAsset>> TrackerAssetsGetWithHttpInfo ();
-        /// <summary>
-        /// [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns></returns>
-        void TrackerAssetsIssuePost (TrackerAssetIssueRequest request = null);
-
-        /// <summary>
-        /// [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> TrackerAssetsIssuePostWithHttpInfo (TrackerAssetIssueRequest request = null);
-        /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
         /// <param name="batchId"></param>
+        /// <param name="productId"></param>
         /// <returns>IssuedBatchTransactionsResponse</returns>
-        IssuedBatchTransactionsResponse TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet (string assetId, string batchId);
+        IssuedBatchTransactionsResponse TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet (string assetId, string batchId, string productId);
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for an asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
         /// <param name="batchId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of IssuedBatchTransactionsResponse</returns>
-        ApiResponse<IssuedBatchTransactionsResponse> TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetWithHttpInfo (string assetId, string batchId);
+        ApiResponse<IssuedBatchTransactionsResponse> TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetWithHttpInfo (string assetId, string batchId, string productId);
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for an asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
+        /// <param name="productId"></param>
         /// <returns>IssuedBatchesResponse</returns>
-        IssuedBatchesResponse TrackerAssetsIssuedbatchesByAssetIdGet (string assetId);
+        IssuedBatchesResponse TrackerByProductIdAssetsBatchesIssuedByAssetIdGet (string assetId, string productId);
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for an asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of IssuedBatchesResponse</returns>
-        ApiResponse<IssuedBatchesResponse> TrackerAssetsIssuedbatchesByAssetIdGetWithHttpInfo (string assetId);
+        ApiResponse<IssuedBatchesResponse> TrackerByProductIdAssetsBatchesIssuedByAssetIdGetWithHttpInfo (string assetId, string productId);
         /// <summary>
-        /// [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for a multi asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>IssuedBatchesResponse</returns>
+        IssuedBatchesResponse TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet (string assetId, string productId);
+
+        /// <summary>
+        /// [] Get all issued batches for a multi asset
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of IssuedBatchesResponse</returns>
+        ApiResponse<IssuedBatchesResponse> TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Delete an asset
+        /// </summary>
+        /// <remarks>
+        /// It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns></returns>
+        void TrackerByProductIdAssetsByAssetIdDelete (string assetId, string productId);
+
+        /// <summary>
+        /// [] Delete an asset
+        /// </summary>
+        /// <remarks>
+        /// It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> TrackerByProductIdAssetsByAssetIdDeleteWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Get a specific asset&#39;s details
+        /// </summary>
+        /// <remarks>
+        /// Requires the Track Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>TrackerAsset</returns>
+        TrackerAsset TrackerByProductIdAssetsByAssetIdGet (string assetId, string productId);
+
+        /// <summary>
+        /// [] Get a specific asset&#39;s details
+        /// </summary>
+        /// <remarks>
+        /// Requires the Track Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of TrackerAsset</returns>
+        ApiResponse<TrackerAsset> TrackerByProductIdAssetsByAssetIdGetWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Edit an asset
+        /// </summary>
+        /// <remarks>
+        /// Only the name can be changed.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns></returns>
+        void TrackerByProductIdAssetsByAssetIdPut (string assetId, string productId, TrackerAssetCreateRequest request = null);
+
+        /// <summary>
+        /// [] Edit an asset
+        /// </summary>
+        /// <remarks>
+        /// Only the name can be changed.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> TrackerByProductIdAssetsByAssetIdPutWithHttpInfo (string assetId, string productId, TrackerAssetCreateRequest request = null);
+        /// <summary>
+        /// [] Get all assets
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>List&lt;TrackerAsset&gt;</returns>
+        List<TrackerAsset> TrackerByProductIdAssetsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null);
+
+        /// <summary>
+        /// [] Get all assets
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;TrackerAsset&gt;</returns>
+        ApiResponse<List<TrackerAsset>> TrackerByProductIdAssetsGetWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null);
+        /// <summary>
+        /// [] Issue a certain amount of asset to a recipient
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns></returns>
+        void TrackerByProductIdAssetsIssuePost (string productId, TrackerAssetIssueRequest request = null);
+
+        /// <summary>
+        /// [] Issue a certain amount of asset to a recipient
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> TrackerByProductIdAssetsIssuePostWithHttpInfo (string productId, TrackerAssetIssueRequest request = null);
+        /// <summary>
+        /// [] Create an asset
+        /// </summary>
+        /// <remarks>
+        /// This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>TrackerAsset</returns>
-        TrackerAsset TrackerAssetsPost (TrackerAssetCreateRequest request = null);
+        TrackerAsset TrackerByProductIdAssetsPost (string productId, TrackerAssetCreateRequest request = null);
 
         /// <summary>
-        /// [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role.
+        /// [] Create an asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of TrackerAsset</returns>
-        ApiResponse<TrackerAsset> TrackerAssetsPostWithHttpInfo (TrackerAssetCreateRequest request = null);
+        ApiResponse<TrackerAsset> TrackerByProductIdAssetsPostWithHttpInfo (string productId, TrackerAssetCreateRequest request = null);
         /// <summary>
-        /// [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role.
+        /// [] Get a specific multi asset&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Track Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>TrackerMultiAsset</returns>
+        TrackerMultiAsset TrackerByProductIdMultiAssetsByAssetIdGet (string assetId, string productId);
+
+        /// <summary>
+        /// [] Get a specific multi asset&#39;s details
+        /// </summary>
+        /// <remarks>
+        /// Requires the Track Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of TrackerMultiAsset</returns>
+        ApiResponse<TrackerMultiAsset> TrackerByProductIdMultiAssetsByAssetIdGetWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Get all multi assets
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="assetIds"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>List&lt;TrackerMultiAsset&gt;</returns>
+        List<TrackerMultiAsset> TrackerByProductIdMultiAssetsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null);
+
+        /// <summary>
+        /// [] Get all multi assets
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="assetIds"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;TrackerMultiAsset&gt;</returns>
+        ApiResponse<List<TrackerMultiAsset>> TrackerByProductIdMultiAssetsGetWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null);
+        /// <summary>
+        /// [] Creates a multi asset
+        /// </summary>
+        /// <remarks>
+        /// This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>TrackerMultiAsset</returns>
+        TrackerMultiAsset TrackerByProductIdMultiAssetsPost (string productId, TrackerMultiAssetCreateRequest request = null);
+
+        /// <summary>
+        /// [] Creates a multi asset
+        /// </summary>
+        /// <remarks>
+        /// This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of TrackerMultiAsset</returns>
+        ApiResponse<TrackerMultiAsset> TrackerByProductIdMultiAssetsPostWithHttpInfo (string productId, TrackerMultiAssetCreateRequest request = null);
+        /// <summary>
+        /// [] Get 3 statistics regarding the usage of Tracker in the last 24 hours
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>TrackerStatsResponse</returns>
-        TrackerStatsResponse TrackerStatsGet ();
+        TrackerStatsResponse TrackerByProductIdStatsGet (string productId);
 
         /// <summary>
-        /// [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role.
+        /// [] Get 3 statistics regarding the usage of Tracker in the last 24 hours
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of TrackerStatsResponse</returns>
-        ApiResponse<TrackerStatsResponse> TrackerStatsGetWithHttpInfo ();
+        ApiResponse<TrackerStatsResponse> TrackerByProductIdStatsGetWithHttpInfo (string productId);
         /// <summary>
-        /// [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role.
+        /// [] Get all transactions
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="beforeDateTime"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>List&lt;AssetTransaction&gt;</returns>
-        List<AssetTransaction> TrackerTransactionsGet (DateTime? beforeDateTime = null, int? limit = null, int? offset = null);
+        List<AssetTransaction> TrackerByProductIdTransactionsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null);
 
         /// <summary>
-        /// [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role.
+        /// [] Get all transactions
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="beforeDateTime"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AssetTransaction&gt;</returns>
-        ApiResponse<List<AssetTransaction>> TrackerTransactionsGetWithHttpInfo (DateTime? beforeDateTime = null, int? limit = null, int? offset = null);
+        ApiResponse<List<AssetTransaction>> TrackerByProductIdTransactionsGetWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null);
         /// <summary>
-        /// [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role.
+        /// [] Revert a transaction
         /// </summary>
         /// <remarks>
-        /// 
+        /// This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns></returns>
-        void TrackerTransactionsReversePost (TrackerTransactionRevertRequest request = null);
+        void TrackerByProductIdTransactionsReversePost (string productId, TrackerTransactionRevertRequest request = null);
 
         /// <summary>
-        /// [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role.
+        /// [] Revert a transaction
         /// </summary>
         /// <remarks>
-        /// 
+        /// This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> TrackerTransactionsReversePostWithHttpInfo (TrackerTransactionRevertRequest request = null);
+        ApiResponse<Object> TrackerByProductIdTransactionsReversePostWithHttpInfo (string productId, TrackerTransactionRevertRequest request = null);
         /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role.
+        /// [] Get all authenticated user&#39;s asset balances
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role or Tracker User Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns></returns>
-        void TrackerWalletBatchesTransferPost (TrackerBatchTransferRequest request = null);
-
-        /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> TrackerWalletBatchesTransferPostWithHttpInfo (TrackerBatchTransferRequest request = null);
-        /// <summary>
-        /// [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>List&lt;DetailedAssetBalance&gt;</returns>
-        List<DetailedAssetBalance> TrackerWalletDetailedbalancesGet ();
+        List<DetailedAssetBalance> TrackerByProductIdWalletBalancesDetailedGet (string productId);
 
         /// <summary>
-        /// [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role.
+        /// [] Get all authenticated user&#39;s asset balances
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role or Tracker User Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of List&lt;DetailedAssetBalance&gt;</returns>
-        ApiResponse<List<DetailedAssetBalance>> TrackerWalletDetailedbalancesGetWithHttpInfo ();
+        ApiResponse<List<DetailedAssetBalance>> TrackerByProductIdWalletBalancesDetailedGetWithHttpInfo (string productId);
         /// <summary>
-        /// [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role.
+        /// [] Create a transfer between yourself and another user from one of your specific batches
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role or Tracker User Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>List&lt;AssetTransaction&gt;</returns>
-        List<AssetTransaction> TrackerWalletTransactionsByAssetIdGet (string assetId);
-
-        /// <summary>
-        /// [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>ApiResponse of List&lt;AssetTransaction&gt;</returns>
-        ApiResponse<List<AssetTransaction>> TrackerWalletTransactionsByAssetIdGetWithHttpInfo (string assetId);
-        /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns></returns>
-        void TrackerWalletTransferPost (TrackerTransferRequest request = null);
+        void TrackerByProductIdWalletBatchesTransferPost (string productId, TrackerBatchTransferRequest request = null);
 
         /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role.
+        /// [] Create a transfer between yourself and another user from one of your specific batches
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role or Tracker User Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> TrackerWalletTransferPostWithHttpInfo (TrackerTransferRequest request = null);
+        ApiResponse<Object> TrackerByProductIdWalletBatchesTransferPostWithHttpInfo (string productId, TrackerBatchTransferRequest request = null);
+        /// <summary>
+        /// [] Get all transactions for a specific asset
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role or Tracker User Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>List&lt;AssetTransaction&gt;</returns>
+        List<AssetTransaction> TrackerByProductIdWalletTransactionsByAssetIdGet (string assetId, string productId);
+
+        /// <summary>
+        /// [] Get all transactions for a specific asset
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role or Tracker User Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of List&lt;AssetTransaction&gt;</returns>
+        ApiResponse<List<AssetTransaction>> TrackerByProductIdWalletTransactionsByAssetIdGetWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Create a transfer between yourself and another user
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role or Tracker User Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns></returns>
+        void TrackerByProductIdWalletTransferPost (string productId, TrackerTransferRequest request = null);
+
+        /// <summary>
+        /// [] Create a transfer between yourself and another user
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role or Tracker User Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> TrackerByProductIdWalletTransferPostWithHttpInfo (string productId, TrackerTransferRequest request = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for an asset
         /// </summary>
         /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TrackerAssetsByAssetIdDeleteAsync (string assetId);
-
-        /// <summary>
-        /// [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerAssetsByAssetIdDeleteAsyncWithHttpInfo (string assetId);
-        /// <summary>
-        /// [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of TrackerAsset</returns>
-        System.Threading.Tasks.Task<TrackerAsset> TrackerAssetsByAssetIdGetAsync (string assetId);
-
-        /// <summary>
-        /// [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of ApiResponse (TrackerAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrackerAsset>> TrackerAssetsByAssetIdGetAsyncWithHttpInfo (string assetId);
-        /// <summary>
-        /// [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TrackerAssetsByAssetIdPutAsync (string assetId, TrackerAssetCreateRequest request = null);
-
-        /// <summary>
-        /// [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerAssetsByAssetIdPutAsyncWithHttpInfo (string assetId, TrackerAssetCreateRequest request = null);
-        /// <summary>
-        /// [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;TrackerAsset&gt;</returns>
-        System.Threading.Tasks.Task<List<TrackerAsset>> TrackerAssetsGetAsync ();
-
-        /// <summary>
-        /// [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;TrackerAsset&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<TrackerAsset>>> TrackerAssetsGetAsyncWithHttpInfo ();
-        /// <summary>
-        /// [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TrackerAssetsIssuePostAsync (TrackerAssetIssueRequest request = null);
-
-        /// <summary>
-        /// [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerAssetsIssuePostAsyncWithHttpInfo (TrackerAssetIssueRequest request = null);
-        /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
-        /// </summary>
-        /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
         /// <param name="batchId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of IssuedBatchTransactionsResponse</returns>
-        System.Threading.Tasks.Task<IssuedBatchTransactionsResponse> TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetAsync (string assetId, string batchId);
+        System.Threading.Tasks.Task<IssuedBatchTransactionsResponse> TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetAsync (string assetId, string batchId, string productId);
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for an asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
         /// <param name="batchId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (IssuedBatchTransactionsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IssuedBatchTransactionsResponse>> TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetAsyncWithHttpInfo (string assetId, string batchId);
+        System.Threading.Tasks.Task<ApiResponse<IssuedBatchTransactionsResponse>> TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetAsyncWithHttpInfo (string assetId, string batchId, string productId);
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for an asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of IssuedBatchesResponse</returns>
-        System.Threading.Tasks.Task<IssuedBatchesResponse> TrackerAssetsIssuedbatchesByAssetIdGetAsync (string assetId);
+        System.Threading.Tasks.Task<IssuedBatchesResponse> TrackerByProductIdAssetsBatchesIssuedByAssetIdGetAsync (string assetId, string productId);
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for an asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (IssuedBatchesResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<IssuedBatchesResponse>> TrackerAssetsIssuedbatchesByAssetIdGetAsyncWithHttpInfo (string assetId);
+        System.Threading.Tasks.Task<ApiResponse<IssuedBatchesResponse>> TrackerByProductIdAssetsBatchesIssuedByAssetIdGetAsyncWithHttpInfo (string assetId, string productId);
         /// <summary>
-        /// [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role.
+        /// [] Get all issued batches for a multi asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of IssuedBatchesResponse</returns>
+        System.Threading.Tasks.Task<IssuedBatchesResponse> TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetAsync (string assetId, string productId);
+
+        /// <summary>
+        /// [] Get all issued batches for a multi asset
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse (IssuedBatchesResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<IssuedBatchesResponse>> TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetAsyncWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Delete an asset
+        /// </summary>
+        /// <remarks>
+        /// It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task TrackerByProductIdAssetsByAssetIdDeleteAsync (string assetId, string productId);
+
+        /// <summary>
+        /// [] Delete an asset
+        /// </summary>
+        /// <remarks>
+        /// It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdAssetsByAssetIdDeleteAsyncWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Get a specific asset&#39;s details
+        /// </summary>
+        /// <remarks>
+        /// Requires the Track Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of TrackerAsset</returns>
+        System.Threading.Tasks.Task<TrackerAsset> TrackerByProductIdAssetsByAssetIdGetAsync (string assetId, string productId);
+
+        /// <summary>
+        /// [] Get a specific asset&#39;s details
+        /// </summary>
+        /// <remarks>
+        /// Requires the Track Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse (TrackerAsset)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TrackerAsset>> TrackerByProductIdAssetsByAssetIdGetAsyncWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Edit an asset
+        /// </summary>
+        /// <remarks>
+        /// Only the name can be changed.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task TrackerByProductIdAssetsByAssetIdPutAsync (string assetId, string productId, TrackerAssetCreateRequest request = null);
+
+        /// <summary>
+        /// [] Edit an asset
+        /// </summary>
+        /// <remarks>
+        /// Only the name can be changed.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdAssetsByAssetIdPutAsyncWithHttpInfo (string assetId, string productId, TrackerAssetCreateRequest request = null);
+        /// <summary>
+        /// [] Get all assets
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of List&lt;TrackerAsset&gt;</returns>
+        System.Threading.Tasks.Task<List<TrackerAsset>> TrackerByProductIdAssetsGetAsync (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null);
+
+        /// <summary>
+        /// [] Get all assets
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;TrackerAsset&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TrackerAsset>>> TrackerByProductIdAssetsGetAsyncWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null);
+        /// <summary>
+        /// [] Issue a certain amount of asset to a recipient
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task TrackerByProductIdAssetsIssuePostAsync (string productId, TrackerAssetIssueRequest request = null);
+
+        /// <summary>
+        /// [] Issue a certain amount of asset to a recipient
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdAssetsIssuePostAsyncWithHttpInfo (string productId, TrackerAssetIssueRequest request = null);
+        /// <summary>
+        /// [] Create an asset
+        /// </summary>
+        /// <remarks>
+        /// This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of TrackerAsset</returns>
-        System.Threading.Tasks.Task<TrackerAsset> TrackerAssetsPostAsync (TrackerAssetCreateRequest request = null);
+        System.Threading.Tasks.Task<TrackerAsset> TrackerByProductIdAssetsPostAsync (string productId, TrackerAssetCreateRequest request = null);
 
         /// <summary>
-        /// [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role.
+        /// [] Create an asset
         /// </summary>
         /// <remarks>
-        /// 
+        /// This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (TrackerAsset)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrackerAsset>> TrackerAssetsPostAsyncWithHttpInfo (TrackerAssetCreateRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<TrackerAsset>> TrackerByProductIdAssetsPostAsyncWithHttpInfo (string productId, TrackerAssetCreateRequest request = null);
         /// <summary>
-        /// [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role.
+        /// [] Get a specific multi asset&#39;s details
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Track Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of TrackerMultiAsset</returns>
+        System.Threading.Tasks.Task<TrackerMultiAsset> TrackerByProductIdMultiAssetsByAssetIdGetAsync (string assetId, string productId);
+
+        /// <summary>
+        /// [] Get a specific multi asset&#39;s details
+        /// </summary>
+        /// <remarks>
+        /// Requires the Track Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse (TrackerMultiAsset)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TrackerMultiAsset>> TrackerByProductIdMultiAssetsByAssetIdGetAsyncWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Get all multi assets
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="assetIds"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of List&lt;TrackerMultiAsset&gt;</returns>
+        System.Threading.Tasks.Task<List<TrackerMultiAsset>> TrackerByProductIdMultiAssetsGetAsync (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null);
+
+        /// <summary>
+        /// [] Get all multi assets
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="assetIds"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;TrackerMultiAsset&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<TrackerMultiAsset>>> TrackerByProductIdMultiAssetsGetAsyncWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null);
+        /// <summary>
+        /// [] Creates a multi asset
+        /// </summary>
+        /// <remarks>
+        /// This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of TrackerMultiAsset</returns>
+        System.Threading.Tasks.Task<TrackerMultiAsset> TrackerByProductIdMultiAssetsPostAsync (string productId, TrackerMultiAssetCreateRequest request = null);
+
+        /// <summary>
+        /// [] Creates a multi asset
+        /// </summary>
+        /// <remarks>
+        /// This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse (TrackerMultiAsset)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TrackerMultiAsset>> TrackerByProductIdMultiAssetsPostAsyncWithHttpInfo (string productId, TrackerMultiAssetCreateRequest request = null);
+        /// <summary>
+        /// [] Get 3 statistics regarding the usage of Tracker in the last 24 hours
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>Task of TrackerStatsResponse</returns>
-        System.Threading.Tasks.Task<TrackerStatsResponse> TrackerStatsGetAsync ();
+        System.Threading.Tasks.Task<TrackerStatsResponse> TrackerByProductIdStatsGetAsync (string productId);
 
         /// <summary>
-        /// [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role.
+        /// [] Get 3 statistics regarding the usage of Tracker in the last 24 hours
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (TrackerStatsResponse)</returns>
-        System.Threading.Tasks.Task<ApiResponse<TrackerStatsResponse>> TrackerStatsGetAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<TrackerStatsResponse>> TrackerByProductIdStatsGetAsyncWithHttpInfo (string productId);
         /// <summary>
-        /// [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role.
+        /// [] Get all transactions
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="beforeDateTime"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of List&lt;AssetTransaction&gt;</returns>
-        System.Threading.Tasks.Task<List<AssetTransaction>> TrackerTransactionsGetAsync (DateTime? beforeDateTime = null, int? limit = null, int? offset = null);
+        System.Threading.Tasks.Task<List<AssetTransaction>> TrackerByProductIdTransactionsGetAsync (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null);
 
         /// <summary>
-        /// [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role.
+        /// [] Get all transactions
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="beforeDateTime"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;AssetTransaction&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AssetTransaction>>> TrackerTransactionsGetAsyncWithHttpInfo (DateTime? beforeDateTime = null, int? limit = null, int? offset = null);
+        System.Threading.Tasks.Task<ApiResponse<List<AssetTransaction>>> TrackerByProductIdTransactionsGetAsyncWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null);
         /// <summary>
-        /// [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role.
+        /// [] Revert a transaction
         /// </summary>
         /// <remarks>
-        /// 
+        /// This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TrackerTransactionsReversePostAsync (TrackerTransactionRevertRequest request = null);
+        System.Threading.Tasks.Task TrackerByProductIdTransactionsReversePostAsync (string productId, TrackerTransactionRevertRequest request = null);
 
         /// <summary>
-        /// [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role.
+        /// [] Revert a transaction
         /// </summary>
         /// <remarks>
-        /// 
+        /// This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerTransactionsReversePostAsyncWithHttpInfo (TrackerTransactionRevertRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdTransactionsReversePostAsyncWithHttpInfo (string productId, TrackerTransactionRevertRequest request = null);
         /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role.
+        /// [] Get all authenticated user&#39;s asset balances
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role or Tracker User Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TrackerWalletBatchesTransferPostAsync (TrackerBatchTransferRequest request = null);
-
-        /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerWalletBatchesTransferPostAsyncWithHttpInfo (TrackerBatchTransferRequest request = null);
-        /// <summary>
-        /// [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>Task of List&lt;DetailedAssetBalance&gt;</returns>
-        System.Threading.Tasks.Task<List<DetailedAssetBalance>> TrackerWalletDetailedbalancesGetAsync ();
+        System.Threading.Tasks.Task<List<DetailedAssetBalance>> TrackerByProductIdWalletBalancesDetailedGetAsync (string productId);
 
         /// <summary>
-        /// [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role.
+        /// [] Get all authenticated user&#39;s asset balances
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role or Tracker User Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (List&lt;DetailedAssetBalance&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<DetailedAssetBalance>>> TrackerWalletDetailedbalancesGetAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<DetailedAssetBalance>>> TrackerByProductIdWalletBalancesDetailedGetAsyncWithHttpInfo (string productId);
         /// <summary>
-        /// [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role.
+        /// [] Create a transfer between yourself and another user from one of your specific batches
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role or Tracker User Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of List&lt;AssetTransaction&gt;</returns>
-        System.Threading.Tasks.Task<List<AssetTransaction>> TrackerWalletTransactionsByAssetIdGetAsync (string assetId);
-
-        /// <summary>
-        /// [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of ApiResponse (List&lt;AssetTransaction&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<AssetTransaction>>> TrackerWalletTransactionsByAssetIdGetAsyncWithHttpInfo (string assetId);
-        /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task TrackerWalletTransferPostAsync (TrackerTransferRequest request = null);
+        System.Threading.Tasks.Task TrackerByProductIdWalletBatchesTransferPostAsync (string productId, TrackerBatchTransferRequest request = null);
 
         /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role.
+        /// [] Create a transfer between yourself and another user from one of your specific batches
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the Tracker Admin Role or Tracker User Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerWalletTransferPostAsyncWithHttpInfo (TrackerTransferRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdWalletBatchesTransferPostAsyncWithHttpInfo (string productId, TrackerBatchTransferRequest request = null);
+        /// <summary>
+        /// [] Get all transactions for a specific asset
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role or Tracker User Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of List&lt;AssetTransaction&gt;</returns>
+        System.Threading.Tasks.Task<List<AssetTransaction>> TrackerByProductIdWalletTransactionsByAssetIdGetAsync (string assetId, string productId);
+
+        /// <summary>
+        /// [] Get all transactions for a specific asset
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role or Tracker User Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse (List&lt;AssetTransaction&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<AssetTransaction>>> TrackerByProductIdWalletTransactionsByAssetIdGetAsyncWithHttpInfo (string assetId, string productId);
+        /// <summary>
+        /// [] Create a transfer between yourself and another user
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role or Tracker User Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task TrackerByProductIdWalletTransferPostAsync (string productId, TrackerTransferRequest request = null);
+
+        /// <summary>
+        /// [] Create a transfer between yourself and another user
+        /// </summary>
+        /// <remarks>
+        /// Requires the Tracker Admin Role or Tracker User Role.
+        /// </remarks>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdWalletTransferPostAsyncWithHttpInfo (string productId, TrackerTransferRequest request = null);
         #endregion Asynchronous Operations
     }
 
@@ -761,746 +1041,40 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns></returns>
-        public void TrackerAssetsByAssetIdDelete (string assetId)
-        {
-             TrackerAssetsByAssetIdDeleteWithHttpInfo(assetId);
-        }
-
-        /// <summary>
-        /// [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> TrackerAssetsByAssetIdDeleteWithHttpInfo (string assetId)
-        {
-            // verify the required parameter 'assetId' is set
-            if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsByAssetIdDelete");
-
-            var localVarPath = "./tracker/assets/{assetId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsByAssetIdDelete", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TrackerAssetsByAssetIdDeleteAsync (string assetId)
-        {
-             await TrackerAssetsByAssetIdDeleteAsyncWithHttpInfo(assetId);
-
-        }
-
-        /// <summary>
-        /// [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerAssetsByAssetIdDeleteAsyncWithHttpInfo (string assetId)
-        {
-            // verify the required parameter 'assetId' is set
-            if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsByAssetIdDelete");
-
-            var localVarPath = "./tracker/assets/{assetId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsByAssetIdDelete", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>TrackerAsset</returns>
-        public TrackerAsset TrackerAssetsByAssetIdGet (string assetId)
-        {
-             ApiResponse<TrackerAsset> localVarResponse = TrackerAssetsByAssetIdGetWithHttpInfo(assetId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>ApiResponse of TrackerAsset</returns>
-        public ApiResponse< TrackerAsset > TrackerAssetsByAssetIdGetWithHttpInfo (string assetId)
-        {
-            // verify the required parameter 'assetId' is set
-            if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsByAssetIdGet");
-
-            var localVarPath = "./tracker/assets/{assetId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsByAssetIdGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<TrackerAsset>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (TrackerAsset) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrackerAsset)));
-        }
-
-        /// <summary>
-        /// [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of TrackerAsset</returns>
-        public async System.Threading.Tasks.Task<TrackerAsset> TrackerAssetsByAssetIdGetAsync (string assetId)
-        {
-             ApiResponse<TrackerAsset> localVarResponse = await TrackerAssetsByAssetIdGetAsyncWithHttpInfo(assetId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of ApiResponse (TrackerAsset)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TrackerAsset>> TrackerAssetsByAssetIdGetAsyncWithHttpInfo (string assetId)
-        {
-            // verify the required parameter 'assetId' is set
-            if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsByAssetIdGet");
-
-            var localVarPath = "./tracker/assets/{assetId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsByAssetIdGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<TrackerAsset>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (TrackerAsset) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrackerAsset)));
-        }
-
-        /// <summary>
-        /// [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <param name="request"> (optional)</param>
-        /// <returns></returns>
-        public void TrackerAssetsByAssetIdPut (string assetId, TrackerAssetCreateRequest request = null)
-        {
-             TrackerAssetsByAssetIdPutWithHttpInfo(assetId, request);
-        }
-
-        /// <summary>
-        /// [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <param name="request"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> TrackerAssetsByAssetIdPutWithHttpInfo (string assetId, TrackerAssetCreateRequest request = null)
-        {
-            // verify the required parameter 'assetId' is set
-            if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsByAssetIdPut");
-
-            var localVarPath = "./tracker/assets/{assetId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsByAssetIdPut", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TrackerAssetsByAssetIdPutAsync (string assetId, TrackerAssetCreateRequest request = null)
-        {
-             await TrackerAssetsByAssetIdPutAsyncWithHttpInfo(assetId, request);
-
-        }
-
-        /// <summary>
-        /// [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerAssetsByAssetIdPutAsyncWithHttpInfo (string assetId, TrackerAssetCreateRequest request = null)
-        {
-            // verify the required parameter 'assetId' is set
-            if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsByAssetIdPut");
-
-            var localVarPath = "./tracker/assets/{assetId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsByAssetIdPut", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>List&lt;TrackerAsset&gt;</returns>
-        public List<TrackerAsset> TrackerAssetsGet ()
-        {
-             ApiResponse<List<TrackerAsset>> localVarResponse = TrackerAssetsGetWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of List&lt;TrackerAsset&gt;</returns>
-        public ApiResponse< List<TrackerAsset> > TrackerAssetsGetWithHttpInfo ()
-        {
-
-            var localVarPath = "./tracker/assets";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<TrackerAsset>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<TrackerAsset>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrackerAsset>)));
-        }
-
-        /// <summary>
-        /// [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of List&lt;TrackerAsset&gt;</returns>
-        public async System.Threading.Tasks.Task<List<TrackerAsset>> TrackerAssetsGetAsync ()
-        {
-             ApiResponse<List<TrackerAsset>> localVarResponse = await TrackerAssetsGetAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (List&lt;TrackerAsset&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<TrackerAsset>>> TrackerAssetsGetAsyncWithHttpInfo ()
-        {
-
-            var localVarPath = "./tracker/assets";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<TrackerAsset>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<TrackerAsset>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrackerAsset>)));
-        }
-
-        /// <summary>
-        /// [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns></returns>
-        public void TrackerAssetsIssuePost (TrackerAssetIssueRequest request = null)
-        {
-             TrackerAssetsIssuePostWithHttpInfo(request);
-        }
-
-        /// <summary>
-        /// [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> TrackerAssetsIssuePostWithHttpInfo (TrackerAssetIssueRequest request = null)
-        {
-
-            var localVarPath = "./tracker/assets/issue";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsIssuePost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TrackerAssetsIssuePostAsync (TrackerAssetIssueRequest request = null)
-        {
-             await TrackerAssetsIssuePostAsyncWithHttpInfo(request);
-
-        }
-
-        /// <summary>
-        /// [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerAssetsIssuePostAsyncWithHttpInfo (TrackerAssetIssueRequest request = null)
-        {
-
-            var localVarPath = "./tracker/assets/issue";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerAssetsIssuePost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for an asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
         /// <param name="batchId"></param>
+        /// <param name="productId"></param>
         /// <returns>IssuedBatchTransactionsResponse</returns>
-        public IssuedBatchTransactionsResponse TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet (string assetId, string batchId)
+        public IssuedBatchTransactionsResponse TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet (string assetId, string batchId, string productId)
         {
-             ApiResponse<IssuedBatchTransactionsResponse> localVarResponse = TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetWithHttpInfo(assetId, batchId);
+             ApiResponse<IssuedBatchTransactionsResponse> localVarResponse = TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetWithHttpInfo(assetId, batchId, productId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for an asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
         /// <param name="batchId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of IssuedBatchTransactionsResponse</returns>
-        public ApiResponse< IssuedBatchTransactionsResponse > TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetWithHttpInfo (string assetId, string batchId)
+        public ApiResponse< IssuedBatchTransactionsResponse > TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetWithHttpInfo (string assetId, string batchId, string productId)
         {
             // verify the required parameter 'assetId' is set
             if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet");
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet");
             // verify the required parameter 'batchId' is set
             if (batchId == null)
-                throw new ApiException(400, "Missing required parameter 'batchId' when calling TrackerApi->TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet");
+                throw new ApiException(400, "Missing required parameter 'batchId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet");
 
-            var localVarPath = "./tracker/assets/issuedbatches/{assetId}/{batchId}";
+            var localVarPath = "./tracker/{productId}/assets/batches/issued/{assetId}/{batchId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1525,6 +1099,7 @@ namespace mantle.lib.Api
 
             if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
             if (batchId != null) localVarPathParams.Add("batchId", Configuration.ApiClient.ParameterToString(batchId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -1536,7 +1111,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1546,36 +1121,41 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for an asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
         /// <param name="batchId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of IssuedBatchTransactionsResponse</returns>
-        public async System.Threading.Tasks.Task<IssuedBatchTransactionsResponse> TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetAsync (string assetId, string batchId)
+        public async System.Threading.Tasks.Task<IssuedBatchTransactionsResponse> TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetAsync (string assetId, string batchId, string productId)
         {
-             ApiResponse<IssuedBatchTransactionsResponse> localVarResponse = await TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetAsyncWithHttpInfo(assetId, batchId);
+             ApiResponse<IssuedBatchTransactionsResponse> localVarResponse = await TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetAsyncWithHttpInfo(assetId, batchId, productId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for an asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
         /// <param name="batchId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (IssuedBatchTransactionsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<IssuedBatchTransactionsResponse>> TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetAsyncWithHttpInfo (string assetId, string batchId)
+        public async System.Threading.Tasks.Task<ApiResponse<IssuedBatchTransactionsResponse>> TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetAsyncWithHttpInfo (string assetId, string batchId, string productId)
         {
             // verify the required parameter 'assetId' is set
             if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet");
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet");
             // verify the required parameter 'batchId' is set
             if (batchId == null)
-                throw new ApiException(400, "Missing required parameter 'batchId' when calling TrackerApi->TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet");
+                throw new ApiException(400, "Missing required parameter 'batchId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet");
 
-            var localVarPath = "./tracker/assets/issuedbatches/{assetId}/{batchId}";
+            var localVarPath = "./tracker/{productId}/assets/batches/issued/{assetId}/{batchId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1600,6 +1180,7 @@ namespace mantle.lib.Api
 
             if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
             if (batchId != null) localVarPathParams.Add("batchId", Configuration.ApiClient.ParameterToString(batchId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -1611,7 +1192,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1621,30 +1202,35 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for an asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
+        /// <param name="productId"></param>
         /// <returns>IssuedBatchesResponse</returns>
-        public IssuedBatchesResponse TrackerAssetsIssuedbatchesByAssetIdGet (string assetId)
+        public IssuedBatchesResponse TrackerByProductIdAssetsBatchesIssuedByAssetIdGet (string assetId, string productId)
         {
-             ApiResponse<IssuedBatchesResponse> localVarResponse = TrackerAssetsIssuedbatchesByAssetIdGetWithHttpInfo(assetId);
+             ApiResponse<IssuedBatchesResponse> localVarResponse = TrackerByProductIdAssetsBatchesIssuedByAssetIdGetWithHttpInfo(assetId, productId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for an asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of IssuedBatchesResponse</returns>
-        public ApiResponse< IssuedBatchesResponse > TrackerAssetsIssuedbatchesByAssetIdGetWithHttpInfo (string assetId)
+        public ApiResponse< IssuedBatchesResponse > TrackerByProductIdAssetsBatchesIssuedByAssetIdGetWithHttpInfo (string assetId, string productId)
         {
             // verify the required parameter 'assetId' is set
             if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsIssuedbatchesByAssetIdGet");
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdGet");
 
-            var localVarPath = "./tracker/assets/issuedbatches/{assetId}";
+            var localVarPath = "./tracker/{productId}/assets/batches/issued/{assetId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1668,6 +1254,7 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -1679,7 +1266,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerAssetsIssuedbatchesByAssetIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsBatchesIssuedByAssetIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1689,31 +1276,36 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for an asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of IssuedBatchesResponse</returns>
-        public async System.Threading.Tasks.Task<IssuedBatchesResponse> TrackerAssetsIssuedbatchesByAssetIdGetAsync (string assetId)
+        public async System.Threading.Tasks.Task<IssuedBatchesResponse> TrackerByProductIdAssetsBatchesIssuedByAssetIdGetAsync (string assetId, string productId)
         {
-             ApiResponse<IssuedBatchesResponse> localVarResponse = await TrackerAssetsIssuedbatchesByAssetIdGetAsyncWithHttpInfo(assetId);
+             ApiResponse<IssuedBatchesResponse> localVarResponse = await TrackerByProductIdAssetsBatchesIssuedByAssetIdGetAsyncWithHttpInfo(assetId, productId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for an asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="assetId"></param>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (IssuedBatchesResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<IssuedBatchesResponse>> TrackerAssetsIssuedbatchesByAssetIdGetAsyncWithHttpInfo (string assetId)
+        public async System.Threading.Tasks.Task<ApiResponse<IssuedBatchesResponse>> TrackerByProductIdAssetsBatchesIssuedByAssetIdGetAsyncWithHttpInfo (string assetId, string productId)
         {
             // verify the required parameter 'assetId' is set
             if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerAssetsIssuedbatchesByAssetIdGet");
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedByAssetIdGet");
 
-            var localVarPath = "./tracker/assets/issuedbatches/{assetId}";
+            var localVarPath = "./tracker/{productId}/assets/batches/issued/{assetId}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1737,6 +1329,7 @@ namespace mantle.lib.Api
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
             if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -1748,7 +1341,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerAssetsIssuedbatchesByAssetIdGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsBatchesIssuedByAssetIdGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1758,27 +1351,976 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role. 
+        /// [] Get all issued batches for a multi asset Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>IssuedBatchesResponse</returns>
+        public IssuedBatchesResponse TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet (string assetId, string productId)
+        {
+             ApiResponse<IssuedBatchesResponse> localVarResponse = TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetWithHttpInfo(assetId, productId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// [] Get all issued batches for a multi asset Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of IssuedBatchesResponse</returns>
+        public ApiResponse< IssuedBatchesResponse > TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet");
+
+            var localVarPath = "./tracker/{productId}/assets/batches/issued/multi/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<IssuedBatchesResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (IssuedBatchesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(IssuedBatchesResponse)));
+        }
+
+        /// <summary>
+        /// [] Get all issued batches for a multi asset Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of IssuedBatchesResponse</returns>
+        public async System.Threading.Tasks.Task<IssuedBatchesResponse> TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetAsync (string assetId, string productId)
+        {
+             ApiResponse<IssuedBatchesResponse> localVarResponse = await TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetAsyncWithHttpInfo(assetId, productId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// [] Get all issued batches for a multi asset Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse (IssuedBatchesResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<IssuedBatchesResponse>> TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetAsyncWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet");
+
+            var localVarPath = "./tracker/{productId}/assets/batches/issued/multi/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<IssuedBatchesResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (IssuedBatchesResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(IssuedBatchesResponse)));
+        }
+
+        /// <summary>
+        /// [] Delete an asset It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns></returns>
+        public void TrackerByProductIdAssetsByAssetIdDelete (string assetId, string productId)
+        {
+             TrackerByProductIdAssetsByAssetIdDeleteWithHttpInfo(assetId, productId);
+        }
+
+        /// <summary>
+        /// [] Delete an asset It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> TrackerByProductIdAssetsByAssetIdDeleteWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdDelete");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdDelete");
+
+            var localVarPath = "./tracker/{productId}/assets/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsByAssetIdDelete", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// [] Delete an asset It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task TrackerByProductIdAssetsByAssetIdDeleteAsync (string assetId, string productId)
+        {
+             await TrackerByProductIdAssetsByAssetIdDeleteAsyncWithHttpInfo(assetId, productId);
+
+        }
+
+        /// <summary>
+        /// [] Delete an asset It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdAssetsByAssetIdDeleteAsyncWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdDelete");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdDelete");
+
+            var localVarPath = "./tracker/{productId}/assets/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsByAssetIdDelete", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// [] Get a specific asset&#39;s details Requires the Track Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>TrackerAsset</returns>
+        public TrackerAsset TrackerByProductIdAssetsByAssetIdGet (string assetId, string productId)
+        {
+             ApiResponse<TrackerAsset> localVarResponse = TrackerByProductIdAssetsByAssetIdGetWithHttpInfo(assetId, productId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// [] Get a specific asset&#39;s details Requires the Track Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of TrackerAsset</returns>
+        public ApiResponse< TrackerAsset > TrackerByProductIdAssetsByAssetIdGetWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdGet");
+
+            var localVarPath = "./tracker/{productId}/assets/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsByAssetIdGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TrackerAsset>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (TrackerAsset) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrackerAsset)));
+        }
+
+        /// <summary>
+        /// [] Get a specific asset&#39;s details Requires the Track Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of TrackerAsset</returns>
+        public async System.Threading.Tasks.Task<TrackerAsset> TrackerByProductIdAssetsByAssetIdGetAsync (string assetId, string productId)
+        {
+             ApiResponse<TrackerAsset> localVarResponse = await TrackerByProductIdAssetsByAssetIdGetAsyncWithHttpInfo(assetId, productId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// [] Get a specific asset&#39;s details Requires the Track Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse (TrackerAsset)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<TrackerAsset>> TrackerByProductIdAssetsByAssetIdGetAsyncWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdGet");
+
+            var localVarPath = "./tracker/{productId}/assets/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsByAssetIdGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TrackerAsset>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (TrackerAsset) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrackerAsset)));
+        }
+
+        /// <summary>
+        /// [] Edit an asset Only the name can be changed.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns></returns>
+        public void TrackerByProductIdAssetsByAssetIdPut (string assetId, string productId, TrackerAssetCreateRequest request = null)
+        {
+             TrackerByProductIdAssetsByAssetIdPutWithHttpInfo(assetId, productId, request);
+        }
+
+        /// <summary>
+        /// [] Edit an asset Only the name can be changed.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> TrackerByProductIdAssetsByAssetIdPutWithHttpInfo (string assetId, string productId, TrackerAssetCreateRequest request = null)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdPut");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdPut");
+
+            var localVarPath = "./tracker/{productId}/assets/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsByAssetIdPut", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// [] Edit an asset Only the name can be changed.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task TrackerByProductIdAssetsByAssetIdPutAsync (string assetId, string productId, TrackerAssetCreateRequest request = null)
+        {
+             await TrackerByProductIdAssetsByAssetIdPutAsyncWithHttpInfo(assetId, productId, request);
+
+        }
+
+        /// <summary>
+        /// [] Edit an asset Only the name can be changed.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdAssetsByAssetIdPutAsyncWithHttpInfo (string assetId, string productId, TrackerAssetCreateRequest request = null)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdPut");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsByAssetIdPut");
+
+            var localVarPath = "./tracker/{productId}/assets/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsByAssetIdPut", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// [] Get all assets Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>List&lt;TrackerAsset&gt;</returns>
+        public List<TrackerAsset> TrackerByProductIdAssetsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
+        {
+             ApiResponse<List<TrackerAsset>> localVarResponse = TrackerByProductIdAssetsGetWithHttpInfo(productId, beforeDateTime, limit, offset, request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// [] Get all assets Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;TrackerAsset&gt;</returns>
+        public ApiResponse< List<TrackerAsset> > TrackerByProductIdAssetsGetWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsGet");
+
+            var localVarPath = "./tracker/{productId}/assets";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (beforeDateTime != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beforeDateTime", beforeDateTime)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<TrackerAsset>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<TrackerAsset>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrackerAsset>)));
+        }
+
+        /// <summary>
+        /// [] Get all assets Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of List&lt;TrackerAsset&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TrackerAsset>> TrackerByProductIdAssetsGetAsync (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
+        {
+             ApiResponse<List<TrackerAsset>> localVarResponse = await TrackerByProductIdAssetsGetAsyncWithHttpInfo(productId, beforeDateTime, limit, offset, request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// [] Get all assets Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;TrackerAsset&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<TrackerAsset>>> TrackerByProductIdAssetsGetAsyncWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsGet");
+
+            var localVarPath = "./tracker/{productId}/assets";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (beforeDateTime != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beforeDateTime", beforeDateTime)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<TrackerAsset>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<TrackerAsset>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrackerAsset>)));
+        }
+
+        /// <summary>
+        /// [] Issue a certain amount of asset to a recipient Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns></returns>
+        public void TrackerByProductIdAssetsIssuePost (string productId, TrackerAssetIssueRequest request = null)
+        {
+             TrackerByProductIdAssetsIssuePostWithHttpInfo(productId, request);
+        }
+
+        /// <summary>
+        /// [] Issue a certain amount of asset to a recipient Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> TrackerByProductIdAssetsIssuePostWithHttpInfo (string productId, TrackerAssetIssueRequest request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsIssuePost");
+
+            var localVarPath = "./tracker/{productId}/assets/issue";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsIssuePost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// [] Issue a certain amount of asset to a recipient Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task TrackerByProductIdAssetsIssuePostAsync (string productId, TrackerAssetIssueRequest request = null)
+        {
+             await TrackerByProductIdAssetsIssuePostAsyncWithHttpInfo(productId, request);
+
+        }
+
+        /// <summary>
+        /// [] Issue a certain amount of asset to a recipient Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdAssetsIssuePostAsyncWithHttpInfo (string productId, TrackerAssetIssueRequest request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsIssuePost");
+
+            var localVarPath = "./tracker/{productId}/assets/issue";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsIssuePost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// [] Create an asset This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>TrackerAsset</returns>
-        public TrackerAsset TrackerAssetsPost (TrackerAssetCreateRequest request = null)
+        public TrackerAsset TrackerByProductIdAssetsPost (string productId, TrackerAssetCreateRequest request = null)
         {
-             ApiResponse<TrackerAsset> localVarResponse = TrackerAssetsPostWithHttpInfo(request);
+             ApiResponse<TrackerAsset> localVarResponse = TrackerByProductIdAssetsPostWithHttpInfo(productId, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role. 
+        /// [] Create an asset This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of TrackerAsset</returns>
-        public ApiResponse< TrackerAsset > TrackerAssetsPostWithHttpInfo (TrackerAssetCreateRequest request = null)
+        public ApiResponse< TrackerAsset > TrackerByProductIdAssetsPostWithHttpInfo (string productId, TrackerAssetCreateRequest request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsPost");
 
-            var localVarPath = "./tracker/assets";
+            var localVarPath = "./tracker/{productId}/assets";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1805,6 +2347,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -1824,7 +2367,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerAssetsPost", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1834,28 +2377,33 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role. 
+        /// [] Create an asset This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of TrackerAsset</returns>
-        public async System.Threading.Tasks.Task<TrackerAsset> TrackerAssetsPostAsync (TrackerAssetCreateRequest request = null)
+        public async System.Threading.Tasks.Task<TrackerAsset> TrackerByProductIdAssetsPostAsync (string productId, TrackerAssetCreateRequest request = null)
         {
-             ApiResponse<TrackerAsset> localVarResponse = await TrackerAssetsPostAsyncWithHttpInfo(request);
+             ApiResponse<TrackerAsset> localVarResponse = await TrackerByProductIdAssetsPostAsyncWithHttpInfo(productId, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role. 
+        /// [] Create an asset This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (TrackerAsset)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TrackerAsset>> TrackerAssetsPostAsyncWithHttpInfo (TrackerAssetCreateRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<TrackerAsset>> TrackerByProductIdAssetsPostAsyncWithHttpInfo (string productId, TrackerAssetCreateRequest request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdAssetsPost");
 
-            var localVarPath = "./tracker/assets";
+            var localVarPath = "./tracker/{productId}/assets";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1882,6 +2430,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -1901,7 +2450,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerAssetsPost", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdAssetsPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1911,25 +2460,511 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role. 
+        /// [] Get a specific multi asset&#39;s details Requires the Track Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>TrackerMultiAsset</returns>
+        public TrackerMultiAsset TrackerByProductIdMultiAssetsByAssetIdGet (string assetId, string productId)
+        {
+             ApiResponse<TrackerMultiAsset> localVarResponse = TrackerByProductIdMultiAssetsByAssetIdGetWithHttpInfo(assetId, productId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// [] Get a specific multi asset&#39;s details Requires the Track Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of TrackerMultiAsset</returns>
+        public ApiResponse< TrackerMultiAsset > TrackerByProductIdMultiAssetsByAssetIdGetWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdMultiAssetsByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdMultiAssetsByAssetIdGet");
+
+            var localVarPath = "./tracker/{productId}/multiassets/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdMultiAssetsByAssetIdGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TrackerMultiAsset>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (TrackerMultiAsset) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrackerMultiAsset)));
+        }
+
+        /// <summary>
+        /// [] Get a specific multi asset&#39;s details Requires the Track Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of TrackerMultiAsset</returns>
+        public async System.Threading.Tasks.Task<TrackerMultiAsset> TrackerByProductIdMultiAssetsByAssetIdGetAsync (string assetId, string productId)
+        {
+             ApiResponse<TrackerMultiAsset> localVarResponse = await TrackerByProductIdMultiAssetsByAssetIdGetAsyncWithHttpInfo(assetId, productId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// [] Get a specific multi asset&#39;s details Requires the Track Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse (TrackerMultiAsset)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<TrackerMultiAsset>> TrackerByProductIdMultiAssetsByAssetIdGetAsyncWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdMultiAssetsByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdMultiAssetsByAssetIdGet");
+
+            var localVarPath = "./tracker/{productId}/multiassets/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdMultiAssetsByAssetIdGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TrackerMultiAsset>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (TrackerMultiAsset) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrackerMultiAsset)));
+        }
+
+        /// <summary>
+        /// [] Get all multi assets Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="assetIds"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>List&lt;TrackerMultiAsset&gt;</returns>
+        public List<TrackerMultiAsset> TrackerByProductIdMultiAssetsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null)
+        {
+             ApiResponse<List<TrackerMultiAsset>> localVarResponse = TrackerByProductIdMultiAssetsGetWithHttpInfo(productId, beforeDateTime, limit, offset, assetIds, request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// [] Get all multi assets Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="assetIds"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of List&lt;TrackerMultiAsset&gt;</returns>
+        public ApiResponse< List<TrackerMultiAsset> > TrackerByProductIdMultiAssetsGetWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdMultiAssetsGet");
+
+            var localVarPath = "./tracker/{productId}/multiassets";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (beforeDateTime != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beforeDateTime", beforeDateTime)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (assetIds != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "assetIds", assetIds)); // query parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdMultiAssetsGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<TrackerMultiAsset>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<TrackerMultiAsset>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrackerMultiAsset>)));
+        }
+
+        /// <summary>
+        /// [] Get all multi assets Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="assetIds"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of List&lt;TrackerMultiAsset&gt;</returns>
+        public async System.Threading.Tasks.Task<List<TrackerMultiAsset>> TrackerByProductIdMultiAssetsGetAsync (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null)
+        {
+             ApiResponse<List<TrackerMultiAsset>> localVarResponse = await TrackerByProductIdMultiAssetsGetAsyncWithHttpInfo(productId, beforeDateTime, limit, offset, assetIds, request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// [] Get all multi assets Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="beforeDateTime"> (optional)</param>
+        /// <param name="limit"> (optional)</param>
+        /// <param name="offset"> (optional)</param>
+        /// <param name="assetIds"> (optional)</param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;TrackerMultiAsset&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<TrackerMultiAsset>>> TrackerByProductIdMultiAssetsGetAsyncWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdMultiAssetsGet");
+
+            var localVarPath = "./tracker/{productId}/multiassets";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (beforeDateTime != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beforeDateTime", beforeDateTime)); // query parameter
+            if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
+            if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (assetIds != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "assetIds", assetIds)); // query parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdMultiAssetsGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<TrackerMultiAsset>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<TrackerMultiAsset>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TrackerMultiAsset>)));
+        }
+
+        /// <summary>
+        /// [] Creates a multi asset This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>TrackerMultiAsset</returns>
+        public TrackerMultiAsset TrackerByProductIdMultiAssetsPost (string productId, TrackerMultiAssetCreateRequest request = null)
+        {
+             ApiResponse<TrackerMultiAsset> localVarResponse = TrackerByProductIdMultiAssetsPostWithHttpInfo(productId, request);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// [] Creates a multi asset This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of TrackerMultiAsset</returns>
+        public ApiResponse< TrackerMultiAsset > TrackerByProductIdMultiAssetsPostWithHttpInfo (string productId, TrackerMultiAssetCreateRequest request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdMultiAssetsPost");
+
+            var localVarPath = "./tracker/{productId}/multiassets";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdMultiAssetsPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TrackerMultiAsset>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (TrackerMultiAsset) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrackerMultiAsset)));
+        }
+
+        /// <summary>
+        /// [] Creates a multi asset This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of TrackerMultiAsset</returns>
+        public async System.Threading.Tasks.Task<TrackerMultiAsset> TrackerByProductIdMultiAssetsPostAsync (string productId, TrackerMultiAssetCreateRequest request = null)
+        {
+             ApiResponse<TrackerMultiAsset> localVarResponse = await TrackerByProductIdMultiAssetsPostAsyncWithHttpInfo(productId, request);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// [] Creates a multi asset This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse (TrackerMultiAsset)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<TrackerMultiAsset>> TrackerByProductIdMultiAssetsPostAsyncWithHttpInfo (string productId, TrackerMultiAssetCreateRequest request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdMultiAssetsPost");
+
+            var localVarPath = "./tracker/{productId}/multiassets";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdMultiAssetsPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TrackerMultiAsset>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (TrackerMultiAsset) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TrackerMultiAsset)));
+        }
+
+        /// <summary>
+        /// [] Get 3 statistics regarding the usage of Tracker in the last 24 hours Requires the Tracker Admin Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>TrackerStatsResponse</returns>
-        public TrackerStatsResponse TrackerStatsGet ()
+        public TrackerStatsResponse TrackerByProductIdStatsGet (string productId)
         {
-             ApiResponse<TrackerStatsResponse> localVarResponse = TrackerStatsGetWithHttpInfo();
+             ApiResponse<TrackerStatsResponse> localVarResponse = TrackerByProductIdStatsGetWithHttpInfo(productId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role. 
+        /// [] Get 3 statistics regarding the usage of Tracker in the last 24 hours Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of TrackerStatsResponse</returns>
-        public ApiResponse< TrackerStatsResponse > TrackerStatsGetWithHttpInfo ()
+        public ApiResponse< TrackerStatsResponse > TrackerByProductIdStatsGetWithHttpInfo (string productId)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdStatsGet");
 
-            var localVarPath = "./tracker/stats";
+            var localVarPath = "./tracker/{productId}/stats";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1952,6 +2987,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -1963,7 +2999,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerStatsGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdStatsGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1973,26 +3009,31 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role. 
+        /// [] Get 3 statistics regarding the usage of Tracker in the last 24 hours Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>Task of TrackerStatsResponse</returns>
-        public async System.Threading.Tasks.Task<TrackerStatsResponse> TrackerStatsGetAsync ()
+        public async System.Threading.Tasks.Task<TrackerStatsResponse> TrackerByProductIdStatsGetAsync (string productId)
         {
-             ApiResponse<TrackerStatsResponse> localVarResponse = await TrackerStatsGetAsyncWithHttpInfo();
+             ApiResponse<TrackerStatsResponse> localVarResponse = await TrackerByProductIdStatsGetAsyncWithHttpInfo(productId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role. 
+        /// [] Get 3 statistics regarding the usage of Tracker in the last 24 hours Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (TrackerStatsResponse)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<TrackerStatsResponse>> TrackerStatsGetAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<TrackerStatsResponse>> TrackerByProductIdStatsGetAsyncWithHttpInfo (string productId)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdStatsGet");
 
-            var localVarPath = "./tracker/stats";
+            var localVarPath = "./tracker/{productId}/stats";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2015,6 +3056,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -2026,7 +3068,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerStatsGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdStatsGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2036,31 +3078,38 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role. 
+        /// [] Get all transactions Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="beforeDateTime"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>List&lt;AssetTransaction&gt;</returns>
-        public List<AssetTransaction> TrackerTransactionsGet (DateTime? beforeDateTime = null, int? limit = null, int? offset = null)
+        public List<AssetTransaction> TrackerByProductIdTransactionsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
         {
-             ApiResponse<List<AssetTransaction>> localVarResponse = TrackerTransactionsGetWithHttpInfo(beforeDateTime, limit, offset);
+             ApiResponse<List<AssetTransaction>> localVarResponse = TrackerByProductIdTransactionsGetWithHttpInfo(productId, beforeDateTime, limit, offset, request);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role. 
+        /// [] Get all transactions Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="beforeDateTime"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of List&lt;AssetTransaction&gt;</returns>
-        public ApiResponse< List<AssetTransaction> > TrackerTransactionsGetWithHttpInfo (DateTime? beforeDateTime = null, int? limit = null, int? offset = null)
+        public ApiResponse< List<AssetTransaction> > TrackerByProductIdTransactionsGetWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdTransactionsGet");
 
-            var localVarPath = "./tracker/transactions";
+            var localVarPath = "./tracker/{productId}/transactions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2083,9 +3132,11 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (beforeDateTime != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beforeDateTime", beforeDateTime)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
 
 
             // make the HTTP request
@@ -2097,7 +3148,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerTransactionsGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdTransactionsGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2107,32 +3158,39 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role. 
+        /// [] Get all transactions Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="beforeDateTime"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of List&lt;AssetTransaction&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AssetTransaction>> TrackerTransactionsGetAsync (DateTime? beforeDateTime = null, int? limit = null, int? offset = null)
+        public async System.Threading.Tasks.Task<List<AssetTransaction>> TrackerByProductIdTransactionsGetAsync (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
         {
-             ApiResponse<List<AssetTransaction>> localVarResponse = await TrackerTransactionsGetAsyncWithHttpInfo(beforeDateTime, limit, offset);
+             ApiResponse<List<AssetTransaction>> localVarResponse = await TrackerByProductIdTransactionsGetAsyncWithHttpInfo(productId, beforeDateTime, limit, offset, request);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role. 
+        /// [] Get all transactions Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="beforeDateTime"> (optional)</param>
         /// <param name="limit"> (optional)</param>
         /// <param name="offset"> (optional)</param>
+        /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;AssetTransaction&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<AssetTransaction>>> TrackerTransactionsGetAsyncWithHttpInfo (DateTime? beforeDateTime = null, int? limit = null, int? offset = null)
+        public async System.Threading.Tasks.Task<ApiResponse<List<AssetTransaction>>> TrackerByProductIdTransactionsGetAsyncWithHttpInfo (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdTransactionsGet");
 
-            var localVarPath = "./tracker/transactions";
+            var localVarPath = "./tracker/{productId}/transactions";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2155,9 +3213,11 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (beforeDateTime != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "beforeDateTime", beforeDateTime)); // query parameter
             if (limit != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "limit", limit)); // query parameter
             if (offset != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "offset", offset)); // query parameter
+            if (request != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "request", request)); // query parameter
 
 
             // make the HTTP request
@@ -2169,7 +3229,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerTransactionsGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdTransactionsGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2179,26 +3239,31 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role. 
+        /// [] Revert a transaction This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns></returns>
-        public void TrackerTransactionsReversePost (TrackerTransactionRevertRequest request = null)
+        public void TrackerByProductIdTransactionsReversePost (string productId, TrackerTransactionRevertRequest request = null)
         {
-             TrackerTransactionsReversePostWithHttpInfo(request);
+             TrackerByProductIdTransactionsReversePostWithHttpInfo(productId, request);
         }
 
         /// <summary>
-        /// [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role. 
+        /// [] Revert a transaction This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> TrackerTransactionsReversePostWithHttpInfo (TrackerTransactionRevertRequest request = null)
+        public ApiResponse<Object> TrackerByProductIdTransactionsReversePostWithHttpInfo (string productId, TrackerTransactionRevertRequest request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdTransactionsReversePost");
 
-            var localVarPath = "./tracker/transactions/reverse";
+            var localVarPath = "./tracker/{productId}/transactions/reverse";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2225,6 +3290,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -2244,7 +3310,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerTransactionsReversePost", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdTransactionsReversePost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2254,27 +3320,32 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role. 
+        /// [] Revert a transaction This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TrackerTransactionsReversePostAsync (TrackerTransactionRevertRequest request = null)
+        public async System.Threading.Tasks.Task TrackerByProductIdTransactionsReversePostAsync (string productId, TrackerTransactionRevertRequest request = null)
         {
-             await TrackerTransactionsReversePostAsyncWithHttpInfo(request);
+             await TrackerByProductIdTransactionsReversePostAsyncWithHttpInfo(productId, request);
 
         }
 
         /// <summary>
-        /// [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role. 
+        /// [] Revert a transaction This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerTransactionsReversePostAsyncWithHttpInfo (TrackerTransactionRevertRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdTransactionsReversePostAsyncWithHttpInfo (string productId, TrackerTransactionRevertRequest request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdTransactionsReversePost");
 
-            var localVarPath = "./tracker/transactions/reverse";
+            var localVarPath = "./tracker/{productId}/transactions/reverse";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2301,6 +3372,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -2320,7 +3392,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerTransactionsReversePost", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdTransactionsReversePost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2330,176 +3402,30 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role. 
+        /// [] Get all authenticated user&#39;s asset balances Requires the Tracker Admin Role or Tracker User Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns></returns>
-        public void TrackerWalletBatchesTransferPost (TrackerBatchTransferRequest request = null)
-        {
-             TrackerWalletBatchesTransferPostWithHttpInfo(request);
-        }
-
-        /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> TrackerWalletBatchesTransferPostWithHttpInfo (TrackerBatchTransferRequest request = null)
-        {
-
-            var localVarPath = "./tracker/wallet/batches/transfer";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerWalletBatchesTransferPost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TrackerWalletBatchesTransferPostAsync (TrackerBatchTransferRequest request = null)
-        {
-             await TrackerWalletBatchesTransferPostAsyncWithHttpInfo(request);
-
-        }
-
-        /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="request"> (optional)</param>
-        /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerWalletBatchesTransferPostAsyncWithHttpInfo (TrackerBatchTransferRequest request = null)
-        {
-
-            var localVarPath = "./tracker/wallet/batches/transfer";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json-patch+json", 
-                "application/json", 
-                "text/json", 
-                "application/_*+json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (request != null && request.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = request; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerWalletBatchesTransferPost", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                null);
-        }
-
-        /// <summary>
-        /// [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>List&lt;DetailedAssetBalance&gt;</returns>
-        public List<DetailedAssetBalance> TrackerWalletDetailedbalancesGet ()
+        public List<DetailedAssetBalance> TrackerByProductIdWalletBalancesDetailedGet (string productId)
         {
-             ApiResponse<List<DetailedAssetBalance>> localVarResponse = TrackerWalletDetailedbalancesGetWithHttpInfo();
+             ApiResponse<List<DetailedAssetBalance>> localVarResponse = TrackerByProductIdWalletBalancesDetailedGetWithHttpInfo(productId);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role. 
+        /// [] Get all authenticated user&#39;s asset balances Requires the Tracker Admin Role or Tracker User Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>ApiResponse of List&lt;DetailedAssetBalance&gt;</returns>
-        public ApiResponse< List<DetailedAssetBalance> > TrackerWalletDetailedbalancesGetWithHttpInfo ()
+        public ApiResponse< List<DetailedAssetBalance> > TrackerByProductIdWalletBalancesDetailedGetWithHttpInfo (string productId)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdWalletBalancesDetailedGet");
 
-            var localVarPath = "./tracker/wallet/detailedbalances";
+            var localVarPath = "./tracker/{productId}/wallet/balances/detailed";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2522,6 +3448,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -2533,7 +3460,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerWalletDetailedbalancesGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdWalletBalancesDetailedGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2543,26 +3470,31 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role. 
+        /// [] Get all authenticated user&#39;s asset balances Requires the Tracker Admin Role or Tracker User Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>Task of List&lt;DetailedAssetBalance&gt;</returns>
-        public async System.Threading.Tasks.Task<List<DetailedAssetBalance>> TrackerWalletDetailedbalancesGetAsync ()
+        public async System.Threading.Tasks.Task<List<DetailedAssetBalance>> TrackerByProductIdWalletBalancesDetailedGetAsync (string productId)
         {
-             ApiResponse<List<DetailedAssetBalance>> localVarResponse = await TrackerWalletDetailedbalancesGetAsyncWithHttpInfo();
+             ApiResponse<List<DetailedAssetBalance>> localVarResponse = await TrackerByProductIdWalletBalancesDetailedGetAsyncWithHttpInfo(productId);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role. 
+        /// [] Get all authenticated user&#39;s asset balances Requires the Tracker Admin Role or Tracker User Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <returns>Task of ApiResponse (List&lt;DetailedAssetBalance&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<DetailedAssetBalance>>> TrackerWalletDetailedbalancesGetAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<DetailedAssetBalance>>> TrackerByProductIdWalletBalancesDetailedGetAsyncWithHttpInfo (string productId)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdWalletBalancesDetailedGet");
 
-            var localVarPath = "./tracker/wallet/detailedbalances";
+            var localVarPath = "./tracker/{productId}/wallet/balances/detailed";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2585,6 +3517,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
 
 
             // make the HTTP request
@@ -2596,7 +3529,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerWalletDetailedbalancesGet", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdWalletBalancesDetailedGet", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2606,163 +3539,31 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role. 
+        /// [] Create a transfer between yourself and another user from one of your specific batches Requires the Tracker Admin Role or Tracker User Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>List&lt;AssetTransaction&gt;</returns>
-        public List<AssetTransaction> TrackerWalletTransactionsByAssetIdGet (string assetId)
-        {
-             ApiResponse<List<AssetTransaction>> localVarResponse = TrackerWalletTransactionsByAssetIdGetWithHttpInfo(assetId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>ApiResponse of List&lt;AssetTransaction&gt;</returns>
-        public ApiResponse< List<AssetTransaction> > TrackerWalletTransactionsByAssetIdGetWithHttpInfo (string assetId)
-        {
-            // verify the required parameter 'assetId' is set
-            if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerWalletTransactionsByAssetIdGet");
-
-            var localVarPath = "./tracker/wallet/transactions/{assetId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerWalletTransactionsByAssetIdGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<AssetTransaction>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<AssetTransaction>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AssetTransaction>)));
-        }
-
-        /// <summary>
-        /// [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of List&lt;AssetTransaction&gt;</returns>
-        public async System.Threading.Tasks.Task<List<AssetTransaction>> TrackerWalletTransactionsByAssetIdGetAsync (string assetId)
-        {
-             ApiResponse<List<AssetTransaction>> localVarResponse = await TrackerWalletTransactionsByAssetIdGetAsyncWithHttpInfo(assetId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assetId"></param>
-        /// <returns>Task of ApiResponse (List&lt;AssetTransaction&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<AssetTransaction>>> TrackerWalletTransactionsByAssetIdGetAsyncWithHttpInfo (string assetId)
-        {
-            // verify the required parameter 'assetId' is set
-            if (assetId == null)
-                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerWalletTransactionsByAssetIdGet");
-
-            var localVarPath = "./tracker/wallet/transactions/{assetId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "text/plain",
-                "application/json",
-                "text/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("TrackerWalletTransactionsByAssetIdGet", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<List<AssetTransaction>>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
-                (List<AssetTransaction>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AssetTransaction>)));
-        }
-
-        /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role. 
-        /// </summary>
-        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns></returns>
-        public void TrackerWalletTransferPost (TrackerTransferRequest request = null)
+        public void TrackerByProductIdWalletBatchesTransferPost (string productId, TrackerBatchTransferRequest request = null)
         {
-             TrackerWalletTransferPostWithHttpInfo(request);
+             TrackerByProductIdWalletBatchesTransferPostWithHttpInfo(productId, request);
         }
 
         /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role. 
+        /// [] Create a transfer between yourself and another user from one of your specific batches Requires the Tracker Admin Role or Tracker User Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> TrackerWalletTransferPostWithHttpInfo (TrackerTransferRequest request = null)
+        public ApiResponse<Object> TrackerByProductIdWalletBatchesTransferPostWithHttpInfo (string productId, TrackerBatchTransferRequest request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdWalletBatchesTransferPost");
 
-            var localVarPath = "./tracker/wallet/transfer";
+            var localVarPath = "./tracker/{productId}/wallet/batches/transfer";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2789,6 +3590,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -2808,7 +3610,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerWalletTransferPost", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdWalletBatchesTransferPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -2818,27 +3620,32 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role. 
+        /// [] Create a transfer between yourself and another user from one of your specific batches Requires the Tracker Admin Role or Tracker User Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task TrackerWalletTransferPostAsync (TrackerTransferRequest request = null)
+        public async System.Threading.Tasks.Task TrackerByProductIdWalletBatchesTransferPostAsync (string productId, TrackerBatchTransferRequest request = null)
         {
-             await TrackerWalletTransferPostAsyncWithHttpInfo(request);
+             await TrackerByProductIdWalletBatchesTransferPostAsyncWithHttpInfo(productId, request);
 
         }
 
         /// <summary>
-        /// [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role. 
+        /// [] Create a transfer between yourself and another user from one of your specific batches Requires the Tracker Admin Role or Tracker User Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerWalletTransferPostAsyncWithHttpInfo (TrackerTransferRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdWalletBatchesTransferPostAsyncWithHttpInfo (string productId, TrackerBatchTransferRequest request = null)
         {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdWalletBatchesTransferPost");
 
-            var localVarPath = "./tracker/wallet/transfer";
+            var localVarPath = "./tracker/{productId}/wallet/batches/transfer";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -2865,6 +3672,7 @@ namespace mantle.lib.Api
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
             if (request != null && request.GetType() != typeof(byte[]))
             {
                 localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
@@ -2884,7 +3692,319 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("TrackerWalletTransferPost", localVarResponse);
+                Exception exception = ExceptionFactory("TrackerByProductIdWalletBatchesTransferPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// [] Get all transactions for a specific asset Requires the Tracker Admin Role or Tracker User Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>List&lt;AssetTransaction&gt;</returns>
+        public List<AssetTransaction> TrackerByProductIdWalletTransactionsByAssetIdGet (string assetId, string productId)
+        {
+             ApiResponse<List<AssetTransaction>> localVarResponse = TrackerByProductIdWalletTransactionsByAssetIdGetWithHttpInfo(assetId, productId);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// [] Get all transactions for a specific asset Requires the Tracker Admin Role or Tracker User Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>ApiResponse of List&lt;AssetTransaction&gt;</returns>
+        public ApiResponse< List<AssetTransaction> > TrackerByProductIdWalletTransactionsByAssetIdGetWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdWalletTransactionsByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdWalletTransactionsByAssetIdGet");
+
+            var localVarPath = "./tracker/{productId}/wallet/transactions/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdWalletTransactionsByAssetIdGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AssetTransaction>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<AssetTransaction>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AssetTransaction>)));
+        }
+
+        /// <summary>
+        /// [] Get all transactions for a specific asset Requires the Tracker Admin Role or Tracker User Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of List&lt;AssetTransaction&gt;</returns>
+        public async System.Threading.Tasks.Task<List<AssetTransaction>> TrackerByProductIdWalletTransactionsByAssetIdGetAsync (string assetId, string productId)
+        {
+             ApiResponse<List<AssetTransaction>> localVarResponse = await TrackerByProductIdWalletTransactionsByAssetIdGetAsyncWithHttpInfo(assetId, productId);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// [] Get all transactions for a specific asset Requires the Tracker Admin Role or Tracker User Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="assetId"></param>
+        /// <param name="productId"></param>
+        /// <returns>Task of ApiResponse (List&lt;AssetTransaction&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<AssetTransaction>>> TrackerByProductIdWalletTransactionsByAssetIdGetAsyncWithHttpInfo (string assetId, string productId)
+        {
+            // verify the required parameter 'assetId' is set
+            if (assetId == null)
+                throw new ApiException(400, "Missing required parameter 'assetId' when calling TrackerApi->TrackerByProductIdWalletTransactionsByAssetIdGet");
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdWalletTransactionsByAssetIdGet");
+
+            var localVarPath = "./tracker/{productId}/wallet/transactions/{assetId}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (assetId != null) localVarPathParams.Add("assetId", Configuration.ApiClient.ParameterToString(assetId)); // path parameter
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdWalletTransactionsByAssetIdGet", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<List<AssetTransaction>>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                (List<AssetTransaction>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<AssetTransaction>)));
+        }
+
+        /// <summary>
+        /// [] Create a transfer between yourself and another user Requires the Tracker Admin Role or Tracker User Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns></returns>
+        public void TrackerByProductIdWalletTransferPost (string productId, TrackerTransferRequest request = null)
+        {
+             TrackerByProductIdWalletTransferPostWithHttpInfo(productId, request);
+        }
+
+        /// <summary>
+        /// [] Create a transfer between yourself and another user Requires the Tracker Admin Role or Tracker User Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> TrackerByProductIdWalletTransferPostWithHttpInfo (string productId, TrackerTransferRequest request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdWalletTransferPost");
+
+            var localVarPath = "./tracker/{productId}/wallet/transfer";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdWalletTransferPost", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Key, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// [] Create a transfer between yourself and another user Requires the Tracker Admin Role or Tracker User Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task TrackerByProductIdWalletTransferPostAsync (string productId, TrackerTransferRequest request = null)
+        {
+             await TrackerByProductIdWalletTransferPostAsyncWithHttpInfo(productId, request);
+
+        }
+
+        /// <summary>
+        /// [] Create a transfer between yourself and another user Requires the Tracker Admin Role or Tracker User Role.
+        /// </summary>
+        /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="productId"></param>
+        /// <param name="request"> (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> TrackerByProductIdWalletTransferPostAsyncWithHttpInfo (string productId, TrackerTransferRequest request = null)
+        {
+            // verify the required parameter 'productId' is set
+            if (productId == null)
+                throw new ApiException(400, "Missing required parameter 'productId' when calling TrackerApi->TrackerByProductIdWalletTransferPost");
+
+            var localVarPath = "./tracker/{productId}/wallet/transfer";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json-patch+json", 
+                "application/json", 
+                "text/json", 
+                "application/_*+json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (productId != null) localVarPathParams.Add("productId", Configuration.ApiClient.ParameterToString(productId)); // path parameter
+            if (request != null && request.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(request); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = request; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TrackerByProductIdWalletTransferPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 

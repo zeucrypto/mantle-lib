@@ -69,7 +69,25 @@ namespace mantle.lib.Model
             /// Enum MCAuthenticityUser for value: MCAuthenticityUser
             /// </summary>
             [EnumMember(Value = "MCAuthenticityUser")]
-            MCAuthenticityUser = 6
+            MCAuthenticityUser = 6,
+            
+            /// <summary>
+            /// Enum MCSealerAdmin for value: MCSealerAdmin
+            /// </summary>
+            [EnumMember(Value = "MCSealerAdmin")]
+            MCSealerAdmin = 7,
+            
+            /// <summary>
+            /// Enum MCSealerUser for value: MCSealerUser
+            /// </summary>
+            [EnumMember(Value = "MCSealerUser")]
+            MCSealerUser = 8,
+            
+            /// <summary>
+            /// Enum MCAdmin for value: MCAdmin
+            /// </summary>
+            [EnumMember(Value = "MCAdmin")]
+            MCAdmin = 9
         }
 
 

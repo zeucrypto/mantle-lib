@@ -25,26 +25,26 @@ namespace mantle.lib.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
+        /// Confirm your password reset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns></returns>
-        void AuthenticationForgotpasswordConfirmationPost (UserForgotPasswordConfirmationRequest request = null);
+        void AuthenticationForgotPasswordConfirmationPost (UserForgotPasswordConfirmationRequest request = null);
 
         /// <summary>
-        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
+        /// Confirm your password reset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AuthenticationForgotpasswordConfirmationPostWithHttpInfo (UserForgotPasswordConfirmationRequest request = null);
+        ApiResponse<Object> AuthenticationForgotPasswordConfirmationPostWithHttpInfo (UserForgotPasswordConfirmationRequest request = null);
         /// <summary>
         /// Send an email to the user&#39;s email address with the reset password instructions.
         /// </summary>
@@ -54,7 +54,7 @@ namespace mantle.lib.Api
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns></returns>
-        void AuthenticationForgotpasswordPost (UserForgotPasswordRequest request = null);
+        void AuthenticationForgotPasswordPost (UserForgotPasswordRequest request = null);
 
         /// <summary>
         /// Send an email to the user&#39;s email address with the reset password instructions.
@@ -65,12 +65,12 @@ namespace mantle.lib.Api
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        ApiResponse<Object> AuthenticationForgotpasswordPostWithHttpInfo (UserForgotPasswordRequest request = null);
+        ApiResponse<Object> AuthenticationForgotPasswordPostWithHttpInfo (UserForgotPasswordRequest request = null);
         /// <summary>
-        /// Login a user with a username and password. The returned access token can be used to perform requests on the platform
+        /// Login a user with a username and password
         /// </summary>
         /// <remarks>
-        /// 
+        /// The returned access token can be used to perform requests on the platform.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -78,39 +78,39 @@ namespace mantle.lib.Api
         UserLoginResponse AuthenticationLoginPost (UserLoginRequest request = null);
 
         /// <summary>
-        /// Login a user with a username and password. The returned access token can be used to perform requests on the platform
+        /// Login a user with a username and password
         /// </summary>
         /// <remarks>
-        /// 
+        /// The returned access token can be used to perform requests on the platform.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of UserLoginResponse</returns>
         ApiResponse<UserLoginResponse> AuthenticationLoginPostWithHttpInfo (UserLoginRequest request = null);
         /// <summary>
-        /// Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
+        /// Logout a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
         void AuthenticationLogoutPost ();
 
         /// <summary>
-        /// Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
+        /// Logout a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AuthenticationLogoutPostWithHttpInfo ();
         /// <summary>
-        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in.
+        /// Confirm your account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -118,20 +118,20 @@ namespace mantle.lib.Api
         void AuthenticationSignupConfirmationPost (UserSignUpConfirmationRequest request = null);
 
         /// <summary>
-        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in.
+        /// Confirm your account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> AuthenticationSignupConfirmationPostWithHttpInfo (UserSignUpConfirmationRequest request = null);
         /// <summary>
-        /// Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account
+        /// Sign up a user with an invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// You shouldn&#39;t be authenticated for this request as it&#39;s meant to create an account.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -139,10 +139,10 @@ namespace mantle.lib.Api
         void AuthenticationSignupPost (SignUpUserRequest request = null);
 
         /// <summary>
-        /// Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account
+        /// Sign up a user with an invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// You shouldn&#39;t be authenticated for this request as it&#39;s meant to create an account.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -151,26 +151,26 @@ namespace mantle.lib.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
+        /// Confirm your password reset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AuthenticationForgotpasswordConfirmationPostAsync (UserForgotPasswordConfirmationRequest request = null);
+        System.Threading.Tasks.Task AuthenticationForgotPasswordConfirmationPostAsync (UserForgotPasswordConfirmationRequest request = null);
 
         /// <summary>
-        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
+        /// Confirm your password reset
         /// </summary>
         /// <remarks>
-        /// 
+        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationForgotpasswordConfirmationPostAsyncWithHttpInfo (UserForgotPasswordConfirmationRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationForgotPasswordConfirmationPostAsyncWithHttpInfo (UserForgotPasswordConfirmationRequest request = null);
         /// <summary>
         /// Send an email to the user&#39;s email address with the reset password instructions.
         /// </summary>
@@ -180,7 +180,7 @@ namespace mantle.lib.Api
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of void</returns>
-        System.Threading.Tasks.Task AuthenticationForgotpasswordPostAsync (UserForgotPasswordRequest request = null);
+        System.Threading.Tasks.Task AuthenticationForgotPasswordPostAsync (UserForgotPasswordRequest request = null);
 
         /// <summary>
         /// Send an email to the user&#39;s email address with the reset password instructions.
@@ -191,12 +191,12 @@ namespace mantle.lib.Api
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationForgotpasswordPostAsyncWithHttpInfo (UserForgotPasswordRequest request = null);
+        System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationForgotPasswordPostAsyncWithHttpInfo (UserForgotPasswordRequest request = null);
         /// <summary>
-        /// Login a user with a username and password. The returned access token can be used to perform requests on the platform
+        /// Login a user with a username and password
         /// </summary>
         /// <remarks>
-        /// 
+        /// The returned access token can be used to perform requests on the platform.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -204,39 +204,39 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task<UserLoginResponse> AuthenticationLoginPostAsync (UserLoginRequest request = null);
 
         /// <summary>
-        /// Login a user with a username and password. The returned access token can be used to perform requests on the platform
+        /// Login a user with a username and password
         /// </summary>
         /// <remarks>
-        /// 
+        /// The returned access token can be used to perform requests on the platform.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse (UserLoginResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<UserLoginResponse>> AuthenticationLoginPostAsyncWithHttpInfo (UserLoginRequest request = null);
         /// <summary>
-        /// Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
+        /// Logout a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
         System.Threading.Tasks.Task AuthenticationLogoutPostAsync ();
 
         /// <summary>
-        /// Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
+        /// Logout a user
         /// </summary>
         /// <remarks>
-        /// 
+        /// You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationLogoutPostAsyncWithHttpInfo ();
         /// <summary>
-        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in.
+        /// Confirm your account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -244,20 +244,20 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task AuthenticationSignupConfirmationPostAsync (UserSignUpConfirmationRequest request = null);
 
         /// <summary>
-        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in.
+        /// Confirm your account
         /// </summary>
         /// <remarks>
-        /// 
+        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationSignupConfirmationPostAsyncWithHttpInfo (UserSignUpConfirmationRequest request = null);
         /// <summary>
-        /// Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account
+        /// Sign up a user with an invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// You shouldn&#39;t be authenticated for this request as it&#39;s meant to create an account.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -265,10 +265,10 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task AuthenticationSignupPostAsync (SignUpUserRequest request = null);
 
         /// <summary>
-        /// Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account
+        /// Sign up a user with an invitation
         /// </summary>
         /// <remarks>
-        /// 
+        /// You shouldn&#39;t be authenticated for this request as it&#39;s meant to create an account.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -375,26 +375,26 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password. 
+        /// Confirm your password reset Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns></returns>
-        public void AuthenticationForgotpasswordConfirmationPost (UserForgotPasswordConfirmationRequest request = null)
+        public void AuthenticationForgotPasswordConfirmationPost (UserForgotPasswordConfirmationRequest request = null)
         {
-             AuthenticationForgotpasswordConfirmationPostWithHttpInfo(request);
+             AuthenticationForgotPasswordConfirmationPostWithHttpInfo(request);
         }
 
         /// <summary>
-        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password. 
+        /// Confirm your password reset Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> AuthenticationForgotpasswordConfirmationPostWithHttpInfo (UserForgotPasswordConfirmationRequest request = null)
+        public ApiResponse<Object> AuthenticationForgotPasswordConfirmationPostWithHttpInfo (UserForgotPasswordConfirmationRequest request = null)
         {
 
-            var localVarPath = "./authentication/forgotpassword/confirmation";
+            var localVarPath = "./authentication/forgot/password/confirmation";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -437,7 +437,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("AuthenticationForgotpasswordConfirmationPost", localVarResponse);
+                Exception exception = ExceptionFactory("AuthenticationForgotPasswordConfirmationPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -447,27 +447,27 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password. 
+        /// Confirm your password reset Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AuthenticationForgotpasswordConfirmationPostAsync (UserForgotPasswordConfirmationRequest request = null)
+        public async System.Threading.Tasks.Task AuthenticationForgotPasswordConfirmationPostAsync (UserForgotPasswordConfirmationRequest request = null)
         {
-             await AuthenticationForgotpasswordConfirmationPostAsyncWithHttpInfo(request);
+             await AuthenticationForgotPasswordConfirmationPostAsyncWithHttpInfo(request);
 
         }
 
         /// <summary>
-        /// Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password. 
+        /// Confirm your password reset Confirm your password reset using the code that has been sent to the email address that was specified in the invitation. This step is required before you can use your new password.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationForgotpasswordConfirmationPostAsyncWithHttpInfo (UserForgotPasswordConfirmationRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationForgotPasswordConfirmationPostAsyncWithHttpInfo (UserForgotPasswordConfirmationRequest request = null)
         {
 
-            var localVarPath = "./authentication/forgotpassword/confirmation";
+            var localVarPath = "./authentication/forgot/password/confirmation";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -510,7 +510,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("AuthenticationForgotpasswordConfirmationPost", localVarResponse);
+                Exception exception = ExceptionFactory("AuthenticationForgotPasswordConfirmationPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -525,9 +525,9 @@ namespace mantle.lib.Api
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns></returns>
-        public void AuthenticationForgotpasswordPost (UserForgotPasswordRequest request = null)
+        public void AuthenticationForgotPasswordPost (UserForgotPasswordRequest request = null)
         {
-             AuthenticationForgotpasswordPostWithHttpInfo(request);
+             AuthenticationForgotPasswordPostWithHttpInfo(request);
         }
 
         /// <summary>
@@ -536,10 +536,10 @@ namespace mantle.lib.Api
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>ApiResponse of Object(void)</returns>
-        public ApiResponse<Object> AuthenticationForgotpasswordPostWithHttpInfo (UserForgotPasswordRequest request = null)
+        public ApiResponse<Object> AuthenticationForgotPasswordPostWithHttpInfo (UserForgotPasswordRequest request = null)
         {
 
-            var localVarPath = "./authentication/forgotpassword";
+            var localVarPath = "./authentication/forgot/password";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -582,7 +582,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("AuthenticationForgotpasswordPost", localVarResponse);
+                Exception exception = ExceptionFactory("AuthenticationForgotPasswordPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -597,9 +597,9 @@ namespace mantle.lib.Api
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of void</returns>
-        public async System.Threading.Tasks.Task AuthenticationForgotpasswordPostAsync (UserForgotPasswordRequest request = null)
+        public async System.Threading.Tasks.Task AuthenticationForgotPasswordPostAsync (UserForgotPasswordRequest request = null)
         {
-             await AuthenticationForgotpasswordPostAsyncWithHttpInfo(request);
+             await AuthenticationForgotPasswordPostAsyncWithHttpInfo(request);
 
         }
 
@@ -609,10 +609,10 @@ namespace mantle.lib.Api
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
         /// <returns>Task of ApiResponse</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationForgotpasswordPostAsyncWithHttpInfo (UserForgotPasswordRequest request = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> AuthenticationForgotPasswordPostAsyncWithHttpInfo (UserForgotPasswordRequest request = null)
         {
 
-            var localVarPath = "./authentication/forgotpassword";
+            var localVarPath = "./authentication/forgot/password";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -655,7 +655,7 @@ namespace mantle.lib.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("AuthenticationForgotpasswordPost", localVarResponse);
+                Exception exception = ExceptionFactory("AuthenticationForgotPasswordPost", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -665,7 +665,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Login a user with a username and password. The returned access token can be used to perform requests on the platform 
+        /// Login a user with a username and password The returned access token can be used to perform requests on the platform.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -677,7 +677,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Login a user with a username and password. The returned access token can be used to perform requests on the platform 
+        /// Login a user with a username and password The returned access token can be used to perform requests on the platform.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -741,7 +741,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Login a user with a username and password. The returned access token can be used to perform requests on the platform 
+        /// Login a user with a username and password The returned access token can be used to perform requests on the platform.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -754,7 +754,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Login a user with a username and password. The returned access token can be used to perform requests on the platform 
+        /// Login a user with a username and password The returned access token can be used to perform requests on the platform.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -818,7 +818,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login. 
+        /// Logout a user You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns></returns>
@@ -828,7 +828,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login. 
+        /// Logout a user You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object(void)</returns>
@@ -876,7 +876,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login. 
+        /// Logout a user You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of void</returns>
@@ -887,7 +887,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Logout a user. You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login. 
+        /// Logout a user You must be logged in to perform this action. This will also delete the current access-token and a new one will be generated on the next login.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse</returns>
@@ -935,7 +935,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in. 
+        /// Confirm your account Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -946,7 +946,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in. 
+        /// Confirm your account Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -1007,7 +1007,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in. 
+        /// Confirm your account Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -1019,7 +1019,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Confirm your account using the code that has been sent to the email address that was specified in the invitation. This step is required before you first log in. 
+        /// Confirm your account Confirm your account using the code that has been sent to the email address that was specified in the invitation.  This step is required before you first log in.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -1080,7 +1080,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account 
+        /// Sign up a user with an invitation You shouldn&#39;t be authenticated for this request as it&#39;s meant to create an account.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -1091,7 +1091,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account 
+        /// Sign up a user with an invitation You shouldn&#39;t be authenticated for this request as it&#39;s meant to create an account.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -1152,7 +1152,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account 
+        /// Sign up a user with an invitation You shouldn&#39;t be authenticated for this request as it&#39;s meant to create an account.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -1164,7 +1164,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Sign up a user with an invitation. You shouldn&#39;t be authentified for this request as it&#39;s meant to create an account 
+        /// Sign up a user with an invitation You shouldn&#39;t be authenticated for this request as it&#39;s meant to create an account.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>

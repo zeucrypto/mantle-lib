@@ -31,27 +31,27 @@ namespace mantle.lib.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AnonymousApiKeyResponse" /> class.
         /// </summary>
-        /// <param name="UserName">UserName.</param>
-        /// <param name="CognitoUserId">CognitoUserId.</param>
+        /// <param name="UserEmail">UserEmail.</param>
+        /// <param name="UserId">UserId.</param>
         /// <param name="CreationDate">CreationDate.</param>
-        public AnonymousApiKeyResponse(string UserName = default(string), string CognitoUserId = default(string), DateTime? CreationDate = default(DateTime?))
+        public AnonymousApiKeyResponse(string UserEmail = default(string), string UserId = default(string), DateTime? CreationDate = default(DateTime?))
         {
-            this.UserName = UserName;
-            this.CognitoUserId = CognitoUserId;
+            this.UserEmail = UserEmail;
+            this.UserId = UserId;
             this.CreationDate = CreationDate;
         }
         
         /// <summary>
-        /// Gets or Sets UserName
+        /// Gets or Sets UserEmail
         /// </summary>
-        [DataMember(Name="userName", EmitDefaultValue=false)]
-        public string UserName { get; set; }
+        [DataMember(Name="userEmail", EmitDefaultValue=false)]
+        public string UserEmail { get; set; }
 
         /// <summary>
-        /// Gets or Sets CognitoUserId
+        /// Gets or Sets UserId
         /// </summary>
-        [DataMember(Name="cognitoUserId", EmitDefaultValue=false)]
-        public string CognitoUserId { get; set; }
+        [DataMember(Name="userId", EmitDefaultValue=false)]
+        public string UserId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreationDate
@@ -67,8 +67,8 @@ namespace mantle.lib.Model
         {
             var sb = new StringBuilder();
             sb.Append("class AnonymousApiKeyResponse {\n");
-            sb.Append("  UserName: ").Append(UserName).Append("\n");
-            sb.Append("  CognitoUserId: ").Append(CognitoUserId).Append("\n");
+            sb.Append("  UserEmail: ").Append(UserEmail).Append("\n");
+            sb.Append("  UserId: ").Append(UserId).Append("\n");
             sb.Append("  CreationDate: ").Append(CreationDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -105,14 +105,14 @@ namespace mantle.lib.Model
 
             return 
                 (
-                    this.UserName == input.UserName ||
-                    (this.UserName != null &&
-                    this.UserName.Equals(input.UserName))
+                    this.UserEmail == input.UserEmail ||
+                    (this.UserEmail != null &&
+                    this.UserEmail.Equals(input.UserEmail))
                 ) && 
                 (
-                    this.CognitoUserId == input.CognitoUserId ||
-                    (this.CognitoUserId != null &&
-                    this.CognitoUserId.Equals(input.CognitoUserId))
+                    this.UserId == input.UserId ||
+                    (this.UserId != null &&
+                    this.UserId.Equals(input.UserId))
                 ) && 
                 (
                     this.CreationDate == input.CreationDate ||
@@ -130,10 +130,10 @@ namespace mantle.lib.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.UserName != null)
-                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
-                if (this.CognitoUserId != null)
-                    hashCode = hashCode * 59 + this.CognitoUserId.GetHashCode();
+                if (this.UserEmail != null)
+                    hashCode = hashCode * 59 + this.UserEmail.GetHashCode();
+                if (this.UserId != null)
+                    hashCode = hashCode * 59 + this.UserId.GetHashCode();
                 if (this.CreationDate != null)
                     hashCode = hashCode * 59 + this.CreationDate.GetHashCode();
                 return hashCode;

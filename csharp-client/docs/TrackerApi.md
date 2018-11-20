@@ -1,31 +1,37 @@
 # mantle.lib.Api.TrackerApi
 
-All URIs are relative to *http://dev.api.mantle.services*
+All URIs are relative to *http://develop.api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**TrackerAssetsByAssetIdDelete**](TrackerApi.md#trackerassetsbyassetiddelete) | **DELETE** /tracker/assets/{assetId} | [ASSETS] Delete an asset that has been previously created. It won&#39;t be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role.
-[**TrackerAssetsByAssetIdGet**](TrackerApi.md#trackerassetsbyassetidget) | **GET** /tracker/assets/{assetId} | [ASSETS] Get a specific asset&#39;s details. Requires the Track Admin Role.
-[**TrackerAssetsByAssetIdPut**](TrackerApi.md#trackerassetsbyassetidput) | **PUT** /tracker/assets/{assetId} | [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role.
-[**TrackerAssetsGet**](TrackerApi.md#trackerassetsget) | **GET** /tracker/assets | [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role.
-[**TrackerAssetsIssuePost**](TrackerApi.md#trackerassetsissuepost) | **POST** /tracker/assets/issue | [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role.
-[**TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet**](TrackerApi.md#trackerassetsissuedbatchesbyassetidbybatchidget) | **GET** /tracker/assets/issuedbatches/{assetId}/{batchId} | [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
-[**TrackerAssetsIssuedbatchesByAssetIdGet**](TrackerApi.md#trackerassetsissuedbatchesbyassetidget) | **GET** /tracker/assets/issuedbatches/{assetId} | [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
-[**TrackerAssetsPost**](TrackerApi.md#trackerassetspost) | **POST** /tracker/assets | [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role.
-[**TrackerStatsGet**](TrackerApi.md#trackerstatsget) | **GET** /tracker/stats | [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role.
-[**TrackerTransactionsGet**](TrackerApi.md#trackertransactionsget) | **GET** /tracker/transactions | [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role.
-[**TrackerTransactionsReversePost**](TrackerApi.md#trackertransactionsreversepost) | **POST** /tracker/transactions/reverse | [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role.
-[**TrackerWalletBatchesTransferPost**](TrackerApi.md#trackerwalletbatchestransferpost) | **POST** /tracker/wallet/batches/transfer | [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role.
-[**TrackerWalletDetailedbalancesGet**](TrackerApi.md#trackerwalletdetailedbalancesget) | **GET** /tracker/wallet/detailedbalances | [WALLET] Get all of the logged user&#39;s asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role.
-[**TrackerWalletTransactionsByAssetIdGet**](TrackerApi.md#trackerwallettransactionsbyassetidget) | **GET** /tracker/wallet/transactions/{assetId} | [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role.
-[**TrackerWalletTransferPost**](TrackerApi.md#trackerwallettransferpost) | **POST** /tracker/wallet/transfer | [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role.
+[**TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet**](TrackerApi.md#trackerbyproductidassetsbatchesissuedbyassetidbybatchidget) | **GET** /tracker/{productId}/assets/batches/issued/{assetId}/{batchId} | [] Get all issued batches for an asset
+[**TrackerByProductIdAssetsBatchesIssuedByAssetIdGet**](TrackerApi.md#trackerbyproductidassetsbatchesissuedbyassetidget) | **GET** /tracker/{productId}/assets/batches/issued/{assetId} | [] Get all issued batches for an asset
+[**TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet**](TrackerApi.md#trackerbyproductidassetsbatchesissuedmultibyassetidget) | **GET** /tracker/{productId}/assets/batches/issued/multi/{assetId} | [] Get all issued batches for a multi asset
+[**TrackerByProductIdAssetsByAssetIdDelete**](TrackerApi.md#trackerbyproductidassetsbyassetiddelete) | **DELETE** /tracker/{productId}/assets/{assetId} | [] Delete an asset
+[**TrackerByProductIdAssetsByAssetIdGet**](TrackerApi.md#trackerbyproductidassetsbyassetidget) | **GET** /tracker/{productId}/assets/{assetId} | [] Get a specific asset&#39;s details
+[**TrackerByProductIdAssetsByAssetIdPut**](TrackerApi.md#trackerbyproductidassetsbyassetidput) | **PUT** /tracker/{productId}/assets/{assetId} | [] Edit an asset
+[**TrackerByProductIdAssetsGet**](TrackerApi.md#trackerbyproductidassetsget) | **GET** /tracker/{productId}/assets | [] Get all assets
+[**TrackerByProductIdAssetsIssuePost**](TrackerApi.md#trackerbyproductidassetsissuepost) | **POST** /tracker/{productId}/assets/issue | [] Issue a certain amount of asset to a recipient
+[**TrackerByProductIdAssetsPost**](TrackerApi.md#trackerbyproductidassetspost) | **POST** /tracker/{productId}/assets | [] Create an asset
+[**TrackerByProductIdMultiAssetsByAssetIdGet**](TrackerApi.md#trackerbyproductidmultiassetsbyassetidget) | **GET** /tracker/{productId}/multiassets/{assetId} | [] Get a specific multi asset&#39;s details
+[**TrackerByProductIdMultiAssetsGet**](TrackerApi.md#trackerbyproductidmultiassetsget) | **GET** /tracker/{productId}/multiassets | [] Get all multi assets
+[**TrackerByProductIdMultiAssetsPost**](TrackerApi.md#trackerbyproductidmultiassetspost) | **POST** /tracker/{productId}/multiassets | [] Creates a multi asset
+[**TrackerByProductIdStatsGet**](TrackerApi.md#trackerbyproductidstatsget) | **GET** /tracker/{productId}/stats | [] Get 3 statistics regarding the usage of Tracker in the last 24 hours
+[**TrackerByProductIdTransactionsGet**](TrackerApi.md#trackerbyproductidtransactionsget) | **GET** /tracker/{productId}/transactions | [] Get all transactions
+[**TrackerByProductIdTransactionsReversePost**](TrackerApi.md#trackerbyproductidtransactionsreversepost) | **POST** /tracker/{productId}/transactions/reverse | [] Revert a transaction
+[**TrackerByProductIdWalletBalancesDetailedGet**](TrackerApi.md#trackerbyproductidwalletbalancesdetailedget) | **GET** /tracker/{productId}/wallet/balances/detailed | [] Get all authenticated user&#39;s asset balances
+[**TrackerByProductIdWalletBatchesTransferPost**](TrackerApi.md#trackerbyproductidwalletbatchestransferpost) | **POST** /tracker/{productId}/wallet/batches/transfer | [] Create a transfer between yourself and another user from one of your specific batches
+[**TrackerByProductIdWalletTransactionsByAssetIdGet**](TrackerApi.md#trackerbyproductidwallettransactionsbyassetidget) | **GET** /tracker/{productId}/wallet/transactions/{assetId} | [] Get all transactions for a specific asset
+[**TrackerByProductIdWalletTransferPost**](TrackerApi.md#trackerbyproductidwallettransferpost) | **POST** /tracker/{productId}/wallet/transfer | [] Create a transfer between yourself and another user
 
 
-<a name="trackerassetsbyassetiddelete"></a>
-# **TrackerAssetsByAssetIdDelete**
-> void TrackerAssetsByAssetIdDelete (string assetId)
+<a name="trackerbyproductidassetsbatchesissuedbyassetidbybatchidget"></a>
+# **TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet**
+> IssuedBatchTransactionsResponse TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet (string assetId, string batchId, string productId)
 
-[ASSETS] Delete an asset that has been previously created. It won't be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role.
+[] Get all issued batches for an asset
+
+Requires the Tracker Admin Role.
 
 ### Example
 ```csharp
@@ -37,21 +43,24 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerAssetsByAssetIdDeleteExample
+    public class TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGetExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
             var assetId = assetId_example;  // string | 
+            var batchId = batchId_example;  // string | 
+            var productId = productId_example;  // string | 
 
             try
             {
-                // [ASSETS] Delete an asset that has been previously created. It won't be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible. Requires the Tracker Admin Role.
-                apiInstance.TrackerAssetsByAssetIdDelete(assetId);
+                // [] Get all issued batches for an asset
+                IssuedBatchTransactionsResponse result = apiInstance.TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet(assetId, batchId, productId);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerAssetsByAssetIdDelete: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsBatchesIssuedByAssetIdByBatchIdGet: " + e.Message );
             }
         }
     }
@@ -63,6 +72,196 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **string**|  | 
+ **batchId** | **string**|  | 
+ **productId** | **string**|  | 
+
+### Return type
+
+[**IssuedBatchTransactionsResponse**](IssuedBatchTransactionsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackerbyproductidassetsbatchesissuedbyassetidget"></a>
+# **TrackerByProductIdAssetsBatchesIssuedByAssetIdGet**
+> IssuedBatchesResponse TrackerByProductIdAssetsBatchesIssuedByAssetIdGet (string assetId, string productId)
+
+[] Get all issued batches for an asset
+
+Requires the Tracker Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Api;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class TrackerByProductIdAssetsBatchesIssuedByAssetIdGetExample
+    {
+        public void main()
+        {
+            var apiInstance = new TrackerApi();
+            var assetId = assetId_example;  // string | 
+            var productId = productId_example;  // string | 
+
+            try
+            {
+                // [] Get all issued batches for an asset
+                IssuedBatchesResponse result = apiInstance.TrackerByProductIdAssetsBatchesIssuedByAssetIdGet(assetId, productId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsBatchesIssuedByAssetIdGet: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetId** | **string**|  | 
+ **productId** | **string**|  | 
+
+### Return type
+
+[**IssuedBatchesResponse**](IssuedBatchesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackerbyproductidassetsbatchesissuedmultibyassetidget"></a>
+# **TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet**
+> IssuedBatchesResponse TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet (string assetId, string productId)
+
+[] Get all issued batches for a multi asset
+
+Requires the Tracker Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Api;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGetExample
+    {
+        public void main()
+        {
+            var apiInstance = new TrackerApi();
+            var assetId = assetId_example;  // string | 
+            var productId = productId_example;  // string | 
+
+            try
+            {
+                // [] Get all issued batches for a multi asset
+                IssuedBatchesResponse result = apiInstance.TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet(assetId, productId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsBatchesIssuedMultiByAssetIdGet: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetId** | **string**|  | 
+ **productId** | **string**|  | 
+
+### Return type
+
+[**IssuedBatchesResponse**](IssuedBatchesResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackerbyproductidassetsbyassetiddelete"></a>
+# **TrackerByProductIdAssetsByAssetIdDelete**
+> void TrackerByProductIdAssetsByAssetIdDelete (string assetId, string productId)
+
+[] Delete an asset
+
+It won't be issuable and transferable anymore, but all transactions made in the past with this asset will still be visible.                Requires the Tracker Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Api;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class TrackerByProductIdAssetsByAssetIdDeleteExample
+    {
+        public void main()
+        {
+            var apiInstance = new TrackerApi();
+            var assetId = assetId_example;  // string | 
+            var productId = productId_example;  // string | 
+
+            try
+            {
+                // [] Delete an asset
+                apiInstance.TrackerByProductIdAssetsByAssetIdDelete(assetId, productId);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsByAssetIdDelete: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetId** | **string**|  | 
+ **productId** | **string**|  | 
 
 ### Return type
 
@@ -79,11 +278,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerassetsbyassetidget"></a>
-# **TrackerAssetsByAssetIdGet**
-> TrackerAsset TrackerAssetsByAssetIdGet (string assetId)
+<a name="trackerbyproductidassetsbyassetidget"></a>
+# **TrackerByProductIdAssetsByAssetIdGet**
+> TrackerAsset TrackerByProductIdAssetsByAssetIdGet (string assetId, string productId)
 
-[ASSETS] Get a specific asset's details. Requires the Track Admin Role.
+[] Get a specific asset's details
+
+Requires the Track Admin Role.
 
 ### Example
 ```csharp
@@ -95,22 +296,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerAssetsByAssetIdGetExample
+    public class TrackerByProductIdAssetsByAssetIdGetExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
             var assetId = assetId_example;  // string | 
+            var productId = productId_example;  // string | 
 
             try
             {
-                // [ASSETS] Get a specific asset's details. Requires the Track Admin Role.
-                TrackerAsset result = apiInstance.TrackerAssetsByAssetIdGet(assetId);
+                // [] Get a specific asset's details
+                TrackerAsset result = apiInstance.TrackerByProductIdAssetsByAssetIdGet(assetId, productId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerAssetsByAssetIdGet: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsByAssetIdGet: " + e.Message );
             }
         }
     }
@@ -122,6 +324,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **string**|  | 
+ **productId** | **string**|  | 
 
 ### Return type
 
@@ -138,11 +341,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerassetsbyassetidput"></a>
-# **TrackerAssetsByAssetIdPut**
-> void TrackerAssetsByAssetIdPut (string assetId, TrackerAssetCreateRequest request = null)
+<a name="trackerbyproductidassetsbyassetidput"></a>
+# **TrackerByProductIdAssetsByAssetIdPut**
+> void TrackerByProductIdAssetsByAssetIdPut (string assetId, string productId, TrackerAssetCreateRequest request = null)
 
-[ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role.
+[] Edit an asset
+
+Only the name can be changed.                Requires the Tracker Admin Role.
 
 ### Example
 ```csharp
@@ -154,22 +359,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerAssetsByAssetIdPutExample
+    public class TrackerByProductIdAssetsByAssetIdPutExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
             var assetId = assetId_example;  // string | 
+            var productId = productId_example;  // string | 
             var request = new TrackerAssetCreateRequest(); // TrackerAssetCreateRequest |  (optional) 
 
             try
             {
-                // [ASSETS] Edit an asset that has previously been created. Only the name can be changed. Requires the Tracker Admin Role.
-                apiInstance.TrackerAssetsByAssetIdPut(assetId, request);
+                // [] Edit an asset
+                apiInstance.TrackerByProductIdAssetsByAssetIdPut(assetId, productId, request);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerAssetsByAssetIdPut: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsByAssetIdPut: " + e.Message );
             }
         }
     }
@@ -181,6 +387,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **string**|  | 
+ **productId** | **string**|  | 
  **request** | [**TrackerAssetCreateRequest**](TrackerAssetCreateRequest.md)|  | [optional] 
 
 ### Return type
@@ -198,11 +405,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerassetsget"></a>
-# **TrackerAssetsGet**
-> List<TrackerAsset> TrackerAssetsGet ()
+<a name="trackerbyproductidassetsget"></a>
+# **TrackerByProductIdAssetsGet**
+> List<TrackerAsset> TrackerByProductIdAssetsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
 
-[ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role.
+[] Get all assets
+
+Requires the Tracker Admin Role.
 
 ### Example
 ```csharp
@@ -214,21 +423,26 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerAssetsGetExample
+    public class TrackerByProductIdAssetsGetExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
+            var beforeDateTime = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
+            var limit = 56;  // int? |  (optional) 
+            var offset = 56;  // int? |  (optional) 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [ASSETS] Get all of the assets that have been created in Tracker. Requires the Tracker Admin Role.
-                List&lt;TrackerAsset&gt; result = apiInstance.TrackerAssetsGet();
+                // [] Get all assets
+                List&lt;TrackerAsset&gt; result = apiInstance.TrackerByProductIdAssetsGet(productId, beforeDateTime, limit, offset, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerAssetsGet: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsGet: " + e.Message );
             }
         }
     }
@@ -236,7 +450,14 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **beforeDateTime** | **DateTime?**|  | [optional] 
+ **limit** | **int?**|  | [optional] 
+ **offset** | **int?**|  | [optional] 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -253,11 +474,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerassetsissuepost"></a>
-# **TrackerAssetsIssuePost**
-> void TrackerAssetsIssuePost (TrackerAssetIssueRequest request = null)
+<a name="trackerbyproductidassetsissuepost"></a>
+# **TrackerByProductIdAssetsIssuePost**
+> void TrackerByProductIdAssetsIssuePost (string productId, TrackerAssetIssueRequest request = null)
 
-[ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role.
+[] Issue a certain amount of asset to a recipient
+
+Requires the Tracker Admin Role.
 
 ### Example
 ```csharp
@@ -269,21 +492,22 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerAssetsIssuePostExample
+    public class TrackerByProductIdAssetsIssuePostExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
             var request = new TrackerAssetIssueRequest(); // TrackerAssetIssueRequest |  (optional) 
 
             try
             {
-                // [ASSETS] Issue a certain amount of asset to a recipient. Requires the Tracker Admin Role.
-                apiInstance.TrackerAssetsIssuePost(request);
+                // [] Issue a certain amount of asset to a recipient
+                apiInstance.TrackerByProductIdAssetsIssuePost(productId, request);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerAssetsIssuePost: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsIssuePost: " + e.Message );
             }
         }
     }
@@ -294,6 +518,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **request** | [**TrackerAssetIssueRequest**](TrackerAssetIssueRequest.md)|  | [optional] 
 
 ### Return type
@@ -311,72 +536,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerassetsissuedbatchesbyassetidbybatchidget"></a>
-# **TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet**
-> IssuedBatchTransactionsResponse TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet (string assetId, string batchId)
+<a name="trackerbyproductidassetspost"></a>
+# **TrackerByProductIdAssetsPost**
+> TrackerAsset TrackerByProductIdAssetsPost (string productId, TrackerAssetCreateRequest request = null)
 
-[ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
+[] Create an asset
 
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class TrackerAssetsIssuedbatchesByAssetIdByBatchIdGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new TrackerApi();
-            var assetId = assetId_example;  // string | 
-            var batchId = batchId_example;  // string | 
-
-            try
-            {
-                // [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
-                IssuedBatchTransactionsResponse result = apiInstance.TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet(assetId, batchId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling TrackerApi.TrackerAssetsIssuedbatchesByAssetIdByBatchIdGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **assetId** | **string**|  | 
- **batchId** | **string**|  | 
-
-### Return type
-
-[**IssuedBatchTransactionsResponse**](IssuedBatchTransactionsResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="trackerassetsissuedbatchesbyassetidget"></a>
-# **TrackerAssetsIssuedbatchesByAssetIdGet**
-> IssuedBatchesResponse TrackerAssetsIssuedbatchesByAssetIdGet (string assetId)
-
-[ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
+This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
 
 ### Example
 ```csharp
@@ -388,81 +554,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerAssetsIssuedbatchesByAssetIdGetExample
+    public class TrackerByProductIdAssetsPostExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
-            var assetId = assetId_example;  // string | 
-
-            try
-            {
-                // [ASSETS] Get all issued batches for an asset. Requires the Tracker Admin Role.
-                IssuedBatchesResponse result = apiInstance.TrackerAssetsIssuedbatchesByAssetIdGet(assetId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling TrackerApi.TrackerAssetsIssuedbatchesByAssetIdGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **assetId** | **string**|  | 
-
-### Return type
-
-[**IssuedBatchesResponse**](IssuedBatchesResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="trackerassetspost"></a>
-# **TrackerAssetsPost**
-> TrackerAsset TrackerAssetsPost (TrackerAssetCreateRequest request = null)
-
-[ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class TrackerAssetsPostExample
-    {
-        public void main()
-        {
-            var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
             var request = new TrackerAssetCreateRequest(); // TrackerAssetCreateRequest |  (optional) 
 
             try
             {
-                // [ASSETS] Creates an asset in Tracker. This asset will then be issuable and transferable between entities. Requires the Tracker Admin Role.
-                TrackerAsset result = apiInstance.TrackerAssetsPost(request);
+                // [] Create an asset
+                TrackerAsset result = apiInstance.TrackerByProductIdAssetsPost(productId, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerAssetsPost: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdAssetsPost: " + e.Message );
             }
         }
     }
@@ -473,6 +581,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **request** | [**TrackerAssetCreateRequest**](TrackerAssetCreateRequest.md)|  | [optional] 
 
 ### Return type
@@ -490,11 +599,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerstatsget"></a>
-# **TrackerStatsGet**
-> TrackerStatsResponse TrackerStatsGet ()
+<a name="trackerbyproductidmultiassetsbyassetidget"></a>
+# **TrackerByProductIdMultiAssetsByAssetIdGet**
+> TrackerMultiAsset TrackerByProductIdMultiAssetsByAssetIdGet (string assetId, string productId)
 
-[STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role.
+[] Get a specific multi asset's details
+
+Requires the Track Admin Role.
 
 ### Example
 ```csharp
@@ -506,21 +617,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerStatsGetExample
+    public class TrackerByProductIdMultiAssetsByAssetIdGetExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
+            var assetId = assetId_example;  // string | 
+            var productId = productId_example;  // string | 
 
             try
             {
-                // [STATS] Get 3 statistics regarding the usage of Tracker in the last 24 hours. Requires the Tracker Admin Role.
-                TrackerStatsResponse result = apiInstance.TrackerStatsGet();
+                // [] Get a specific multi asset's details
+                TrackerMultiAsset result = apiInstance.TrackerByProductIdMultiAssetsByAssetIdGet(assetId, productId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerStatsGet: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdMultiAssetsByAssetIdGet: " + e.Message );
             }
         }
     }
@@ -528,7 +641,206 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **assetId** | **string**|  | 
+ **productId** | **string**|  | 
+
+### Return type
+
+[**TrackerMultiAsset**](TrackerMultiAsset.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackerbyproductidmultiassetsget"></a>
+# **TrackerByProductIdMultiAssetsGet**
+> List<TrackerMultiAsset> TrackerByProductIdMultiAssetsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string assetIds = null, string request = null)
+
+[] Get all multi assets
+
+Requires the Tracker Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Api;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class TrackerByProductIdMultiAssetsGetExample
+    {
+        public void main()
+        {
+            var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
+            var beforeDateTime = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
+            var limit = 56;  // int? |  (optional) 
+            var offset = 56;  // int? |  (optional) 
+            var assetIds = assetIds_example;  // string |  (optional) 
+            var request = request_example;  // string |  (optional) 
+
+            try
+            {
+                // [] Get all multi assets
+                List&lt;TrackerMultiAsset&gt; result = apiInstance.TrackerByProductIdMultiAssetsGet(productId, beforeDateTime, limit, offset, assetIds, request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdMultiAssetsGet: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **beforeDateTime** | **DateTime?**|  | [optional] 
+ **limit** | **int?**|  | [optional] 
+ **offset** | **int?**|  | [optional] 
+ **assetIds** | **string**|  | [optional] 
+ **request** | **string**|  | [optional] 
+
+### Return type
+
+[**List<TrackerMultiAsset>**](TrackerMultiAsset.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackerbyproductidmultiassetspost"></a>
+# **TrackerByProductIdMultiAssetsPost**
+> TrackerMultiAsset TrackerByProductIdMultiAssetsPost (string productId, TrackerMultiAssetCreateRequest request = null)
+
+[] Creates a multi asset
+
+This asset will then be issuable and transferable between entities.                Requires the Tracker Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Api;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class TrackerByProductIdMultiAssetsPostExample
+    {
+        public void main()
+        {
+            var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
+            var request = new TrackerMultiAssetCreateRequest(); // TrackerMultiAssetCreateRequest |  (optional) 
+
+            try
+            {
+                // [] Creates a multi asset
+                TrackerMultiAsset result = apiInstance.TrackerByProductIdMultiAssetsPost(productId, request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdMultiAssetsPost: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **request** | [**TrackerMultiAssetCreateRequest**](TrackerMultiAssetCreateRequest.md)|  | [optional] 
+
+### Return type
+
+[**TrackerMultiAsset**](TrackerMultiAsset.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackerbyproductidstatsget"></a>
+# **TrackerByProductIdStatsGet**
+> TrackerStatsResponse TrackerByProductIdStatsGet (string productId)
+
+[] Get 3 statistics regarding the usage of Tracker in the last 24 hours
+
+Requires the Tracker Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Api;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class TrackerByProductIdStatsGetExample
+    {
+        public void main()
+        {
+            var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
+
+            try
+            {
+                // [] Get 3 statistics regarding the usage of Tracker in the last 24 hours
+                TrackerStatsResponse result = apiInstance.TrackerByProductIdStatsGet(productId);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdStatsGet: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
 
 ### Return type
 
@@ -545,11 +857,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackertransactionsget"></a>
-# **TrackerTransactionsGet**
-> List<AssetTransaction> TrackerTransactionsGet (DateTime? beforeDateTime = null, int? limit = null, int? offset = null)
+<a name="trackerbyproductidtransactionsget"></a>
+# **TrackerByProductIdTransactionsGet**
+> List<AssetTransaction> TrackerByProductIdTransactionsGet (string productId, DateTime? beforeDateTime = null, int? limit = null, int? offset = null, string request = null)
 
-[TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role.
+[] Get all transactions
+
+Requires the Tracker Admin Role.
 
 ### Example
 ```csharp
@@ -561,24 +875,26 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerTransactionsGetExample
+    public class TrackerByProductIdTransactionsGetExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
             var beforeDateTime = 2013-10-20T19:20:30+01:00;  // DateTime? |  (optional) 
             var limit = 56;  // int? |  (optional) 
             var offset = 56;  // int? |  (optional) 
+            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [TRANSACTIONS] Get all of the latest transactions that have been performed in Tracker. Requires the Tracker Admin Role.
-                List&lt;AssetTransaction&gt; result = apiInstance.TrackerTransactionsGet(beforeDateTime, limit, offset);
+                // [] Get all transactions
+                List&lt;AssetTransaction&gt; result = apiInstance.TrackerByProductIdTransactionsGet(productId, beforeDateTime, limit, offset, request);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerTransactionsGet: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdTransactionsGet: " + e.Message );
             }
         }
     }
@@ -589,9 +905,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **beforeDateTime** | **DateTime?**|  | [optional] 
  **limit** | **int?**|  | [optional] 
  **offset** | **int?**|  | [optional] 
+ **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -608,11 +926,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackertransactionsreversepost"></a>
-# **TrackerTransactionsReversePost**
-> void TrackerTransactionsReversePost (TrackerTransactionRevertRequest request = null)
+<a name="trackerbyproductidtransactionsreversepost"></a>
+# **TrackerByProductIdTransactionsReversePost**
+> void TrackerByProductIdTransactionsReversePost (string productId, TrackerTransactionRevertRequest request = null)
 
-[TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role.
+[] Revert a transaction
+
+This operation will refund the amounts that have been sent from a user to another by creating a new transaction.                Requires the Tracker Admin Role.
 
 ### Example
 ```csharp
@@ -624,21 +944,22 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerTransactionsReversePostExample
+    public class TrackerByProductIdTransactionsReversePostExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
             var request = new TrackerTransactionRevertRequest(); // TrackerTransactionRevertRequest |  (optional) 
 
             try
             {
-                // [TRANSACTIONS] Revert a transaction. This operation will refund the amounts that have been sent from a user to another by creating a new transaction. Requires the Tracker Admin Role.
-                apiInstance.TrackerTransactionsReversePost(request);
+                // [] Revert a transaction
+                apiInstance.TrackerByProductIdTransactionsReversePost(productId, request);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerTransactionsReversePost: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdTransactionsReversePost: " + e.Message );
             }
         }
     }
@@ -649,6 +970,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **request** | [**TrackerTransactionRevertRequest**](TrackerTransactionRevertRequest.md)|  | [optional] 
 
 ### Return type
@@ -666,11 +988,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerwalletbatchestransferpost"></a>
-# **TrackerWalletBatchesTransferPost**
-> void TrackerWalletBatchesTransferPost (TrackerBatchTransferRequest request = null)
+<a name="trackerbyproductidwalletbalancesdetailedget"></a>
+# **TrackerByProductIdWalletBalancesDetailedGet**
+> List<DetailedAssetBalance> TrackerByProductIdWalletBalancesDetailedGet (string productId)
 
-[WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role.
+[] Get all authenticated user's asset balances
+
+Requires the Tracker Admin Role or Tracker User Role.
 
 ### Example
 ```csharp
@@ -682,21 +1006,22 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerWalletBatchesTransferPostExample
+    public class TrackerByProductIdWalletBalancesDetailedGetExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
-            var request = new TrackerBatchTransferRequest(); // TrackerBatchTransferRequest |  (optional) 
+            var productId = productId_example;  // string | 
 
             try
             {
-                // [WALLET] Create a transfer between yourself and another user from one of your specific batches. Requires the Tracker Admin Role or Tracker User Role.
-                apiInstance.TrackerWalletBatchesTransferPost(request);
+                // [] Get all authenticated user's asset balances
+                List&lt;DetailedAssetBalance&gt; result = apiInstance.TrackerByProductIdWalletBalancesDetailedGet(productId);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerWalletBatchesTransferPost: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdWalletBalancesDetailedGet: " + e.Message );
             }
         }
     }
@@ -707,6 +1032,68 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+
+### Return type
+
+[**List<DetailedAssetBalance>**](DetailedAssetBalance.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="trackerbyproductidwalletbatchestransferpost"></a>
+# **TrackerByProductIdWalletBatchesTransferPost**
+> void TrackerByProductIdWalletBatchesTransferPost (string productId, TrackerBatchTransferRequest request = null)
+
+[] Create a transfer between yourself and another user from one of your specific batches
+
+Requires the Tracker Admin Role or Tracker User Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Api;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class TrackerByProductIdWalletBatchesTransferPostExample
+    {
+        public void main()
+        {
+            var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
+            var request = new TrackerBatchTransferRequest(); // TrackerBatchTransferRequest |  (optional) 
+
+            try
+            {
+                // [] Create a transfer between yourself and another user from one of your specific batches
+                apiInstance.TrackerByProductIdWalletBatchesTransferPost(productId, request);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdWalletBatchesTransferPost: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **request** | [**TrackerBatchTransferRequest**](TrackerBatchTransferRequest.md)|  | [optional] 
 
 ### Return type
@@ -724,66 +1111,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerwalletdetailedbalancesget"></a>
-# **TrackerWalletDetailedbalancesGet**
-> List<DetailedAssetBalance> TrackerWalletDetailedbalancesGet ()
+<a name="trackerbyproductidwallettransactionsbyassetidget"></a>
+# **TrackerByProductIdWalletTransactionsByAssetIdGet**
+> List<AssetTransaction> TrackerByProductIdWalletTransactionsByAssetIdGet (string assetId, string productId)
 
-[WALLET] Get all of the logged user's asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role.
+[] Get all transactions for a specific asset
 
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class TrackerWalletDetailedbalancesGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new TrackerApi();
-
-            try
-            {
-                // [WALLET] Get all of the logged user's asset balances for a specific main coin. Requires the Tracker Admin Role or Tracker User Role.
-                List&lt;DetailedAssetBalance&gt; result = apiInstance.TrackerWalletDetailedbalancesGet();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling TrackerApi.TrackerWalletDetailedbalancesGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List<DetailedAssetBalance>**](DetailedAssetBalance.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="trackerwallettransactionsbyassetidget"></a>
-# **TrackerWalletTransactionsByAssetIdGet**
-> List<AssetTransaction> TrackerWalletTransactionsByAssetIdGet (string assetId)
-
-[WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role.
+Requires the Tracker Admin Role or Tracker User Role.
 
 ### Example
 ```csharp
@@ -795,22 +1129,23 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerWalletTransactionsByAssetIdGetExample
+    public class TrackerByProductIdWalletTransactionsByAssetIdGetExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
             var assetId = assetId_example;  // string | 
+            var productId = productId_example;  // string | 
 
             try
             {
-                // [WALLET] Get all transactions for a specific asset. Requires the Tracker Admin Role or Tracker User Role.
-                List&lt;AssetTransaction&gt; result = apiInstance.TrackerWalletTransactionsByAssetIdGet(assetId);
+                // [] Get all transactions for a specific asset
+                List&lt;AssetTransaction&gt; result = apiInstance.TrackerByProductIdWalletTransactionsByAssetIdGet(assetId, productId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerWalletTransactionsByAssetIdGet: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdWalletTransactionsByAssetIdGet: " + e.Message );
             }
         }
     }
@@ -822,6 +1157,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **assetId** | **string**|  | 
+ **productId** | **string**|  | 
 
 ### Return type
 
@@ -838,11 +1174,13 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="trackerwallettransferpost"></a>
-# **TrackerWalletTransferPost**
-> void TrackerWalletTransferPost (TrackerTransferRequest request = null)
+<a name="trackerbyproductidwallettransferpost"></a>
+# **TrackerByProductIdWalletTransferPost**
+> void TrackerByProductIdWalletTransferPost (string productId, TrackerTransferRequest request = null)
 
-[WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role.
+[] Create a transfer between yourself and another user
+
+Requires the Tracker Admin Role or Tracker User Role.
 
 ### Example
 ```csharp
@@ -854,21 +1192,22 @@ using mantle.lib.Model;
 
 namespace Example
 {
-    public class TrackerWalletTransferPostExample
+    public class TrackerByProductIdWalletTransferPostExample
     {
         public void main()
         {
             var apiInstance = new TrackerApi();
+            var productId = productId_example;  // string | 
             var request = new TrackerTransferRequest(); // TrackerTransferRequest |  (optional) 
 
             try
             {
-                // [WALLET] Create a transfer between yourself and another user. Requires the Tracker Admin Role or Tracker User Role.
-                apiInstance.TrackerWalletTransferPost(request);
+                // [] Create a transfer between yourself and another user
+                apiInstance.TrackerByProductIdWalletTransferPost(productId, request);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TrackerApi.TrackerWalletTransferPost: " + e.Message );
+                Debug.Print("Exception when calling TrackerApi.TrackerByProductIdWalletTransferPost: " + e.Message );
             }
         }
     }
@@ -879,6 +1218,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
  **request** | [**TrackerTransferRequest**](TrackerTransferRequest.md)|  | [optional] 
 
 ### Return type

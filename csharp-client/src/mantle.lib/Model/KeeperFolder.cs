@@ -33,6 +33,7 @@ namespace mantle.lib.Model
         /// </summary>
         /// <param name="Id">Id.</param>
         /// <param name="ClientId">ClientId.</param>
+        /// <param name="SubscriptionId">SubscriptionId.</param>
         /// <param name="CreatedById">CreatedById.</param>
         /// <param name="CreatedByEmail">CreatedByEmail.</param>
         /// <param name="Name">Name.</param>
@@ -40,10 +41,11 @@ namespace mantle.lib.Model
         /// <param name="CreationDate">CreationDate.</param>
         /// <param name="ModificationDate">ModificationDate.</param>
         /// <param name="IsDeleted">IsDeleted.</param>
-        public KeeperFolder(string Id = default(string), string ClientId = default(string), string CreatedById = default(string), string CreatedByEmail = default(string), string Name = default(string), int? FileQuantity = default(int?), DateTime? CreationDate = default(DateTime?), DateTime? ModificationDate = default(DateTime?), bool? IsDeleted = default(bool?))
+        public KeeperFolder(string Id = default(string), string ClientId = default(string), string SubscriptionId = default(string), string CreatedById = default(string), string CreatedByEmail = default(string), string Name = default(string), int? FileQuantity = default(int?), DateTime? CreationDate = default(DateTime?), DateTime? ModificationDate = default(DateTime?), bool? IsDeleted = default(bool?))
         {
             this.Id = Id;
             this.ClientId = ClientId;
+            this.SubscriptionId = SubscriptionId;
             this.CreatedById = CreatedById;
             this.CreatedByEmail = CreatedByEmail;
             this.Name = Name;
@@ -64,6 +66,12 @@ namespace mantle.lib.Model
         /// </summary>
         [DataMember(Name="clientId", EmitDefaultValue=false)]
         public string ClientId { get; set; }
+
+        /// <summary>
+        /// Gets or Sets SubscriptionId
+        /// </summary>
+        [DataMember(Name="subscriptionId", EmitDefaultValue=false)]
+        public string SubscriptionId { get; set; }
 
         /// <summary>
         /// Gets or Sets CreatedById
@@ -117,6 +125,7 @@ namespace mantle.lib.Model
             sb.Append("class KeeperFolder {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ClientId: ").Append(ClientId).Append("\n");
+            sb.Append("  SubscriptionId: ").Append(SubscriptionId).Append("\n");
             sb.Append("  CreatedById: ").Append(CreatedById).Append("\n");
             sb.Append("  CreatedByEmail: ").Append(CreatedByEmail).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
@@ -169,6 +178,11 @@ namespace mantle.lib.Model
                     this.ClientId.Equals(input.ClientId))
                 ) && 
                 (
+                    this.SubscriptionId == input.SubscriptionId ||
+                    (this.SubscriptionId != null &&
+                    this.SubscriptionId.Equals(input.SubscriptionId))
+                ) && 
+                (
                     this.CreatedById == input.CreatedById ||
                     (this.CreatedById != null &&
                     this.CreatedById.Equals(input.CreatedById))
@@ -218,6 +232,8 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.ClientId != null)
                     hashCode = hashCode * 59 + this.ClientId.GetHashCode();
+                if (this.SubscriptionId != null)
+                    hashCode = hashCode * 59 + this.SubscriptionId.GetHashCode();
                 if (this.CreatedById != null)
                     hashCode = hashCode * 59 + this.CreatedById.GetHashCode();
                 if (this.CreatedByEmail != null)

@@ -25,29 +25,29 @@ namespace mantle.lib.Api
     {
         #region Synchronous Operations
         /// <summary>
-        /// Get all of the users that have a generated API key and their details. Requires the User Admin Role.
+        /// Get all generated api keys
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;AnonymousApiKeyResponse&gt;</returns>
         List<AnonymousApiKeyResponse> ApiKeysAllGet ();
 
         /// <summary>
-        /// Get all of the users that have a generated API key and their details. Requires the User Admin Role.
+        /// Get all generated api keys
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;AnonymousApiKeyResponse&gt;</returns>
         ApiResponse<List<AnonymousApiKeyResponse>> ApiKeysAllGetWithHttpInfo ();
         /// <summary>
-        /// Delete the API key for a specific user. Requires the User Admin Role.
+        /// Delete the API key for a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -55,39 +55,39 @@ namespace mantle.lib.Api
         void ApiKeysByUserIdDelete (string userId);
 
         /// <summary>
-        /// Delete the API key for a specific user. Requires the User Admin Role.
+        /// Delete the API key for a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
         /// <returns>ApiResponse of Object(void)</returns>
         ApiResponse<Object> ApiKeysByUserIdDeleteWithHttpInfo (string userId);
         /// <summary>
-        /// Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account.
+        /// Get the API key for the currently authenticated user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Will return null if no API key has been generated for your account.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>string</returns>
         string ApiKeysGet ();
 
         /// <summary>
-        /// Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account.
+        /// Get the API key for the currently authenticated user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Will return null if no API key has been generated for your account.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of string</returns>
         ApiResponse<string> ApiKeysGetWithHttpInfo ();
         /// <summary>
-        /// Create an API key for a specific user. Requires the User Admin Role.
+        /// Create an API key for a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -95,10 +95,10 @@ namespace mantle.lib.Api
         void ApiKeysPost (CreateApiKeyRequest request = null);
 
         /// <summary>
-        /// Create an API key for a specific user. Requires the User Admin Role.
+        /// Create an API key for a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -107,29 +107,29 @@ namespace mantle.lib.Api
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
-        /// Get all of the users that have a generated API key and their details. Requires the User Admin Role.
+        /// Get all generated api keys
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;AnonymousApiKeyResponse&gt;</returns>
         System.Threading.Tasks.Task<List<AnonymousApiKeyResponse>> ApiKeysAllGetAsync ();
 
         /// <summary>
-        /// Get all of the users that have a generated API key and their details. Requires the User Admin Role.
+        /// Get all generated api keys
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;AnonymousApiKeyResponse&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<AnonymousApiKeyResponse>>> ApiKeysAllGetAsyncWithHttpInfo ();
         /// <summary>
-        /// Delete the API key for a specific user. Requires the User Admin Role.
+        /// Delete the API key for a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -137,39 +137,39 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task ApiKeysByUserIdDeleteAsync (string userId);
 
         /// <summary>
-        /// Delete the API key for a specific user. Requires the User Admin Role.
+        /// Delete the API key for a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
         /// <returns>Task of ApiResponse</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> ApiKeysByUserIdDeleteAsyncWithHttpInfo (string userId);
         /// <summary>
-        /// Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account.
+        /// Get the API key for the currently authenticated user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Will return null if no API key has been generated for your account.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of string</returns>
         System.Threading.Tasks.Task<string> ApiKeysGetAsync ();
 
         /// <summary>
-        /// Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account.
+        /// Get the API key for the currently authenticated user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Will return null if no API key has been generated for your account.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (string)</returns>
         System.Threading.Tasks.Task<ApiResponse<string>> ApiKeysGetAsyncWithHttpInfo ();
         /// <summary>
-        /// Create an API key for a specific user. Requires the User Admin Role.
+        /// Create an API key for a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -177,10 +177,10 @@ namespace mantle.lib.Api
         System.Threading.Tasks.Task ApiKeysPostAsync (CreateApiKeyRequest request = null);
 
         /// <summary>
-        /// Create an API key for a specific user. Requires the User Admin Role.
+        /// Create an API key for a specific user
         /// </summary>
         /// <remarks>
-        /// 
+        /// Requires the User Admin Role.
         /// </remarks>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -287,7 +287,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the users that have a generated API key and their details. Requires the User Admin Role. 
+        /// Get all generated api keys Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;AnonymousApiKeyResponse&gt;</returns>
@@ -298,7 +298,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the users that have a generated API key and their details. Requires the User Admin Role. 
+        /// Get all generated api keys Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;AnonymousApiKeyResponse&gt;</returns>
@@ -349,7 +349,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the users that have a generated API key and their details. Requires the User Admin Role. 
+        /// Get all generated api keys Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;AnonymousApiKeyResponse&gt;</returns>
@@ -361,7 +361,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get all of the users that have a generated API key and their details. Requires the User Admin Role. 
+        /// Get all generated api keys Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;AnonymousApiKeyResponse&gt;)</returns>
@@ -412,7 +412,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Delete the API key for a specific user. Requires the User Admin Role. 
+        /// Delete the API key for a specific user Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -423,7 +423,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Delete the API key for a specific user. Requires the User Admin Role. 
+        /// Delete the API key for a specific user Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -476,7 +476,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Delete the API key for a specific user. Requires the User Admin Role. 
+        /// Delete the API key for a specific user Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -488,7 +488,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Delete the API key for a specific user. Requires the User Admin Role. 
+        /// Delete the API key for a specific user Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="userId"></param>
@@ -541,7 +541,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account. 
+        /// Get the API key for the currently authenticated user Will return null if no API key has been generated for your account.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>string</returns>
@@ -552,7 +552,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account. 
+        /// Get the API key for the currently authenticated user Will return null if no API key has been generated for your account.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of string</returns>
@@ -603,7 +603,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account. 
+        /// Get the API key for the currently authenticated user Will return null if no API key has been generated for your account.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of string</returns>
@@ -615,7 +615,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Get the API key for the currently authenticated user. Will return null if no API key has been generated for your account. 
+        /// Get the API key for the currently authenticated user Will return null if no API key has been generated for your account.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (string)</returns>
@@ -666,7 +666,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Create an API key for a specific user. Requires the User Admin Role. 
+        /// Create an API key for a specific user Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -677,7 +677,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Create an API key for a specific user. Requires the User Admin Role. 
+        /// Create an API key for a specific user Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -738,7 +738,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Create an API key for a specific user. Requires the User Admin Role. 
+        /// Create an API key for a specific user Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
@@ -750,7 +750,7 @@ namespace mantle.lib.Api
         }
 
         /// <summary>
-        /// Create an API key for a specific user. Requires the User Admin Role. 
+        /// Create an API key for a specific user Requires the User Admin Role.
         /// </summary>
         /// <exception cref="mantle.lib.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="request"> (optional)</param>
