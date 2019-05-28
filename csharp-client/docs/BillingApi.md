@@ -1,45 +1,46 @@
-# mantle.lib.Api.BillingApi
+# mantle.lib.Mantle.lib.BillingApi
 
-All URIs are relative to *http://develop.api.mantleblockchain.com*
+All URIs are relative to *http://api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**BillsGet**](BillingApi.md#billsget) | **GET** /bills | Get all bills
+[**GetAllBills**](BillingApi.md#getallbills) | **GET** /bills | Get all bills
 
 
-<a name="billsget"></a>
-# **BillsGet**
-> List<Bill> BillsGet ()
+<a name="getallbills"></a>
+# **GetAllBills**
+> List<Bill> GetAllBills (string xApiKey)
 
 Get all bills
 
-Get all bills that have been generated for the client linked to the authenticated user. Requires the Billing Role.
+Get all bills that have been generated for the client linked to the authenticated user.                Requires the Billing Role.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class BillsGetExample
+    public class GetAllBillsExample
     {
         public void main()
         {
             var apiInstance = new BillingApi();
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
                 // Get all bills
-                List&lt;Bill&gt; result = apiInstance.BillsGet();
+                List&lt;Bill&gt; result = apiInstance.GetAllBills(xApiKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling BillingApi.BillsGet: " + e.Message );
+                Debug.Print("Exception when calling BillingApi.GetAllBills: " + e.Message );
             }
         }
     }
@@ -47,7 +48,10 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiKey** | **string**|  | 
 
 ### Return type
 

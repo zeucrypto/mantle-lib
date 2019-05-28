@@ -3,9 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**RecipientEmail** | **string** |  | 
-**Amount** | **int?** |  | [optional] 
-**AssetId** | **string** |  | 
+**RecipientDisplayName** | **string** |  | 
+**Amount** | **int?** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

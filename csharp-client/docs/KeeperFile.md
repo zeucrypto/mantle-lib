@@ -4,8 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Tag** | **string** |  | [optional] 
-**ModificationDate** | **DateTime?** |  | [optional] 
-**VersionQuantity** | **int?** |  | [optional] 
 **FileType** | **string** |  | [optional] 
 **AccuracyLevel** | **string** |  | [optional] 
 **Id** | **string** |  | [optional] 

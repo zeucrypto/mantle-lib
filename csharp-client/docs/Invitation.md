@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** |  | [optional] 
 **ClientId** | **string** |  | [optional] 
-**CreatedByCognitoUserId** | **string** |  | [optional] 
+**CreatedBy** | **string** |  | [optional] 
 **NewUserEmail** | **string** |  | [optional] 
 **Status** | **string** |  | [optional] 
 **Roles** | **List&lt;string&gt;** |  | [optional] 

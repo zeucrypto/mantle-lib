@@ -1,175 +1,48 @@
-# mantle.lib.Api.ProductsApi
+# mantle.lib.Mantle.lib.ProductsApi
 
-All URIs are relative to *http://develop.api.mantleblockchain.com*
+All URIs are relative to *http://api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ProductsByClientIdActivateByProductIdPost**](ProductsApi.md#productsbyclientidactivatebyproductidpost) | **POST** /products/{clientId}/activate/{productId} | Activate a product in Mantle that was previously deactivated
-[**ProductsByClientIdDeactivateByProductIdPost**](ProductsApi.md#productsbyclientiddeactivatebyproductidpost) | **POST** /products/{clientId}/deactivate/{productId} | Deactivate a product in Mantle. This will result in a
-[**ProductsByClientIdGet**](ProductsApi.md#productsbyclientidget) | **GET** /products/{clientId} | Get all available products for the logged in user&#39;s client including the ones that are disabled
-[**ProductsByClientIdPost**](ProductsApi.md#productsbyclientidpost) | **POST** /products/{clientId} | Create a new product in Mantle
-[**ProductsByClientIdPut**](ProductsApi.md#productsbyclientidput) | **PUT** /products/{clientId} | Update a product in Mantle
-[**ProductsMenuGet**](ProductsApi.md#productsmenuget) | **GET** /products/menu | Get the product menu for the authenticated user
+[**GetAllProducts**](ProductsApi.md#getallproducts) | **GET** /products | Get the products for the authenticated user
+[**GetProductById**](ProductsApi.md#getproductbyid) | **GET** /products/{productId} | Get a product and its settings
+[**UpdateKeeperProduct**](ProductsApi.md#updatekeeperproduct) | **PUT** /products/keeper/{productId} | Update a keeper instance&#39;s name
+[**UpdateSealerProduct**](ProductsApi.md#updatesealerproduct) | **PUT** /products/sealer/{productId} | Update a sealer instance&#39;s name
+[**UpdateTrackerProduct**](ProductsApi.md#updatetrackerproduct) | **PUT** /products/tracker/{productId} | Update a tracker instance&#39;s name
 
 
-<a name="productsbyclientidactivatebyproductidpost"></a>
-# **ProductsByClientIdActivateByProductIdPost**
-> void ProductsByClientIdActivateByProductIdPost (string clientId, string productId)
+<a name="getallproducts"></a>
+# **GetAllProducts**
+> List<ProductMenuOption> GetAllProducts (string xApiKey)
 
-Activate a product in Mantle that was previously deactivated
-
-Requires the Admin role.
+Get the products for the authenticated user
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class ProductsByClientIdActivateByProductIdPostExample
+    public class GetAllProductsExample
     {
         public void main()
         {
             var apiInstance = new ProductsApi();
-            var clientId = clientId_example;  // string | 
-            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
-                // Activate a product in Mantle that was previously deactivated
-                apiInstance.ProductsByClientIdActivateByProductIdPost(clientId, productId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductsApi.ProductsByClientIdActivateByProductIdPost: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientId** | **string**|  | 
- **productId** | **string**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="productsbyclientiddeactivatebyproductidpost"></a>
-# **ProductsByClientIdDeactivateByProductIdPost**
-> void ProductsByClientIdDeactivateByProductIdPost (string clientId, string productId)
-
-Deactivate a product in Mantle. This will result in a
-
-Requires the Admin role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class ProductsByClientIdDeactivateByProductIdPostExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductsApi();
-            var clientId = clientId_example;  // string | 
-            var productId = productId_example;  // string | 
-
-            try
-            {
-                // Deactivate a product in Mantle. This will result in a
-                apiInstance.ProductsByClientIdDeactivateByProductIdPost(clientId, productId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductsApi.ProductsByClientIdDeactivateByProductIdPost: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientId** | **string**|  | 
- **productId** | **string**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="productsbyclientidget"></a>
-# **ProductsByClientIdGet**
-> List<ProductSubscription> ProductsByClientIdGet (string clientId)
-
-Get all available products for the logged in user's client including the ones that are disabled
-
-Requires the Admin role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class ProductsByClientIdGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductsApi();
-            var clientId = clientId_example;  // string | 
-
-            try
-            {
-                // Get all available products for the logged in user's client including the ones that are disabled
-                List&lt;ProductSubscription&gt; result = apiInstance.ProductsByClientIdGet(clientId);
+                // Get the products for the authenticated user
+                List&lt;ProductMenuOption&gt; result = apiInstance.GetAllProducts(xApiKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ProductsApi.ProductsByClientIdGet: " + e.Message );
+                Debug.Print("Exception when calling ProductsApi.GetAllProducts: " + e.Message );
             }
         }
     }
@@ -180,188 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **clientId** | **string**|  | 
-
-### Return type
-
-[**List<ProductSubscription>**](ProductSubscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="productsbyclientidpost"></a>
-# **ProductsByClientIdPost**
-> ProductSubscription ProductsByClientIdPost (string clientId, CreateProductRequest request = null)
-
-Create a new product in Mantle
-
-Requires the Admin role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class ProductsByClientIdPostExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductsApi();
-            var clientId = clientId_example;  // string | 
-            var request = new CreateProductRequest(); // CreateProductRequest |  (optional) 
-
-            try
-            {
-                // Create a new product in Mantle
-                ProductSubscription result = apiInstance.ProductsByClientIdPost(clientId, request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductsApi.ProductsByClientIdPost: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientId** | **string**|  | 
- **request** | [**CreateProductRequest**](CreateProductRequest.md)|  | [optional] 
-
-### Return type
-
-[**ProductSubscription**](ProductSubscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="productsbyclientidput"></a>
-# **ProductsByClientIdPut**
-> ProductSubscription ProductsByClientIdPut (string clientId, UpdateProductRequest request = null)
-
-Update a product in Mantle
-
-Requires the Admin role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class ProductsByClientIdPutExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductsApi();
-            var clientId = clientId_example;  // string | 
-            var request = new UpdateProductRequest(); // UpdateProductRequest |  (optional) 
-
-            try
-            {
-                // Update a product in Mantle
-                ProductSubscription result = apiInstance.ProductsByClientIdPut(clientId, request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductsApi.ProductsByClientIdPut: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **clientId** | **string**|  | 
- **request** | [**UpdateProductRequest**](UpdateProductRequest.md)|  | [optional] 
-
-### Return type
-
-[**ProductSubscription**](ProductSubscription.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="productsmenuget"></a>
-# **ProductsMenuGet**
-> List<ProductMenuOption> ProductsMenuGet ()
-
-Get the product menu for the authenticated user
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class ProductsMenuGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new ProductsApi();
-
-            try
-            {
-                // Get the product menu for the authenticated user
-                List&lt;ProductMenuOption&gt; result = apiInstance.ProductsMenuGet();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ProductsApi.ProductsMenuGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
+ **xApiKey** | **string**|  | 
 
 ### Return type
 
@@ -374,6 +66,264 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getproductbyid"></a>
+# **GetProductById**
+> ProductSubscription GetProductById (string productId, string xApiKey)
+
+Get a product and its settings
+
+Requires the Admin role
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class GetProductByIdExample
+    {
+        public void main()
+        {
+            var apiInstance = new ProductsApi();
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // Get a product and its settings
+                ProductSubscription result = apiInstance.GetProductById(productId, xApiKey);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ProductsApi.GetProductById: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+[**ProductSubscription**](ProductSubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatekeeperproduct"></a>
+# **UpdateKeeperProduct**
+> KeeperProductSubscription UpdateKeeperProduct (string productId, string xApiKey, UpdateKeeperProductRequest request = null)
+
+Update a keeper instance's name
+
+Requires the Admin role
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class UpdateKeeperProductExample
+    {
+        public void main()
+        {
+            var apiInstance = new ProductsApi();
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var request = new UpdateKeeperProductRequest(); // UpdateKeeperProductRequest |  (optional) 
+
+            try
+            {
+                // Update a keeper instance's name
+                KeeperProductSubscription result = apiInstance.UpdateKeeperProduct(productId, xApiKey, request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ProductsApi.UpdateKeeperProduct: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+ **request** | [**UpdateKeeperProductRequest**](UpdateKeeperProductRequest.md)|  | [optional] 
+
+### Return type
+
+[**KeeperProductSubscription**](KeeperProductSubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatesealerproduct"></a>
+# **UpdateSealerProduct**
+> SealerProductSubscription UpdateSealerProduct (string productId, string xApiKey, UpdateSealerProductRequest request = null)
+
+Update a sealer instance's name
+
+When the Mode is set to API: Signatures must be provided on Contract Creation, Allow non-email Signers, Users cannot sign Contracts by themselves.  When the Mode is set to GUI: Signatures cannot be provided on Contract Creation, Only allow signer emails, An email will be sent to ask for a signature after the contract is confirmed in blockchain, Users must sign the contracts either logged in or using the link in the email that was sent.                Requires the Admin role
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class UpdateSealerProductExample
+    {
+        public void main()
+        {
+            var apiInstance = new ProductsApi();
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var request = new UpdateSealerProductRequest(); // UpdateSealerProductRequest |  (optional) 
+
+            try
+            {
+                // Update a sealer instance's name
+                SealerProductSubscription result = apiInstance.UpdateSealerProduct(productId, xApiKey, request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ProductsApi.UpdateSealerProduct: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+ **request** | [**UpdateSealerProductRequest**](UpdateSealerProductRequest.md)|  | [optional] 
+
+### Return type
+
+[**SealerProductSubscription**](SealerProductSubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="updatetrackerproduct"></a>
+# **UpdateTrackerProduct**
+> TrackerProductSubscription UpdateTrackerProduct (string productId, string xApiKey, UpdateTrackerProductRequest request = null)
+
+Update a tracker instance's name
+
+Requires the Admin role
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class UpdateTrackerProductExample
+    {
+        public void main()
+        {
+            var apiInstance = new ProductsApi();
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var request = new UpdateTrackerProductRequest(); // UpdateTrackerProductRequest |  (optional) 
+
+            try
+            {
+                // Update a tracker instance's name
+                TrackerProductSubscription result = apiInstance.UpdateTrackerProduct(productId, xApiKey, request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ProductsApi.UpdateTrackerProduct: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+ **request** | [**UpdateTrackerProductRequest**](UpdateTrackerProductRequest.md)|  | [optional] 
+
+### Return type
+
+[**TrackerProductSubscription**](TrackerProductSubscription.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

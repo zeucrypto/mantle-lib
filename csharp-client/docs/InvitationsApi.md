@@ -1,18 +1,81 @@
-# mantle.lib.Api.InvitationsApi
+# mantle.lib.Mantle.lib.InvitationsApi
 
-All URIs are relative to *http://develop.api.mantleblockchain.com*
+All URIs are relative to *http://api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**InvitationsByInvitationIdDelete**](InvitationsApi.md#invitationsbyinvitationiddelete) | **DELETE** /invitations/{invitationId} | Delete a specific invitation
-[**InvitationsByInvitationIdGet**](InvitationsApi.md#invitationsbyinvitationidget) | **GET** /invitations/{invitationId} | Get an invitation&#39;s details
-[**InvitationsGet**](InvitationsApi.md#invitationsget) | **GET** /invitations | Get all invitations
-[**InvitationsPost**](InvitationsApi.md#invitationspost) | **POST** /invitations | Create an invitation
+[**CreateInvitation**](InvitationsApi.md#createinvitation) | **POST** /invitations | Create an invitation
+[**DeleteInvitation**](InvitationsApi.md#deleteinvitation) | **DELETE** /invitations/{invitationId} | Delete a specific invitation
+[**GetAllInvitations**](InvitationsApi.md#getallinvitations) | **GET** /invitations | Get all invitations
+[**GetInvitationById**](InvitationsApi.md#getinvitationbyid) | **GET** /invitations/{invitationId} | Get an invitation&#39;s details
 
 
-<a name="invitationsbyinvitationiddelete"></a>
-# **InvitationsByInvitationIdDelete**
-> void InvitationsByInvitationIdDelete (string invitationId)
+<a name="createinvitation"></a>
+# **CreateInvitation**
+> Invitation CreateInvitation (string xApiKey, InvitationCreateRequest request = null)
+
+Create an invitation
+
+Invite a user to join the platform. The entered email will be used to confirm the user's  entity. An invitation email will also be sent.                Requires the User Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class CreateInvitationExample
+    {
+        public void main()
+        {
+            var apiInstance = new InvitationsApi();
+            var xApiKey = xApiKey_example;  // string | 
+            var request = new InvitationCreateRequest(); // InvitationCreateRequest |  (optional) 
+
+            try
+            {
+                // Create an invitation
+                Invitation result = apiInstance.CreateInvitation(xApiKey, request);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling InvitationsApi.CreateInvitation: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiKey** | **string**|  | 
+ **request** | [**InvitationCreateRequest**](InvitationCreateRequest.md)|  | [optional] 
+
+### Return type
+
+[**Invitation**](Invitation.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deleteinvitation"></a>
+# **DeleteInvitation**
+> void DeleteInvitation (string invitationId, string xApiKey)
 
 Delete a specific invitation
 
@@ -22,27 +85,28 @@ The invited user won't be able to join the platform anymore. An invitation can b
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class InvitationsByInvitationIdDeleteExample
+    public class DeleteInvitationExample
     {
         public void main()
         {
             var apiInstance = new InvitationsApi();
             var invitationId = invitationId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
                 // Delete a specific invitation
-                apiInstance.InvitationsByInvitationIdDelete(invitationId);
+                apiInstance.DeleteInvitation(invitationId, xApiKey);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling InvitationsApi.InvitationsByInvitationIdDelete: " + e.Message );
+                Debug.Print("Exception when calling InvitationsApi.DeleteInvitation: " + e.Message );
             }
         }
     }
@@ -54,6 +118,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invitationId** | **string**|  | 
+ **xApiKey** | **string**|  | 
 
 ### Return type
 
@@ -70,38 +135,40 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="invitationsbyinvitationidget"></a>
-# **InvitationsByInvitationIdGet**
-> InvitationSignUpResponse InvitationsByInvitationIdGet (string invitationId)
+<a name="getallinvitations"></a>
+# **GetAllInvitations**
+> List<Invitation> GetAllInvitations (string xApiKey)
 
-Get an invitation's details
+Get all invitations
+
+Requires the User Admin Role.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class InvitationsByInvitationIdGetExample
+    public class GetAllInvitationsExample
     {
         public void main()
         {
             var apiInstance = new InvitationsApi();
-            var invitationId = invitationId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
-                // Get an invitation's details
-                InvitationSignUpResponse result = apiInstance.InvitationsByInvitationIdGet(invitationId);
+                // Get all invitations
+                List&lt;Invitation&gt; result = apiInstance.GetAllInvitations(xApiKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling InvitationsApi.InvitationsByInvitationIdGet: " + e.Message );
+                Debug.Print("Exception when calling InvitationsApi.GetAllInvitations: " + e.Message );
             }
         }
     }
@@ -112,64 +179,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **invitationId** | **string**|  | 
-
-### Return type
-
-[**InvitationSignUpResponse**](InvitationSignUpResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="invitationsget"></a>
-# **InvitationsGet**
-> List<Invitation> InvitationsGet ()
-
-Get all invitations
-
-Requires the User Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class InvitationsGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new InvitationsApi();
-
-            try
-            {
-                // Get all invitations
-                List&lt;Invitation&gt; result = apiInstance.InvitationsGet();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling InvitationsApi.InvitationsGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
+ **xApiKey** | **string**|  | 
 
 ### Return type
 
@@ -186,40 +196,39 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="invitationspost"></a>
-# **InvitationsPost**
-> Invitation InvitationsPost (InvitationCreateRequest request = null)
+<a name="getinvitationbyid"></a>
+# **GetInvitationById**
+> InvitationSignUpResponse GetInvitationById (string invitationId, string xApiKey)
 
-Create an invitation
-
-Used so a user can join the platform. The entered email will be used to confirm the user's  entity. An invitation email will also be sent.                Requires the User Admin Role.
+Get an invitation's details
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class InvitationsPostExample
+    public class GetInvitationByIdExample
     {
         public void main()
         {
             var apiInstance = new InvitationsApi();
-            var request = new InvitationCreateRequest(); // InvitationCreateRequest |  (optional) 
+            var invitationId = invitationId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
-                // Create an invitation
-                Invitation result = apiInstance.InvitationsPost(request);
+                // Get an invitation's details
+                InvitationSignUpResponse result = apiInstance.GetInvitationById(invitationId, xApiKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling InvitationsApi.InvitationsPost: " + e.Message );
+                Debug.Print("Exception when calling InvitationsApi.GetInvitationById: " + e.Message );
             }
         }
     }
@@ -230,11 +239,12 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**InvitationCreateRequest**](InvitationCreateRequest.md)|  | [optional] 
+ **invitationId** | **string**|  | 
+ **xApiKey** | **string**|  | 
 
 ### Return type
 
-[**Invitation**](Invitation.md)
+[**InvitationSignUpResponse**](InvitationSignUpResponse.md)
 
 ### Authorization
 
@@ -242,7 +252,7 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
