@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = mantle.lib.Client.SwaggerDateConverter;
 
 namespace mantle.lib.Model
@@ -26,7 +28,7 @@ namespace mantle.lib.Model
     /// Invitation
     /// </summary>
     [DataContract]
-    public partial class Invitation :  IEquatable<Invitation>
+    public partial class Invitation :  IEquatable<Invitation>, IValidatableObject
     {
         /// <summary>
         /// Defines Status
@@ -97,28 +99,22 @@ namespace mantle.lib.Model
             MCTrackerUser = 5,
             
             /// <summary>
-            /// Enum MCAuthenticityUser for value: MCAuthenticityUser
-            /// </summary>
-            [EnumMember(Value = "MCAuthenticityUser")]
-            MCAuthenticityUser = 6,
-            
-            /// <summary>
             /// Enum MCSealerAdmin for value: MCSealerAdmin
             /// </summary>
             [EnumMember(Value = "MCSealerAdmin")]
-            MCSealerAdmin = 7,
+            MCSealerAdmin = 6,
             
             /// <summary>
             /// Enum MCSealerUser for value: MCSealerUser
             /// </summary>
             [EnumMember(Value = "MCSealerUser")]
-            MCSealerUser = 8,
+            MCSealerUser = 7,
             
             /// <summary>
             /// Enum MCAdmin for value: MCAdmin
             /// </summary>
             [EnumMember(Value = "MCAdmin")]
-            MCAdmin = 9
+            MCAdmin = 8
         }
 
 
@@ -130,22 +126,22 @@ namespace mantle.lib.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Invitation" /> class.
         /// </summary>
-        /// <param name="Id">Id.</param>
-        /// <param name="ClientId">ClientId.</param>
-        /// <param name="CreatedByCognitoUserId">CreatedByCognitoUserId.</param>
-        /// <param name="NewUserEmail">NewUserEmail.</param>
-        /// <param name="Status">Status.</param>
-        /// <param name="Roles">Roles.</param>
-        /// <param name="CreationDateTime">CreationDateTime.</param>
-        public Invitation(string Id = default(string), string ClientId = default(string), string CreatedByCognitoUserId = default(string), string NewUserEmail = default(string), StatusEnum? Status = default(StatusEnum?), List<RolesEnum> Roles = default(List<RolesEnum>), DateTime? CreationDateTime = default(DateTime?))
+        /// <param name="id">id.</param>
+        /// <param name="clientId">clientId.</param>
+        /// <param name="createdBy">createdBy.</param>
+        /// <param name="newUserEmail">newUserEmail.</param>
+        /// <param name="status">status.</param>
+        /// <param name="roles">roles.</param>
+        /// <param name="creationDateTime">creationDateTime.</param>
+        public Invitation(string id = default(string), string clientId = default(string), string createdBy = default(string), string newUserEmail = default(string), StatusEnum? status = default(StatusEnum?), List<RolesEnum> roles = default(List<RolesEnum>), DateTime? creationDateTime = default(DateTime?))
         {
-            this.Id = Id;
-            this.ClientId = ClientId;
-            this.CreatedByCognitoUserId = CreatedByCognitoUserId;
-            this.NewUserEmail = NewUserEmail;
-            this.Status = Status;
-            this.Roles = Roles;
-            this.CreationDateTime = CreationDateTime;
+            this.Id = id;
+            this.ClientId = clientId;
+            this.CreatedBy = createdBy;
+            this.NewUserEmail = newUserEmail;
+            this.Status = status;
+            this.Roles = roles;
+            this.CreationDateTime = creationDateTime;
         }
         
         /// <summary>
@@ -161,10 +157,10 @@ namespace mantle.lib.Model
         public string ClientId { get; set; }
 
         /// <summary>
-        /// Gets or Sets CreatedByCognitoUserId
+        /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name="createdByCognitoUserId", EmitDefaultValue=false)]
-        public string CreatedByCognitoUserId { get; set; }
+        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        public string CreatedBy { get; set; }
 
         /// <summary>
         /// Gets or Sets NewUserEmail
@@ -190,7 +186,7 @@ namespace mantle.lib.Model
             sb.Append("class Invitation {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  ClientId: ").Append(ClientId).Append("\n");
-            sb.Append("  CreatedByCognitoUserId: ").Append(CreatedByCognitoUserId).Append("\n");
+            sb.Append("  CreatedBy: ").Append(CreatedBy).Append("\n");
             sb.Append("  NewUserEmail: ").Append(NewUserEmail).Append("\n");
             sb.Append("  Status: ").Append(Status).Append("\n");
             sb.Append("  Roles: ").Append(Roles).Append("\n");
@@ -203,7 +199,7 @@ namespace mantle.lib.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -240,9 +236,9 @@ namespace mantle.lib.Model
                     this.ClientId.Equals(input.ClientId))
                 ) && 
                 (
-                    this.CreatedByCognitoUserId == input.CreatedByCognitoUserId ||
-                    (this.CreatedByCognitoUserId != null &&
-                    this.CreatedByCognitoUserId.Equals(input.CreatedByCognitoUserId))
+                    this.CreatedBy == input.CreatedBy ||
+                    (this.CreatedBy != null &&
+                    this.CreatedBy.Equals(input.CreatedBy))
                 ) && 
                 (
                     this.NewUserEmail == input.NewUserEmail ||
@@ -279,8 +275,8 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.ClientId != null)
                     hashCode = hashCode * 59 + this.ClientId.GetHashCode();
-                if (this.CreatedByCognitoUserId != null)
-                    hashCode = hashCode * 59 + this.CreatedByCognitoUserId.GetHashCode();
+                if (this.CreatedBy != null)
+                    hashCode = hashCode * 59 + this.CreatedBy.GetHashCode();
                 if (this.NewUserEmail != null)
                     hashCode = hashCode * 59 + this.NewUserEmail.GetHashCode();
                 if (this.Status != null)
@@ -291,6 +287,16 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.CreationDateTime.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            yield break;
         }
     }
 

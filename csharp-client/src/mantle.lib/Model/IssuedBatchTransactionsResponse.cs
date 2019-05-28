@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = mantle.lib.Client.SwaggerDateConverter;
 
 namespace mantle.lib.Model
@@ -26,19 +28,19 @@ namespace mantle.lib.Model
     /// IssuedBatchTransactionsResponse
     /// </summary>
     [DataContract]
-    public partial class IssuedBatchTransactionsResponse :  IEquatable<IssuedBatchTransactionsResponse>
+    public partial class IssuedBatchTransactionsResponse :  IEquatable<IssuedBatchTransactionsResponse>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="IssuedBatchTransactionsResponse" /> class.
         /// </summary>
-        /// <param name="BatchTimestamp">BatchTimestamp.</param>
-        /// <param name="AssetDisplayName">AssetDisplayName.</param>
-        /// <param name="Transactions">Transactions.</param>
-        public IssuedBatchTransactionsResponse(long? BatchTimestamp = default(long?), string AssetDisplayName = default(string), List<AssetTransaction> Transactions = default(List<AssetTransaction>))
+        /// <param name="batchTimestamp">batchTimestamp.</param>
+        /// <param name="assetDisplayName">assetDisplayName.</param>
+        /// <param name="transactions">transactions.</param>
+        public IssuedBatchTransactionsResponse(long? batchTimestamp = default(long?), string assetDisplayName = default(string), List<AssetTransaction> transactions = default(List<AssetTransaction>))
         {
-            this.BatchTimestamp = BatchTimestamp;
-            this.AssetDisplayName = AssetDisplayName;
-            this.Transactions = Transactions;
+            this.BatchTimestamp = batchTimestamp;
+            this.AssetDisplayName = assetDisplayName;
+            this.Transactions = transactions;
         }
         
         /// <summary>
@@ -78,7 +80,7 @@ namespace mantle.lib.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -138,6 +140,16 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.Transactions.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            yield break;
         }
     }
 

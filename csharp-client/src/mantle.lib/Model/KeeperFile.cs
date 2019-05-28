@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = mantle.lib.Client.SwaggerDateConverter;
 
 namespace mantle.lib.Model
@@ -26,7 +28,7 @@ namespace mantle.lib.Model
     /// KeeperFile
     /// </summary>
     [DataContract]
-    public partial class KeeperFile :  IEquatable<KeeperFile>
+    public partial class KeeperFile :  IEquatable<KeeperFile>, IValidatableObject
     {
         /// <summary>
         /// Defines FileType
@@ -63,7 +65,13 @@ namespace mantle.lib.Model
             /// Enum Xml for value: Xml
             /// </summary>
             [EnumMember(Value = "Xml")]
-            Xml = 5
+            Xml = 5,
+            
+            /// <summary>
+            /// Enum Pdf for value: Pdf
+            /// </summary>
+            [EnumMember(Value = "Pdf")]
+            Pdf = 6
         }
 
         /// <summary>
@@ -148,30 +156,26 @@ namespace mantle.lib.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="KeeperFile" /> class.
         /// </summary>
-        /// <param name="Tag">Tag.</param>
-        /// <param name="ModificationDate">ModificationDate.</param>
-        /// <param name="VersionQuantity">VersionQuantity.</param>
-        /// <param name="FileType">FileType.</param>
-        /// <param name="AccuracyLevel">AccuracyLevel.</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="BlockchainStatus">BlockchainStatus.</param>
-        /// <param name="OwnerEmail">OwnerEmail.</param>
-        /// <param name="DisplayName">DisplayName.</param>
-        /// <param name="CreationDate">CreationDate.</param>
-        /// <param name="IsDeleted">IsDeleted.</param>
-        public KeeperFile(string Tag = default(string), DateTime? ModificationDate = default(DateTime?), int? VersionQuantity = default(int?), FileTypeEnum? FileType = default(FileTypeEnum?), AccuracyLevelEnum? AccuracyLevel = default(AccuracyLevelEnum?), string Id = default(string), BlockchainStatusEnum? BlockchainStatus = default(BlockchainStatusEnum?), string OwnerEmail = default(string), string DisplayName = default(string), DateTime? CreationDate = default(DateTime?), bool? IsDeleted = default(bool?))
+        /// <param name="tag">tag.</param>
+        /// <param name="fileType">fileType.</param>
+        /// <param name="accuracyLevel">accuracyLevel.</param>
+        /// <param name="id">id.</param>
+        /// <param name="blockchainStatus">blockchainStatus.</param>
+        /// <param name="ownerEmail">ownerEmail.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="creationDate">creationDate.</param>
+        /// <param name="isDeleted">isDeleted.</param>
+        public KeeperFile(string tag = default(string), FileTypeEnum? fileType = default(FileTypeEnum?), AccuracyLevelEnum? accuracyLevel = default(AccuracyLevelEnum?), string id = default(string), BlockchainStatusEnum? blockchainStatus = default(BlockchainStatusEnum?), string ownerEmail = default(string), string displayName = default(string), DateTime? creationDate = default(DateTime?), bool? isDeleted = default(bool?))
         {
-            this.Tag = Tag;
-            this.ModificationDate = ModificationDate;
-            this.VersionQuantity = VersionQuantity;
-            this.FileType = FileType;
-            this.AccuracyLevel = AccuracyLevel;
-            this.Id = Id;
-            this.BlockchainStatus = BlockchainStatus;
-            this.OwnerEmail = OwnerEmail;
-            this.DisplayName = DisplayName;
-            this.CreationDate = CreationDate;
-            this.IsDeleted = IsDeleted;
+            this.Tag = tag;
+            this.FileType = fileType;
+            this.AccuracyLevel = accuracyLevel;
+            this.Id = id;
+            this.BlockchainStatus = blockchainStatus;
+            this.OwnerEmail = ownerEmail;
+            this.DisplayName = displayName;
+            this.CreationDate = creationDate;
+            this.IsDeleted = isDeleted;
         }
         
         /// <summary>
@@ -179,18 +183,6 @@ namespace mantle.lib.Model
         /// </summary>
         [DataMember(Name="tag", EmitDefaultValue=false)]
         public string Tag { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ModificationDate
-        /// </summary>
-        [DataMember(Name="modificationDate", EmitDefaultValue=false)]
-        public DateTime? ModificationDate { get; set; }
-
-        /// <summary>
-        /// Gets or Sets VersionQuantity
-        /// </summary>
-        [DataMember(Name="versionQuantity", EmitDefaultValue=false)]
-        public int? VersionQuantity { get; set; }
 
 
 
@@ -234,8 +226,6 @@ namespace mantle.lib.Model
             var sb = new StringBuilder();
             sb.Append("class KeeperFile {\n");
             sb.Append("  Tag: ").Append(Tag).Append("\n");
-            sb.Append("  ModificationDate: ").Append(ModificationDate).Append("\n");
-            sb.Append("  VersionQuantity: ").Append(VersionQuantity).Append("\n");
             sb.Append("  FileType: ").Append(FileType).Append("\n");
             sb.Append("  AccuracyLevel: ").Append(AccuracyLevel).Append("\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
@@ -252,7 +242,7 @@ namespace mantle.lib.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -282,16 +272,6 @@ namespace mantle.lib.Model
                     this.Tag == input.Tag ||
                     (this.Tag != null &&
                     this.Tag.Equals(input.Tag))
-                ) && 
-                (
-                    this.ModificationDate == input.ModificationDate ||
-                    (this.ModificationDate != null &&
-                    this.ModificationDate.Equals(input.ModificationDate))
-                ) && 
-                (
-                    this.VersionQuantity == input.VersionQuantity ||
-                    (this.VersionQuantity != null &&
-                    this.VersionQuantity.Equals(input.VersionQuantity))
                 ) && 
                 (
                     this.FileType == input.FileType ||
@@ -346,10 +326,6 @@ namespace mantle.lib.Model
                 int hashCode = 41;
                 if (this.Tag != null)
                     hashCode = hashCode * 59 + this.Tag.GetHashCode();
-                if (this.ModificationDate != null)
-                    hashCode = hashCode * 59 + this.ModificationDate.GetHashCode();
-                if (this.VersionQuantity != null)
-                    hashCode = hashCode * 59 + this.VersionQuantity.GetHashCode();
                 if (this.FileType != null)
                     hashCode = hashCode * 59 + this.FileType.GetHashCode();
                 if (this.AccuracyLevel != null)
@@ -368,6 +344,16 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.IsDeleted.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            yield break;
         }
     }
 

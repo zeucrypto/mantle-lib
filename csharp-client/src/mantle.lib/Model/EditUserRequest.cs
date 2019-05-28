@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = mantle.lib.Client.SwaggerDateConverter;
 
 namespace mantle.lib.Model
@@ -26,7 +28,7 @@ namespace mantle.lib.Model
     /// EditUserRequest
     /// </summary>
     [DataContract]
-    public partial class EditUserRequest :  IEquatable<EditUserRequest>
+    public partial class EditUserRequest :  IEquatable<EditUserRequest>, IValidatableObject
     {
         /// <summary>
         /// Defines Roles
@@ -66,28 +68,22 @@ namespace mantle.lib.Model
             MCTrackerUser = 5,
             
             /// <summary>
-            /// Enum MCAuthenticityUser for value: MCAuthenticityUser
-            /// </summary>
-            [EnumMember(Value = "MCAuthenticityUser")]
-            MCAuthenticityUser = 6,
-            
-            /// <summary>
             /// Enum MCSealerAdmin for value: MCSealerAdmin
             /// </summary>
             [EnumMember(Value = "MCSealerAdmin")]
-            MCSealerAdmin = 7,
+            MCSealerAdmin = 6,
             
             /// <summary>
             /// Enum MCSealerUser for value: MCSealerUser
             /// </summary>
             [EnumMember(Value = "MCSealerUser")]
-            MCSealerUser = 8,
+            MCSealerUser = 7,
             
             /// <summary>
             /// Enum MCAdmin for value: MCAdmin
             /// </summary>
             [EnumMember(Value = "MCAdmin")]
-            MCAdmin = 9
+            MCAdmin = 8
         }
 
 
@@ -104,37 +100,37 @@ namespace mantle.lib.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EditUserRequest" /> class.
         /// </summary>
-        /// <param name="FirstName">FirstName (required).</param>
-        /// <param name="LastName">LastName (required).</param>
-        /// <param name="Roles">Roles (required).</param>
-        public EditUserRequest(string FirstName = default(string), string LastName = default(string), List<RolesEnum> Roles = default(List<RolesEnum>))
+        /// <param name="firstName">firstName (required).</param>
+        /// <param name="lastName">lastName (required).</param>
+        /// <param name="roles">roles (required).</param>
+        public EditUserRequest(string firstName = default(string), string lastName = default(string), List<RolesEnum> roles = default(List<RolesEnum>))
         {
-            // to ensure "FirstName" is required (not null)
-            if (FirstName == null)
+            // to ensure "firstName" is required (not null)
+            if (firstName == null)
             {
-                throw new InvalidDataException("FirstName is a required property for EditUserRequest and cannot be null");
+                throw new InvalidDataException("firstName is a required property for EditUserRequest and cannot be null");
             }
             else
             {
-                this.FirstName = FirstName;
+                this.FirstName = firstName;
             }
-            // to ensure "LastName" is required (not null)
-            if (LastName == null)
+            // to ensure "lastName" is required (not null)
+            if (lastName == null)
             {
-                throw new InvalidDataException("LastName is a required property for EditUserRequest and cannot be null");
-            }
-            else
-            {
-                this.LastName = LastName;
-            }
-            // to ensure "Roles" is required (not null)
-            if (Roles == null)
-            {
-                throw new InvalidDataException("Roles is a required property for EditUserRequest and cannot be null");
+                throw new InvalidDataException("lastName is a required property for EditUserRequest and cannot be null");
             }
             else
             {
-                this.Roles = Roles;
+                this.LastName = lastName;
+            }
+            // to ensure "roles" is required (not null)
+            if (roles == null)
+            {
+                throw new InvalidDataException("roles is a required property for EditUserRequest and cannot be null");
+            }
+            else
+            {
+                this.Roles = roles;
             }
         }
         
@@ -170,7 +166,7 @@ namespace mantle.lib.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -230,6 +226,40 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.Roles.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // FirstName (string) maxLength
+            if(this.FirstName != null && this.FirstName.Length > 200)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FirstName, length must be less than 200.", new [] { "FirstName" });
+            }
+
+            // FirstName (string) minLength
+            if(this.FirstName != null && this.FirstName.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for FirstName, length must be greater than 0.", new [] { "FirstName" });
+            }
+
+            // LastName (string) maxLength
+            if(this.LastName != null && this.LastName.Length > 200)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LastName, length must be less than 200.", new [] { "LastName" });
+            }
+
+            // LastName (string) minLength
+            if(this.LastName != null && this.LastName.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for LastName, length must be greater than 0.", new [] { "LastName" });
+            }
+
+            yield break;
         }
     }
 

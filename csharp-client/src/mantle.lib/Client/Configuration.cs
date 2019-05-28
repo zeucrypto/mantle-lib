@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -29,7 +29,7 @@ namespace mantle.lib.Client
         /// Version of the package.
         /// </summary>
         /// <value>Version of the package.</value>
-        public const string Version = "1.2.1";
+        public const string Version = "1.0.0";
 
         /// <summary>
         /// Identifier for ISO 8601 DateTime Format
@@ -57,7 +57,11 @@ namespace mantle.lib.Client
                     string.Format("Error calling {0}: {1}", methodName, response.Content),
                     response.Content);
             }
-            
+            if (status == 0)
+            {
+                return new ApiException(status,
+                    string.Format("Error calling {0}: {1}", methodName, response.ErrorMessage), response.ErrorMessage);
+            }
             return null;
         };
 
@@ -110,8 +114,8 @@ namespace mantle.lib.Client
         /// </summary>
         public Configuration()
         {
-            UserAgent = "Swagger-Codegen/1.2.1/csharp";
-            BasePath = "http://develop.api.mantleblockchain.com";
+            UserAgent = "Swagger-Codegen/1.0.0/csharp";
+            BasePath = "http://api.mantleblockchain.com";
             DefaultHeader = new ConcurrentDictionary<string, string>();
             ApiKey = new ConcurrentDictionary<string, string>();
             ApiKeyPrefix = new ConcurrentDictionary<string, string>();
@@ -127,7 +131,7 @@ namespace mantle.lib.Client
             IDictionary<string, string> defaultHeader,
             IDictionary<string, string> apiKey,
             IDictionary<string, string> apiKeyPrefix,
-            string basePath = "http://develop.api.mantleblockchain.com") : this()
+            string basePath = "http://api.mantleblockchain.com") : this()
         {
             if (string.IsNullOrWhiteSpace(basePath))
                 throw new ArgumentException("The provided basePath is invalid.", "basePath");
@@ -183,7 +187,7 @@ namespace mantle.lib.Client
             string tempFolderPath = null,
             string dateTimeFormat = null,
             int timeout = 100000,
-            string userAgent = "Swagger-Codegen/1.2.1/csharp"
+            string userAgent = "Swagger-Codegen/1.0.0/csharp"
             // ReSharper restore UnusedParameter.Local
             )
         {
@@ -244,8 +248,9 @@ namespace mantle.lib.Client
         /// </summary>
         public virtual int Timeout
         {
-            get { return (int)ApiClient.RestClient.Timeout.GetValueOrDefault(TimeSpan.FromSeconds(0)).TotalMilliseconds; }
-            set { ApiClient.RestClient.Timeout = TimeSpan.FromMilliseconds(value); }
+            
+            get { return ApiClient.RestClient.Timeout; }
+            set { ApiClient.RestClient.Timeout = value; }
         }
 
         /// <summary>
@@ -414,9 +419,10 @@ namespace mantle.lib.Client
         public static String ToDebugReport()
         {
             String report = "C# SDK (mantle.lib) Debug Report:\n";
-            report += "    OS: " + System.Runtime.InteropServices.RuntimeInformation.OSDescription + "\n";
+            report += "    OS: " + System.Environment.OSVersion + "\n";
+            report += "    .NET Framework Version: " + System.Environment.Version  + "\n";
             report += "    Version of the API: v1\n";
-            report += "    SDK Package Version: 1.2.1\n";
+            report += "    SDK Package Version: 1.0.0\n";
 
             return report;
         }

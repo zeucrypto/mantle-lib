@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = mantle.lib.Client.SwaggerDateConverter;
 
 namespace mantle.lib.Model
@@ -26,7 +28,7 @@ namespace mantle.lib.Model
     /// InvitationCreateRequest
     /// </summary>
     [DataContract]
-    public partial class InvitationCreateRequest :  IEquatable<InvitationCreateRequest>
+    public partial class InvitationCreateRequest :  IEquatable<InvitationCreateRequest>, IValidatableObject
     {
         /// <summary>
         /// Defines Roles
@@ -66,28 +68,22 @@ namespace mantle.lib.Model
             MCTrackerUser = 5,
             
             /// <summary>
-            /// Enum MCAuthenticityUser for value: MCAuthenticityUser
-            /// </summary>
-            [EnumMember(Value = "MCAuthenticityUser")]
-            MCAuthenticityUser = 6,
-            
-            /// <summary>
             /// Enum MCSealerAdmin for value: MCSealerAdmin
             /// </summary>
             [EnumMember(Value = "MCSealerAdmin")]
-            MCSealerAdmin = 7,
+            MCSealerAdmin = 6,
             
             /// <summary>
             /// Enum MCSealerUser for value: MCSealerUser
             /// </summary>
             [EnumMember(Value = "MCSealerUser")]
-            MCSealerUser = 8,
+            MCSealerUser = 7,
             
             /// <summary>
             /// Enum MCAdmin for value: MCAdmin
             /// </summary>
             [EnumMember(Value = "MCAdmin")]
-            MCAdmin = 9
+            MCAdmin = 8
         }
 
 
@@ -104,20 +100,20 @@ namespace mantle.lib.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InvitationCreateRequest" /> class.
         /// </summary>
-        /// <param name="Email">Email (required).</param>
-        /// <param name="Roles">Roles.</param>
-        public InvitationCreateRequest(string Email = default(string), List<RolesEnum> Roles = default(List<RolesEnum>))
+        /// <param name="email">email (required).</param>
+        /// <param name="roles">roles.</param>
+        public InvitationCreateRequest(string email = default(string), List<RolesEnum> roles = default(List<RolesEnum>))
         {
-            // to ensure "Email" is required (not null)
-            if (Email == null)
+            // to ensure "email" is required (not null)
+            if (email == null)
             {
-                throw new InvalidDataException("Email is a required property for InvitationCreateRequest and cannot be null");
+                throw new InvalidDataException("email is a required property for InvitationCreateRequest and cannot be null");
             }
             else
             {
-                this.Email = Email;
+                this.Email = email;
             }
-            this.Roles = Roles;
+            this.Roles = roles;
         }
         
         /// <summary>
@@ -145,7 +141,7 @@ namespace mantle.lib.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -198,6 +194,28 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.Roles.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            // Email (string) maxLength
+            if(this.Email != null && this.Email.Length > 200)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be less than 200.", new [] { "Email" });
+            }
+
+            // Email (string) minLength
+            if(this.Email != null && this.Email.Length < 0)
+            {
+                yield return new System.ComponentModel.DataAnnotations.ValidationResult("Invalid value for Email, length must be greater than 0.", new [] { "Email" });
+            }
+
+            yield break;
         }
     }
 

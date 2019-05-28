@@ -1,51 +1,52 @@
-# mantle.lib.Api.UsersApi
+# mantle.lib.Mantle.lib.UsersApi
 
-All URIs are relative to *http://develop.api.mantleblockchain.com*
+All URIs are relative to *http://api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**UsersByUserIdGet**](UsersApi.md#usersbyuseridget) | **GET** /users/{userId} | Get a specific user&#39;s details and roles
-[**UsersByUserIdPut**](UsersApi.md#usersbyuseridput) | **PUT** /users/{userId} | Edit a user&#39;s details
-[**UsersDisableByUserIdPut**](UsersApi.md#usersdisablebyuseridput) | **PUT** /users/disable/{userId} | Disable a specific user
-[**UsersEnableByUserIdPut**](UsersApi.md#usersenablebyuseridput) | **PUT** /users/enable/{userId} | Enable a specific user
-[**UsersGet**](UsersApi.md#usersget) | **GET** /users | Get all users
-[**UsersSelfRolesGet**](UsersApi.md#usersselfrolesget) | **GET** /users/self/roles | Get all roles
+[**DeleteUser**](UsersApi.md#deleteuser) | **DELETE** /users/{userId} | Delete a user
+[**DisableUser**](UsersApi.md#disableuser) | **PUT** /users/{userId}/disable | Disable a user
+[**EditUser**](UsersApi.md#edituser) | **PUT** /users/{userId} | Edit a user&#39;s details
+[**EnableUser**](UsersApi.md#enableuser) | **PUT** /users/{userId}/enable | Enable a user
+[**Get**](UsersApi.md#get) | **GET** /users/self | Get the authenticated user
+[**GetAllUsers**](UsersApi.md#getallusers) | **GET** /users | Get all users
+[**GetUserById**](UsersApi.md#getuserbyid) | **GET** /users/{userId} | Get a user
 
 
-<a name="usersbyuseridget"></a>
-# **UsersByUserIdGet**
-> User UsersByUserIdGet (string userId)
+<a name="deleteuser"></a>
+# **DeleteUser**
+> void DeleteUser (string userId, string xApiKey)
 
-Get a specific user's details and roles
+Delete a user
 
-Requires the User Admin Role.
+Delete a specific user. This will prevent this user from accessing the platform and will delete their API key if  they had one.                Requires the User Admin Role.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class UsersByUserIdGetExample
+    public class DeleteUserExample
     {
         public void main()
         {
             var apiInstance = new UsersApi();
             var userId = userId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
-                // Get a specific user's details and roles
-                User result = apiInstance.UsersByUserIdGet(userId);
-                Debug.WriteLine(result);
+                // Delete a user
+                apiInstance.DeleteUser(userId, xApiKey);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling UsersApi.UsersByUserIdGet: " + e.Message );
+                Debug.Print("Exception when calling UsersApi.DeleteUser: " + e.Message );
             }
         }
     }
@@ -57,6 +58,256 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **userId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="disableuser"></a>
+# **DisableUser**
+> void DisableUser (string userId, string xApiKey)
+
+Disable a user
+
+This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class DisableUserExample
+    {
+        public void main()
+        {
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // Disable a user
+                apiInstance.DisableUser(userId, xApiKey);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.DisableUser: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="edituser"></a>
+# **EditUser**
+> void EditUser (string userId, string xApiKey, EditUserRequest request = null)
+
+Edit a user's details
+
+If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class EditUserExample
+    {
+        public void main()
+        {
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var request = new EditUserRequest(); // EditUserRequest |  (optional) 
+
+            try
+            {
+                // Edit a user's details
+                apiInstance.EditUser(userId, xApiKey, request);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.EditUser: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+ **request** | [**EditUserRequest**](EditUserRequest.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="enableuser"></a>
+# **EnableUser**
+> void EnableUser (string userId, string xApiKey)
+
+Enable a user
+
+This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class EnableUserExample
+    {
+        public void main()
+        {
+            var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // Enable a user
+                apiInstance.EnableUser(userId, xApiKey);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.EnableUser: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="get"></a>
+# **Get**
+> User Get (string xApiKey)
+
+Get the authenticated user
+
+Details on the authenticated user                Requires the User Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class GetExample
+    {
+        public void main()
+        {
+            var apiInstance = new UsersApi();
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // Get the authenticated user
+                User result = apiInstance.Get(xApiKey);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling UsersApi.Get: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiKey** | **string**|  | 
 
 ### Return type
 
@@ -73,191 +324,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="usersbyuseridput"></a>
-# **UsersByUserIdPut**
-> void UsersByUserIdPut (string userId, EditUserRequest request = null)
-
-Edit a user's details
-
-If their roles are changed, it will also delete their access token and they will need to login again next time.                Requires the User Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class UsersByUserIdPutExample
-    {
-        public void main()
-        {
-            var apiInstance = new UsersApi();
-            var userId = userId_example;  // string | 
-            var request = new EditUserRequest(); // EditUserRequest |  (optional) 
-
-            try
-            {
-                // Edit a user's details
-                apiInstance.UsersByUserIdPut(userId, request);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling UsersApi.UsersByUserIdPut: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **string**|  | 
- **request** | [**EditUserRequest**](EditUserRequest.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="usersdisablebyuseridput"></a>
-# **UsersDisableByUserIdPut**
-> void UsersDisableByUserIdPut (string userId)
-
-Disable a specific user
-
-This will prevent this user from accessing the platform and will delete their API key if they had one.                Requires the User Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class UsersDisableByUserIdPutExample
-    {
-        public void main()
-        {
-            var apiInstance = new UsersApi();
-            var userId = userId_example;  // string | 
-
-            try
-            {
-                // Disable a specific user
-                apiInstance.UsersDisableByUserIdPut(userId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling UsersApi.UsersDisableByUserIdPut: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **string**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="usersenablebyuseridput"></a>
-# **UsersEnableByUserIdPut**
-> void UsersEnableByUserIdPut (string userId)
-
-Enable a specific user
-
-This will let this user access the platform again. If the user needs an API key, it will need to be regenerated.                Requires the User Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class UsersEnableByUserIdPutExample
-    {
-        public void main()
-        {
-            var apiInstance = new UsersApi();
-            var userId = userId_example;  // string | 
-
-            try
-            {
-                // Enable a specific user
-                apiInstance.UsersEnableByUserIdPut(userId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling UsersApi.UsersEnableByUserIdPut: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **string**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="usersget"></a>
-# **UsersGet**
-> List<User> UsersGet (bool? isEnabled = null, int? limit = null, int? offset = null)
+<a name="getallusers"></a>
+# **GetAllUsers**
+> List<User> GetAllUsers (string xApiKey, bool? isEnabled = null, int? limit = null, int? offset = null)
 
 Get all users
 
@@ -267,17 +336,18 @@ Requires the User Admin Role.
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class UsersGetExample
+    public class GetAllUsersExample
     {
         public void main()
         {
             var apiInstance = new UsersApi();
+            var xApiKey = xApiKey_example;  // string | 
             var isEnabled = true;  // bool? |  (optional) 
             var limit = 56;  // int? |  (optional) 
             var offset = 56;  // int? |  (optional) 
@@ -285,12 +355,12 @@ namespace Example
             try
             {
                 // Get all users
-                List&lt;User&gt; result = apiInstance.UsersGet(isEnabled, limit, offset);
+                List&lt;User&gt; result = apiInstance.GetAllUsers(xApiKey, isEnabled, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling UsersApi.UsersGet: " + e.Message );
+                Debug.Print("Exception when calling UsersApi.GetAllUsers: " + e.Message );
             }
         }
     }
@@ -301,6 +371,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xApiKey** | **string**|  | 
  **isEnabled** | **bool?**|  | [optional] 
  **limit** | **int?**|  | [optional] 
  **offset** | **int?**|  | [optional] 
@@ -320,39 +391,41 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="usersselfrolesget"></a>
-# **UsersSelfRolesGet**
-> List<string> UsersSelfRolesGet ()
+<a name="getuserbyid"></a>
+# **GetUserById**
+> User GetUserById (string userId, string xApiKey)
 
-Get all roles
+Get a user
 
-Requires the User Admin Role.
+Get a specific user's details.                Requires the User Admin Role.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class UsersSelfRolesGetExample
+    public class GetUserByIdExample
     {
         public void main()
         {
             var apiInstance = new UsersApi();
+            var userId = userId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
-                // Get all roles
-                List&lt;string&gt; result = apiInstance.UsersSelfRolesGet();
+                // Get a user
+                User result = apiInstance.GetUserById(userId, xApiKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling UsersApi.UsersSelfRolesGet: " + e.Message );
+                Debug.Print("Exception when calling UsersApi.GetUserById: " + e.Message );
             }
         }
     }
@@ -360,11 +433,15 @@ namespace Example
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **string**|  | 
+ **xApiKey** | **string**|  | 
 
 ### Return type
 
-**List<string>**
+[**User**](User.md)
 
 ### Authorization
 

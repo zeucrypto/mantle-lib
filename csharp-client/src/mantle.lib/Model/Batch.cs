@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = mantle.lib.Client.SwaggerDateConverter;
 
 namespace mantle.lib.Model
@@ -26,40 +28,32 @@ namespace mantle.lib.Model
     /// Batch
     /// </summary>
     [DataContract]
-    public partial class Batch :  IEquatable<Batch>
+    public partial class Batch :  IEquatable<Batch>, IValidatableObject
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="Batch" /> class.
         /// </summary>
-        /// <param name="BatchTransactionId">BatchTransactionId.</param>
-        /// <param name="InitialAmount">InitialAmount.</param>
-        /// <param name="RemainingAmount">RemainingAmount.</param>
-        /// <param name="Timestamp">Timestamp.</param>
-        public Batch(string BatchTransactionId = default(string), long? InitialAmount = default(long?), long? RemainingAmount = default(long?), long? Timestamp = default(long?))
+        /// <param name="batchId">batchId.</param>
+        /// <param name="amount">amount.</param>
+        /// <param name="timestamp">timestamp.</param>
+        public Batch(string batchId = default(string), long? amount = default(long?), long? timestamp = default(long?))
         {
-            this.BatchTransactionId = BatchTransactionId;
-            this.InitialAmount = InitialAmount;
-            this.RemainingAmount = RemainingAmount;
-            this.Timestamp = Timestamp;
+            this.BatchId = batchId;
+            this.Amount = amount;
+            this.Timestamp = timestamp;
         }
         
         /// <summary>
-        /// Gets or Sets BatchTransactionId
+        /// Gets or Sets BatchId
         /// </summary>
-        [DataMember(Name="batchTransactionId", EmitDefaultValue=false)]
-        public string BatchTransactionId { get; set; }
+        [DataMember(Name="batchId", EmitDefaultValue=false)]
+        public string BatchId { get; set; }
 
         /// <summary>
-        /// Gets or Sets InitialAmount
+        /// Gets or Sets Amount
         /// </summary>
-        [DataMember(Name="initialAmount", EmitDefaultValue=false)]
-        public long? InitialAmount { get; set; }
-
-        /// <summary>
-        /// Gets or Sets RemainingAmount
-        /// </summary>
-        [DataMember(Name="remainingAmount", EmitDefaultValue=false)]
-        public long? RemainingAmount { get; set; }
+        [DataMember(Name="amount", EmitDefaultValue=false)]
+        public long? Amount { get; set; }
 
         /// <summary>
         /// Gets or Sets Timestamp
@@ -75,9 +69,8 @@ namespace mantle.lib.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Batch {\n");
-            sb.Append("  BatchTransactionId: ").Append(BatchTransactionId).Append("\n");
-            sb.Append("  InitialAmount: ").Append(InitialAmount).Append("\n");
-            sb.Append("  RemainingAmount: ").Append(RemainingAmount).Append("\n");
+            sb.Append("  BatchId: ").Append(BatchId).Append("\n");
+            sb.Append("  Amount: ").Append(Amount).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -87,7 +80,7 @@ namespace mantle.lib.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -114,19 +107,14 @@ namespace mantle.lib.Model
 
             return 
                 (
-                    this.BatchTransactionId == input.BatchTransactionId ||
-                    (this.BatchTransactionId != null &&
-                    this.BatchTransactionId.Equals(input.BatchTransactionId))
+                    this.BatchId == input.BatchId ||
+                    (this.BatchId != null &&
+                    this.BatchId.Equals(input.BatchId))
                 ) && 
                 (
-                    this.InitialAmount == input.InitialAmount ||
-                    (this.InitialAmount != null &&
-                    this.InitialAmount.Equals(input.InitialAmount))
-                ) && 
-                (
-                    this.RemainingAmount == input.RemainingAmount ||
-                    (this.RemainingAmount != null &&
-                    this.RemainingAmount.Equals(input.RemainingAmount))
+                    this.Amount == input.Amount ||
+                    (this.Amount != null &&
+                    this.Amount.Equals(input.Amount))
                 ) && 
                 (
                     this.Timestamp == input.Timestamp ||
@@ -144,16 +132,24 @@ namespace mantle.lib.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.BatchTransactionId != null)
-                    hashCode = hashCode * 59 + this.BatchTransactionId.GetHashCode();
-                if (this.InitialAmount != null)
-                    hashCode = hashCode * 59 + this.InitialAmount.GetHashCode();
-                if (this.RemainingAmount != null)
-                    hashCode = hashCode * 59 + this.RemainingAmount.GetHashCode();
+                if (this.BatchId != null)
+                    hashCode = hashCode * 59 + this.BatchId.GetHashCode();
+                if (this.Amount != null)
+                    hashCode = hashCode * 59 + this.Amount.GetHashCode();
                 if (this.Timestamp != null)
                     hashCode = hashCode * 59 + this.Timestamp.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            yield break;
         }
     }
 

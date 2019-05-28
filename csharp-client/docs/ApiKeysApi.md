@@ -1,192 +1,17 @@
-# mantle.lib.Api.ApiKeysApi
+# mantle.lib.Mantle.lib.ApiKeysApi
 
-All URIs are relative to *http://develop.api.mantleblockchain.com*
+All URIs are relative to *http://api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApiKeysAllGet**](ApiKeysApi.md#apikeysallget) | **GET** /apikeys/all | Get all generated api keys
-[**ApiKeysByUserIdDelete**](ApiKeysApi.md#apikeysbyuseriddelete) | **DELETE** /apikeys/{userId} | Delete the API key for a specific user
-[**ApiKeysGet**](ApiKeysApi.md#apikeysget) | **GET** /apikeys | Get the API key for the currently authenticated user
-[**ApiKeysPost**](ApiKeysApi.md#apikeyspost) | **POST** /apikeys | Create an API key for a specific user
+[**CreateApiKey**](ApiKeysApi.md#createapikey) | **POST** /apikeys | Create an API key for a specific user
+[**DeleteApiKey**](ApiKeysApi.md#deleteapikey) | **DELETE** /apikeys/{userId} | Delete the API key for a specific user
+[**GetAllApiKeys**](ApiKeysApi.md#getallapikeys) | **GET** /apikeys | Get all generated api keys
 
 
-<a name="apikeysallget"></a>
-# **ApiKeysAllGet**
-> List<AnonymousApiKeyResponse> ApiKeysAllGet ()
-
-Get all generated api keys
-
-Requires the User Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class ApiKeysAllGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new ApiKeysApi();
-
-            try
-            {
-                // Get all generated api keys
-                List&lt;AnonymousApiKeyResponse&gt; result = apiInstance.ApiKeysAllGet();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ApiKeysApi.ApiKeysAllGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**List<AnonymousApiKeyResponse>**](AnonymousApiKeyResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="apikeysbyuseriddelete"></a>
-# **ApiKeysByUserIdDelete**
-> void ApiKeysByUserIdDelete (string userId)
-
-Delete the API key for a specific user
-
-Requires the User Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class ApiKeysByUserIdDeleteExample
-    {
-        public void main()
-        {
-            var apiInstance = new ApiKeysApi();
-            var userId = userId_example;  // string | 
-
-            try
-            {
-                // Delete the API key for a specific user
-                apiInstance.ApiKeysByUserIdDelete(userId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ApiKeysApi.ApiKeysByUserIdDelete: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **string**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="apikeysget"></a>
-# **ApiKeysGet**
-> string ApiKeysGet ()
-
-Get the API key for the currently authenticated user
-
-Will return null if no API key has been generated for your account.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class ApiKeysGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new ApiKeysApi();
-
-            try
-            {
-                // Get the API key for the currently authenticated user
-                string result = apiInstance.ApiKeysGet();
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling ApiKeysApi.ApiKeysGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-**string**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="apikeyspost"></a>
-# **ApiKeysPost**
-> void ApiKeysPost (CreateApiKeyRequest request = null)
+<a name="createapikey"></a>
+# **CreateApiKey**
+> void CreateApiKey (string xApiKey, CreateApiKeyRequest request = null)
 
 Create an API key for a specific user
 
@@ -196,27 +21,28 @@ Requires the User Admin Role.
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class ApiKeysPostExample
+    public class CreateApiKeyExample
     {
         public void main()
         {
             var apiInstance = new ApiKeysApi();
+            var xApiKey = xApiKey_example;  // string | 
             var request = new CreateApiKeyRequest(); // CreateApiKeyRequest |  (optional) 
 
             try
             {
                 // Create an API key for a specific user
-                apiInstance.ApiKeysPost(request);
+                apiInstance.CreateApiKey(xApiKey, request);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ApiKeysApi.ApiKeysPost: " + e.Message );
+                Debug.Print("Exception when calling ApiKeysApi.CreateApiKey: " + e.Message );
             }
         }
     }
@@ -227,6 +53,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **xApiKey** | **string**|  | 
  **request** | [**CreateApiKeyRequest**](CreateApiKeyRequest.md)|  | [optional] 
 
 ### Return type
@@ -241,6 +68,129 @@ No authorization required
 
  - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deleteapikey"></a>
+# **DeleteApiKey**
+> void DeleteApiKey (string userId, string xApiKey)
+
+Delete the API key for a specific user
+
+Requires the User Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class DeleteApiKeyExample
+    {
+        public void main()
+        {
+            var apiInstance = new ApiKeysApi();
+            var userId = userId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // Delete the API key for a specific user
+                apiInstance.DeleteApiKey(userId, xApiKey);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ApiKeysApi.DeleteApiKey: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getallapikeys"></a>
+# **GetAllApiKeys**
+> List<AnonymousApiKeyResponse> GetAllApiKeys (string xApiKey)
+
+Get all generated api keys
+
+Requires the User Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class GetAllApiKeysExample
+    {
+        public void main()
+        {
+            var apiInstance = new ApiKeysApi();
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // Get all generated api keys
+                List&lt;AnonymousApiKeyResponse&gt; result = apiInstance.GetAllApiKeys(xApiKey);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ApiKeysApi.GetAllApiKeys: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+[**List<AnonymousApiKeyResponse>**](AnonymousApiKeyResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -12,12 +12,14 @@ using System;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = mantle.lib.Client.SwaggerDateConverter;
 
 namespace mantle.lib.Model
@@ -26,7 +28,7 @@ namespace mantle.lib.Model
     /// ProductSubscription
     /// </summary>
     [DataContract]
-    public partial class ProductSubscription :  IEquatable<ProductSubscription>
+    public partial class ProductSubscription :  IEquatable<ProductSubscription>, IValidatableObject
     {
         /// <summary>
         /// Defines BlockchainStatus
@@ -67,34 +69,22 @@ namespace mantle.lib.Model
         {
             
             /// <summary>
-            /// Enum All for value: All
-            /// </summary>
-            [EnumMember(Value = "All")]
-            All = 1,
-            
-            /// <summary>
             /// Enum Tracker for value: Tracker
             /// </summary>
             [EnumMember(Value = "Tracker")]
-            Tracker = 2,
-            
-            /// <summary>
-            /// Enum Owner for value: Owner
-            /// </summary>
-            [EnumMember(Value = "Owner")]
-            Owner = 3,
+            Tracker = 1,
             
             /// <summary>
             /// Enum Keeper for value: Keeper
             /// </summary>
             [EnumMember(Value = "Keeper")]
-            Keeper = 4,
+            Keeper = 2,
             
             /// <summary>
             /// Enum Sealer for value: Sealer
             /// </summary>
             [EnumMember(Value = "Sealer")]
-            Sealer = 5
+            Sealer = 3
         }
 
         /// <summary>
@@ -105,20 +95,20 @@ namespace mantle.lib.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ProductSubscription" /> class.
         /// </summary>
-        /// <param name="Id">Id.</param>
-        /// <param name="StartDate">StartDate.</param>
-        /// <param name="EndDate">EndDate.</param>
-        /// <param name="BlockchainStatus">BlockchainStatus.</param>
-        /// <param name="Name">Name.</param>
-        /// <param name="Product">Product.</param>
-        public ProductSubscription(string Id = default(string), DateTime? StartDate = default(DateTime?), DateTime? EndDate = default(DateTime?), BlockchainStatusEnum? BlockchainStatus = default(BlockchainStatusEnum?), string Name = default(string), ProductEnum? Product = default(ProductEnum?))
+        /// <param name="id">id.</param>
+        /// <param name="startDate">startDate.</param>
+        /// <param name="endDate">endDate.</param>
+        /// <param name="blockchainStatus">blockchainStatus.</param>
+        /// <param name="name">name.</param>
+        /// <param name="product">product.</param>
+        public ProductSubscription(string id = default(string), DateTime? startDate = default(DateTime?), DateTime? endDate = default(DateTime?), BlockchainStatusEnum? blockchainStatus = default(BlockchainStatusEnum?), string name = default(string), ProductEnum? product = default(ProductEnum?))
         {
-            this.Id = Id;
-            this.StartDate = StartDate;
-            this.EndDate = EndDate;
-            this.BlockchainStatus = BlockchainStatus;
-            this.Name = Name;
-            this.Product = Product;
+            this.Id = id;
+            this.StartDate = startDate;
+            this.EndDate = endDate;
+            this.BlockchainStatus = blockchainStatus;
+            this.Name = name;
+            this.Product = product;
         }
         
         /// <summary>
@@ -169,7 +159,7 @@ namespace mantle.lib.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -250,6 +240,16 @@ namespace mantle.lib.Model
                     hashCode = hashCode * 59 + this.Product.GetHashCode();
                 return hashCode;
             }
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            yield break;
         }
     }
 

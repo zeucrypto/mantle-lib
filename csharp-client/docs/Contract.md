@@ -3,9 +3,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**TemplateId** | **string** |  | [optional] 
-**SignerEmails** | **List&lt;string&gt;** |  | [optional] 
 **ContractStatus** | **string** |  | [optional] 
+**SignerIdentifiers** | **List&lt;string&gt;** |  | [optional] 
 **Id** | **string** |  | [optional] 
 **BlockchainStatus** | **string** |  | [optional] 
 **OwnerEmail** | **string** |  | [optional] 

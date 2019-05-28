@@ -1,129 +1,65 @@
-# mantle.lib.Api.SealerApi
+# mantle.lib.Mantle.lib.SealerApi
 
-All URIs are relative to *http://develop.api.mantleblockchain.com*
+All URIs are relative to *http://api.mantleblockchain.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**SealerByProductIdContractsByContractIdDelete**](SealerApi.md#sealerbyproductidcontractsbycontractiddelete) | **DELETE** /sealer/{productId}/contracts/{contractId} | [] Delete a contract
-[**SealerByProductIdContractsCompareContractPost**](SealerApi.md#sealerbyproductidcontractscomparecontractpost) | **POST** /sealer/{productId}/contracts/compare/contract | [] Compare a local contract file
-[**SealerByProductIdContractsCompareSignaturePost**](SealerApi.md#sealerbyproductidcontractscomparesignaturepost) | **POST** /sealer/{productId}/contracts/compare/signature | [] Compare a local signature file to all the signatures of the contract to see if one matches
-[**SealerByProductIdContractsGet**](SealerApi.md#sealerbyproductidcontractsget) | **GET** /sealer/{productId}/contracts | [] Get all the contracts grouped by signer
-[**SealerByProductIdContractsPost**](SealerApi.md#sealerbyproductidcontractspost) | **POST** /sealer/{productId}/contracts | [] Create a contract for specified emails
-[**SealerByProductIdContractsSelfGet**](SealerApi.md#sealerbyproductidcontractsselfget) | **GET** /sealer/{productId}/contracts/self | [] Get all of the authenticated user’s contracts
-[**SealerByProductIdContractsSignByContractIdPost**](SealerApi.md#sealerbyproductidcontractssignbycontractidpost) | **POST** /sealer/{productId}/contracts/sign/{contractId} | [] Sign a contract
-[**SealerByProductIdContractsSignPost**](SealerApi.md#sealerbyproductidcontractssignpost) | **POST** /sealer/{productId}/contracts/sign | [] Sign a contract
-[**SealerByProductIdSignaturesBySignatureIdDelete**](SealerApi.md#sealerbyproductidsignaturesbysignatureiddelete) | **DELETE** /sealer/{productId}/signatures/{signatureId} | [] Delete a signature
-[**SealerByProductIdSignaturesComparePost**](SealerApi.md#sealerbyproductidsignaturescomparepost) | **POST** /sealer/{productId}/signatures/compare | [] Compare a local signature file to a signature
-[**SealerByProductIdSignaturesGet**](SealerApi.md#sealerbyproductidsignaturesget) | **GET** /sealer/{productId}/signatures | [] Get all of the authenticated user’s signatures
-[**SealerByProductIdSignaturesPost**](SealerApi.md#sealerbyproductidsignaturespost) | **POST** /sealer/{productId}/signatures | [] Create a signature for the authenticated user
-[**SealerByProductIdTemplatesByTemplateIdContractsGet**](SealerApi.md#sealerbyproductidtemplatesbytemplateidcontractsget) | **GET** /sealer/{productId}/templates/{templateId}/contracts | [] Get contracts attached to a template
-[**SealerByProductIdTemplatesByTemplateIdDelete**](SealerApi.md#sealerbyproductidtemplatesbytemplateiddelete) | **DELETE** /sealer/{productId}/templates/{templateId} | [] Delete a template
-[**SealerByProductIdTemplatesByTemplateIdGet**](SealerApi.md#sealerbyproductidtemplatesbytemplateidget) | **GET** /sealer/{productId}/templates/{templateId} | [] Get a specific template
-[**SealerByProductIdTemplatesComparePost**](SealerApi.md#sealerbyproductidtemplatescomparepost) | **POST** /sealer/{productId}/templates/compare | [] Compare a local template file to the template
-[**SealerByProductIdTemplatesGet**](SealerApi.md#sealerbyproductidtemplatesget) | **GET** /sealer/{productId}/templates | [] Get all templates
-[**SealerByProductIdTemplatesPost**](SealerApi.md#sealerbyproductidtemplatespost) | **POST** /sealer/{productId}/templates | [] Create a template
+[**CompareContract**](SealerApi.md#comparecontract) | **POST** /sealer/{productId}/contracts/{contractId}/compare/contract | [CONTRACTS] Compare a local contract file
+[**CompareContractSignature**](SealerApi.md#comparecontractsignature) | **POST** /sealer/{productId}/contracts/{contractId}/compare/signature | [CONTRACTS] Compare a local signature
+[**CompareSignature**](SealerApi.md#comparesignature) | **POST** /sealer/{productId}/signatures/compare/{signatureId} | [SIGNATURES] Compare a local signature file to a signature
+[**CompareTemplate**](SealerApi.md#comparetemplate) | **POST** /sealer/{productId}/templates/compare/{templateId} | [TEMPLATES] Compare a local template file to the template
+[**CreateContract**](SealerApi.md#createcontract) | **POST** /sealer/{productId}/contracts | [CONTRACTS] Create a contract for specified emails
+[**CreateSignature**](SealerApi.md#createsignature) | **POST** /sealer/{productId}/signatures | [SIGNATURES] Create a signature for the authenticated user
+[**CreateTemplate**](SealerApi.md#createtemplate) | **POST** /sealer/{productId}/templates | [TEMPLATES] Create a template
+[**DeleteContract**](SealerApi.md#deletecontract) | **DELETE** /sealer/{productId}/contracts/{contractId} | [CONTRACTS] Delete a contract
+[**DeleteTemplate**](SealerApi.md#deletetemplate) | **DELETE** /sealer/{productId}/templates/{templateId} | [TEMPLATES] Delete a template
+[**GetAllContracts**](SealerApi.md#getallcontracts) | **GET** /sealer/{productId}/contracts | [CONTRACTS] Get all the contracts grouped by signer
+[**GetAllSignatures**](SealerApi.md#getallsignatures) | **GET** /sealer/{productId}/signatures | [SIGNATURES] Get all signatures of the authenticated user’s
+[**GetAllTemplates**](SealerApi.md#getalltemplates) | **GET** /sealer/{productId}/templates | [TEMPLATES] Get all templates
+[**GetAuthenticatedUserContracts**](SealerApi.md#getauthenticatedusercontracts) | **GET** /sealer/{productId}/contracts/self | [CONTRACTS] Get all of the authenticated user’s contracts
+[**GetContractsByTemplateId**](SealerApi.md#getcontractsbytemplateid) | **GET** /sealer/{productId}/templates/{templateId}/contracts | [TEMPLATES] Get contracts attached to a template
+[**GetTemplateById**](SealerApi.md#gettemplatebyid) | **GET** /sealer/{productId}/templates/{templateId} | [TEMPLATES] Get a template
+[**SignContractWhenAuthenticated**](SealerApi.md#signcontractwhenauthenticated) | **POST** /sealer/{productId}/contracts/{contractId}/sign | [CONTRACTS] Sign a contract
 
 
-<a name="sealerbyproductidcontractsbycontractiddelete"></a>
-# **SealerByProductIdContractsByContractIdDelete**
-> void SealerByProductIdContractsByContractIdDelete (string contractId, string productId)
+<a name="comparecontract"></a>
+# **CompareContract**
+> SealerBreadcrumbingCompareResponse CompareContract (string contractId, System.IO.Stream file, string productId, string xApiKey, bool? mustGenerateCompareResult = null)
 
-[] Delete a contract
+[CONTRACTS] Compare a local contract file
 
-Cannot if the contract was signed by at least one person.                Requires the Sealer Admin Role.
+Compare a local contract file to the unsigned contract document.                Requires the Sealer Admin Role for all contracts, but a Sealer User can compare their signed contract.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class SealerByProductIdContractsByContractIdDeleteExample
+    public class CompareContractExample
     {
         public void main()
         {
             var apiInstance = new SealerApi();
             var contractId = contractId_example;  // string | 
-            var productId = productId_example;  // string | 
-
-            try
-            {
-                // [] Delete a contract
-                apiInstance.SealerByProductIdContractsByContractIdDelete(contractId, productId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdContractsByContractIdDelete: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contractId** | **string**|  | 
- **productId** | **string**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidcontractscomparecontractpost"></a>
-# **SealerByProductIdContractsCompareContractPost**
-> SealerBreadcrumbingCompareResponse SealerByProductIdContractsCompareContractPost (System.IO.Stream file, string contractId, string productId, bool? mustGenerateFileDiff = null, string request = null)
-
-[] Compare a local contract file
-
- Compare a local contract file to the unsigned contract document.                Requires the Sealer Admin Role for all contracts, but a Sealer User can compare their signed contract.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdContractsCompareContractPostExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var contractId = contractId_example;  // string | 
             var productId = productId_example;  // string | 
-            var mustGenerateFileDiff = true;  // bool? |  (optional) 
-            var request = request_example;  // string |  (optional) 
+            var xApiKey = xApiKey_example;  // string | 
+            var mustGenerateCompareResult = true;  // bool? |  (optional) 
 
             try
             {
-                // [] Compare a local contract file
-                SealerBreadcrumbingCompareResponse result = apiInstance.SealerByProductIdContractsCompareContractPost(file, contractId, productId, mustGenerateFileDiff, request);
+                // [CONTRACTS] Compare a local contract file
+                SealerBreadcrumbingCompareResponse result = apiInstance.CompareContract(contractId, file, productId, xApiKey, mustGenerateCompareResult);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdContractsCompareContractPost: " + e.Message );
+                Debug.Print("Exception when calling SealerApi.CompareContract: " + e.Message );
             }
         }
     }
@@ -134,11 +70,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **contractId** | **string**|  | 
+ **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **productId** | **string**|  | 
- **mustGenerateFileDiff** | **bool?**|  | [optional] 
- **request** | **string**|  | [optional] 
+ **xApiKey** | **string**|  | 
+ **mustGenerateCompareResult** | **bool?**|  | [optional] 
 
 ### Return type
 
@@ -155,44 +91,44 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sealerbyproductidcontractscomparesignaturepost"></a>
-# **SealerByProductIdContractsCompareSignaturePost**
-> ContractSignatureDiffResponse SealerByProductIdContractsCompareSignaturePost (System.IO.Stream file, string contractId, string productId, bool? mustGenerateFileDiff = null, string request = null)
+<a name="comparecontractsignature"></a>
+# **CompareContractSignature**
+> ContractSignatureDiffResponse CompareContractSignature (string contractId, System.IO.Stream file, string productId, string xApiKey, bool? mustGenerateCompareResult = null)
 
-[] Compare a local signature file to all the signatures of the contract to see if one matches
+[CONTRACTS] Compare a local signature
 
-Requires the Sealer Admin Role.
+Compare a local signature file to all the signatures of the contract to see if one matches                Requires the Sealer Admin Role or the Sealer User Role.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class SealerByProductIdContractsCompareSignaturePostExample
+    public class CompareContractSignatureExample
     {
         public void main()
         {
             var apiInstance = new SealerApi();
-            var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
             var contractId = contractId_example;  // string | 
+            var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
             var productId = productId_example;  // string | 
-            var mustGenerateFileDiff = true;  // bool? |  (optional) 
-            var request = request_example;  // string |  (optional) 
+            var xApiKey = xApiKey_example;  // string | 
+            var mustGenerateCompareResult = true;  // bool? |  (optional) 
 
             try
             {
-                // [] Compare a local signature file to all the signatures of the contract to see if one matches
-                ContractSignatureDiffResponse result = apiInstance.SealerByProductIdContractsCompareSignaturePost(file, contractId, productId, mustGenerateFileDiff, request);
+                // [CONTRACTS] Compare a local signature
+                ContractSignatureDiffResponse result = apiInstance.CompareContractSignature(contractId, file, productId, xApiKey, mustGenerateCompareResult);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdContractsCompareSignaturePost: " + e.Message );
+                Debug.Print("Exception when calling SealerApi.CompareContractSignature: " + e.Message );
             }
         }
     }
@@ -203,11 +139,11 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **contractId** | **string**|  | 
+ **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **productId** | **string**|  | 
- **mustGenerateFileDiff** | **bool?**|  | [optional] 
- **request** | **string**|  | [optional] 
+ **xApiKey** | **string**|  | 
+ **mustGenerateCompareResult** | **bool?**|  | [optional] 
 
 ### Return type
 
@@ -224,42 +160,44 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sealerbyproductidcontractsget"></a>
-# **SealerByProductIdContractsGet**
-> List<Contract> SealerByProductIdContractsGet (string productId, int? limit = null, int? offset = null)
+<a name="comparesignature"></a>
+# **CompareSignature**
+> SealerBreadcrumbingCompareResponse CompareSignature (string signatureId, System.IO.Stream file, string productId, string xApiKey, bool? mustGenerateCompareResult = null)
 
-[] Get all the contracts grouped by signer
+[SIGNATURES] Compare a local signature file to a signature
 
-A status defines if the contract is signed, partially signed, currently being signed or unsigned
+Requires the Sealer Admin Role or the Sealer User Role.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class SealerByProductIdContractsGetExample
+    public class CompareSignatureExample
     {
         public void main()
         {
             var apiInstance = new SealerApi();
+            var signatureId = signatureId_example;  // string | 
+            var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
             var productId = productId_example;  // string | 
-            var limit = 56;  // int? |  (optional) 
-            var offset = 56;  // int? |  (optional) 
+            var xApiKey = xApiKey_example;  // string | 
+            var mustGenerateCompareResult = true;  // bool? |  (optional) 
 
             try
             {
-                // [] Get all the contracts grouped by signer
-                List&lt;Contract&gt; result = apiInstance.SealerByProductIdContractsGet(productId, limit, offset);
+                // [SIGNATURES] Compare a local signature file to a signature
+                SealerBreadcrumbingCompareResponse result = apiInstance.CompareSignature(signatureId, file, productId, xApiKey, mustGenerateCompareResult);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdContractsGet: " + e.Message );
+                Debug.Print("Exception when calling SealerApi.CompareSignature: " + e.Message );
             }
         }
     }
@@ -270,13 +208,15 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **signatureId** | **string**|  | 
+ **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **productId** | **string**|  | 
- **limit** | **int?**|  | [optional] 
- **offset** | **int?**|  | [optional] 
+ **xApiKey** | **string**|  | 
+ **mustGenerateCompareResult** | **bool?**|  | [optional] 
 
 ### Return type
 
-[**List<Contract>**](Contract.md)
+[**SealerBreadcrumbingCompareResponse**](SealerBreadcrumbingCompareResponse.md)
 
 ### Authorization
 
@@ -284,16 +224,85 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: multipart/form-data
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sealerbyproductidcontractspost"></a>
-# **SealerByProductIdContractsPost**
-> Contract SealerByProductIdContractsPost (System.IO.Stream file, string displayName, List<string> signerEmails, string signatures, string productId, string templateId = null, string request = null)
+<a name="comparetemplate"></a>
+# **CompareTemplate**
+> SealerBreadcrumbingCompareResponse CompareTemplate (string templateId, System.IO.Stream file, string productId, string xApiKey, bool? mustGenerateCompareResult = null)
 
-[] Create a contract for specified emails
+[TEMPLATES] Compare a local template file to the template
+
+Requires the Sealer Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class CompareTemplateExample
+    {
+        public void main()
+        {
+            var apiInstance = new SealerApi();
+            var templateId = templateId_example;  // string | 
+            var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var mustGenerateCompareResult = true;  // bool? |  (optional) 
+
+            try
+            {
+                // [TEMPLATES] Compare a local template file to the template
+                SealerBreadcrumbingCompareResponse result = apiInstance.CompareTemplate(templateId, file, productId, xApiKey, mustGenerateCompareResult);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SealerApi.CompareTemplate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **templateId** | **string**|  | 
+ **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+ **mustGenerateCompareResult** | **bool?**|  | [optional] 
+
+### Return type
+
+[**SealerBreadcrumbingCompareResponse**](SealerBreadcrumbingCompareResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="createcontract"></a>
+# **CreateContract**
+> Contract CreateContract (System.IO.Stream file, string displayName, List<string> signerEmails, List<string> signatures, string productId, string xApiKey, string signatureRequestMessage = null, string templateId = null)
+
+[CONTRACTS] Create a contract for specified emails
 
 The contract can also be signed at the same time if signature files are provided at the same time.  If provided, the signature files must match the SignerEmails provided in the same order.  If signatures are not provided, an email will be sent to the users to ask for their signatures when the contract is ready.                Requires the Sealer Admin Role.
 
@@ -301,13 +310,13 @@ The contract can also be signed at the same time if signature files are provided
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class SealerByProductIdContractsPostExample
+    public class CreateContractExample
     {
         public void main()
         {
@@ -315,20 +324,21 @@ namespace Example
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
             var displayName = displayName_example;  // string | 
             var signerEmails = new List<string>(); // List<string> | 
-            var signatures = signatures_example;  // string | The files to upload. How http file upload works: https://goo.gl/UYQ2nX
+            var signatures = new List<string>(); // List<string> | The files to upload. How http file upload works: https://goo.gl/UYQ2nX
             var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var signatureRequestMessage = signatureRequestMessage_example;  // string |  (optional) 
             var templateId = templateId_example;  // string |  (optional) 
-            var request = request_example;  // string |  (optional) 
 
             try
             {
-                // [] Create a contract for specified emails
-                Contract result = apiInstance.SealerByProductIdContractsPost(file, displayName, signerEmails, signatures, productId, templateId, request);
+                // [CONTRACTS] Create a contract for specified emails
+                Contract result = apiInstance.CreateContract(file, displayName, signerEmails, signatures, productId, xApiKey, signatureRequestMessage, templateId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdContractsPost: " + e.Message );
+                Debug.Print("Exception when calling SealerApi.CreateContract: " + e.Message );
             }
         }
     }
@@ -342,10 +352,11 @@ Name | Type | Description  | Notes
  **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **displayName** | **string**|  | 
  **signerEmails** | [**List&lt;string&gt;**](string.md)|  | 
- **signatures** | **string**| The files to upload. How http file upload works: https://goo.gl/UYQ2nX | 
+ **signatures** | [**List&lt;string&gt;**](string.md)| The files to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+ **signatureRequestMessage** | **string**|  | [optional] 
  **templateId** | **string**|  | [optional] 
- **request** | **string**|  | [optional] 
 
 ### Return type
 
@@ -362,435 +373,42 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sealerbyproductidcontractsselfget"></a>
-# **SealerByProductIdContractsSelfGet**
-> List<Contract> SealerByProductIdContractsSelfGet (string productId, int? limit = null, int? offset = null)
+<a name="createsignature"></a>
+# **CreateSignature**
+> Signature CreateSignature (System.IO.Stream file, string productId, string xApiKey)
 
-[] Get all of the authenticated user’s contracts
+[SIGNATURES] Create a signature for the authenticated user
 
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdContractsSelfGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var productId = productId_example;  // string | 
-            var limit = 56;  // int? |  (optional) 
-            var offset = 56;  // int? |  (optional) 
-
-            try
-            {
-                // [] Get all of the authenticated user’s contracts
-                List&lt;Contract&gt; result = apiInstance.SealerByProductIdContractsSelfGet(productId, limit, offset);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdContractsSelfGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **string**|  | 
- **limit** | **int?**|  | [optional] 
- **offset** | **int?**|  | [optional] 
-
-### Return type
-
-[**List<Contract>**](Contract.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidcontractssignbycontractidpost"></a>
-# **SealerByProductIdContractsSignByContractIdPost**
-> void SealerByProductIdContractsSignByContractIdPost (string contractId, System.IO.Stream signature, System.IO.Stream contract, string productId, bool? reuseLastSignature = null, string request = null)
-
-[] Sign a contract
-
-Requires to be authenticated to the platform.  The original contract and signature must be provided and a Signature Request Id is used to link the email and the contract Id
+Requires the Sealer Admin Role or the Sealer User Role.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class SealerByProductIdContractsSignByContractIdPostExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var contractId = contractId_example;  // string | 
-            var signature = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var contract = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var productId = productId_example;  // string | 
-            var reuseLastSignature = true;  // bool? |  (optional) 
-            var request = request_example;  // string |  (optional) 
-
-            try
-            {
-                // [] Sign a contract
-                apiInstance.SealerByProductIdContractsSignByContractIdPost(contractId, signature, contract, productId, reuseLastSignature, request);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdContractsSignByContractIdPost: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **contractId** | **string**|  | 
- **signature** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **contract** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **productId** | **string**|  | 
- **reuseLastSignature** | **bool?**|  | [optional] 
- **request** | **string**|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidcontractssignpost"></a>
-# **SealerByProductIdContractsSignPost**
-> void SealerByProductIdContractsSignPost (System.IO.Stream signature, System.IO.Stream contract, string productId, string request = null)
-
-[] Sign a contract
-
-Requires no role, as someone outside of the Mantle software could sign this contract.  The original contract and signature must be provided and a Signature Request Id is used to link the email and the contract Id.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdContractsSignPostExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var signature = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var contract = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var productId = productId_example;  // string | 
-            var request = request_example;  // string |  (optional) 
-
-            try
-            {
-                // [] Sign a contract
-                apiInstance.SealerByProductIdContractsSignPost(signature, contract, productId, request);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdContractsSignPost: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **signature** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **contract** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **productId** | **string**|  | 
- **request** | **string**|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidsignaturesbysignatureiddelete"></a>
-# **SealerByProductIdSignaturesBySignatureIdDelete**
-> void SealerByProductIdSignaturesBySignatureIdDelete (string signatureId, string productId)
-
-[] Delete a signature
-
-Cannot if used in one or more contracts.                Requires the Sealer User Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdSignaturesBySignatureIdDeleteExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var signatureId = signatureId_example;  // string | 
-            var productId = productId_example;  // string | 
-
-            try
-            {
-                // [] Delete a signature
-                apiInstance.SealerByProductIdSignaturesBySignatureIdDelete(signatureId, productId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdSignaturesBySignatureIdDelete: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **signatureId** | **string**|  | 
- **productId** | **string**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidsignaturescomparepost"></a>
-# **SealerByProductIdSignaturesComparePost**
-> SealerBreadcrumbingCompareResponse SealerByProductIdSignaturesComparePost (string signatureId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
-
-[] Compare a local signature file to a signature
-
-Requires the Sealer User Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdSignaturesComparePostExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var signatureId = signatureId_example;  // string | 
-            var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var productId = productId_example;  // string | 
-            var mustGenerateFileDiff = true;  // bool? |  (optional) 
-            var request = request_example;  // string |  (optional) 
-
-            try
-            {
-                // [] Compare a local signature file to a signature
-                SealerBreadcrumbingCompareResponse result = apiInstance.SealerByProductIdSignaturesComparePost(signatureId, file, productId, mustGenerateFileDiff, request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdSignaturesComparePost: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **signatureId** | **string**|  | 
- **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **productId** | **string**|  | 
- **mustGenerateFileDiff** | **bool?**|  | [optional] 
- **request** | **string**|  | [optional] 
-
-### Return type
-
-[**SealerBreadcrumbingCompareResponse**](SealerBreadcrumbingCompareResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidsignaturesget"></a>
-# **SealerByProductIdSignaturesGet**
-> List<Contract> SealerByProductIdSignaturesGet (string productId, int? limit = null, int? offset = null)
-
-[] Get all of the authenticated user’s signatures
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdSignaturesGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var productId = productId_example;  // string | 
-            var limit = 56;  // int? |  (optional) 
-            var offset = 56;  // int? |  (optional) 
-
-            try
-            {
-                // [] Get all of the authenticated user’s signatures
-                List&lt;Contract&gt; result = apiInstance.SealerByProductIdSignaturesGet(productId, limit, offset);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdSignaturesGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **productId** | **string**|  | 
- **limit** | **int?**|  | [optional] 
- **offset** | **int?**|  | [optional] 
-
-### Return type
-
-[**List<Contract>**](Contract.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidsignaturespost"></a>
-# **SealerByProductIdSignaturesPost**
-> Signature SealerByProductIdSignaturesPost (System.IO.Stream file, string productId, string request = null)
-
-[] Create a signature for the authenticated user
-
-Requires the Sealer User Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdSignaturesPostExample
+    public class CreateSignatureExample
     {
         public void main()
         {
             var apiInstance = new SealerApi();
             var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
             var productId = productId_example;  // string | 
-            var request = request_example;  // string |  (optional) 
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
-                // [] Create a signature for the authenticated user
-                Signature result = apiInstance.SealerByProductIdSignaturesPost(file, productId, request);
+                // [SIGNATURES] Create a signature for the authenticated user
+                Signature result = apiInstance.CreateSignature(file, productId, xApiKey);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdSignaturesPost: " + e.Message );
+                Debug.Print("Exception when calling SealerApi.CreateSignature: " + e.Message );
             }
         }
     }
@@ -803,7 +421,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
  **productId** | **string**|  | 
- **request** | **string**|  | [optional] 
+ **xApiKey** | **string**|  | 
 
 ### Return type
 
@@ -820,43 +438,172 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sealerbyproductidtemplatesbytemplateidcontractsget"></a>
-# **SealerByProductIdTemplatesByTemplateIdContractsGet**
-> List<Contract> SealerByProductIdTemplatesByTemplateIdContractsGet (string templateId, string productId, int? limit = null, int? offset = null)
+<a name="createtemplate"></a>
+# **CreateTemplate**
+> Template CreateTemplate (System.IO.Stream file, string displayName, string productId, string xApiKey)
 
-[] Get contracts attached to a template
+[TEMPLATES] Create a template
 
-Requires the Sealer Admin Role.
+Used to regroup contracts.                Requires the Sealer Admin Role.
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class SealerByProductIdTemplatesByTemplateIdContractsGetExample
+    public class CreateTemplateExample
+    {
+        public void main()
+        {
+            var apiInstance = new SealerApi();
+            var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
+            var displayName = displayName_example;  // string | 
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // [TEMPLATES] Create a template
+                Template result = apiInstance.CreateTemplate(file, displayName, productId, xApiKey);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SealerApi.CreateTemplate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
+ **displayName** | **string**|  | 
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+[**Template**](Template.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletecontract"></a>
+# **DeleteContract**
+> void DeleteContract (string contractId, string productId, string xApiKey)
+
+[CONTRACTS] Delete a contract
+
+Cannot be deleted if the contract was signed by at least one person.                Requires the Sealer Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class DeleteContractExample
+    {
+        public void main()
+        {
+            var apiInstance = new SealerApi();
+            var contractId = contractId_example;  // string | 
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // [CONTRACTS] Delete a contract
+                apiInstance.DeleteContract(contractId, productId, xApiKey);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SealerApi.DeleteContract: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contractId** | **string**|  | 
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletetemplate"></a>
+# **DeleteTemplate**
+> void DeleteTemplate (string templateId, string productId, string xApiKey)
+
+[TEMPLATES] Delete a template
+
+Cannot be deleted if it has linked contracts.                Requires the Sealer Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class DeleteTemplateExample
     {
         public void main()
         {
             var apiInstance = new SealerApi();
             var templateId = templateId_example;  // string | 
             var productId = productId_example;  // string | 
-            var limit = 56;  // int? |  (optional) 
-            var offset = 56;  // int? |  (optional) 
+            var xApiKey = xApiKey_example;  // string | 
 
             try
             {
-                // [] Get contracts attached to a template
-                List&lt;Contract&gt; result = apiInstance.SealerByProductIdTemplatesByTemplateIdContractsGet(templateId, productId, limit, offset);
-                Debug.WriteLine(result);
+                // [TEMPLATES] Delete a template
+                apiInstance.DeleteTemplate(templateId, productId, xApiKey);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdTemplatesByTemplateIdContractsGet: " + e.Message );
+                Debug.Print("Exception when calling SealerApi.DeleteTemplate: " + e.Message );
             }
         }
     }
@@ -869,6 +616,72 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **templateId** | **string**|  | 
  **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getallcontracts"></a>
+# **GetAllContracts**
+> List<Contract> GetAllContracts (string productId, string xApiKey, int? limit = null, int? offset = null)
+
+[CONTRACTS] Get all the contracts grouped by signer
+
+A status defines if the contract is signed, partially signed, currently being signed or unsigned                Require the Sealer Admin Role
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class GetAllContractsExample
+    {
+        public void main()
+        {
+            var apiInstance = new SealerApi();
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var limit = 56;  // int? |  (optional) 
+            var offset = 56;  // int? |  (optional) 
+
+            try
+            {
+                // [CONTRACTS] Get all the contracts grouped by signer
+                List&lt;Contract&gt; result = apiInstance.GetAllContracts(productId, xApiKey, limit, offset);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SealerApi.GetAllContracts: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
  **limit** | **int?**|  | [optional] 
  **offset** | **int?**|  | [optional] 
 
@@ -887,236 +700,41 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sealerbyproductidtemplatesbytemplateiddelete"></a>
-# **SealerByProductIdTemplatesByTemplateIdDelete**
-> void SealerByProductIdTemplatesByTemplateIdDelete (string templateId, string productId)
+<a name="getallsignatures"></a>
+# **GetAllSignatures**
+> List<Contract> GetAllSignatures (string productId, string xApiKey, int? limit = null, int? offset = null)
 
-[] Delete a template
-
-Cannot if it has linked contracts.                Requires the Sealer Admin Role.
+[SIGNATURES] Get all signatures of the authenticated user’s
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class SealerByProductIdTemplatesByTemplateIdDeleteExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var templateId = templateId_example;  // string | 
-            var productId = productId_example;  // string | 
-
-            try
-            {
-                // [] Delete a template
-                apiInstance.SealerByProductIdTemplatesByTemplateIdDelete(templateId, productId);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdTemplatesByTemplateIdDelete: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **string**|  | 
- **productId** | **string**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidtemplatesbytemplateidget"></a>
-# **SealerByProductIdTemplatesByTemplateIdGet**
-> Template SealerByProductIdTemplatesByTemplateIdGet (string templateId, string productId)
-
-[] Get a specific template
-
-Requires the Sealer Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdTemplatesByTemplateIdGetExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var templateId = templateId_example;  // string | 
-            var productId = productId_example;  // string | 
-
-            try
-            {
-                // [] Get a specific template
-                Template result = apiInstance.SealerByProductIdTemplatesByTemplateIdGet(templateId, productId);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdTemplatesByTemplateIdGet: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **string**|  | 
- **productId** | **string**|  | 
-
-### Return type
-
-[**Template**](Template.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidtemplatescomparepost"></a>
-# **SealerByProductIdTemplatesComparePost**
-> SealerBreadcrumbingCompareResponse SealerByProductIdTemplatesComparePost (string templateId, System.IO.Stream file, string productId, bool? mustGenerateFileDiff = null, string request = null)
-
-[] Compare a local template file to the template
-
-Requires the Sealer Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdTemplatesComparePostExample
-    {
-        public void main()
-        {
-            var apiInstance = new SealerApi();
-            var templateId = templateId_example;  // string | 
-            var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var productId = productId_example;  // string | 
-            var mustGenerateFileDiff = true;  // bool? |  (optional) 
-            var request = request_example;  // string |  (optional) 
-
-            try
-            {
-                // [] Compare a local template file to the template
-                SealerBreadcrumbingCompareResponse result = apiInstance.SealerByProductIdTemplatesComparePost(templateId, file, productId, mustGenerateFileDiff, request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdTemplatesComparePost: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **templateId** | **string**|  | 
- **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **productId** | **string**|  | 
- **mustGenerateFileDiff** | **bool?**|  | [optional] 
- **request** | **string**|  | [optional] 
-
-### Return type
-
-[**SealerBreadcrumbingCompareResponse**](SealerBreadcrumbingCompareResponse.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: multipart/form-data
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="sealerbyproductidtemplatesget"></a>
-# **SealerByProductIdTemplatesGet**
-> List<Template> SealerByProductIdTemplatesGet (string productId, int? limit = null, int? offset = null)
-
-[] Get all templates
-
-Requires the Sealer Admin Role.
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using mantle.lib.Api;
-using mantle.lib.Client;
-using mantle.lib.Model;
-
-namespace Example
-{
-    public class SealerByProductIdTemplatesGetExample
+    public class GetAllSignaturesExample
     {
         public void main()
         {
             var apiInstance = new SealerApi();
             var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
             var limit = 56;  // int? |  (optional) 
             var offset = 56;  // int? |  (optional) 
 
             try
             {
-                // [] Get all templates
-                List&lt;Template&gt; result = apiInstance.SealerByProductIdTemplatesGet(productId, limit, offset);
+                // [SIGNATURES] Get all signatures of the authenticated user’s
+                List&lt;Contract&gt; result = apiInstance.GetAllSignatures(productId, xApiKey, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdTemplatesGet: " + e.Message );
+                Debug.Print("Exception when calling SealerApi.GetAllSignatures: " + e.Message );
             }
         }
     }
@@ -1128,6 +746,74 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+ **limit** | **int?**|  | [optional] 
+ **offset** | **int?**|  | [optional] 
+
+### Return type
+
+[**List<Contract>**](Contract.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getalltemplates"></a>
+# **GetAllTemplates**
+> List<Template> GetAllTemplates (string productId, string xApiKey, int? limit = null, int? offset = null)
+
+[TEMPLATES] Get all templates
+
+Requires the Sealer Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class GetAllTemplatesExample
+    {
+        public void main()
+        {
+            var apiInstance = new SealerApi();
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var limit = 56;  // int? |  (optional) 
+            var offset = 56;  // int? |  (optional) 
+
+            try
+            {
+                // [TEMPLATES] Get all templates
+                List&lt;Template&gt; result = apiInstance.GetAllTemplates(productId, xApiKey, limit, offset);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SealerApi.GetAllTemplates: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
  **limit** | **int?**|  | [optional] 
  **offset** | **int?**|  | [optional] 
 
@@ -1146,43 +832,43 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="sealerbyproductidtemplatespost"></a>
-# **SealerByProductIdTemplatesPost**
-> Template SealerByProductIdTemplatesPost (System.IO.Stream file, string displayName, string productId, string request = null)
+<a name="getauthenticatedusercontracts"></a>
+# **GetAuthenticatedUserContracts**
+> List<Contract> GetAuthenticatedUserContracts (string productId, string xApiKey, int? limit = null, int? offset = null)
 
-[] Create a template
+[CONTRACTS] Get all of the authenticated user’s contracts
 
-Used to regroup contracts.                Requires the Sealer Admin Role.
+Require the Sealer Admin Role or Sealer User Role
 
 ### Example
 ```csharp
 using System;
 using System.Diagnostics;
-using mantle.lib.Api;
+using mantle.lib.Mantle.lib;
 using mantle.lib.Client;
 using mantle.lib.Model;
 
 namespace Example
 {
-    public class SealerByProductIdTemplatesPostExample
+    public class GetAuthenticatedUserContractsExample
     {
         public void main()
         {
             var apiInstance = new SealerApi();
-            var file = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
-            var displayName = displayName_example;  // string | 
             var productId = productId_example;  // string | 
-            var request = request_example;  // string |  (optional) 
+            var xApiKey = xApiKey_example;  // string | 
+            var limit = 56;  // int? |  (optional) 
+            var offset = 56;  // int? |  (optional) 
 
             try
             {
-                // [] Create a template
-                Template result = apiInstance.SealerByProductIdTemplatesPost(file, displayName, productId, request);
+                // [CONTRACTS] Get all of the authenticated user’s contracts
+                List&lt;Contract&gt; result = apiInstance.GetAuthenticatedUserContracts(productId, xApiKey, limit, offset);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling SealerApi.SealerByProductIdTemplatesPost: " + e.Message );
+                Debug.Print("Exception when calling SealerApi.GetAuthenticatedUserContracts: " + e.Message );
             }
         }
     }
@@ -1193,14 +879,218 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
- **displayName** | **string**|  | 
  **productId** | **string**|  | 
- **request** | **string**|  | [optional] 
+ **xApiKey** | **string**|  | 
+ **limit** | **int?**|  | [optional] 
+ **offset** | **int?**|  | [optional] 
+
+### Return type
+
+[**List<Contract>**](Contract.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getcontractsbytemplateid"></a>
+# **GetContractsByTemplateId**
+> List<Contract> GetContractsByTemplateId (string templateId, string productId, string xApiKey, int? limit = null, int? offset = null)
+
+[TEMPLATES] Get contracts attached to a template
+
+Requires the Sealer Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class GetContractsByTemplateIdExample
+    {
+        public void main()
+        {
+            var apiInstance = new SealerApi();
+            var templateId = templateId_example;  // string | 
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+            var limit = 56;  // int? |  (optional) 
+            var offset = 56;  // int? |  (optional) 
+
+            try
+            {
+                // [TEMPLATES] Get contracts attached to a template
+                List&lt;Contract&gt; result = apiInstance.GetContractsByTemplateId(templateId, productId, xApiKey, limit, offset);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SealerApi.GetContractsByTemplateId: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **templateId** | **string**|  | 
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+ **limit** | **int?**|  | [optional] 
+ **offset** | **int?**|  | [optional] 
+
+### Return type
+
+[**List<Contract>**](Contract.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="gettemplatebyid"></a>
+# **GetTemplateById**
+> Template GetTemplateById (string templateId, string productId, string xApiKey)
+
+[TEMPLATES] Get a template
+
+Requires the Sealer Admin Role.
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class GetTemplateByIdExample
+    {
+        public void main()
+        {
+            var apiInstance = new SealerApi();
+            var templateId = templateId_example;  // string | 
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // [TEMPLATES] Get a template
+                Template result = apiInstance.GetTemplateById(templateId, productId, xApiKey);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SealerApi.GetTemplateById: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **templateId** | **string**|  | 
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
 
 ### Return type
 
 [**Template**](Template.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="signcontractwhenauthenticated"></a>
+# **SignContractWhenAuthenticated**
+> void SignContractWhenAuthenticated (string contractId, System.IO.Stream signature, System.IO.Stream contract, bool? reuseLastSignature, string productId, string xApiKey)
+
+[CONTRACTS] Sign a contract
+
+Requires to be authenticated to the platform.  The original contract and signature must be provided and a Signature Request Id is used to link the email and the contract Id
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using mantle.lib.Mantle.lib;
+using mantle.lib.Client;
+using mantle.lib.Model;
+
+namespace Example
+{
+    public class SignContractWhenAuthenticatedExample
+    {
+        public void main()
+        {
+            var apiInstance = new SealerApi();
+            var contractId = contractId_example;  // string | 
+            var signature = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
+            var contract = new System.IO.Stream(); // System.IO.Stream | The file to upload. How http file upload works: https://goo.gl/UYQ2nX
+            var reuseLastSignature = true;  // bool? | 
+            var productId = productId_example;  // string | 
+            var xApiKey = xApiKey_example;  // string | 
+
+            try
+            {
+                // [CONTRACTS] Sign a contract
+                apiInstance.SignContractWhenAuthenticated(contractId, signature, contract, reuseLastSignature, productId, xApiKey);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling SealerApi.SignContractWhenAuthenticated: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contractId** | **string**|  | 
+ **signature** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
+ **contract** | **System.IO.Stream**| The file to upload. How http file upload works: https://goo.gl/UYQ2nX | 
+ **reuseLastSignature** | **bool?**|  | 
+ **productId** | **string**|  | 
+ **xApiKey** | **string**|  | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 

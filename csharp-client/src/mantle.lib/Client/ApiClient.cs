@@ -1,7 +1,7 @@
 /* 
  * Mantle API
  *
- * Most endpoints require authentication with an API key.  You must first authenticate with your account by logging in your account on app.mantle.services. Then, you will need to navigate to the \"My API Key\" page in the Administration section. You might need to have the user administrator of your organization generate you an API Key first.  You must then use this API Key in all your requests with the following header:  [ x-api-key: API_KEY ].
+ * Most endpoints require authentication with an <strong>API key</strong><br><br>                                         You must first authenticate with your account by logging in your account on <strong><a target='_blank' href='https://www.mantleblockchain.com'/>mantleblockchain.com</a></strong>.<br>                                         Then, you will need to navigate to the <strong>My API Key</strong> page in the Settings section.<br>                                         You need to have the role administrator of your organization to generate an <strong>API Key</strong>.<br><br>                                         Then use this <strong>API Key</strong> in all your requests with the following header:<br><br>                                         <strong>[ x-api-key: API_KEY ]</strong><br><br>For more information on the different product and more, you can refer to the <a target='_blank' href='https://docs.mantleblockchain.com/v1.0/documentation/home'><strong>knowledge base</strong></a>
  *
  * OpenAPI spec version: v1
  * 
@@ -14,12 +14,12 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Text.RegularExpressions;
 using System.IO;
+using System.Web;
 using System.Linq;
 using System.Net;
 using System.Text;
 using Newtonsoft.Json;
-using RestSharp.Portable;
-using RestSharp.Portable.HttpClient;
+using RestSharp;
 
 namespace mantle.lib.Client
 {
@@ -53,13 +53,12 @@ namespace mantle.lib.Client
         public ApiClient()
         {
             Configuration = mantle.lib.Client.Configuration.Default;
-            RestClient = new RestClient("http://develop.api.mantleblockchain.com");
-            RestClient.IgnoreResponseStatusCode = true;
+            RestClient = new RestClient("http://api.mantleblockchain.com");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (http://develop.api.mantleblockchain.com).
+        /// with default base path (http://api.mantleblockchain.com).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config)
@@ -67,7 +66,6 @@ namespace mantle.lib.Client
             Configuration = config ?? mantle.lib.Client.Configuration.Default;
 
             RestClient = new RestClient(Configuration.BasePath);
-            RestClient.IgnoreResponseStatusCode = true;
         }
 
         /// <summary>
@@ -75,13 +73,12 @@ namespace mantle.lib.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "http://develop.api.mantleblockchain.com")
+        public ApiClient(String basePath = "http://api.mantleblockchain.com")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");
 
             RestClient = new RestClient(basePath);
-            RestClient.IgnoreResponseStatusCode = true;
             Configuration = Client.Configuration.Default;
         }
 
@@ -111,14 +108,12 @@ namespace mantle.lib.Client
 
         // Creates and sets up a RestRequest prior to a call.
         private RestRequest PrepareRequest(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
         {
             var request = new RestRequest(path, method);
-            // disable ResetSharp.Portable built-in serialization
-            request.Serializer = null;
 
             // add path parameter, if any
             foreach(var param in pathParams)
@@ -139,12 +134,12 @@ namespace mantle.lib.Client
             // add file parameter, if any
             foreach(var param in fileParams)
             {
-                request.AddFile(param.Value);
+                request.AddFile(param.Value.Name, param.Value.Writer, param.Value.FileName, param.Value.ContentType);
             }
 
             if (postBody != null) // http body (model or byte[]) parameter
             {
-                request.AddParameter(new Parameter { Value = postBody, Type = ParameterType.RequestBody, ContentType = contentType });
+                request.AddParameter(contentType, postBody, ParameterType.RequestBody);
             }
 
             return request;
@@ -164,7 +159,7 @@ namespace mantle.lib.Client
         /// <param name="contentType">Content Type of the request</param>
         /// <returns>Object</returns>
         public Object CallApi(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -174,13 +169,13 @@ namespace mantle.lib.Client
                 pathParams, contentType);
 
             // set timeout
-            RestClient.Timeout = TimeSpan.FromMilliseconds(Configuration.Timeout);
             
+            RestClient.Timeout = Configuration.Timeout;
             // set user agent
             RestClient.UserAgent = Configuration.UserAgent;
 
             InterceptRequest(request);
-            var response = RestClient.Execute(request).Result;
+            var response = RestClient.Execute(request);
             InterceptResponse(request, response);
 
             return (Object) response;
@@ -199,7 +194,7 @@ namespace mantle.lib.Client
         /// <param name="contentType">Content type.</param>
         /// <returns>The Task instance.</returns>
         public async System.Threading.Tasks.Task<Object> CallApiAsync(
-            String path, Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
+            String path, RestSharp.Method method, List<KeyValuePair<String, String>> queryParams, Object postBody,
             Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
             Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
             String contentType)
@@ -208,7 +203,7 @@ namespace mantle.lib.Client
                 path, method, queryParams, postBody, headerParams, formParams, fileParams,
                 pathParams, contentType);
             InterceptRequest(request);
-            var response = await RestClient.Execute(request);
+            var response = await RestClient.ExecuteTaskAsync(request);
             InterceptResponse(request, response);
             return (Object)response;
         }
@@ -281,7 +276,7 @@ namespace mantle.lib.Client
         /// <returns>Object representation of the JSON string.</returns>
         public object Deserialize(IRestResponse response, Type type)
         {
-            IHttpHeaders headers = response.Headers;
+            IList<Parameter> headers = response.Headers;
             if (type == typeof(byte[])) // return byte array
             {
                 return response.RawBytes;

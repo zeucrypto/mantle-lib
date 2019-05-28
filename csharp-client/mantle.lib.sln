@@ -1,8 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mantle.lib", "src\mantle.lib\mantle.lib.csproj", "{5FA4DE39-D1DD-4EE2-B656-54B622F699A6}"
+# Visual Studio 2012
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mantle.lib", "src\mantle.lib\mantle.lib.csproj", "{C47D9589-FCC0-427F-81D1-A777F243826B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -10,10 +10,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5FA4DE39-D1DD-4EE2-B656-54B622F699A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FA4DE39-D1DD-4EE2-B656-54B622F699A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FA4DE39-D1DD-4EE2-B656-54B622F699A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FA4DE39-D1DD-4EE2-B656-54B622F699A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C47D9589-FCC0-427F-81D1-A777F243826B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C47D9589-FCC0-427F-81D1-A777F243826B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C47D9589-FCC0-427F-81D1-A777F243826B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C47D9589-FCC0-427F-81D1-A777F243826B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19F1DEBC-DE5E-4517-8062-F000CD499087}.Release|Any CPU.ActiveCfg = Release|Any CPU
